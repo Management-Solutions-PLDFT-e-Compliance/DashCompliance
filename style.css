@@ -170,6 +170,10 @@
     background-color: lightgray;
   }
   
+  .tabsCaptura{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
   .tabsTriagem{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -211,11 +215,16 @@
   .wrapper .active {
     display:contents;
   }
-  .tabsAtendimento .active {
+  
+  .tabsCaptura .active {
     background-color: lightgray;
     color: black;
   }
   .tabsTriagem .active {
+    background-color: lightgray;
+    color: black;
+  }
+  .tabsAtendimento .active {
     background-color: lightgray;
     color: black;
   }
@@ -249,6 +258,88 @@
     grid-column: 1/5;
     grid-row: 4/8;
   }
+
+  .capturaParametrizacao > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+  }
+  .capturaParametrizacao{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-auto-rows: 80px;
+  }
+
+  .capturaParametrizacaoCapAuto{
+    grid-column: 1;
+    grid-row: 1/4;
+  }
+
+  .capturaParametrizacaoCapMan{
+    grid-column: 2;
+    grid-row: 1/4;
+  }
+  
+  .capturaParametrizacaoVarAtuais{
+    grid-column: 1/3;
+    grid-row: 4/7;
+  }
+
+  .capturaBiblioteca > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+  }
+  .capturaBiblioteca{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    grid-auto-rows: 80px;
+  }
+
+  .capturaBibliotecaBuscaNormativos {
+    grid-column: 1;
+    grid-row: 1/4;
+  }
+  .capturaBibliotecaPublicações {
+    grid-column: 1;
+    grid-row: 4/7;
+  }
+
+  .capturaDashboard > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+  }
+  .capturaDashboard{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-auto-rows: 80px;
+  }
+
+  .capturaDashboardNormPublicados {
+    grid-column: 1;
+    grid-row: 1/4;
+  }
+  .capturaDashboardNormativos {
+    grid-column: 2;
+    grid-row: 1/4;
+  }
+  .capturaDashboardNormMunicipais {
+    grid-column: 1;
+    grid-row: 4/7;
+  }
+  .capturaDashboardNormAplicaveis {
+    grid-column: 2;
+    grid-row: 4/7;
+  }
+
+
 
   .triagemGestaoProcesso > div{
     border: 2px solid lightgray;

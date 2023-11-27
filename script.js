@@ -28,3 +28,17 @@ tabsTriagem.forEach((tab, index) => {
     tabsTriagem[index].classList.add("active");
   });
 });
+let tabsCaptura = document.querySelectorAll(".tabsCaptura h3");
+
+tabsCaptura.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    tabContents.forEach((content) => {
+      content.classList.remove("active");
+    });
+    tabsCaptura.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+    tabContents[index].classList.add("active");
+    tabsCaptura[index].classList.add("active");
+  });
+});
