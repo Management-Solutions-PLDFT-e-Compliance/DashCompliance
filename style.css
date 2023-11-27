@@ -259,7 +259,7 @@
 
   .gestaoProcesso{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     grid-auto-rows: 100px;
   }
@@ -291,5 +291,35 @@
 
   .captura{
     grid-column: 1/6;
+    grid-row: 4/8;
+  }
+
+
+  .parecerArea > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+  }
+  .parecerArea{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-auto-rows: 100px;
+  }
+  .publicacoesParecer {
+    grid-column: 1;
+    grid-row: 1/4;
+  }
+  .planosDeAção {
+    grid-column: 2;
+    grid-row: 1/4;
+  }
+  .buscaDeNormativos {
+    grid-column: 3/5;
+    grid-row: 1/4;
+  }
+  .normativos {
+    grid-column: 1/5;
     grid-row: 4/8;
   }
