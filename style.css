@@ -295,33 +295,33 @@
   }
 
 
-  .parecerArea > div{
+  .TriagemParecerArea > div{
     border: 2px solid lightgray;
     background-color: white;
     padding: 1em;
     color: black;
   }
-  .parecerArea{
+  .TriagemParecerArea{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     grid-auto-rows: 100px;
   }
-  .publicacoesParecer {
+  .TriagemParecerAreaPublicacoes {
     grid-column: 1;
     grid-row: 1/4;
   }
-  .planosDeAção {
+  .TriagemParecerAreaPlanosDeAcao {
     grid-column: 2;
     grid-row: 1/4;
   }
-  .buscaDeNormativos {
+  .TriagemParecerAreaBuscaDeNormativos {
     grid-column: 3/5;
     grid-row: 1/4;
   }
-  .normativos {
+  .TriagemParecerAreaNormativos {
     grid-column: 1/5;
-    grid-row: 4/8;
+    grid-row: 4/7;
   }
 
   .atendimentoMonitoramento > div{
@@ -351,6 +351,44 @@
   .atendimentoMonitoramentoDemandas{
     grid-column: 1/5;
     grid-row: 4/8;
+  }
+
+  .TriagemValidacaoArea > div {
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+  }
+
+  .TriagemValidacaoArea{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-auto-rows: 100px;
+  }
+  .TriagemValidacaoAreaPublicacoes {
+    grid-column: 1;
+    grid-row: 1/4;
+  }
+  .TriagemValidacaoAreaPlanosDeAcao {
+    grid-column: 2;
+    grid-row: 1/4;
+  }
+  .TriagemValidacaoAreaBuscaDeNormativos {
+    grid-column: 3/5;
+    grid-row: 1/4;
+  }
+  .TriagemValidacaoAreaNormativos {
+    grid-column: 1/5;
+    grid-row: 4/7;
+  }
+
+
+  .TriagemHistorico > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
   }
 
   .atendimentoGestaoProcesso > div{
@@ -524,3 +562,17 @@
   }
 
   
+  .TriagemHistorico{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    grid-auto-rows: 100px;
+  }
+  .TriagemHistoricoAreaBusca {
+    grid-column: 1;
+    grid-row: 1/4;
+  }
+  .TriagemHistoricoPublicacoes {
+    grid-column: 1;
+    grid-row: 4/7;
+  }
