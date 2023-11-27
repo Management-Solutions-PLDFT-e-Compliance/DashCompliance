@@ -176,7 +176,7 @@
   }
   .tabsTriagem{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
   .tabsAtendimento{
     display: grid;
@@ -341,46 +341,46 @@
 
 
 
-  .triagemGestaoProcesso > div{
+  .triagemCompliance > div{
     border: 2px solid lightgray;
     background-color: white;
     padding: 1em;
     color: black;
   }
 
-  .triagemGestaoProcesso{
+  .triagemCompliance{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 10px;
     grid-auto-rows: 80px;
   }
 
-  .triagemGestaoProcessoPublicacao{
+  .triagemCompliancePublicacao{
     grid-column: 1;
     grid-row: 1/4;
   }
 
-  .triagemGestaoProcessoNotificacao{
+  .triagemComplianceNotificacao{
     grid-column: 2/4;
     grid-row: 1/4;
   }
   
-  .triagemGestaoProcessoPrazo{
+  .triagemCompliancePrazo{
     grid-column: 4;
     grid-row: 1/4;
   }
 
-  .triagemGestaoProcessoParecer{
+  .triagemComplianceParecer{
     grid-column: 5;
     grid-row: 1/4;
   }
 
-  .triagemGestaoProcessoPlano{
+  .triagemCompliancePlano{
     grid-column: 6;
     grid-row: 1/4;
   }
 
-  .triagemGestaoProcessoCaptura{
+  .triagemComplianceCaptura{
     grid-column: 1/7;
     grid-row: 4/8;
   }
@@ -666,4 +666,48 @@
   .TriagemHistoricoPublicacoes {
     grid-column: 1;
     grid-row: 4/7;
+  }
+
+  .TriagemDashboard > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+  }
+
+  .TriagemDashboard{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: 100px;
+  }
+
+  .triagemDashboardPendencias{
+    grid-column: 1;
+    grid-row: 1/4;
+  }
+
+  .triagemDashboardSLA{
+    grid-column: 2;
+    grid-row: 1/4;
+  }
+
+  .triagemDashboardCriticidade{
+    grid-column: 3;
+    grid-row: 1/4;
+  }
+
+  .triagemDashboardAderenciaNormativos{
+    grid-column: 1;
+    grid-row: 4/8;
+  }
+
+  .triagemDashboardAderenciaEstado{
+    grid-column: 2;
+    grid-row: 4/8;
+  }
+
+  .triagemDashboardStatus{
+    grid-column: 3;
+    grid-row: 4/8;
   }
