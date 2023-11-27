@@ -15,7 +15,6 @@ tabsAtendimento.forEach((tab, index) => {
 });
 
 let tabsTriagem = document.querySelectorAll(".tabsTriagem h3");
-// let tabContents = document.querySelectorAll(".tab-content div");
 
 tabsTriagem.forEach((tab, index) => {
   tab.addEventListener("click", () => {
