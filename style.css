@@ -2,6 +2,15 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
     background-color: #041f4c;
+    display: flex;
+    justify-content: center;
+}
+
+.containerMaxWidth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1366px;
 }
 
 .fundoBranco{
@@ -13,7 +22,7 @@
 .header1  {
     position: fixed;
     width: 100%;
-    height: 100px;
+    height: 10vh;
     background-color: #041f4c;
 
     display: flex;
@@ -121,7 +130,7 @@
 }
 
 .botoesAuxiliares{
-    margin-top: 50px;
+    margin-top: 300px;
     padding-left: 40px;
 }
 
@@ -153,11 +162,11 @@
   
   .container {
     width: 100%;
-    height: 87vh;
+    height: 89vh;
     position: absolute;
     transform: translateX(-50%);
     left: 50%;
-    top: 120px;
+    top: 11vh;
     background-color: lightgray;
   }
   .tabsTriagem{
@@ -191,10 +200,10 @@
     letter-spacing: 0.4px;
     color: #202238;
   }
-  .tab-content div {
+  .tab-content .content {
     display: none;
   }
-  .tab-content .active {
+  .tab-content .content.active {
     display:contents;
   }
   .tabsAtendimento .active {
@@ -204,4 +213,18 @@
   .tabsTriagem .active {
     background-color: lightgray;
     color: black;
+  }
+
+  .tab-content .tituloBloco{
+    display: flex;
+    font-size: 16px;
+  }
+
+  .tab-content .subtituloBloco{
+    color: #cdcdcd;
+    font-size: 16px;
+  }
+
+  .tab-content .containerBloco{
+    background-color: white;
   }

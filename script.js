@@ -1,5 +1,5 @@
 let tabsAtendimento = document.querySelectorAll(".tabsAtendimento h3");
-let tabContents = document.querySelectorAll(".tab-content div");
+let tabContents = document.querySelectorAll(".tab-content .content");
 
 tabsAtendimento.forEach((tab, index) => {
   tab.addEventListener("click", () => {
@@ -15,7 +15,6 @@ tabsAtendimento.forEach((tab, index) => {
 });
 
 let tabsTriagem = document.querySelectorAll(".tabsTriagem h3");
-// let tabContents = document.querySelectorAll(".tab-content div");
 
 tabsTriagem.forEach((tab, index) => {
   tab.addEventListener("click", () => {
