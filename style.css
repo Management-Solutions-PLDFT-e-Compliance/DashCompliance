@@ -436,6 +436,63 @@
 }
 
 
+.tableFixHead {
+  overflow-y: auto; 
+  height: 340px;
+}
+.tableFixHead thead th {
+  position: sticky; 
+  top: 0px;
+}
+
+.tableVariaves {
+  width: 100%;
+  border-spacing: 5px;
+  font-size: 11px;
+}
+
+.tableVariaves td{
+  padding: 10px;
+  
+}
+
+.tableButton{
+  border: 1px solid white;
+  background-color: white;
+  height: 30px;
+  text-align: center;
+}
+
+.botaoEngrenagemLixeira{
+  background-color: #2c4c7c;
+  border: solid 1px #2c4c7c;
+  border-radius: 5px;
+  height: 40px;
+  width: 80px;
+}
+
+.parametrizarBotao{
+  position: center;
+  
+  size: 40px;
+}
+
+.tableVariaves th, td {
+  border: 1px solid lightgray;
+  border-spacing: 30px;
+  width: 240px;
+  height: 30px;
+}
+
+.tableVariaves th {
+  background-color: #647ca4;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 240px;
+  height: 30px;
+}
+
   .capturaParametrizacaoCapAuto{
     grid-column: 1;
     grid-row: 1/4;
