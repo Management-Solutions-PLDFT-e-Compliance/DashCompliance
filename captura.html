@@ -20,7 +20,7 @@
     <div class="container">
         <div class="tabsCaptura">
           <h3 class="active">Parametrização</h3>
-          <h3>Biblioteca</h3>
+          <h3 class="abaBiblioteca">Biblioteca</h3>
           <h3>Dashboard</h3>
         </div>
         <div class="tab-content">
@@ -214,7 +214,7 @@
               </div>
             </div>
         <div class="content">
-              <div class="capturaBiblioteca">
+              <div class="capturaBiblioteca showBiblioteca" id="capturaBiblioteca">
                 <div class="capturaBibliotecaBuscaNormativos">
                   <h2 class="TituloPreto9">Busca de normativos</h2>
                   <h5 class="SubtituloCinza">Histórico</h5>
@@ -491,6 +491,48 @@
                       </tbody>
                     </table>
                   </div>
+                </div>
+              </div>
+              <div class="capturaPesquisa hiddenPesquisa" id="capturaPesquisa">
+                <div class="capturaPesquisaBuscaNormativos hiddenPesquisa">
+                  <div class="containerPesquisa">
+                    <div class="containerPesquisaTitulos">
+                      <h2 class="TituloPreto9">Busca de normativos</h2>
+                      <h5 class="SubtituloCinza">Histórico</h5>
+                    </div>
+                    <div class="horarioAtualizacaoPesquisa">
+                      <p id="horaAtualizada">Atualizado 00h00 05/06/2023</p>
+                    </div>
+                  </div>
+                  <hr class="espacoPesquisaNormativos">
+                  <div class="pesquisaCaptura">
+                    <div class="pesquisaCapturaInputs">
+                      <label class="pesquisaCapturaLabel1 fonteItensBlocos">Normativo</label>
+                      <input class="pesquisaCapturaInput1" type="text" readonly value="Resolução nº 309
+                      ">
+                      <label class="pesquisaCapturaLabel2 fonteItensBlocos">Regulador</label>
+                      <input class="pesquisaCapturaInput2" type="text" readonly value="Bacen">
+                      <label class="pesquisaCapturaLabel3 fonteItensBlocos">Instrução</label>
+                      <input class="pesquisaCapturaInput3" type="text" readonly value="Resolução">
+                      <label class="pesquisaCapturaLabel4 fonteItensBlocos">Publicação</label>
+                      <input class="pesquisaCapturaInput4" type="text" readonly value="28/03/2023">
+                    </div>
+                    <div class="pesquisaCapturaPerguntas">
+                      Perguntas
+                    </div>
+                    <div class="pesquisaCapturaRelacionados">
+                      Relacionados  
+                    </div>
+                    <div class="pesquisaCapturaRevogados">
+                      Revogados
+                    </div>
+                  </div>
+                </div>
+                <div class="capturaPesquisaConteudo hiddenPesquisa">
+                  Conteudo
+                </div>
+                <div class="capturaPesquisaNormativo hiddenPesquisa">
+                  Normativos
                 </div>
               </div>
         </div>
