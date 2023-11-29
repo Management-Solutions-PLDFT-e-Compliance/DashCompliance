@@ -42,3 +42,45 @@ tabsCaptura.forEach((tab, index) => {
     tabsCaptura[index].classList.add("active");
   });
 });
+
+if(document.getElementById('formLogin')){
+  document.getElementById('formLogin').addEventListener('submit', function (event) {
+    event.preventDefault();
+  
+    var usuario = document.getElementById('loginUsuario').value;
+    var senha = document.getElementById('loginSenha').value;
+  
+    if (usuario.trim() !== '' && senha.trim() !== '') {
+        window.location.href = './home.html';
+    } else {
+        alert('Por favor, preencha todos os campos.');
+    }
+  });
+}
+
+function atualizarHorario() {
+  const fusoHorario = 'America/Sao_Paulo';
+  const dataAtual = new Date();
+  const opcoes = { 
+    hour: '2-digit', 
+    minute: '2-digit', 
+    day: '2-digit', 
+    month: '2-digit', 
+    year: 'numeric',
+    timeZone: fusoHorario 
+  };
+
+  const formatadorDataHora = new Intl.DateTimeFormat('pt-BR', opcoes);
+  const horaFormatada = formatadorDataHora.format(dataAtual);
+
+  const horas = horaFormatada.split(',')[1].trim();
+  const paragrafo = document.getElementById('horaAtualizada');
+  paragrafo.textContent = `Atualizado ${horas.replace(':', 'h')} ${horaFormatada.split(',')[0]}`;
+}
+
+if(document.getElementById('horaAtualizada')){
+  atualizarHorario();
+}
+
+
+

@@ -13,20 +13,20 @@
             <h1 class="tituloCompliance">COMPLIANCE ANALYTICS</h1>
         </div>
         <div class="formLogin">
-            <form action="">
+            <form action="./home" id="formLogin">
                 <div class="infoLogin">
                     <img src="./assets/icons/perfilDefaultIcon.png" alt="perfilDefault"><div>Faça o login</div>
                 </div>
                 <div class="containerCampos">
                     <div class="inputUsuario">
                         <label for="usuario">Usuário:</label>
-                        <input type="text" name="usuario">
+                        <input type="text" name="usuario" id="loginUsuario">
                     </div>
                     <div class="inputSenha">
                         <label for="senha">Senha:</label>
-                        <input type="password" name="senha" id="">
+                        <input type="password" name="senha" id="loginSenha">
                     </div>
-                    <input type="submit" value="Entrar" class="botaoEnviar">
+                    <input type="submit" value="Entrar" class="botaoEnviar" id="botaoEnviar">
                 </div>
             </form>
         </div>
@@ -42,5 +42,6 @@
             </div>
         </header>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
