@@ -9,7 +9,10 @@ if(document.getElementById('formLogin')){
         localStorage.setItem('usuario', usuario);
         window.location.href = './home.html';
     } else {
-        alert('Por favor, preencha todos os campos.');
+      Swal.fire({
+        icon: "error",
+        title: "Por favor, preencha todos os campos."
+      });
     }
   });
 }
@@ -60,21 +63,6 @@ tabsCaptura.forEach((tab, index) => {
     tabsCaptura[index].classList.add("active");
   });
 });
-
-if(document.getElementById('formLogin')){
-  document.getElementById('formLogin').addEventListener('submit', function (event) {
-    event.preventDefault();
-  
-    const usuario = document.getElementById('loginUsuario').value;
-    const senha = document.getElementById('loginSenha').value;
-  
-    if (usuario.trim() !== '' && senha.trim() !== '') {
-        window.location.href = './home.html';
-    } else {
-        alert('Por favor, preencha todos os campos.');
-    }
-  });
-}
 
 function atualizarHorario() {
   const fusoHorario = 'America/Sao_Paulo';

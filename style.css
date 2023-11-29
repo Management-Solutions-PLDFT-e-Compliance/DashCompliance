@@ -1339,6 +1339,14 @@
     display: flex;
   }
 
-  .capturaPesquisaNormativo-Conteudo{
+  #capturaPesquisaNormativo-PDF{
     height: 300px;
+    overflow: hidden; 
+  }
+
+  #pdfObject{
+    border: none;
+    width: 100%;
+    height: 100%;
+    
   }
