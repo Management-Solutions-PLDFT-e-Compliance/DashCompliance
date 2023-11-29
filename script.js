@@ -156,7 +156,6 @@ if(document.querySelector(".comprimentos")){
 }
 
 var incluirBotao = document.querySelector('.separadorCapAutoIncluir');
-import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 incluirBotao.addEventListener('click', function () {
   var regulador = document.getElementById('Regulador').checked;
@@ -187,3 +186,9 @@ incluirBotao.addEventListener('click', function () {
   alert("Parâmetro incluído na captura automática!");
 });
 
+var executarBotao = document.querySelector('.separadorCapManExecutar');
+executarBotao.addEventListener('click', function () {
+
+  alert("Captura executada!");
+
+});
