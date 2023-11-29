@@ -182,13 +182,15 @@ incluirBotao.addEventListener('click', function () {
   <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="/assets/icons/Lixeira.png" alt="Descrição da Imagem" height="20px" width="20px"></button></td>
   </tr>`;
 
-  
-  alert("Parâmetro incluído na captura automática!");
+  Swal.fire({
+    icon: 'success',
+    title: 'Parâmetro incluído na captura automática!'})
 });
 
 var executarBotao = document.querySelector('.separadorCapManExecutar');
 executarBotao.addEventListener('click', function () {
 
-  alert("Captura executada!");
-
+  Swal.fire({
+    icon: 'success',
+    title: 'Captura executada!'})
 });
