@@ -92,8 +92,10 @@ function atualizarHorario() {
   const horaFormatada = formatadorDataHora.format(dataAtual);
 
   const horas = horaFormatada.split(',')[1].trim();
-  const paragrafo = document.getElementById('horaAtualizada');
-  paragrafo.textContent = `Atualizado ${horas.replace(':', 'h')} ${horaFormatada.split(',')[0]}`;
+  const paragrafos = document.querySelectorAll('#horaAtualizada');
+  paragrafos.forEach((paragrafo)=>{
+    paragrafo.textContent = `Atualizado ${horas.replace(':', 'h')} ${horaFormatada.split(',')[0]}`;
+  });
 }
 
 if(document.getElementById('horaAtualizada')){
@@ -141,13 +143,41 @@ if(document.querySelector('.campoData')){
 if(document.querySelector(".botaoAbrirPesquisa")){
   let botoes = document.querySelectorAll(".botaoAbrirPesquisa");
   let paginaBibliotecaBusca = document.querySelector(".capturaBiblioteca");
-
-  console.log(botoes);
+  let paginaPesquisa = document.querySelector(".capturaPesquisa");
+  let buscaNorma = document.querySelector(".capturaPesquisaBuscaNormativos");
+  let conteudo = document.querySelector(".capturaPesquisaConteudo");
+  let norma = document.querySelector(".capturaPesquisaNormativo");
 
   botoes.forEach((botao)=>{
     botao.addEventListener("click", ()=>{
-      paginaBibliotecaBusca.remove();
+      paginaBibliotecaBusca.classList.replace('showBiblioteca', 'hiddenBiblioteca');
+      paginaPesquisa.classList.replace('hiddenPesquisa', 'showPesquisa');
+      buscaNorma.classList.replace('hiddenPesquisa', 'showPesquisa');
+      conteudo.classList.replace('hiddenPesquisaFlex', 'showPesquisaFlex');
+      norma.classList.replace('hiddenPesquisaFlex', 'showPesquisaFlex');
     })
+  })
+}
+
+if(document.querySelector(".abaBiblioteca")){
+  let abaBiblioteca = document.querySelector(".abaBiblioteca");
+  let paginaBibliotecaBusca = document.querySelector("#capturaBiblioteca");
+  let paginaPesquisa = document.querySelector("#capturaPesquisa");
+  let buscaNorma = document.querySelector(".capturaPesquisaBuscaNormativos");
+  let conteudo = document.querySelector(".capturaPesquisaConteudo");
+  let norma = document.querySelector(".capturaPesquisaNormativo");
+
+  abaBiblioteca.addEventListener("click", ()=>{
+    if(paginaBibliotecaBusca.classList.contains("hiddenBiblioteca")){
+      paginaBibliotecaBusca.classList.add('showBiblioteca');
+      paginaBibliotecaBusca.classList.remove('hiddenBiblioteca');
+      paginaPesquisa.classList.add('hiddenPesquisa');
+      paginaPesquisa.classList.remove('showPesquisa');
+
+      buscaNorma.classList.replace('showPesquisa', 'hiddenPesquisa');
+      conteudo.classList.replace('showPesquisaFlex', 'hiddenPesquisaFlex');
+      norma.classList.replace('showPesquisaFlex', 'hiddenPesquisaFlex');
+    }
   })
 }
 
