@@ -194,3 +194,78 @@ executarBotao.addEventListener('click', function () {
     icon: 'success',
     title: 'Captura executada!'})
 });
+
+var NormativosPublicados = document.getElementById('NormativosPublicados').getContext('2d');
+
+    const data = {
+      labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+      datasets: [
+        {
+          label: "Bacen",
+          data: [50, 11, 78, 57, 49, 99],
+          fill: true,
+          backgroundColor: "#cc94e4",
+        },
+        {
+          label: "CVM",
+          data: [106, 22, 44, 81, 64, 11],
+          fill: true,
+          backgroundColor: "#8c3c8c",
+        },
+        {
+          label: "Susep",
+          data: [0, 0, 0, 4, 19, 30],
+          fill: true,
+          backgroundColor: "#f46ce4",
+        },
+        {
+          label: "Outros",
+          data: [4, 10, 0, 6, 8, 14],
+          fill: true,
+          backgroundColor: "#ac54dc",
+        },
+      ],
+    };
+
+    var barCountSelector = document.getElementById('barCount');
+
+    function updateChart() {
+      const selectedBarCount = parseInt(barCountSelector.value, 10);
+      const updatedData = {
+        labels: data.labels.slice(0, selectedBarCount),
+        datasets: data.datasets.map(dataset => ({
+          ...dataset,
+          data: dataset.data.slice(0, selectedBarCount),
+        })),
+      };
+
+      myChart.data = updatedData;
+      myChart.update();
+    }
+
+    const myChart = new Chart(NormativosPublicados, {
+      type: "bar",
+      data: data,
+      options: {
+        scales: {
+          x: {
+            stacked: true,
+            grid: {
+              display: false,
+            },
+          },
+          y: {
+            stacked: true,
+            grid: {
+              display: false,
+            },
+            ticks: {
+              display: false,
+            },
+          },
+        },
+      },
+    });
+
+
+
