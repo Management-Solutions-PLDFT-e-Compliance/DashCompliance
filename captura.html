@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <link rel="stylesheet" href="style.css">
   <title>Compliance Analytics</title>
 </head>
@@ -588,7 +590,15 @@
                     <h5 class="SubtituloCinza">Principais Reguladores</h5>
                     <hr>
                   </div>
-
+                  <div>
+                    <label for="barCount">Número de Barras:</label>
+                    <select id="barCount" onchange="updateChart()">
+                      <option value="6" selected>Semestre</option>
+                      <option value="3">1º trimestre</option>
+                    </select>
+                  </div>
+                    <canvas id="NormativosPublicados" width="300px" height="80px"></canvas>
+              
                 </div>
                 <div class="capturaDashboardNormativos"> <h2 class="TituloPreto9">Normativos</h2>
                   <div>
@@ -616,8 +626,10 @@
             </div>
         </div>    
       </div>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="script.js"></script>
+    
 </body>
