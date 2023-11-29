@@ -185,7 +185,42 @@ if(document.querySelector(".comprimentos")){
   document.querySelector(".comprimentos").textContent = `Olá ${usuarioGlobal}!`;
 }
 
+var incluirBotao = document.querySelector('.separadorCapAutoIncluir');
 
+incluirBotao.addEventListener('click', function () {
+  var regulador = document.getElementById('Regulador').checked;
+  var descricao = document.getElementById('Descrição').value;
+  var fonte = document.getElementById('Fonte').value;
+  var formato = document.getElementById('Formato').value; 
+  var periodicidade = document.getElementById('Periodicidade').value;
 
+  let valorRegulador = regulador ? 'Regulador' : 'Outro';
 
+  console.log(valorRegulador, descricao, fonte, formato, periodicidade);
 
+  var tabela = document.querySelector('.tableVariaves tbody');
+
+  tabela.innerHTML = tabela.innerHTML + 
+  `<tr>
+  <td>0006</td>
+  <td>${valorRegulador}</td>
+  <td>${descricao}</td>
+  <td>${fonte}</td>
+  <td>${formato}</td>
+  <td>${periodicidade}</td>
+  <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="/assets/icons/Engrenagem.png" alt="Descrição da Imagem" height="20px" width="20px"></button></td>
+  <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="/assets/icons/Lixeira.png" alt="Descrição da Imagem" height="20px" width="20px"></button></td>
+  </tr>`;
+
+  Swal.fire({
+    icon: 'success',
+    title: 'Parâmetro incluído na captura automática!'})
+});
+
+var executarBotao = document.querySelector('.separadorCapManExecutar');
+executarBotao.addEventListener('click', function () {
+
+  Swal.fire({
+    icon: 'success',
+    title: 'Captura executada!'})
+});

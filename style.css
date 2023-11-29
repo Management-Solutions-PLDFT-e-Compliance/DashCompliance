@@ -545,19 +545,19 @@
 
   .capturaDashboardNormPublicados {
     grid-column: 1;
-    grid-row: 1/4;
+    grid-row: 1/5;
   }
   .capturaDashboardNormativos {
     grid-column: 2;
-    grid-row: 1/4;
+    grid-row: 1/5;
   }
   .capturaDashboardNormMunicipais {
     grid-column: 1;
-    grid-row: 4/7;
+    grid-row: 5/9;
   }
   .capturaDashboardNormAplicaveis {
     grid-column: 2;
-    grid-row: 4/7;
+    grid-row: 5/9;
   }
 
 
