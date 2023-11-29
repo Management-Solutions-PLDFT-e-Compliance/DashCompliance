@@ -518,7 +518,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
-    grid-auto-rows: 80px;
+    grid-auto-rows: 90px;
   }
 
   .capturaBibliotecaBuscaNormativos {
@@ -527,7 +527,7 @@
   }
   .capturaBibliotecaPublicações {
     grid-column: 1;
-    grid-row: 5/8;
+    grid-row: 5/10;
   }
 
   .capturaDashboard > div{
@@ -1136,7 +1136,7 @@
   }
 
   .bibliotecaFiltroConsiderar-Completa > button{
-    margin-left: 100px;
+    margin-left: 50px;
     width: 100px;
     padding: 5px 0 5px 0;
     background-color: #2c4c7c;
@@ -1145,5 +1145,32 @@
     border-radius: 5px;
     transform: scale(1.2);
     cursor: pointer;
+  }
+
+  .botaoAbrirPesquisa{
+    display: flex;
+    background-color: #BFBFBF;
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 4px 10px 4px 10px;
+    width: 100px;
+    justify-content: space-around;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .botaoAbrirPesquisa > img{
+    width: 20px;
+  }
+
+  .botaoAbrirPesquisaCentralizar{
+    display: flex;
+    justify-content: center;
+  }
+
+  .espacoTabela{
+    margin-bottom: 10px;
   }
 

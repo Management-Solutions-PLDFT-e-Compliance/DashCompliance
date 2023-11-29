@@ -1,3 +1,21 @@
+if(document.getElementById('formLogin')){
+  document.getElementById('formLogin').addEventListener('submit', function (event) {
+    event.preventDefault();
+    
+    const usuario = document.getElementById('loginUsuario').value;
+    const senha = document.getElementById('loginSenha').value;
+  
+    if (usuario.trim() !== '' && senha.trim() !== '') {
+        localStorage.setItem('usuario', usuario);
+        window.location.href = './home.html';
+    } else {
+        alert('Por favor, preencha todos os campos.');
+    }
+  });
+}
+
+const usuarioGlobal = localStorage.getItem('usuario');
+
 let tabsAtendimento = document.querySelectorAll(".tabsAtendimento h3");
 let tabContents = document.querySelectorAll(".tab-content .content");
 
@@ -47,8 +65,8 @@ if(document.getElementById('formLogin')){
   document.getElementById('formLogin').addEventListener('submit', function (event) {
     event.preventDefault();
   
-    var usuario = document.getElementById('loginUsuario').value;
-    var senha = document.getElementById('loginSenha').value;
+    const usuario = document.getElementById('loginUsuario').value;
+    const senha = document.getElementById('loginSenha').value;
   
     if (usuario.trim() !== '' && senha.trim() !== '') {
         window.location.href = './home.html';
@@ -81,6 +99,63 @@ function atualizarHorario() {
 if(document.getElementById('horaAtualizada')){
   atualizarHorario();
 }
+
+if(document.querySelector('.campoData')){
+  const camposData = document.querySelectorAll('.campoData');
+
+    camposData.forEach(function (campo) {
+      campo.addEventListener('input', function (event) {
+        const input = event.target;
+        let valor = input.value.replace(/\D/g, '');
+        if (valor.length > 8) {
+          valor = valor.slice(0, 8);
+        }
+        if (valor.length > 4) {
+          valor = valor.replace(/^(\d{2})(\d{2})(\d{4})$/, function (match, dia, mes, ano) {
+            
+            const data = new Date(`${ano}-${mes}-${dia}T00:00:00`);
+            const anoAtual = new Date().getFullYear();
+            const anoMinimo = 1900;
+            const anoMaximo = 2100;
+
+            if (
+              !isNaN(data.getTime()) &&
+              ano >= anoMinimo && ano <= anoMaximo &&
+              mes >= 1 && mes <= 12 && 
+              dia >= 1 && dia <= new Date(ano, mes, 0).getDate() // 
+            ) {
+              return `${dia}/${mes}/${ano}`;
+            } else {
+              return match;
+            }
+          });
+        } else if (valor.length > 2) {
+          valor = valor.replace(/^(\d{2})(\d{2})$/, '$1/$2');
+        }
+        input.value = valor;
+      });
+    });
+  
+}
+
+if(document.querySelector(".botaoAbrirPesquisa")){
+  let botoes = document.querySelectorAll(".botaoAbrirPesquisa");
+  let paginaBibliotecaBusca = document.querySelector(".capturaBiblioteca");
+
+  console.log(botoes);
+
+  botoes.forEach((botao)=>{
+    botao.addEventListener("click", ()=>{
+      paginaBibliotecaBusca.remove();
+    })
+  })
+}
+
+if(document.querySelector(".comprimentos")){
+  document.querySelector(".comprimentos").textContent = `Olá ${usuarioGlobal}!`;
+}
+
+
 
 
 
