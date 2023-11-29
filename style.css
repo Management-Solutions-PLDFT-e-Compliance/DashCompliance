@@ -1193,7 +1193,7 @@
   .capturaPesquisa > div{
     border: 2px solid lightgray;
     background-color: white;
-    padding: 1em;
+    padding: 1em; 
     color: black;
   }
 
@@ -1240,7 +1240,6 @@
   }
 
   .pesquisaCaptura > div{
-    border: 2px solid lightgray;
     background-color: white;
     padding: 1em;
     color: black;
@@ -1286,3 +1285,33 @@
     grid-auto-rows: 30px;
   }
 
+  .pesquisaCapturaPerguntas{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pesquisaCapturaPerguntas > div{
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+  }
+
+  .pesquisaCapturaPerguntas > div > p{
+    margin: 10px;
+  }
+
+  .textAreaPesquisa{
+    max-width: 300px;
+    max-height: 120px;
+    min-width: 300px;
+    min-height: 120px;
+    border-color: #000224;
+    resize: none;
+    padding: 5px;
+  }
+
+  .pesquisaCapturaRelacionados > div{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
