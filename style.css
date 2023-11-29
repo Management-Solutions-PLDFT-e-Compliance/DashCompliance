@@ -1315,3 +1315,30 @@
     flex-direction: column;
     margin-left: 10px;
   }
+
+  .capturaPesquisaConteudo{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .capturaPesquisaConteudo-Conteudo{
+    height: 300px;
+    overflow-y: auto;
+  }
+
+  .capturaPesquisaNormativo{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hiddenPesquisaFlex{
+    display: none;
+  }
+
+  .showPesquisaFlex{
+    display: flex;
+  }
+
+  .capturaPesquisaNormativo-Conteudo{
+    height: 300px;
+  }

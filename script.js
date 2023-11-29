@@ -153,8 +153,8 @@ if(document.querySelector(".botaoAbrirPesquisa")){
       paginaBibliotecaBusca.classList.replace('showBiblioteca', 'hiddenBiblioteca');
       paginaPesquisa.classList.replace('hiddenPesquisa', 'showPesquisa');
       buscaNorma.classList.replace('hiddenPesquisa', 'showPesquisa');
-      conteudo.classList.replace('hiddenPesquisa', 'showPesquisa');
-      norma.classList.replace('hiddenPesquisa', 'showPesquisa');
+      conteudo.classList.replace('hiddenPesquisaFlex', 'showPesquisaFlex');
+      norma.classList.replace('hiddenPesquisaFlex', 'showPesquisaFlex');
     })
   })
 }
@@ -175,8 +175,8 @@ if(document.querySelector(".abaBiblioteca")){
       paginaPesquisa.classList.remove('showPesquisa');
 
       buscaNorma.classList.replace('showPesquisa', 'hiddenPesquisa');
-      conteudo.classList.replace('showPesquisa', 'hiddenPesquisa');
-      norma.classList.replace('showPesquisa', 'hiddenPesquisa');
+      conteudo.classList.replace('showPesquisaFlex', 'hiddenPesquisaFlex');
+      norma.classList.replace('showPesquisaFlex', 'hiddenPesquisaFlex');
     }
   })
 }
