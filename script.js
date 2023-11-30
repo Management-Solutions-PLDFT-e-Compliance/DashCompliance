@@ -382,3 +382,71 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
 			description.style.left = e.pageX + "px";
 			description.style.top = (e.pageY - 70) + "px";
 		}
+
+    if(document.querySelector("#graficoNormaAplicaveis")){
+      const ctx = document.getElementById('graficoNormaAplicaveis');
+        const chartData = {
+            labels: ['Resolução', 'Carta Circular', 'Decreto', 'Lei', 'Circular'],
+            datasets: [
+                {
+                    label: 'Publicados',
+                    data: [29, 146, 245, 75, 158],
+                    backgroundColor: ['rgb(0,112,192)'],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Vigentes',
+                    data: [20, 80, 240, 70, 100],
+                    backgroundColor: ['rgb(201,201,201)'],
+                    borderWidth: 1
+                }
+            ]
+        };
+
+        const chartOptions = {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        };
+
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: chartData,
+            options: chartOptions
+        });
+
+      function atualizaGrafNormaApp(){
+        const selectedOption = document.getElementById('selecionaMesNormaApp').value;
+
+        // Atualizar os dados do gráfico com base na opção selecionada
+        switch (selectedOption) {
+            case 'nov':
+                myChart.data.datasets[0].data = [29, 146, 245, 75, 158];
+                myChart.data.datasets[1].data = [20, 80, 240, 70, 100];
+                break;
+            case 'set':
+                myChart.data.datasets[0].data = generateRandomArray(245, 20, 5);
+                myChart.data.datasets[1].data = generateRandomArray(245, 20, 5);
+                break;
+            case 'out':
+                myChart.data.datasets[0].data = generateRandomArray(245, 20, 5);
+                myChart.data.datasets[1].data = generateRandomArray(245, 20, 5);
+                break;
+            default:
+                break;
+        }
+
+        myChart.update();
+      }
+    }
+
+    function generateRandomArray(min, max, length) {
+      const randomArray = [];
+      for (let i = 0; i < length; i++) {
+          const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+          randomArray.push(randomNumber);
+      }
+      return randomArray;
+    }

@@ -716,13 +716,23 @@
                   </div>
 
                 </div>
-                <div class="capturaDashboardNormAplicaveis"> <h2 class="TituloPreto9">Normativos aplicáveis à Organização</h2>
+                <div class="capturaDashboardNormAplicaveis"> 
+                  <h2 class="TituloPreto9">Normativos aplicáveis à Organização</h2>
                   <div>
                     <h5 class="SubtituloCinza">Por período</h5>
                     <hr>
                   </div>
-
-
+                  <div>
+                    <!-- <label for="selecionaMesNormaApp">Número de Barras:</label> -->
+                    <select id="selecionaMesNormaApp" onchange="atualizaGrafNormaApp()">
+                      <option value="nov" selected>Nov/2023</option>
+                      <option value="out">Out/2023</option>
+                      <option value="set">Set/2023</option>
+                    </select>
+                  </div>
+                  <div class="containerGraficoNormaApli">
+                    <canvas id="graficoNormaAplicaveis"></canvas>
+                  </div>
                 </div>
               </div>
             </div>
