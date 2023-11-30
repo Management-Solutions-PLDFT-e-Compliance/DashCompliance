@@ -36,7 +36,7 @@ tabsAtendimento.forEach((tab, index) => {
 });
 
 function redirecionarParaLogin() {
-  window.location.href = 'login.html';
+  window.location.href = 'index.html';
 }
 function redirecionarParaHome() {
   window.location.href = 'home.html';
