@@ -42,6 +42,7 @@ function redirecionarParaHome() {
   window.location.href = 'home.html';
 }
 
+
 let tabsTriagem = document.querySelectorAll(".tabsTriagem h3");
 
 tabsTriagem.forEach((tab, index) => {
