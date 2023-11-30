@@ -82,7 +82,7 @@ function atualizarHorario() {
   const horas = horaFormatada.split(',')[1].trim();
   const paragrafos = document.querySelectorAll('#horaAtualizada');
   paragrafos.forEach((paragrafo)=>{
-    paragrafo.textContent = `Atualizado ${horas.replace(':', 'h')} ${horaFormatada.split(',')[0]}`;
+    paragrafo.textContent = `Última atualização em: ${horas.replace(':', 'h')} ${horaFormatada.split(',')[0]}`;
   });
 }
 
@@ -128,34 +128,34 @@ if(document.querySelector('.campoData')){
   
 }
 
-if(document.querySelector(".botaoAbrirPesquisa")){
-  let botoes = document.querySelectorAll(".botaoAbrirPesquisa");
+if(document.querySelector(".botaoAbrirPesquisa.botaoMain")){
+  let botao = document.querySelector(".botaoAbrirPesquisa.botaoMain");
   let paginaBibliotecaBusca = document.querySelector(".capturaBiblioteca");
   let paginaPesquisa = document.querySelector(".capturaPesquisa");
   let buscaNorma = document.querySelector(".capturaPesquisaBuscaNormativos");
   let conteudo = document.querySelector(".capturaPesquisaConteudo");
   let norma = document.querySelector(".capturaPesquisaNormativo");
 
-  botoes.forEach((botao)=>{
-    botao.addEventListener("click", ()=>{
-      paginaBibliotecaBusca.classList.replace('showBiblioteca', 'hiddenBiblioteca');
-      paginaPesquisa.classList.replace('hiddenPesquisa', 'showPesquisa');
-      buscaNorma.classList.replace('hiddenPesquisa', 'showPesquisa');
-      conteudo.classList.replace('hiddenPesquisaFlex', 'showPesquisaFlex');
-      norma.classList.replace('hiddenPesquisaFlex', 'showPesquisaFlex');
-    })
-  })
+
+
+  botao.addEventListener("click", ()=>{
+    paginaBibliotecaBusca.classList.replace('showBiblioteca', 'hiddenBiblioteca');
+    paginaPesquisa.classList.replace('hiddenPesquisa', 'showPesquisa');
+    buscaNorma.classList.replace('hiddenPesquisa', 'showPesquisa');
+    conteudo.classList.replace('hiddenPesquisaFlex', 'showPesquisaFlex');
+    norma.classList.replace('hiddenPesquisaFlex', 'showPesquisaFlex');
+  });
 }
 
-if(document.querySelector(".abaBiblioteca")){
-  let abaBiblioteca = document.querySelector(".abaBiblioteca");
+if(document.querySelector("#botaoVoltarBiblioteca")){
+  let botaoVoltar = document.querySelector("#botaoVoltarBiblioteca");
   let paginaBibliotecaBusca = document.querySelector("#capturaBiblioteca");
   let paginaPesquisa = document.querySelector("#capturaPesquisa");
   let buscaNorma = document.querySelector(".capturaPesquisaBuscaNormativos");
   let conteudo = document.querySelector(".capturaPesquisaConteudo");
   let norma = document.querySelector(".capturaPesquisaNormativo");
 
-  abaBiblioteca.addEventListener("click", ()=>{
+  botaoVoltar.addEventListener("click", ()=>{
     if(paginaBibliotecaBusca.classList.contains("hiddenBiblioteca")){
       paginaBibliotecaBusca.classList.add('showBiblioteca');
       paginaBibliotecaBusca.classList.remove('hiddenBiblioteca');
