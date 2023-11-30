@@ -19,6 +19,12 @@
 
 }
 
+sup{
+  color: red;
+  font-size: 10px;
+
+}
+
 .header1  {
     position: fixed;
     width: 100%;
