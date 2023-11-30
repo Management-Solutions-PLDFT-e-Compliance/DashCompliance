@@ -173,18 +173,73 @@ if(document.querySelector(".comprimentos")){
   document.querySelector(".comprimentos").textContent = `Olá ${usuarioGlobal}!`;
 }
 
+function ReguladorOutros(checkboxId) {
+  const reguladorCheckbox = document.getElementById('Regulador');
+  const outroCheckbox = document.getElementById('Outro');
+
+  if (checkboxId === 'Regulador' && reguladorCheckbox.checked) {
+    outroCheckbox.checked = false;
+  } else if (checkboxId === 'Outro' && outroCheckbox.checked) {
+    reguladorCheckbox.checked = false;
+  }
+}
+
+function CapcturaManualOpcoes(checkboxId) {
+  const atuaTodosCheckbox = document.getElementById('AtuaTodos');
+  const atuaEspeCheckbox = document.getElementById('AtuaEspe');
+  const fonteEspecificaSelect = document.getElementById('FonteEspecifica');
+
+  if (checkboxId === 'AtuaTodos' && atuaTodosCheckbox.checked) {
+    atuaEspeCheckbox.checked = false;
+    fonteEspecificaSelect.disabled = true; // Se AtuaTodos é marcado, desativa o select
+  } else if (checkboxId === 'AtuaEspe' && atuaEspeCheckbox.checked) {
+    atuaTodosCheckbox.checked = false;
+    fonteEspecificaSelect.disabled = false; // Se AtuaEspe é marcado, ativa o select
+  }
+}
+
+
 var incluirBotao = document.querySelector('.separadorCapAutoIncluir');
+
+function preencheRegulador() {
+  var descricaoInput = document.getElementById('Descrição');
+  var fonteInput = document.getElementById('Fonte');
+  var armazenarInput = document.getElementById('Armazenar');
+
+  if (document.getElementById('Regulador').checked) {
+    descricaoInput.value = 'Bacen';
+    fonteInput.value = 'https://www.bcb.gov.br/resultadobusca?termo=3978&source=';
+    armazenarInput.value = 'https://soluçõescompliance...';
+  } else {
+    descricaoInput.value = '';
+    fonteInput.value = '';
+    armazenarInput.value = '';
+  }
+}
+
+function preencheOutros() {
+  var descricaoInput = document.getElementById('Descrição');
+  var fonteInput = document.getElementById('Fonte');
+  var armazenarInput = document.getElementById('Armazenar');
+
+  if (document.getElementById('Regulador').checked) {
+    descricaoInput.value = '';
+    fonteInput.value = '';
+    armazenarInput.value = '';
+  } else {
+    descricaoInput.value = '';
+    fonteInput.value = '';
+    armazenarInput.value = '';
+  }
+}
 
 incluirBotao.addEventListener('click', function () {
   var regulador = document.getElementById('Regulador').checked;
   var descricao = document.getElementById('Descrição').value;
   var fonte = document.getElementById('Fonte').value;
-  var formato = document.getElementById('Formato').value; 
   var periodicidade = document.getElementById('Periodicidade').value;
 
   let valorRegulador = regulador ? 'Regulador' : 'Outro';
-
-  console.log(valorRegulador, descricao, fonte, formato, periodicidade);
 
   var tabela = document.querySelector('.tableVariaves tbody');
 
@@ -194,11 +249,20 @@ incluirBotao.addEventListener('click', function () {
   <td>${valorRegulador}</td>
   <td>${descricao}</td>
   <td>${fonte}</td>
-  <td>${formato}</td>
+  <td>html</td>
   <td>${periodicidade}</td>
   <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="/assets/icons/Engrenagem.png" alt="Descrição da Imagem" height="20px" width="20px"></button></td>
   <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="/assets/icons/Lixeira.png" alt="Descrição da Imagem" height="20px" width="20px"></button></td>
   </tr>`;
+
+  document.getElementById('Regulador').checked = false;
+  document.getElementById('Descrição').value = '';
+  document.getElementById('Fonte').value = '';
+  document.getElementById('Periodicidade').value = '';
+  
+  document.getElementById('Outro').checked = false;
+  document.getElementById('Armazenar').value = '';
+  document.getElementById('Horário').value ='';
 
   Swal.fire({
     icon: 'success',
@@ -207,6 +271,9 @@ incluirBotao.addEventListener('click', function () {
 
 var executarBotao = document.querySelector('.separadorCapManExecutar');
 executarBotao.addEventListener('click', function () {
+
+  document.getElementById('AtuaTodos').checked = false;
+  document.getElementById('AtuaEspe').checked = false;
 
   Swal.fire({
     icon: 'success',

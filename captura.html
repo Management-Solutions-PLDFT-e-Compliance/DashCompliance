@@ -36,26 +36,22 @@
                   </div>
                   <div class="separadorCapAuto">
                     <label for="Regulador" class="separadorCapAutoRegulador">Regulador</label>
-                    <input type="checkbox" id="Regulador" name="Regulador" class="separadorCapAutoReguladorChk"/>
+                    <input type="checkbox" id="Regulador" name="Regulador" class="separadorCapAutoReguladorChk" onclick="ReguladorOutros('Regulador')" onchange="preencheRegulador()"/>
                     <label for="Outro" class="separadorCapAutoOutro">Outro</label>
-                    <input type="checkbox" id="Outro" name="Outro" class="separadorCapAutoOutroChk"/>
+                    <input type="checkbox" id="Outro" name="Outro" class="separadorCapAutoOutroChk" onclick="ReguladorOutros('Outro')" onchange="preencheOutros()"/>
                     <input type="button" value="Incluir" class="separadorCapAutoIncluir">
                   </div>
                   <div class="separadorCapAutoCampos">
                     <label for="Descrição" class="separadorCapAutoCamposDescricao1">Descrição:</label>
-                    <input type="text" id="Descrição" name="Descrição" class="separadorCapAutoCamposDescricao2">
+                    <input type="text" id="Descrição" name="Descrição" class="separadorCapAutoCamposDescricao2" value="">
                   </div>
                   <div class="separadorCapAutoCampos">
                     <label for="Fonte" class="separadorCapAutoCamposFonte1">Fonte:</label>
-                    <input type="text" id="Fonte" name="Fonte" class="separadorCapAutoCamposFonte2">
-                  </div>
-                  <div class="separadorCapAutoCampos">
-                    <label for="Formato" class="separadorCapAutoCamposFormato1">Formato:</label>
-                    <input type="text" id="Formato" name="Formato" class="separadorCapAutoCamposFormato2">
+                    <input type="text" id="Fonte" name="Fonte" class="separadorCapAutoCamposFonte2" value="">
                   </div>
                   <div class="separadorCapAutoCampos">
                     <label for="Armazenar" class="separadorCapAutoCamposArmazenar1">Armazenar:</label>
-                    <input type="text" id="Armazenar" name="Armazenar" class="separadorCapAutoCamposArmazenar2">
+                    <input type="text" id="Armazenar" name="Armazenar" class="separadorCapAutoCamposArmazenar2" value="">
                   </div>
                   <div class="separadorCapAuto">
                       <label for="Periodicidade" class="separadorCapAutoCamposPeriodicidade1">Periodicidade:</label>
@@ -111,21 +107,26 @@
                     <h2 class="TituloPreto7">Realizar captura manual?</h2>
                   </div>
                   <div class="separadorCapMan">
-                    <input type="checkbox" id="AtuaTodos" name="AtuaTodos" class="separadorCapManAtuaTodos1"/>
+                    <input type="checkbox" id="AtuaTodos" name="AtuaTodos" class="separadorCapManAtuaTodos1" onclick="CapcturaManualOpcoes('AtuaTodos')"/>
                     <label for="AtuaTodos" class="separadorCapManAtuaTodos2">Atualizar todas as fontes</label>
                   </div>
+                  
                   <div class="separadorCapMan">
-                    <input type="checkbox" id="AtuaEspe" name="AtuaEspe" class="separadorCapManAtuaEspe1"/>
+                    <input type="checkbox" id="AtuaEspe" name="AtuaEspe" class="separadorCapManAtuaEspe1" onclick="CapcturaManualOpcoes('AtuaEspe')"/>
                     <label for="AtuaEspe" class="separadorCapManAtuaEspe2">Atualizar fonte específica</label>
                   </div>
                   <div class="separadorCapMan">
-                    <label for="Descrição" class="separadorCapManParametroID1">Paramêtro ID:</label>
-                    <input type="text" id="Descrição" name="Descrição" class="separadorCapManParametroID2">
+                    <label for="FonteEspecifica" class="separadorCapManParametroID1">Paramêtro ID:</label>
+                    <select name="FonteEspecifica" id="FonteEspecifica" class="separadorCapManParametroID2" disabled>
+                      <option value="0001">0001</option>
+                      <option value="0002">0002</option>
+                      <option value="0003">0003</option>
+                      <option value="0004">0004</option>
+                      <option value="0005">0005</option>
+                      <option value="0006">0006</option>
+                    </select>
                   </div>
-                  <div class="separadorCapMan">
-                    <label for="Fonte" class="separadorCapManFonte1">Fonte:</label>
-                    <input type="text" id="Fonte" name="Fonte" class="separadorCapManFonte2">
-                  </div>
+                  
                 </div>
                 <div class="capturaParametrizacaoVarAtuais"> <h2 class="TituloPreto9">Váriaveis atuais</h2>
                   <div>
