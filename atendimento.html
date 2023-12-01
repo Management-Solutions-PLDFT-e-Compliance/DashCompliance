@@ -7,24 +7,28 @@
   <title>Compliance Analytics</title>
 </head>
 <header class="header1" >
-    <img src="logoMS.png" alt="MSSolutions" class="MSlogoHome">
-    <h1 class="a comprimentos">Olá, Usuário! </h1>
-    <div class="dropdown">
-      <button class="botaoHeader">Pesquisa</button>
-      <div class="dropdown-content">
-        <a href="captura.html">Captura</a>
-        <a href="triagem.html">Triagem</a>
-      </div>
+  <img src="logoMS.png" alt="MSSolutions" class="MSlogoHome" onclick="redirecionarParaHome()">
+  <div class="dropdown">
+    <button class="botaoHeader botaoBiblioteca">
+      <img src="./assets/icons/capturaIconOff.svg" alt="Icone Biblioteca">
+      <p>Biblioteca</p>
+    </button>
+    <div class="dropdown-content">
+      <a href="captura.html">Captura</a>
+      <a href="triagem.html">Triagem</a>
     </div>
-    <a href="atendimento.html">Atendimento</a>
-    <button class="botaoHeader" onclick="redirecionarParaHome()">
-      <img src="./assets/icons/home.png" alt="Descrição da Imagem" height="25px" width="25px">
-      Home
+  </div>
+  <a href="atendimento.html" class="linkAtendimento">
+    <button class="botaoHeader botaoAtendimento botaoAtendimentoOn">
+      <img src="./assets/icons/atendimentoIconOn.png" alt="Icone Atendimento">
+      <p>Atendimento</p>
     </button>
-    <button class="botaoHeader" onclick="redirecionarParaLogin()">
-      <img src="./assets/icons/exitIcon.png" alt="Descrição da Imagem" height="25px" width="25px">
-      Sair
-    </button>
+  </a>
+  <h1 class="a comprimentos">Olá, Usuário! </h1>
+  <button class="botaoHeader botaoSair" onclick="redirecionarParaLogin()">
+    <img src="./assets/icons/exitIcon.png" alt="Descrição da Imagem" height="25px" width="25px">
+    SAIR
+  </button>
 </header>
 
 <body>
