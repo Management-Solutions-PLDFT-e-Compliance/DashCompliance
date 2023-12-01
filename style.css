@@ -600,6 +600,8 @@ sup{
   height: 340px;
 }
 .tableFixHead thead th {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
   position: sticky; 
   top: 0px;
 }
@@ -607,7 +609,8 @@ sup{
 .tableVariaves {
   width: 100%;
   border-spacing: 5px;
-  font-size: 11px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
 }
 
 .tableVariaves td{
