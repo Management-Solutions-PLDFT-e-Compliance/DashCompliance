@@ -49,18 +49,309 @@
           </div>
           <div class="content">
             <div class="TriagemParecerArea">
-              <div class="TriagemParecerAreaPublicacoes">Publicações</div>
-              <div class="TriagemParecerAreaPlanosDeAcao">Planos de ações</div>
-              <div class="TriagemParecerAreaBuscaDeNormativos">Busca de normativos</div>
-              <div class="TriagemParecerAreaNormativos">Normativos</div>
+              <div class="TriagemParecerAreaPublicacoes">
+                <h2 class="TituloPreto9">Publicações</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Status</h5>
+                  <hr>
+                </div>
+              <div class="separadorPubli">
+                <div class="separadorPubliHora">
+                  <div class="horarioAtualizacao">
+                    <p id="horaAtualizada">Atualizado 00h00 05/06/2023</p>
+                  </div>
+                </div>
+                <div class="separadorPubliVencido">
+                  <div class="quadrado">
+                   <div class="conteudo">
+                      <div class="numero">0</div>
+                      <div class="palavra">Vencido</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="separadorPubliAberto">
+                  <div class="quadrado">
+                    <div class="conteudo">
+                     <div class="numero">2</div>
+                      <div class="palavra">Aberto</div>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+
+
+              </div>
+              <div class="TriagemParecerAreaPlanosDeAcao">
+                <h2 class="TituloPreto9">Planos de ações</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Status</h5>
+                  <hr>
+                </div>
+                <div class="separadorPubli">
+                  <div class="separadorPlanoVencido">
+                    <div class="quadrado">
+                     <div class="conteudo">
+                        <div class="numero">0</div>
+                        <div class="palavra">Vencido</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="separadorPlanoAberto">
+                    <div class="quadrado">
+                      <div class="conteudo">
+                       <div class="numero">2</div>
+                        <div class="palavra">Aberto</div>
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="separadorPlanoFinalizado">
+                    <div class="quadrado">
+                      <div class="conteudo">
+                       <div class="numero">2</div>
+                        <div class="palavra">Finalizado</div>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+
+              </div>
+              <div class="TriagemParecerAreaBuscaDeNormativos">
+                <h2 class="TituloPreto9">Busca de normativos</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Filtro:</h5>
+                  <hr>
+                </div>
+                <div class="separadorBuscaNormativos">
+                  <div>
+                    <label for="Regulador" class="">Regulador:</label>
+                      <select name="Regulador" id="Regulador" class="">
+                        <option value="Bacen">Bacen</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="DataPublicacao" class="">Data da publicação:</label>
+                      <select name="DataPublicacao" id="DataPublicacao" class="">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Categoria" class="">Categoria:</label>
+                      <select name="Categoria" id="Categoria" class="">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Tema" class="">Tema:</label>
+                      <select name="Tema" id="Tema" class="">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Status" class="">Status:</label>
+                      <select name="Status" id="Status" class="">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Criticidade" class="">Criticidade:</label>
+                      <select name="Criticidade" id="Criticidade" class="">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <button>Limpar</button>
+                  </div>
+                  <div>
+                    <button>Pesquisar</button>
+                  </div>
+                </div>
+
+              </div>
+              <div class="TriagemParecerAreaNormativos">
+                <h2 class="TituloPreto9">Normativos</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Lista</h5>
+                  <hr>
+                </div>
+                  <div class="tableFixHead">
+                    <table class="tableVariaves">
+                      <thead>
+                        <tr>
+                          <th>Normativo</th>
+                          <th>Regulador</th>
+                          <th>Publicação</th>
+                          <th>Status</th>
+                          <th>Tema</th>
+                          <th>Criticidade</th>
+                          <th>Visualização</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Resolução nº 309</td>
+                          <td>Bacen</td>
+                          <td>28/03/2023</td>
+                          <td>Aberto</td>
+                          <td>Contabilidade</td>
+                          <td>Alta</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir<sup>1</sup></div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.066</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Aberto</td>
+                          <td>Contabilidade</td>
+                          <td>baixa</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
             </div>
           </div>
           <div class="content">
             <div class="TriagemValidacaoArea">
-              <div class="TriagemValidacaoAreaPublicacoes">Publicações</div>
-              <div class="TriagemValidacaoAreaPlanosDeAcao">Planos de ações</div>
-              <div class="TriagemValidacaoAreaBuscaDeNormativos">Busca de normativos</div>
-              <div class="TriagemValidacaoAreaNormativos">Normativos</div>
+              <div class="TriagemValidacaoAreaPublicacoes">
+                  <h2 class="TituloPreto9">Publicações</h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Status</h5>
+                    <hr>
+                  </div>
+                <div class="separadorPubli">
+                  <div class="separadorPubliHora">
+                    <div class="horarioAtualizacao">
+                      <p id="horaAtualizada">Atualizado 00h00 05/06/2023</p>
+                    </div>
+                  </div>
+                  <div class="separadorPubliVencido">
+                    <div class="quadrado">
+                     <div class="conteudo">
+                        <div class="numero">0</div>
+                        <div class="palavra">Vencido</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="separadorPubliAberto">
+                    <div class="quadrado">
+                      <div class="conteudo">
+                       <div class="numero">2</div>
+                        <div class="palavra">Aberto</div>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+
+              </div>
+              <div class="TriagemValidacaoAreaPlanosDeAcao">
+                <h2 class="TituloPreto9">Planos de ações</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Status</h5>
+                  <hr>
+                </div>
+                <div class="separadorPubli">
+                  <div class="separadorPlanoVencido">
+                    <div class="quadrado">
+                     <div class="conteudo">
+                        <div class="numero">0</div>
+                        <div class="palavra">Vencido</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="separadorPlanoAberto">
+                    <div class="quadrado">
+                      <div class="conteudo">
+                       <div class="numero">2</div>
+                        <div class="palavra">Aberto</div>
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="separadorPlanoFinalizado">
+                    <div class="quadrado">
+                      <div class="conteudo">
+                       <div class="numero">2</div>
+                        <div class="palavra">Finalizado</div>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+
+              </div>
+              <div class="TriagemValidacaoAreaBuscaDeNormativos">Busca de normativos
+
+
+              </div>
+              <div class="TriagemValidacaoAreaNormativos">
+                <h2 class="TituloPreto9">Normativos</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Lista</h5>
+                  <hr>
+                </div>
+                  <div class="tableFixHead">
+                    <table class="tableVariaves">
+                      <thead>
+                        <tr>
+                          <th>Normativo</th>
+                          <th>Regulador</th>
+                          <th>Publicação</th>
+                          <th>Status</th>
+                          <th>Tema</th>
+                          <th>Criticidade</th>
+                          <th>Visualização</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Resolução nº 309</td>
+                          <td>Bacen</td>
+                          <td>28/03/2023</td>
+                          <td>Aberto</td>
+                          <td>Contabilidade</td>
+                          <td>Alta</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir<sup>1</sup></div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.066</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Aberto</td>
+                          <td>Contabilidade</td>
+                          <td>baixa</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
             </div>
           </div>
           <div class="content">
