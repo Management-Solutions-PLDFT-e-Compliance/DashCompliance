@@ -259,8 +259,8 @@ incluirBotao.addEventListener('click', function () {
   <td>${fonte}</td>
   <td>html</td>
   <td>${periodicidade}</td>
-  <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="/assets/icons/Engrenagem.png" alt="Descrição da Imagem" height="30px" width="30px"></button></td>
-  <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="/assets/icons/Lixeira.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
+  <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Engrenagem.png" alt="Descrição da Imagem" height="30px" width="30px"></button></td>
+  <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Lixeira.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
   </tr>`;
 
   document.getElementById('Regulador').checked = false;

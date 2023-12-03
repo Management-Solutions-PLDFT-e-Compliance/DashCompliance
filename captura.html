@@ -54,7 +54,7 @@
                     <input type="checkbox" id="Regulador" name="Regulador" class="separadorCapAutoReguladorChk" onclick="ReguladorOutros('Regulador')" onchange="preencheRegulador()"/>
                     <label for="Outro" class="separadorCapAutoOutro">Outro<sup>1</sup></label>
                     <input type="checkbox" id="Outro" name="Outro" class="separadorCapAutoOutroChk" onclick="ReguladorOutros('Outro')" onchange="preencheOutros()"/>
-                    <input type="button" value="Incluir" class="separadorCapAutoIncluir" >
+                    
                   </div>
                   <div class="separadorCapAutoCampos">
                     <label for="Descrição" class="separadorCapAutoCamposDescricao1">Descrição:</label>
@@ -107,6 +107,7 @@
                         <option value="23:00">23:00</option>
                       </select>
                     </form>
+                    <button class="separadorCapAutoIncluir"><span>Incluir</span><img src="./assets/icons/icon-add.png" height="20px"  alt="Incluir"></button>
                   </div>
                 </div>
                 <div class="capturaParametrizacaoCapMan"> <h2 class="TituloPreto9">Captura Manual</h2>
@@ -115,11 +116,11 @@
                     <hr>
                   </div>
                   <div class="separadorCapMan">
-                    <input type="button" value="Log acesso" class="separadorCapManLog">
-                    <input type="button" value="Executar" class="separadorCapManExecutar" >
+                    
                   </div>
                   <div>
                     <h2 class="TituloPreto7">Realizar captura manual?</h2>
+                    
                   </div>
                   <div class="separadorCapMan">
                     <input type="checkbox" id="AtuaTodos" name="AtuaTodos" class="separadorCapManAtuaTodos1" onclick="CapcturaManualOpcoes('AtuaTodos')"/>
@@ -140,10 +141,12 @@
                       <option value="0005">0005</option>
                       <option value="0006">0006</option>
                     </select>
+                    <button class="separadorCapManLog">Log acesso <img src="./assets/icons/editar_2.png" alt=""></button>
                   </div>
+                  <button class="separadorCapManExecutar">Executar <img src="/assets/icons/reiniciar_2.png" alt=""></button>
                   
                 </div>
-                <div class="capturaParametrizacaoVarAtuais"> <h2 class="TituloPreto9">Váriaveis atuais</h2>
+                <div class="capturaParametrizacaoVarAtuais"> <h2 class="TituloPreto9">Inventário</h2>
                   <div>
                     <h5 class="SubtituloCinza">Visualização</h5>
                       <hr>
@@ -152,14 +155,12 @@
                     <table class="tableVariaves">
                       <thead>
                         <tr>
-                          <th>Parâmetro ID</th>
+                          <th>ID</th>
                           <th>Categoria</th>
                           <th>Descrição</th>
                           <th>Fonte</th>
                           <th>Formato</th>
                           <th>Periodicidade</th>
-                          <th>Parametrizar</th>
-                          <th>Excluir</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -170,8 +171,7 @@
                           <td>https://conteudo.cvm.gov.br/legislacao/legislacao-em-vigor/resolucoes/resolucao-cmv-n-544-de-27-de-ago-2022</td>
                           <td>pdf</td>
                           <td>Diariamente</td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Engrenagem.png" alt="Descrição da Imagem" height="30px" width="30px"></button></td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Lixeira.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
+                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"></button><button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
                         </tr>
                         <tr>
                           <td>0002</td>
@@ -180,8 +180,7 @@
                           <td>https://www2.susep.gov.br/legislacao/legislacao-em-vigor/resolucoes/resolucao-susep-n-572-de-20-de-dez-2022</td>
                           <td>txt</td>
                           <td>Diariamente</td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Engrenagem.png" alt="Descrição da Imagem" height="30px" width="30px"></button></td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Lixeira.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>                          
+                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>                         
                         </tr>
                         <tr>
                           <td>0003</td>
@@ -190,8 +189,7 @@
                           <td>https://legislacao.unicach.cl/legislacion/leyes/ley-de-bancos-y-otras-instituciones-financieras-n-18-281-de-1989</td>
                           <td>pdf</td>
                           <td>Diariamente</td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Engrenagem.png" alt="Descrição da Imagem" height="30px" width="30px"></button></td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Lixeira.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td></tr>
+                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
                         <tr>
                           <td>0004</td>
                           <td>Outro</td>
@@ -199,8 +197,7 @@
                           <td>https://legislacao.prefeitura.sp.gov.br/legislacao/leis-ordinarias/lei-no-17.743-de-13-de-julho-de-2022</td>
                           <td>html</td>
                           <td>Semanalmente</td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Engrenagem.png" alt="Descrição da Imagem" height="30px" width="30px"></button></td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Lixeira.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td></tr>
+                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
                         <tr>
                           <td>0005</td>
                           <td>Outro</td>
@@ -208,8 +205,7 @@
                           <td>https://legislacao.gov.ba.gov.br/legislacao/lei-no-14.703-de-18-de-julho-de-2022</td>
                           <td>html</td>
                           <td>Semanalmente</td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Engrenagem.png" alt="Descrição da Imagem" height="30px" width="30px"></button></td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Lixeira.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td></tr>
+                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
                       </tbody>
                     </table>
                   </div>
