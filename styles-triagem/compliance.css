@@ -1,0 +1,169 @@
+.triagem-compliance {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.up {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.triagem-compliance-publicacao {
+    width: 20%;
+}
+
+.triagem-compliance-notificacao {
+    width: 23%;
+}
+.triagem-compliance-prazo {
+    width: 17%;
+}
+.triagem-compliance-parecer {
+    width: 20%;
+}
+.triagem-compliance-plano {
+    width: 20%;
+}
+
+.card {
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #000;
+    padding: 0.3rem 0.75rem;
+    padding-bottom: .5rem;
+}
+
+.card-body {
+    padding: 0.75rem;
+}
+
+.card-titulo {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    color: #000;
+    font-weight: 700;
+}
+
+.card-subtitulo {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: 	#80808094;
+}
+
+#parecer-atraso {
+    width: 100%;
+}
+
+#plano-acao-pendente {
+    width: 100%;
+}
+
+.notificacoes {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.notificacoes img{
+    width: 15px;
+}
+
+.notificacoes li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid lightgray;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: .5rem .5rem;
+    padding-right: 0.1rem;
+}
+
+
+.triagem-compliance-publicacao .card-body span{
+    font-size: 15px;
+    align-self: center;
+}
+
+.triagem-compliance-publicacao .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.publicados {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+}
+
+
+
+.quadrado {
+    width: 40%;
+    border: 3px solid lightgray;
+    border-radius: 15px;
+    background-color: white;
+    text-align: center;
+  }
+ 
+  .conteudo {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+ 
+  .numero {
+    font-size: 35px;
+    font-weight: bold;
+    padding-bottom: 5px;
+  }
+ 
+  .palavra {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+.triagem-compliance-prazo .card-body{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.triagem-compliance-prazo select{
+    width: 90%;
+    padding: 0.275rem .5rem;
+    align-self: center;
+}
+
+.cronometro-quadrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cronometro-quadrado .conteudo{
+    display: flex;
+}
+.cronometro-quadrado .quadrado{
+    width: 48%;
+}
+
+.cronometro-quadrado .palavra{
+    font-size: 1rem;
+}
+
+.cronometro-quadrado img{
+    height: 60px;
+}
