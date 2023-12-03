@@ -43,12 +43,95 @@
         <div class="tab-content">
           <div class="content active">
             <div class="triagemCompliance">
-              <div class="triagemCompliancePublicacao">Publicações</div>
-              <div class="triagemComplianceNotificacao">Notificações</div>
-              <div class="triagemCompliancePrazo">Prazo</div>
-              <div class="triagemComplianceParecer">Parecer</div>
-              <div class="triagemCompliancePlano">Plano</div>
-              <div class="triagemComplianceCaptura">Captura</div>
+              <div class="up">
+                <div class="triagem-compliance-publicacao card">
+                  <div class="card-header">
+                    <span class="card-titulo">Publicações</span>
+                    <span class="card-subtitulo">Diário</span>
+                  </div>
+                  <div class="card-body">
+                    <span>Atualizado 00h00 25/04/2023</span>
+                    <div class="publicados">
+                        <div class="quadrado">
+                          <div class="conteudo">
+                            <div class="numero">13</div>
+                            <div class="palavra">Total</div>
+                          </div>
+                        </div>
+                        <div class="quadrado">
+                          <div class="conteudo">
+                            <div class="numero">9</div>
+                            <div class="palavra">Aplicável</div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="triagem-compliance-notificacao card">
+                  <div class="card-header">
+                    <span class="card-titulo">Notificações</span>
+                    <span class="card-subtitulo">Categorias</span>
+                  </div>
+                  <div class="card-body">
+                    <ul class="notificacoes">
+                      <li><span>3 Pareceres em atraso</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li>
+                      <li><span>2 Retornos de parecer</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li>
+                      <li><span>0 Envios pendentes</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li> 
+                      <li><span>5 Plano de ação pendentes</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li> 
+                    </ul>
+                  </div>
+                </div>
+                <div class="triagem-compliance-prazo card">
+                  <div class="card-header">
+                    <span class="card-titulo">Prazo médio análises</span>
+                    <span class="card-subtitulo">Últimos 6 meses</span>
+                  </div>
+                  <div class="card-body">
+                    <select name="" id="">
+                      <option value="">Todos</option>
+                      <option value="">Opção 1</option>
+                      <option value="">Opção 2</option>
+                      <option value="">Opção 3  </option>
+                    </select>
+                    <div class="cronometro-quadrado">
+                      <img src="./assets/icons/cronometro.png" alt="">
+                      <div class="quadrado">
+                        <div class="conteudo">
+                          <div class="numero">6</div>
+                          <div class="palavra">Dias</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="triagem-compliance-parecer card">
+                  <div class="card-header">
+                    <span class="card-titulo">Parecer em atraso</span>
+                    <span class="card-subtitulo">Principais áreas</span>
+                  </div>
+                  <div class="card-body">
+                    <canvas id="parecer-atraso"></canvas>
+                  </div>
+                </div>
+                <div class="triagem-compliance-plano card">
+                  <div class="card-header">
+                    <span class="card-titulo">Plano de ação pendente</span>
+                    <span class="card-subtitulo">Principais áreas</span>
+                  </div>
+                  <div class="card-body">
+                    <canvas id="plano-acao-pendente"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="triagem-compliance-captura card">
+                <div class="card-header">
+                  <span class="card-titulo">Captura</span>
+                  <span class="card-subtitulo">Lista</span>
+                </div>
+                <div class="card-body">
+                </div>
+              </div>
+            </di
             </div>
           </div>
           <div class="content">
