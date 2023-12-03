@@ -126,14 +126,25 @@ sup{
     font-weight: bolder;
   }
 
-  .botaoBibliotecaOn{
+  .botaoCapturaOn{
     margin-top: 6px;
     border-bottom: 2px solid white;
     background-color: white;
     height: 80px;
   }
 
-  .botaoBibliotecaOn > p{
+  .botaoCapturaOn > p{
+    color: black;
+  }
+
+  .botaoTriagemOn{
+    margin-top: 6px;
+    border-bottom: 2px solid white;
+    background-color: white;
+    height: 80px;
+  }
+
+  .botaoTriagemOn > p{
     color: black;
   }
 
