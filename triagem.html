@@ -359,10 +359,300 @@
             </div>
           </div>
           <div class="content">
+            <!-- VIctor -->
+
             <div class="TriagemHistorico">
-              <div class="TriagemHistoricoAreaBusca">Busca de normativos</div>
-              <div class="TriagemHistoricoPublicacoes">Publicações</div>
+              <div class="TriagemHistoricoAreaFiltro">
+
+                <div id="titulo">
+                  <h4 style="font-size: large; margin-bottom: 0%;">Busca de Triagens</h4>
+                  <p style="color: #c0bcbc; font-size: medium; border-bottom: 1px solid #000;">Histórico</p> 
+                </div>
+
+                <p style="font-size: medium;font-weight: bold;margin: 1.5% 1% 0% 1%;">Filtro:</p>
+
+                <!-- Dividindo por linhas os parâmetros -->
+                <div class="Parametros_linha">
+                  <!-- Linha 1 -->
+                  <p>Regulador:</p>
+                  <select name="Regulador" id="select-regulador">
+                      <option value=""></option>
+                      <option value="Bacen">Bacen</option>
+                      <option value="CVM">CVM</option>
+                  </select>
+
+                  <p style="margin-left: 6%; margin-right: 0.5%;">Data de Publicação:</p>
+                  <input type="date" class="data-range">
+                  <input type="date" class="data-range">
+
+                  <p style="margin-left: 6%; margin-right: 0.5%;">Status:</p>
+                  <select name="Status" id="select-status">
+                    <option value=""></option>
+                  </select>
+                </div>
+
+                <div class="Parametros_linha">
+                  <!-- Linha 2 -->
+                  <p>Categoria:</p>
+                  <select name="Categoria" id="select-categoria">
+                    <option value=""></option>
+                    <option value="Normativo">Normativo</option>                 
+                  </select>
+
+                  <p style="margin-left: 4.6%; margin-right: 0.5%;">Responsável:</p>
+                  <select name="Responsavel" id="select-responsavel">
+                    <option value=""></option>
+                  </select>
+
+                  <p style="margin-left: 22.7%; margin-right: 0.5%;">Tema:</p>
+                  <select name="Tema" id="select-Tema">
+                    <option value=""></option>
+                  </select>
+
+                </div>
+
+                <Button style="margin-left: 92%;">Pesquisar</Button>
+              </div>
+              <div class="TriagemHistoricoRegulatoria">
+                
+                <div id="titulo">
+                  <h4 style="font-size: large; margin-bottom: 0%;">Triagem Regulatória</h4>
+                  <p style="color: #c0bcbc; font-size: medium; border-bottom: 1px solid #000;">Histórico</p> 
+                </div>
+                
+                <div id="tabela">
+                  <table>
+
+                    <thead>
+                        <tr>
+                            <th>Normativo</th>
+                            <th>Regulador</th>
+                            <th>Publicação</th>
+                            <th>Tema</th>
+                            <th>Responsável</th>
+                            <th>Status</th>
+                            <th>Visualização</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Circular n° 4.038</td>
+                            <td>Bacen</td>
+                            <td>28/07/2020</td>
+                            <td>Crédito</td>
+                            <td>Crédito</td>
+                            <td>Finalizado</td>
+                            <td>
+                              <div class="botaoAbrirPesquisaCentralizar">
+                                <button class="botaoAbrirPesquisa botaoMain">
+                                  <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                  <div>Abrir</div>
+                                </button>
+                              </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Circular n° 4.034</td>
+                            <td>Bacen</td>
+                            <td>29/06/2020</td>
+                            <td>Crédito</td>
+                            <td>Crédito</td>
+                            <td>Finalizado</td>
+                            <td><div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>Resolução n° 254</td>
+                          <td>Bacen</td>
+                          <td>27/10/2022</td>
+                          <td>PLD</td>
+                          <td>PLD</td>
+                          <td>Atrasado</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+                        <tr>
+                          <td>Resolução n° 5.070</td>
+                          <td>CMN</td>
+                          <td>20/04/2023</td>
+                          <td>Crédito</td>
+                          <td>Crédito</td>
+                          <td>Aberto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>Resolução n° 285</td>
+                          <td>Bacen</td>
+                          <td>19/01/2023</td>
+                          <td>Consórcio</td>
+                          <td>Consórcios</td>
+                          <td>Aberto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>Resolução n° 309</td>
+                          <td>Bacen</td>
+                          <td>28/03/2023</td>
+                          <td>Contabilidade</td>
+                          <td>Controladoria</td>
+                          <td>Aberto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>Resolução n° 304</td>
+                          <td>Bacen</td>
+                          <td>20/03/2023</td>
+                          <td>Sist. Pagamento</td>
+                          <td>Tesouraria</td>
+                          <td>Aberto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>Resolução n° 300</td>
+                          <td>Bacen</td>
+                          <td>16/03/2023</td>
+                          <td>Moedas Eletrônicas</td>
+                          <td>Comercial</td>
+                          <td>Aberto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>Resolução n° 28</td>
+                          <td>Bacen</td>
+                          <td>23/10/2020</td>
+                          <td>Ouvidoria</td>
+                          <td>Ouvidoria</td>
+                          <td>Finalizado</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>Resolução n° 5.070</td>
+                          <td>CMN</td>
+                          <td>20/04/2023</td>
+                          <td>Crédito</td>
+                          <td>Crédito</td>
+                          <td>Aberto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>Resolução n° 304</td>
+                          <td>Bacen</td>
+                          <td>20/03/2023</td>
+                          <td>Sist. Pagamento</td>
+                          <td>Tesouraria</td>
+                          <td>Aberto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>Resolução n° 285</td>
+                          <td>Bacen</td>
+                          <td>19/01/2023</td>
+                          <td>Consórcio</td>
+                          <td>Consórcios</td>
+                          <td>Aberto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>Circular n° 4.038</td>
+                          <td>Bacen</td>
+                          <td>28/07/2020</td>
+                          <td>Crédito</td>
+                          <td>Crédito</td>
+                          <td>Finalizado</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                      </tr>
+
+                      <tr>
+                        <td>Resolução n° 300</td>
+                        <td>Bacen</td>
+                        <td>16/03/2023</td>
+                        <td>Moedas Eletrônicas</td>
+                        <td>Comercial</td>
+                        <td>Aberto</td>
+                        <td><div class="botaoAbrirPesquisaCentralizar">
+                          <button class="botaoAbrirPesquisa botaoMain">
+                            <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                            <div>Abrir</div>
+                          </button>
+                        </div></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
             </div>
+
           </div>
           <div class="content">
             <div class="TriagemDashboard">
