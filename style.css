@@ -137,17 +137,6 @@ sup{
     color: black;
   }
 
-  .botaoTriagemOn{
-    margin-top: 6px;
-    border-bottom: 2px solid white;
-    background-color: white;
-    height: 80px;
-  }
-
-  .botaoTriagemOn > p{
-    color: black;
-  }
-
   .linkSelecionado{
     background-color: silver;
     font-weight: bold;
@@ -254,6 +243,22 @@ sup{
     font-weight: bolder;
   }
 
+  .botaoTriagemOn > img{
+    width: 80px;
+    margin-bottom: 3px;
+  }
+
+  .botaoTriagemOn{
+    margin-top: 22px;
+    border-bottom: 2px solid white;
+    background-color: white;
+    height: 90px;
+  }
+
+  .botaoTriagemOn > p{
+    color: black;
+  }
+
 
 
   .botaoAtendimentoOn{
@@ -267,6 +272,7 @@ sup{
   .botaoAtendimentoOn > img{
     margin-left: 20px;
     width: 40px;
+    margin-bottom: 7px;
   }
   
   h1 {
