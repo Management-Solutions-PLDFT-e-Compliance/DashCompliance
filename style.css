@@ -86,13 +86,13 @@ sup{
   }
 
   .MSlogoHome {
-    width: 100px;
-    height: 50px;
+    width: 200px;
+    /* height: 50px; */
     cursor: pointer;
   }
 
   .comprimentos{
-    margin-left: 1220px;
+    margin-left: 43%;
   }
   
   .botaoSair{
@@ -142,8 +142,13 @@ sup{
     font-weight: bold;
   }
 
-  .linkAtendimento{
+  .linksBotoes{
     text-decoration: none;
+    margin-left: 10px;
+  }
+
+  .linkCaptura{
+    margin-left: 100px;
   }
   
 
@@ -164,7 +169,7 @@ sup{
   }
 
   .botaoAtendimento > img{
-    width: 60px;
+    width: 65px;
     margin-left: 30px;
     margin-bottom: 4px;
     margin-top: -8px;
@@ -225,9 +230,9 @@ sup{
   }
 
   .botaoTriagem > img{
-    width: 35px;
+    width: 70px;
     margin-left: 20px;
-    margin-bottom: 4px;
+    margin-bottom: 0px;
     margin-top: -8px;
   }
 
