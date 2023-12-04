@@ -542,3 +542,75 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
       }
       return randomArray;
     }
+
+    function abrirConfigParamsGeral(){
+      let card1 = document.getElementById("card1PreTriagem");
+      let card2 = document.getElementById("card2PreTriagem");
+      let card3 = document.getElementById("card3Captura");
+      let cardConfigParamsGeral = document.getElementById("cardConfigParamsGeral");
+
+      card1.classList.replace("showElement", "hiddenElement");
+      card2.classList.replace("showElement", "hiddenElement");
+      card3.classList.replace("showElement", "hiddenElement");
+      cardConfigParamsGeral.classList.replace("hiddenElement", "showElement");
+      
+    }
+
+    function salvarConfigParamsGeral(){
+      let card1 = document.getElementById("card1PreTriagem");
+      let card2 = document.getElementById("card2PreTriagem");
+      let card3 = document.getElementById("card3Captura");
+      let cardConfigParamsGeral = document.getElementById("cardConfigParamsGeral");
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Alterações realizadas com sucesso!'});
+
+      card1.classList.replace("hiddenElement", "showElement");
+      card2.classList.replace("hiddenElement", "showElement");
+      card3.classList.replace("hiddenElement", "showElement");
+      cardConfigParamsGeral.classList.replace("showElement", "hiddenElement");
+      
+    }
+
+    function configurarParametroEspecifico(){
+
+      let checkRegulador = document.getElementById('Regulador');
+      let aspConsiderar = document.getElementById('aspectosConsiderarInput');
+      let aspExcluir = document.getElementById('aspectosExcluirInput');
+      let checkCustom = document.getElementById('customCheckbox');
+      let checkPadrao = document.getElementById('padraoCheckbox');
+      let botaoIncluir = document.querySelector("#botaoIncluirCapAuto");
+      let botaoAtualizar = document.querySelector("#botaoAtualizarParamEsp");
+      let botaoCancelar = document.querySelector("#botaoCancelarCapAuto");
+      
+
+      botaoIncluir.classList.replace("showElement", "hiddenElement");
+      botaoAtualizar.classList.replace("hiddenElement", "showElement");
+      
+      checkCustom.checked = true;
+      checkPadrao.checked = false;
+      checkRegulador.checked = true;
+      aspConsiderar.textContent = "Normativos: Leis, Decreto, Resolução, Circular, Carta Circular; Localidades: Brasil, Reino Unido, Chile";
+      aspExcluir.textContent = "Operações no mercado de câmbio";
+
+      
+      mostrarAspectosPreTriagem();
+      preencheRegulador();
+      botaoCancelar.classList.replace("showElement", "hiddenElement");
+
+    }
+
+    function atualizarParamEsp(){
+      let botaoAtualizar = document.querySelector("#botaoAtualizarParamEsp");
+      let botaoIncluir = document.querySelector("#botaoIncluirCapAuto");
+
+      botaoIncluir.classList.replace("hiddenElement", "showElement");
+      botaoAtualizar.classList.replace("showElement", "hiddenElement");
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Parâmetro atualizado!'});
+
+        botaoCancelarPreTriagem();
+    }
