@@ -112,11 +112,6 @@
     box-shadow: 0 0 5px rgba(220, 220, 220, 0.8);
 }
 
-/* .Parametros_linha > input:hover {
-    /* Altere conforme necessário */
-    /* border-color: #a0a0a0;
-}  */
-
 .Parametros_linha > input {
     border: 1px solid #dcdcdc;
     border-radius: 4px;
@@ -131,7 +126,6 @@
     text-align: center;
     margin: 5px;
     padding: 10px;
-    box-shadow: 2px 2px 2px #888888;
 }
 
 .tabela > table > tbody > tr  > td {
