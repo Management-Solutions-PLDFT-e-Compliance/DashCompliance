@@ -109,7 +109,7 @@
 
 
 
-.quadrado {
+.quadrado-compliance {
     width: 40%;
     border: 3px solid lightgray;
     border-radius: 15px;
@@ -117,19 +117,19 @@
     text-align: center;
   }
  
-  .conteudo {
+  .conteudo-compliance {
     display: flex;
     flex-direction: column;
     padding: 0.5rem 0;
   }
  
-  .numero {
+  .numero-compliance {
     font-size: 35px;
     font-weight: bold;
     padding-bottom: 5px;
   }
  
-  .palavra {
+  .palavra-compliance {
     font-size: 14px;
     font-weight: bold;
   }
@@ -153,14 +153,14 @@
     gap: 1rem;
 }
 
-.cronometro-quadrado .conteudo{
+.cronometro-quadrado .conteudo-compliance{
     display: flex;
 }
-.cronometro-quadrado .quadrado{
+.cronometro-quadrado .quadrado-compliance{
     width: 48%;
 }
 
-.cronometro-quadrado .palavra{
+.cronometro-quadrado .palavra-compliance{
     font-size: 1rem;
 }
 

@@ -747,11 +747,11 @@ sup{
   font-size: 18px;
   position: sticky; 
   top: 0px;
-  padding: 0.3rem 0.5rem;
+  padding: 0.5rem 0.5rem;
 }
 
 .tableVariaves {
-  width: 100%;
+  width:100%;
   border-spacing: 5px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 16px;
@@ -768,30 +768,23 @@ sup{
 }
 
 .tableVariaves th:nth-child(2), td:nth-child(2) {
-  width: 10%;
+  width: 8%;
 }
 
 .tableVariaves th:nth-child(3), td:nth-child(3) {
-  width: 5%;
+  width: 7%;
 }
 .tableVariaves th:nth-child(4), td:nth-child(4) {
-  width: 50%;
+  width: 40%;
 }
 .tableVariaves th:nth-child(5), td:nth-child(5) {
-  width: 5%;
+  width: 10%;
 }
 
 .tableVariaves th:nth-child(6), td:nth-child(6) {
-  width: 13%;
-}
-
-.tableVariaves td:nth-child(6) {
-  width: 1%;
+  width: 10%;
 }
 .tableVariaves th:nth-child(7), td:nth-child(7) {
-  /* display: flex; */
-  /* justify-content: center;
-  align-items: center; */
   width: 5%;
 }
 
@@ -870,7 +863,7 @@ sup{
   }
   .capturaBibliotecaPublicações {
     grid-column: 1;
-    grid-row: 5/10;
+    grid-row: 5/17;
 
     border-radius: 12px;
   }
@@ -979,6 +972,134 @@ sup{
   .TriagemParecerAreaNormativos {
     grid-column: 1/5;
     grid-row: 4/8;
+  }
+
+  .tableVariavesTriagemRaul {
+    width: 100%;
+    border-spacing: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+  }
+
+  .tableVariavesTriagemRaul th, td {
+    border: 1px solid lightgray;
+    border-spacing: 30px;
+  }
+  
+  .tableVariavesTriagemRaul th {
+    background-color: #647ca4;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .tableVariavesTriagemRaul td{
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .tableVariavesTriagemRaul th:nth-child(1), td:nth-child(1) {
+    width: 14%;
+  }
+  
+  .tableVariavesTriagemRaul th:nth-child(2), td:nth-child(2) {
+    width: 14%;
+  }
+  
+  .tableVariavesTriagemRaul th:nth-child(3), td:nth-child(3) {
+    width: 14%;
+  }
+  .tableVariavesTriagemRaul th:nth-child(4), td:nth-child(4) {
+    width: 14%;
+  }
+  .tableVariavesTriagemRaul th:nth-child(5), td:nth-child(5) {
+    width: 14%;
+  }
+  .tableVariavesTriagemRaul th:nth-child(6), td:nth-child(6) {
+    width: 14%;
+  }
+  .tableVariavesTriagemRaul th:nth-child(7), td:nth-child(7) {
+    width: 14%;
+  }
+
+  .tableFixHeadTriagemRaul {
+    overflow-y: auto; 
+    height: 340px;
+    
+  }
+  
+  .tableFixHeadTriagemRaul thead th {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    position: sticky; 
+    top: 0px;
+    padding: 0.3rem 0.5rem;
+  }
+  .tableVariavesCapturaRaul {
+    width: 100%;
+    border-spacing: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+  }
+
+  .tableVariavesCapturaRaul th, td {
+    border: 1px solid lightgray;
+    border-spacing: 30px;
+  }
+  
+  .tableVariavesCapturaRaul th {
+    background-color: #647ca4;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .tableVariavesCapturaRaul td{
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .tableVariavesCapturaRaul th:nth-child(1), td:nth-child(1) {
+    width: 5%;
+  }
+  
+  .tableVariavesCapturaRaul th:nth-child(2), td:nth-child(2) {
+    width: 4%;
+  }
+  
+  .tableVariavesCapturaRaul th:nth-child(3), td:nth-child(3) {
+    width: 4%;
+  }
+  .tableVariavesCapturaRaul th:nth-child(4), td:nth-child(4) {
+    width: 10%;
+  }
+  .tableVariavesCapturaRaul th:nth-child(5), td:nth-child(5) {
+    width: 25%;
+  }
+  .tableVariavesCapturaRaul th:nth-child(6), td:nth-child(6) {
+    width: 24%;
+  }
+  .tableVariavesCapturaRaul th:nth-child(7), td:nth-child(7) {
+    width: 14%;
+  }
+  .tableVariavesCapturaRaul th:nth-child(8), td:nth-child(8) {
+    width: 14%;
+  }
+  .tableVariavesCapturaRaul th:nth-child(9), td:nth-child(9) {
+    width: 14%;
+    border-color: white;
+  }
+
+  .tableFixHeadCapturaRaul {
+    overflow-y: auto; 
+    height: 340px;
+    
+  }
+  
+  .tableFixHeadCapturaRaul thead th {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    position: sticky; 
+    top: 0px;
+    padding: 0.3rem 0.5rem;
   }
 
   .separadorPubli{
