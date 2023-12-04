@@ -1,0 +1,159 @@
+.TriagemHistoricoAreaFiltro{
+    border: 1px solid #dcdcdc;
+}
+
+.TriagemHistorico > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+}
+
+.TriagemHistorico{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 2;
+    gap: 10px;
+}
+
+.Parametros_linha{
+    display: flex;
+    margin: 2% 0%;
+}
+
+.Parametros_linha > p{
+    font-size: medium;
+    font-weight: bold; 
+    margin: 0% 1%;
+}
+
+.data-range{
+    margin: 0% 0.5%;
+} 
+
+
+.TriagemHistoricoAreaFiltro > button {
+    /* Cor de fundo */
+    background-color: #304c7c;
+    
+    /* Cor do texto (opcional, ajuste conforme necessário) */
+    color: #ffffff;
+    
+    /* Outras propriedades de estilo, como margem, preenchimento, etc. */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+/* Adicional: Estilo ao passar o mouse sobre o botão */
+.TriagemHistoricoAreaFiltro > button:hover {
+    background-color: #1e3557;
+}
+
+#select-categoria{
+    margin-left: 0.2%;
+}
+
+#select-responsavel{
+    margin-left: 3.2%;
+}
+
+#select-Tema {
+    margin-left: 0.4%;
+}
+
+
+.Parametros_linha > select {
+    /* Cor da borda */
+    border: 1px solid #dcdcdc;
+  
+    /* Cor de fundo */
+    background-color: #ffffff;
+  
+    /* Cor do texto */
+    color: #000000;
+  
+    /* Outras propriedades de estilo, como margem, preenchimento, etc. */
+    padding: 8px;
+    border-radius: 4px;
+}
+  
+
+.Parametros_linha > select::-ms-expand {
+    display: none;
+}
+
+.Parametros_linha > select:hover {
+    /* Altere conforme necessário */
+    border-color: #a0a0a0;
+}
+
+
+.Parametros_linha > select:focus {
+    /* Altere conforme necessário */
+    outline: none;
+    border-color: #5c5c5c;
+    box-shadow: 0 0 5px rgba(220, 220, 220, 0.8);
+}
+
+.Parametros_linha > input {
+    border: 1px solid #5c5c5c;
+    border-radius: 4px;
+}
+
+
+/* Tabela */
+
+#tabela > table > thead > tr > th {
+    background-color: #687ca4;
+    color: white;
+    border: 1px solid #ddd;
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+#tabela > table > tbody > tr  > td {
+    margin: 12px;
+}
+
+#tabela > table {
+    border-collapse: separate;
+    border-spacing: 10px; /* Altere o valor conforme necessário */
+}
+
+#celula-abrir {
+    background-color: #c0bcbc;
+
+}
+
+/* From Captura */
+
+.botaoAbrirPesquisa{
+    display: flex;
+    background-color: #BFBFBF;
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 4px 10px 4px 10px;
+    width: 100px;
+    justify-content: space-around;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.botaoAbrirPesquisa > img{
+    width: 20px;
+}
+
+.botaoAbrirPesquisaCentralizar{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+

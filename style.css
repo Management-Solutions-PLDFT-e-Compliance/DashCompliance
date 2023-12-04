@@ -493,14 +493,14 @@ sup{
   
   .tabsCaptura .active {
     /* border: darkgray solid; */
-    border-bottom: white solid;
+    border-bottom: #2c4c7c solid;
     padding-left: 12px;
     padding-right: 12px;
     border-radius: 12px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    background-color: white;
-    color: black;
+    background-color: #2c4c7c;
+    color: white;
   }
 
   .tabsTriagem .active {
@@ -997,6 +997,31 @@ sup{
     grid-auto-rows: 90px;
   }
 
+  .capturaBibliotecaBuscaNormativos > button{
+    font-size: 18px;
+    width: 100px;
+    height: 40px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    /* font-weight: bolder; */
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 55px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display:flex;  
+  }
+  .capturaBibliotecaBuscaNormativos > button > img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+
   .capturaBibliotecaBuscaNormativos {
     grid-column: 1;
     grid-row: 1/5;
@@ -1005,8 +1030,7 @@ sup{
   }
   .capturaBibliotecaPublicações {
     grid-column: 1;
-    grid-row: 5/17;
-
+    grid-row: 5/14;
     border-radius: 12px;
   }
 
@@ -1165,11 +1189,23 @@ sup{
 
   .tableFixHeadTriagemRaul {
     overflow-y: auto; 
-    height: 340px;
-    
+    height: 90%;
   }
   
   .tableFixHeadTriagemRaul thead th {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    position: sticky; 
+    top: 0px;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .tableFixHeadCapturaRaul {
+    overflow-y: auto;
+    height: 90%;
+  }
+  
+  .tableFixHeadCapturaRaul thead th {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 18px;
     position: sticky; 
@@ -1232,7 +1268,7 @@ sup{
 
   .tableFixHeadCapturaRaul {
     overflow-y: auto; 
-    height: 340px;
+    height: 90%;
     
   }
   
@@ -1385,14 +1421,6 @@ sup{
     grid-row: 4/8;
   }
 
-
-  .TriagemHistorico > div{
-    border: 2px solid lightgray;
-    background-color: white;
-    padding: 1em;
-    color: black;
-  }
-
   .atendimentoGestaoProcesso > div{
     border: 2px solid lightgray;
     background-color: white;
@@ -1539,7 +1567,7 @@ sup{
     grid-row: 4/8;
   }
 
-  .atendimentoHistorico > div{
+  /* .atendimentoHistorico > div{
     border: 2px solid lightgray;
     background-color: white;
     padding: 1em;
@@ -1561,23 +1589,7 @@ sup{
   .atendimentoHistoricoAtendimento{
     grid-column: 1/3;
     grid-row: 4/8;
-  }
-
-  
-  .TriagemHistorico{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
-    grid-auto-rows: 100px;
-  }
-  .TriagemHistoricoAreaBusca {
-    grid-column: 1;
-    grid-row: 1/4;
-  }
-  .TriagemHistoricoPublicacoes {
-    grid-column: 1;
-    grid-row: 4/7;
-  }
+  } */
 
   .TriagemDashboard > div{
     border: 2px solid lightgray;
@@ -1642,6 +1654,12 @@ sup{
     grid-template-columns: repeat(11, 1fr);
     gap: 10px;
     grid-auto-rows: 100px;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    position: sticky; 
+    top: 0px;
+    padding: 0.3rem 0.5rem;
   }
 
   .bibliotecaFiltroID{
@@ -1652,6 +1670,7 @@ sup{
   .bibliotecaFiltroNormativo{
     grid-column: 3/6;
     grid-row: 1/3;
+    
   }
 
   .bibliotecaFiltroData{
@@ -1699,20 +1718,23 @@ sup{
   .bibliotecaFiltroID-ID-Input{
     grid-column: 2;
     grid-row: 3;
+    border: 1px darkgray solid;
   }
 
   .bibliotecaFiltroID-Regulador-Select{
     grid-column: 2;
     grid-row: 4;
+    border: 1px darkgray solid;
   }
 
   .bibliotecaFiltroID-Categoria-Select{
     grid-column: 2;
     grid-row: 5;
+    border: 1px darkgray solid;
   }
 
   .fonteItensBlocos{
-    font-size: 0.9em;
+    font-size: 1.1em;
     font-weight: bold;
   }
 
@@ -1736,6 +1758,7 @@ sup{
   .bibliotecaFiltroNormativo-Normativo-Select{
     grid-column: 2;
     grid-row: 3;
+    border: 1px darkgray solid;
   }
 
   .bibliotecaFiltroNormativo-Nome-Label{
@@ -1746,16 +1769,19 @@ sup{
   .bibliotecaFiltroNormativo-Nome-Input{
     grid-column: 2;
     grid-row: 4;
+    border: 1px darkgray solid;
   }
 
   .bibliotecaFiltroNormativo-Fonte-Label{
     grid-column: 1;
     grid-row: 5;
+    
   }
 
   .bibliotecaFiltroNormativo-Fonte-Input{
     grid-column: 2;
     grid-row: 5;
+    border: 1px darkgray solid;
   }
 
   .bibliotecaFiltroData > *{
@@ -1773,35 +1799,48 @@ sup{
   .bibliotecaFiltroData-Pub-Label{
     grid-column: 1;
     grid-row: 3;
+    width: 270px;
+
   }
 
   .bibliotecaFiltroData-Pub-Input{
     grid-column: 2;
     grid-row: 3;
+    width: 270px;
+
+    border: 1px darkgray solid;
   }
 
   .bibliotecaFiltroData-Carga-Label{
     grid-column: 1;
     grid-row: 4;
-  }
+    width: 270px;
+    }
 
   .bibliotecaFiltroData-Carga-Input{
     grid-column: 2;
     grid-row: 4;
+    width: 270px;
+
+    border: 1px darkgray solid;
   }
 
   .bibliotecaFiltroData-Chave-Label{
     grid-column: 1;
     grid-row: 5;
+    width: 270px;
+
   }
 
   .bibliotecaFiltroData-Chave-Input{
     grid-column: 2;
     grid-row: 5;
+    border: 1px darkgray solid;
+    width: 270px;
+
   }
 
   .bibliotecaFiltroConsiderar > *{
-    background-color: white;
     color: black;
   }
 
@@ -1825,17 +1864,59 @@ sup{
     min-height: 20px;
   }
 
-  .bibliotecaFiltroConsiderar-Completa > button{
-    margin-left: 50px;
+  .botaoFiltrar{
+    font-size: 18px;
     width: 100px;
-    padding: 5px 0 5px 0;
+    height: 40px;
     background-color: #2c4c7c;
     border: solid 1px #2c4c7c;
     color: white;
+    /* font-weight: bolder; */
     border-radius: 5px;
-    transform: scale(1.2);
     cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    position: fixed;
+    right: 10px;
+    top: 385px;
+    left: 1785px;
   }
+  .botaoFiltrar > img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+
+  .botaoLimpaFiltro{
+    font-size: 18px;
+    width: 100px;
+    height: 40px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    /* font-weight: bolder; */
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display:flex;  
+    position:fixed;
+    right: 100px;
+    top: 385px;
+    left: 1675px;
+    
+  }
+  .botaoLimpaFiltro > img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
 
   .botaoAbrirPesquisa{
     display: flex;
@@ -1885,6 +1966,7 @@ sup{
     background-color: white;
     padding: 1em; 
     color: black;
+    border-radius: 12px;
   }
 
   .capturaPesquisa{
@@ -1901,12 +1983,12 @@ sup{
 
   .capturaPesquisaConteudo{
     grid-column: 1;
-    grid-row: 4/8;
+    grid-row: 4/10;
   }
 
   .capturaPesquisaNormativo{
     grid-column: 2;
-    grid-row: 4/8;
+    grid-row: 4/10;
   }
 
   .containerPesquisa{
@@ -2012,7 +2094,7 @@ sup{
   }
 
   .capturaPesquisaConteudo-Conteudo{
-    height: 300px;
+    height: 600px;
     overflow-y: auto;
   }
 
@@ -2030,7 +2112,7 @@ sup{
   }
 
   #capturaPesquisaNormativo-PDF{
-    height: 300px;
+    height: 600px;
     overflow: hidden; 
   }
 
@@ -2041,7 +2123,7 @@ sup{
     
   }
 
-  .containerPesquisa > button{
+  .horarioAtualizacaoPesquisa > button{
     font-size: 18px;
     width: 100px;
     height: 40px;
@@ -2051,6 +2133,19 @@ sup{
     /* font-weight: bolder; */
     border-radius: 5px;
     cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 55px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display:flex;  
+  }
+  .horarioAtualizacaoPesquisa > button > img{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
   }
   .container2{
     width: 80%;
