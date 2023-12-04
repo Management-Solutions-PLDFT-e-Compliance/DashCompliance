@@ -55,11 +55,11 @@
         <div class="tab-content">
             <div class="content active">
               <div class="capturaParametrizacao">
-                <div class="capturaParametrizacaoCapAuto" id="card1PreTriagem"> 
+                <div class="capturaParametrizacaoCapAuto showElement" id="card1PreTriagem"> 
                   <h2 class="TituloPreto9">Captura Automática</h2>
                   <div>
                     <h5 class="SubtituloCinza">Parâmetros</h5>
-                    <button class="botaoEngrenagemLixeira botaoEngrenagemParGeral showElement" id="botaoConfigParamsGeral"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"></button>
+                    <button class="botaoEngrenagemLixeira botaoEngrenagemParGeral showElement" id="botaoConfigParamsGeral" onclick="abrirConfigParamsGeral()"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"></button>
                     <hr>
                   </div>
                   <div class="separadorCapAuto">
@@ -71,9 +71,9 @@
                       <input type="checkbox" name="" id="customCheckbox" class="preTriagemLegenda configCustom checkConfigCustom" onclick="PadraoCustom('Custom')" onchange="mostrarAspectosPreTriagem()">
                       <div class="hiddenElement" id="aspectosPreTriagem">
                         <label class="preTriagemLegenda configPadrao aspectosConsiderar">Aspectos a serem considerados (palavras-chave):</label>
-                        <textarea class="aspectosConsiderarInput"></textarea>
+                        <textarea class="aspectosConsiderarInput" id="aspectosConsiderarInput"></textarea>
                         <label class="preTriagemLegenda configPadrao aspectosConsiderar aspectosExcluir">Aspectos de exclusão(palavras-chave):</label>
-                        <textarea class="aspectosConsiderarInput aspectosExcluirInput"></textarea>
+                        <textarea class="aspectosConsiderarInput aspectosExcluirInput" id="aspectosExcluirInput"></textarea>
                       </div>
                     </div>
                     <label for="Regulador" class="separadorCapAutoRegulador">Regulador<sup>1</sup></label>
@@ -133,11 +133,12 @@
                         <option value="23:00">23:00</option>
                       </select>
                     </form>
-                    <button class="separadorCapAutoIncluir" id="botaoIncluirCapAuto"><span>Incluir</span><img src="./assets/icons/icon-add.png" height="20px"  alt="Incluir"></button>
+                    <button class="separadorCapAutoIncluir showElement" id="botaoIncluirCapAuto"><span>Incluir</span><img src="./assets/icons/icon-add.png" height="20px"  alt="Incluir"></button>
+                    <button class="separadorCapAutoIncluir hiddenElement" id="botaoAtualizarParamEsp" onclick="atualizarParamEsp()"><span>Atualizar</span><img src="./assets/icons/icon-add.png" height="20px"  alt="Incluir"></button>
                     <button class="separadorCapAutoIncluir btnIncluirPreTriagem btnVoltar hiddenElement" id="botaoCancelarCapAuto" onclick="botaoCancelarPreTriagem()"><span>Cancelar</span><img src="./assets/icons/cancelarIcon.png" height="20px"  alt="Cancelar"></button>
                   </div>
                 </div>
-                <div class="capturaParametrizacaoCapMan" id="card2PreTriagem"> <h2 class="TituloPreto9">Captura Manual</h2>
+                <div class="capturaParametrizacaoCapMan showElement" id="card2PreTriagem"> <h2 class="TituloPreto9">Captura Manual</h2>
                   <div>
                     <h5 class="SubtituloCinza">Parâmetros</h5>
                     <hr>
@@ -173,7 +174,7 @@
                   <button class="separadorCapManExecutar">Executar <img src="/assets/icons/reiniciar_2.png" alt=""></button>
                   
                 </div>
-                <div class="capturaParametrizacaoVarAtuais"> <h2 class="TituloPreto9">Inventário</h2>
+                <div class="capturaParametrizacaoVarAtuais showElement" id="card3Captura"> <h2 class="TituloPreto9">Inventário</h2>
                   <div>
                     <h5 class="SubtituloCinza">Visualização</h5>
                       <hr>
@@ -196,11 +197,11 @@
                         <tr>
                           <td>0001</td>
                           <td>Regulador</td>
-                          <td>CVM</td>
-                          <td>https://conteudo.cvm.gov.br/legislacao/legislacao-em-vigor/resolucoes/resolucao-cmv-n-544-de-27-de-ago-2022</td>
+                          <td>Bacen</td>
+                          <td>https://www.bcb.gov.br/resultadobusca?termo=3978&source</td>
                           <td>Diariamente</td>
                           <td>Configuração customizada</td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"></button><button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
+                          <td class="tableButton"><button class="botaoEngrenagemLixeira" onclick="configurarParametroEspecifico()"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"></button><button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
                         </tr>
                         <tr>
                           <td>0002</td>
@@ -350,6 +351,117 @@
                     </table>
                   </div>
                 
+                </div>
+                <div class="capturaParametrizacaoConfigParams hiddenElement" id="cardConfigParamsGeral">
+                  <div>
+                    <h2 class="TituloPreto9">Configuração</h2>
+                    <div>
+                      <h5 class="SubtituloCinza">Parâmetros</h5>
+                      <hr>
+                    </div>
+                    <div class="configParamsFull">
+                      <div class="configParamsLeft">
+                        <p class="par1">Configuração padrão:</p>
+                        <div class="configParamsLeftConsiderar">
+                          <p class="par2">Aspectos a serem considerados (palavras-chave)
+                          </p>
+                          <div class="campoConfigParams">
+                            <p>Normativos</p>
+                            <textarea name="" id="">Leis, Decreto, Resolução, Circular, Carta Circular
+                            </textarea>
+                          </div>
+                          <div class="campoConfigParams">
+                            <p>Orgãos Reguladores</p>
+                            <textarea name="" id="">Banco Central do Brasil, Comissão de Valores Mobiliários, Bank of England
+                            </textarea>
+                          </div>
+                          <div class="campoConfigParams">
+                            <p>Localidades</p>
+                            <textarea name="" id="">Brasil, BR, AC, AL, AP, AM, BA, CE, ES, GO, MA, MT, MS, MG, PA, PB, PR, PE, PI, RJ, RN, RS, RO, RR, SP, SE, TO, DF, Reino Unido, UK
+                            </textarea>
+                          </div>
+                          <div class="campoConfigParams">
+                            <p>Outros</p>
+                            <textarea name="" id="">Câmbio, banco, valores mobiliários
+                            </textarea>
+                          </div>
+                        </div>
+                        <div class="configParamsLeftExcluir">
+                          <p class="par3">Aspectos de exclusão (palavras-chave):
+                          </p>
+                          <div class="campoConfigParams">
+                            <p>Normativos</p>
+                            <textarea name="" id="">Superintendência de Seguros Privados, títulos de capitalização, instrumentos de garantia 
+                            </textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="configParamsRight">
+                        <div class="configParamsRightPriorizar">
+                          <p>Critérios de priorização (palavras-chave):
+                          </p>
+                          <div class="conteinerPriorizar">
+                            <div class="blocoCriterio">
+                              <p>Critério 1:</p>
+                              <textarea name="" id="">Relacionamento com Clientes
+                              </textarea>
+                              <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button>
+                            </div>
+                            <div class="blocoCriterio">
+                              <p>Critério 2:</p>
+                              <textarea name="" id="">Proteção de Dados
+                              </textarea>
+                              <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button>
+                            </div>
+                            <div class="blocoCriterio">
+                              <p>Critério 3:</p>
+                              <textarea name="" id="">Inteligência Artificial
+                              </textarea>
+                              <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button>
+                            </div>
+                            <div class="blocoCriterio">
+                              <p>Critério 4:</p>
+                              <textarea name="" id="">“vigor”;”2023”
+                              </textarea>
+                              <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button>
+                            </div>
+                            <button class="botaoEngrenagemLixeira botaoAddCriterio"><img src="./assets/icons/iconAdd.png" alt="Descrição da Imagem" height="30px" width="30px"></button>
+                          </div>
+                        </div>
+                        <div class="configParamsRightPreAnalise"><p>Critérios de pré-análise (palavras-chave)
+                        </p>
+                        <div class="conteinerPriorizar">
+                          <div class="blocoAddPreAnalise">
+                            <div class="blocoAddPreAnaliseInput">
+                              <p>Área:</p>
+                              <textarea name="" id="" class="textAreaAreaApp">Contábil</textarea>
+                              <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button>
+                            </div>
+                            <div class="blocoAddPreAnaliseInput">
+                              <p>Temas Aplicáveis:</p>
+                              <textarea name="" id="" class="textAreaTemasApp">Demonstrações Financeiras, Conciliação, Notas Explicativas
+                              </textarea>
+                            </div>  
+                          </div>
+                          <div class="blocoAddPreAnalise">
+                            <div class="blocoAddPreAnaliseInput">
+                              <p>Área:</p>
+                              <textarea name="" id="" class="textAreaAreaApp">Riscos</textarea>
+                              <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button>
+                            </div>
+                            <div class="blocoAddPreAnaliseInput">
+                              <p>Temas Aplicáveis:</p>
+                              <textarea name="" id="" class="textAreaTemasApp">Controles Internos, Lavagem de Dinheiro, Relacionamento com Clientes, Risco de Mercado, Risco de Crédito, Risco Operacional
+                              </textarea>
+                            </div>  
+                          </div>
+                          <button class="botaoEngrenagemLixeira botaoAddCriterio botaoAddPreAnalise"><img src="./assets/icons/iconAdd.png" alt="Descrição da Imagem" height="30px" width="30px"></button>
+                        </div>
+                        </div>
+                        <button class="separadorCapAutoIncluir botaoSalvarParams" id="" onclick="salvarConfigParamsGeral()"><img src="./assets/icons/salvarIcon.svg" height="30px"  alt="Incluir"><span style="margin-left: 10px;">Salvar</span></button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
