@@ -1292,7 +1292,10 @@ sup{
   }
   .tableVariavesCapturaRaul th:nth-child(9), td:nth-child(9) {
     width: 14%;
-    border-color: white;
+  }
+
+  .SemBordaColuna{
+    border: none;
   }
 
   .tableFixHeadCapturaRaul {
@@ -1793,7 +1796,7 @@ sup{
     grid-auto-rows: 100px;
 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 18px;
+    font-size: 17.6px;
     position: sticky; 
     top: 0px;
     padding: 0.3rem 0.5rem;
@@ -1871,9 +1874,9 @@ sup{
   }
 
   .fonteItensBlocos{
-    font-size: 1.1em;
     font-weight: bold;
   }
+  
 
   .bibliotecaFiltroNormativo > *{
     background-color: white;
@@ -2209,7 +2212,6 @@ sup{
   }
 
   .pesquisaCaptura > div{
-    background-color: white;
     padding: 1em;
     color: black;
   }
@@ -2218,13 +2220,83 @@ sup{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    grid-auto-rows: 90px;
   }
 
-  .pesquisaCapturaInputs{
+  .pesquisaCapturaLabel1{
+    position: fixed;
+    left: 150px;
+    top: 130px;
+    left: 10px;
+    height: 25px;
+    background: none;
+  }
+
+  .pesquisaCapturaInput1{
+    position: fixed;
+    left: 300px;
+    height: 25px;
+    left: 150px;
+    
+    background: none;
+
+  }
+  .pesquisaCapturaLabel2{
+    position: fixed;
+    left: 150px;
+    top: 175px;
+    left: 10px;
+    background: none;
+  }
+
+  .pesquisaCapturaInput2{
+    position: fixed;
+    top: 190px;
+    left: 300px;
+    height: 25px;
+    left: 150px;
+    background: none;
+
+  }
+  .pesquisaCapturaLabel3{
+    position: fixed;
+    left: 150px;
+    top: 225px;
+    left: 10px;
+    background: none;
+  }
+
+  .pesquisaCapturaInput3{
+    position: fixed;
+    top: 235px;
+    left: 300px;
+    height: 25px;
+    left: 150px;
+    background: none;
+
+  }
+  .pesquisaCapturaLabel4{
+    position: fixed;
+    top: 270px;
+    left: 150px;
+    left: 10px;
+    
+    background: none;
+  }
+
+  .pesquisaCapturaInput4{
+    position: fixed;
+    top: 280px;
+    left: 300px;
+    height: 25px;
+    left: 150px;
+    background: none;
+
+  }
+  
+  /* .pesquisaCapturaInputs{
     grid-column: 1;
     grid-row: -2/2;
-  }
+  } */
 
   .pesquisaCapturaPerguntas{
     grid-column: 2;
@@ -2242,7 +2314,6 @@ sup{
   }
 
   .pesquisaCapturaInputs > *{
-    background-color: white;
     padding: 1em;
     color: black;
   }
