@@ -9,7 +9,7 @@
 </head>
 <header class="header1" >
   <img src="logoMS.png" alt="MSSolutions" class="MSlogoHome" onclick="redirecionarParaHome()">
-  <div class="dropdown">
+  <!-- <div class="dropdown">
     <button class="botaoHeader botaoBiblioteca">
       <img src="./assets/icons/capturaIconOff.svg" alt="Icone Biblioteca">
       <p>Biblioteca</p>
@@ -18,15 +18,27 @@
       <a href="captura.html">Captura</a>
       <a href="triagem.html">Triagem</a>
     </div>
-  </div>
-  <a href="atendimento.html" class="linkAtendimento">
+  </div> -->
+  <a href="captura.html" class="linksBotoes linkCaptura">
+    <button class="botaoHeader botaoCaptura">
+      <img src="./assets/icons/capturaIconOff.svg" alt="Icone Atendimento">
+      <p>Captura</p>
+    </button>
+  </a>
+  <a href="triagem.html" class="linksBotoes">
+    <button class="botaoHeader botaoTriagem">
+      <img src="./assets/icons/TriagemIconOff.png" alt="Icone Atendimento">
+      <p>Triagem</p>
+    </button>
+  </a>
+  <a href="atendimento.html" class="linksBotoes">
     <button class="botaoHeader botaoAtendimento botaoAtendimentoOn">
       <img src="./assets/icons/atendimentoIconOn.png" alt="Icone Atendimento">
       <p>Atendimento</p>
     </button>
   </a>
   <h1 class="a comprimentos">Olá, Usuário! </h1>
-  <button class="botaoHeader botaoSair" onclick="redirecionarParaLogin()">
+  <button class="botaoHeader botaoSair botaoSairHeaderPrincipal" onclick="redirecionarParaLogin()">
     <img src="./assets/icons/exitIcon.png" alt="Descrição da Imagem" height="25px" width="25px">
     SAIR
   </button>

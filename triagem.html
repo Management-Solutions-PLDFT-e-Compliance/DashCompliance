@@ -12,24 +12,36 @@
 </head>
 <header class="header1" >
   <img src="logoMS.png" alt="MSSolutions" class="MSlogoHome" onclick="redirecionarParaHome()">
-  <div class="dropdown">
-    <button class="botaoHeader botaoBiblioteca botaoBibliotecaOn">
-      <img src="./assets/icons/capturaIconOn.svg" alt="Icone Biblioteca">
+  <!-- <div class="dropdown">
+    <button class="botaoHeader botaoBiblioteca">
+      <img src="./assets/icons/capturaIconOff.svg" alt="Icone Biblioteca">
       <p>Biblioteca</p>
     </button>
     <div class="dropdown-content">
       <a href="captura.html">Captura</a>
-      <a href="triagem.html" class="linkSelecionado">Triagem</a>
+      <a href="triagem.html">Triagem</a>
     </div>
-  </div>
-  <a href="atendimento.html" class="linkAtendimento">
+  </div> -->
+  <a href="captura.html" class="linksBotoes linkCaptura">
+    <button class="botaoHeader botaoCaptura">
+      <img src="./assets/icons/capturaIconOff.svg" alt="Icone Atendimento">
+      <p>Captura</p>
+    </button>
+  </a>
+  <a href="triagem.html" class="linksBotoes">
+    <button class="botaoHeader botaoTriagem botaoTriagemOn">
+      <img src="./assets/icons/TriagemIconOn.png" alt="Icone Atendimento">
+      <p>Triagem</p>
+    </button>
+  </a>
+  <a href="atendimento.html" class="linksBotoes">
     <button class="botaoHeader botaoAtendimento">
       <img src="./assets/icons/atendimentoIconOff.png" alt="Icone Atendimento">
       <p>Atendimento</p>
     </button>
   </a>
   <h1 class="a comprimentos">Olá, Usuário! </h1>
-  <button class="botaoHeader botaoSair" onclick="redirecionarParaLogin()">
+  <button class="botaoHeader botaoSair botaoSairHeaderPrincipal" onclick="redirecionarParaLogin()">
     <img src="./assets/icons/exitIcon.png" alt="Descrição da Imagem" height="25px" width="25px">
     SAIR
   </button>
@@ -56,16 +68,16 @@
                   <div class="card-body">
                     <span>Atualizado 00h00 25/04/2023</span>
                     <div class="publicados">
-                        <div class="quadrado">
-                          <div class="conteudo">
-                            <div class="numero">13</div>
-                            <div class="palavra">Total</div>
+                        <div class="quadrado-compliance">
+                          <div class="conteudo-compliance">
+                            <div class="numero-compliance">13</div>
+                            <div class="palavra-compliance">Total</div>
                           </div>
                         </div>
-                        <div class="quadrado">
-                          <div class="conteudo">
-                            <div class="numero">9</div>
-                            <div class="palavra">Aplicável</div>
+                        <div class="quadrado-compliance">
+                          <div class="conteudo-compliance">
+                            <div class="numero-compliance">9</div>
+                            <div class="palavra-compliance">Aplicável</div>
                           </div>
                         </div>
                     </div>
@@ -99,10 +111,10 @@
                     </select>
                     <div class="cronometro-quadrado">
                       <img src="./assets/icons/cronometro.png" alt="">
-                      <div class="quadrado">
-                        <div class="conteudo">
-                          <div class="numero">6</div>
-                          <div class="palavra">Dias</div>
+                      <div class="quadrado-compliance">
+                        <div class="conteudo-compliance">
+                          <div class="numero-compliance">6</div>
+                          <div class="palavra-compliance">Dias</div>
                         </div>
                       </div>
                     </div>
@@ -263,8 +275,8 @@
                   <h5 class="SubtituloCinza">Lista</h5>
                   <hr>
                 </div>
-                  <div class="tableFixHead">
-                    <table class="tableVariaves">
+                  <div class="tableFixHeadTriagemRaul">
+                    <table class="tableVariavesTriagemRaul">
                       <thead>
                         <tr>
                           <th>Normativo</th>
@@ -392,8 +404,8 @@
                   <h5 class="SubtituloCinza">Lista</h5>
                   <hr>
                 </div>
-                  <div class="tableFixHead">
-                    <table class="tableVariaves">
+                  <div class="tableFixHeadTriagemRaul">
+                    <table class="tableVariavesTriagemRaul">
                       <thead>
                         <tr>
                           <th>Normativo</th>
@@ -740,7 +752,6 @@
                     </tbody>
                   </table>
                 </div>
-
               </div>
             </div>
 
