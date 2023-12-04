@@ -114,3 +114,27 @@ function createLinearGradientBar(ctx, colorInicio, colorFim) {
     gradient.addColorStop(1, colorFim); // Cor no final do gradiente
     return gradient;
 }
+
+const triagemComplianceConfigurar = document.getElementById("triagem-compliance-engrenagem")
+const triagemComplianceConteudoPreAnaliseDetalhe = document.getElementById("conteudo-pre-analise-detalhe")
+let triagemComplianceMostrar = false
+
+// triagemComplianceConteudoPreAnaliseDetalhe.classList.add('triagem-compliance-mostrar-pre-analise')
+triagemComplianceConfigurar.addEventListener("click", function() {
+    triagemComplianceMostrar = !triagemComplianceMostrar
+    if(triagemComplianceMostrar) {
+        triagemComplianceConteudoPreAnaliseDetalhe.style.display = 'flex'
+    } else {
+        triagemComplianceConteudoPreAnaliseDetalhe.style.display = 'none'
+    }
+})
+
+const lerMaisArray = document.getElementsByClassName("ler-mais")
+const conteudoNormativoRelacionado = document.getElementsByClassName("card-conteudo-normativo-relacionado")[0]
+
+lerMaisArray[0].addEventListener("click", function() {
+    console.log("aquiiiii")
+})
+lerMaisArray[1].addEventListener("click", function() {
+    console.log("aquiiiii")
+})

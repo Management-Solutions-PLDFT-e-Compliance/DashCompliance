@@ -37,7 +37,7 @@
 <body>
     <div class="container">
         <div class="tabsTriagem">
-          <h3 class="active">Compliance</h3>
+          <h3 class="active">Gerenciamento de processos</h3>
           <h3>Parecer área</h3>
           <h3>Validação área</h3>
           <h3>Histórico</h3>
@@ -45,94 +45,551 @@
         </div>
         <div class="tab-content">
           <div class="content active">
-            <div class="triagem-compliance">
-              <div class="up">
-                <div class="triagem-compliance-publicacao card">
-                  <div class="card-header">
-                    <span class="card-titulo">Publicações</span>
-                    <span class="card-subtitulo">Diário</span>
-                  </div>
-                  <div class="card-body">
-                    <span>Atualizado 00h00 25/04/2023</span>
-                    <div class="publicados">
-                        <div class="quadrado-compliance">
-                          <div class="conteudo-compliance">
-                            <div class="numero-compliance">13</div>
-                            <div class="palavra-compliance">Total</div>
+            <div class="triagem-compliance-vizualizar">
+              <div class="triagem-compliance">
+                <div class="up">
+                  <div class="triagem-compliance-publicacao card">
+                    <div class="card-header">
+                      <span class="card-titulo">Publicações</span>
+                      <span class="card-subtitulo">Diário</span>
+                    </div>
+                    <div class="card-body">
+                      <span>Atualizado 00h00 25/04/2023</span>
+                      <div class="publicados">
+                          <div class="quadrado-compliance">
+                            <div class="conteudo-compliance">
+                              <div class="numero-compliance">13</div>
+                              <div class="palavra-compliance">Total</div>
+                            </div>
                           </div>
-                        </div>
-                        <div class="quadrado-compliance">
-                          <div class="conteudo-compliance">
-                            <div class="numero-compliance">9</div>
-                            <div class="palavra-compliance">Aplicável</div>
+                          <div class="quadrado-compliance">
+                            <div class="conteudo-compliance">
+                              <div class="numero-compliance">9</div>
+                              <div class="palavra-compliance">Aplicável</div>
+                            </div>
                           </div>
-                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="triagem-compliance-notificacao card">
-                  <div class="card-header">
-                    <span class="card-titulo">Notificações</span>
-                    <span class="card-subtitulo">Categorias</span>
+                  <div class="triagem-compliance-notificacao card">
+                    <div class="card-header">
+                      <span class="card-titulo">Notificações</span>
+                      <span class="card-subtitulo">Categorias</span>
+                    </div>
+                    <div class="card-body">
+                      <ul class="notificacoes">
+                        <li><span>3 Pareceres em atraso</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li>
+                        <li><span>2 Retornos de parecer</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li>
+                        <li><span>0 Envios pendentes</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li> 
+                        <li><span>5 Plano de ação pendentes</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li> 
+                      </ul>
+                    </div>
                   </div>
-                  <div class="card-body">
-                    <ul class="notificacoes">
-                      <li><span>3 Pareceres em atraso</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li>
-                      <li><span>2 Retornos de parecer</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li>
-                      <li><span>0 Envios pendentes</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li> 
-                      <li><span>5 Plano de ação pendentes</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li> 
-                    </ul>
-                  </div>
-                </div>
-                <div class="triagem-compliance-prazo card">
-                  <div class="card-header">
-                    <span class="card-titulo">Prazo médio análises</span>
-                    <span class="card-subtitulo">Últimos 6 meses</span>
-                  </div>
-                  <div class="card-body">
-                    <select name="" id="">
-                      <option value="">Todos</option>
-                      <option value="">Opção 1</option>
-                      <option value="">Opção 2</option>
-                      <option value="">Opção 3  </option>
-                    </select>
-                    <div class="cronometro-quadrado">
-                      <img src="./assets/icons/cronometro.png" alt="">
-                      <div class="quadrado-compliance">
-                        <div class="conteudo-compliance">
-                          <div class="numero-compliance">6</div>
-                          <div class="palavra-compliance">Dias</div>
+                  <div class="triagem-compliance-prazo card">
+                    <div class="card-header">
+                      <span class="card-titulo">Prazo médio análises</span>
+                      <span class="card-subtitulo">Últimos 6 meses</span>
+                    </div>
+                    <div class="card-body">
+                      <select name="" id="">
+                        <option value="">Todos</option>
+                        <option value="">Opção 1</option>
+                        <option value="">Opção 2</option>
+                        <option value="">Opção 3  </option>
+                      </select>
+                      <div class="cronometro-quadrado">
+                        <img src="./assets/icons/cronometro.png" alt="">
+                        <div class="quadrado-compliance">
+                          <div class="conteudo-compliance">
+                            <div class="numero-compliance">6</div>
+                            <div class="palavra-compliance">Dias</div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <div class="triagem-compliance-parecer card">
+                    <div class="card-header">
+                      <span class="card-titulo">Parecer em atraso</span>
+                      <span class="card-subtitulo">Principais áreas</span>
+                    </div>
+                    <div class="card-body">
+                      <canvas id="parecer-atraso"></canvas>
+                    </div>
+                  </div>
+                  <div class="triagem-compliance-plano card">
+                    <div class="card-header">
+                      <span class="card-titulo">Plano de ação pendente</span>
+                      <span class="card-subtitulo">Principais áreas</span>
+                    </div>
+                    <div class="card-body">
+                      <canvas id="plano-acao-pendente"></canvas>
+                    </div>
+                  </div>
                 </div>
-                <div class="triagem-compliance-parecer card">
+                <div class="triagem-compliance-captura card">
                   <div class="card-header">
-                    <span class="card-titulo">Parecer em atraso</span>
-                    <span class="card-subtitulo">Principais áreas</span>
+                    <span class="card-titulo">Captura</span>
+                    <span class="card-subtitulo">Lista</span>
                   </div>
                   <div class="card-body">
-                    <canvas id="parecer-atraso"></canvas>
-                  </div>
-                </div>
-                <div class="triagem-compliance-plano card">
-                  <div class="card-header">
-                    <span class="card-titulo">Plano de ação pendente</span>
-                    <span class="card-subtitulo">Principais áreas</span>
-                  </div>
-                  <div class="card-body">
-                    <canvas id="plano-acao-pendente"></canvas>
+                    <div class="espacamento-table-top"></div>
+                    <table class="tableVariaves table-compliance">
+                      <thead class="thead-compliance">
+                        <tr>
+                          <th>Normativo</th>
+                          <th>Regulador</th>
+                          <th>Publicação</th>
+                          <th>Área</th>
+                          <th>tema</th>
+                          <th>Pré-triagem</th>
+                          <th>Visualização</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Resolução nº 309</td>
+                          <td>Bacen</td>
+                          <td>28/03/2023</td>
+                          <td>Contábil, Financeiro</td>
+                          <td>Contabilidade</td>
+                          <td>Aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir<sup>1</sup></div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.067</td>
+                          <td>CMN</td>
+                          <td>20/04/2023</td>
+                          <td>Auditoria, Controles In...</td>
+                          <td>Auditoria</td>
+                          <td>Não aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Ins. Normativa nº 371</td>
+                          <td>Bacen</td>
+                          <td>10/04/2023</td>
+                          <td>Inteligência financeira</td>
+                          <td>Open Finance</td>
+                          <td>Aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Ins. Normativa nº 370</td>
+                          <td>Bacen</td>
+                          <td>10/04/2023</td>
+                          <td>Cadastro, Tesouraria</td>
+                          <td>Sist. de Pagamenentos</td>
+                          <td>Aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Ins. Normativa nº 369</td>
+                          <td>Bacen</td>
+                          <td>31/03/2023</td>
+                          <td>Cadastro, Intel. Finance..</td>
+                          <td>PIX</td>
+                          <td>Não aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Ins. Normativa nº 369</td>
+                          <td>Bacen</td>
+                          <td>31/03/2023</td>
+                          <td>Cadastro, Intel. Finance..</td>
+                          <td>PIX</td>
+                          <td>Não aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Ins. Normativa nº 369</td>
+                          <td>Bacen</td>
+                          <td>31/03/2023</td>
+                          <td>Cadastro, Intel. Finance..</td>
+                          <td>PIX</td>
+                          <td>Aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.066</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Contábil, tesouraria...</td>
+                          <td>Contabilidade</td>
+                          <td>Não aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.064</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Cambio, Corretora</td>
+                          <td>Câmbio</td>
+                          <td>Aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.064</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Cambio, Corretora</td>
+                          <td>Câmbio</td>
+                          <td>Aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.064</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Cambio, Corretora</td>
+                          <td>Câmbio</td>
+                          <td>Aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.064</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Cambio, Corretora</td>
+                          <td>Câmbio</td>
+                          <td>Aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.064</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Cambio, Corretora</td>
+                          <td>Câmbio</td>
+                          <td>Aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.064</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Cambio, Corretora</td>
+                          <td>Câmbio</td>
+                          <td>Aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.064</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Cambio, Corretora</td>
+                          <td>Câmbio</td>
+                          <td>Aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.064</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Cambio, Corretora</td>
+                          <td>Câmbio</td>
+                          <td>Aplicável</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
-              <div class="triagem-compliance-captura card">
-                <div class="card-header">
-                  <span class="card-titulo">Captura</span>
-                  <span class="card-subtitulo">Lista</span>
+              <div class="triagem-compliance-vizualizar-dashboard">
+                <div class="up-visualizacao">
+                  <div class="triagem-compliance-visualizar-pre-triagem card">
+                    <div class="card-header">
+                      <span class="card-titulo">Pré-triagem</span>
+                      <span class="card-subtitulo">Resolução</span>
+                    </div>
+                    <div class="card-body">
+                      <form action="">
+                        <div class="label-input">
+                          <label for="normativo">Normativo:</label>
+                          <input type="text" id="normativo" name="normativo" value="Resolução n° 309" required>
+                        </div>
+                        <div class="label-input">
+                          <label for="regulador">Regulador:</label>
+                          <input type="text" id="regulador" name="regulador" value="Bacen" required>
+                        </div>
+                        <div class="label-input">
+                          <label for="tema">Tema:</label>
+                          <input type="text" id="tema" name="tema" value="Contábeis" required>
+                        </div>
+                        <div class="label-input">
+                          <label for="publicacao">Publicação:</label>
+                          <input type="text" id="publicacao" name="publicacao" value="28/03/2023" required>
+                        </div>
+                        <div class="label-input">
+                          <label for="Criticidade">Criticidade:</label>
+                          <input type="text" id="criticidade" name="criticidade" value="Alta" required>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="triagem-compliance-visualizar-pre-analise card">
+                    <div class="card-header">
+                      <span class="card-titulo">Pré-Análise IA</span>
+                      <span class="card-subtitulo">Responsáveis</span>
+                    </div>
+                    <div class="card-body">
+                      <div class="tamanho-lista">
+                        <ul>
+                          <li><span>Contábil</span><span>001</span><span>01/05/2023</span><span><div class="btn-pre-analise" id="triagem-compliance-engrenagem"><img src="./assets/icons/Engrenagem.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/Lixeira.png" alt=""></span></div></li>
+                          <li><span>Financeiro</span><span>001;003;004</span><span>01/05/2023</span><span><div class="btn-pre-analise"><img src="./assets/icons/Engrenagem.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/Lixeira.png" alt=""></span></div></li>
+                          <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/Engrenagem.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/Lixeira.png" alt=""></span></div></li>
+                          <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/Engrenagem.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/Lixeira.png" alt=""></span></div></li> 
+                          <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/Engrenagem.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/Lixeira.png" alt=""></span></div></li>
+                          <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/Engrenagem.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/Lixeira.png" alt=""></span></div></li>
+                        </ul>
+                      </div>
+                      <button class="separadorCapAutoIncluir triagem-compliance-btn"><span>Incluir</span><img src="./assets/icons/icon-add.png" height="20px"  alt="Incluir"></button>
+                    </div>
+                  </div>
+                  <div class="triagem-compliance-visualizar-normas-vinculadas card">
+                    <div class="card-header">
+                      <span class="card-titulo">Normas Vinculadas</span>
+                      <span class="card-subtitulo">Requerimentos</span>
+                    </div>
+                    <div class="card-body">
+                      <div class="normativo-atualizacao"><div class="pergunta-resposta"><span class="normativo-label">Novo normativo?</span><span>Sim</span></div><div class="pergunta-resposta"><span class="normativo-label">Atualização?</span><span>Sim</span></div></div>
+                      <div class="normativo-relacionado-pergunta">
+                        <div class="normativo-relacionado">
+                          <span class="normativo-label">Normativos Relacionados</span>
+                          <div class="card-normativo"><span class="card-conteudo-normativo-relacionado">Resolução CMN (4.817/2020 | 4.818/2020...</span><span class="ler-mais">Ler mais</span></div>
+                        </div>
+                        <span class="normativo-label">Revoga normativo?</span>
+                      </div>
+                      <div class="normativo-revogado">
+                        <span class="normativo-label">Normativos Revogados</span>
+                        <div class="card-normativo"><span class="card-conteudo-normativo-revogado">Circulares BCB ns.2.535/1995, 2.951/1999...</span><span class="ler-mais">Ler mais</span></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-body">
+                <div class="down-visualizacao">
+                  <div class="triagem-compliance-visualizar-conteudo card">
+                    <div class="card-header">
+                      <div class="titulo-subtitulo">
+                        <span class="card-titulo">Conteúdo</span>
+                        <span class="card-subtitulo">Resumo IA</span>
+                      </div>
+
+                      <img src="./assets/icons/download.svg" alt="">
+                    </div>
+                    <div class="card-body">
+                      <span class="resumo-texto">
+                        O Banco Central do Brasil (BCB) publicou a Resolução BCB nº 309 de 28 de março de 2023, que 
+                        estabelece procedimentos contábeis sobre: a definição de fluxos de caixa de ativo financeiro 
+                        como somente pagamento de principal e juros; a aplicação da metodologia para apuração da taxa 
+                        de juros efetiva de instrumentos financeiros; a constituição de provisão para perdas associadas 
+                        ao risco de crédito; e a evidenciação de informações relativas a instrumentos financeiros em notas 
+                        explicativas a serem observadas pelas instituições financeiras e demais instituições autorizadas a 
+                        funcionar pelo Banco Central do Brasil
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="triagem-compliance-visualizar-pre-analise-detalhe card">
+                    <div class="card-header">
+                      <span class="card-titulo">Pré-Análise IA</span>
+                      <span class="card-subtitulo">Detalhe Requerimentos</span>
+                    </div>
+                    <div class="card-body">
+                      <form id="conteudo-pre-analise-detalhe" action="">
+                        <div class="label-input">
+                          <label for="normativo">ID:</label>
+                          <input type="text" id="normativo" name="normativo" value="001" required>
+                        </div>
+                        <div class="label-input">
+                          <label for="regulador">Palavras chave:</label>
+                          <textarea name="" id="" cols="30" rows="10">Art. 1º; IV; notas explicativas</textarea>
+                        </div>
+                        <div class="label-input">
+                          <label for="publicacao">Data de retorno:</label>
+                          <select name="" id="">
+                            <option value="">Contábil</option>
+                            <option value="">Financeiro</option>
+                          </select>
+                        </div>
+                        <div class="label-input">
+                          <label for="Criticidade">Criticidade:</label>
+                          <select name="" id="">
+                            <option value="">01/05/2023</option>
+                            <option value="">01/05/2023</option>
+                          </select>
+                        </div>
+                        <button class="separadorCapAutoIncluir triagem-compliance-btn triagem-btn-alterar"><span>Alterar</span><img src="./assets/icons/editar_2.png" height="20px"  alt="Incluir"></button>
+                      </form>
+                    </div>
+                  </div>
                 </div>
+                <button class="separadorCapAutoIncluir triagem-compliance-btn triagem-compliance-distribuir"><span>Distribuir</span><img src="./assets/icons/seta-btn-distribuir.png" height="20px"  alt="Incluir"></button>
+              </div>
+
+              <div class="triagem-compliance-respondidos">
+                  <div class="triagem-compliance-respondidos-up">
+                    <div class="triagem-compliance-pre-triagem card">
+                      <div class="card-header">
+                        <span class="card-titulo">Pré-triagem</span>
+                        <span class="card-subtitulo">Resolução</span>
+                      </div>
+                      <div class="card-body">
+                        <canvas id="parecer-atraso"></canvas>
+                      </div>
+                    </div>
+                    <div class="triagem-compliance-parecer-area card">
+                      <div class="card-header">
+                        <span class="card-titulo">Parecer da área</span>
+                        <span class="card-subtitulo">Cronograma</span>
+                      </div>
+                      <div class="card-body">
+                        <canvas id="parecer-atraso"></canvas>
+                      </div>
+                    </div>
+                    <div class="triagem-compliance-plano-acao card">
+                      <div class="card-header">
+                        <span class="card-titulo">Plano de ação</span>
+                        <span class="card-subtitulo">Cronograma</span>
+                      </div>
+                      <div class="card-body">
+                        <canvas id="parecer-atraso"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="triagem-compliance-respondidos-down">
+                    <div class="triagem-compliance-conteudo card">
+                      <div class="card-header">
+                        <span class="card-titulo">Conteúdo</span>
+                        <span class="card-subtitulo">Resumo e Requerimentos</span>
+                      </div>
+                      <div class="card-body">
+                        <canvas id="parecer-atraso"></canvas>
+                      </div>
+                    </div>
+                    <div class="triagem-compliance-resposta-area card">
+                      <div class="card-header">
+                        <span class="card-titulo">Resposta da área</span>
+                        <span class="card-subtitulo">Parecer para Aprovação</span>
+                      </div>
+                      <div class="card-body">
+                        <canvas id="parecer-atraso"></canvas>
+                      </div>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -167,8 +624,6 @@
                   </div>
                 </div>  
               </div>
-
-
               </div>
               <div class="TriagemParecerAreaPlanosDeAcao">
                 <h2 class="TituloPreto9">Planos de ações</h2>
