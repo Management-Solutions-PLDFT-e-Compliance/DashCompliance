@@ -530,12 +530,54 @@
 .triagem-compliance-respondidos {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 }
 
 .triagem-compliance-respondidos-up {
     display: flex;
+    gap: 1rem;
 }
 
 .triagem-compliance-respondidos-down {
     display: flex;
+    gap: 1rem;
+}
+
+.triagem-compliance-pre-triagem {
+    width: 25%;
+}
+
+.triagem-compliance-parecer-area {
+    width: 25%;
+}
+
+.triagem-compliance-plano-acao {
+    width: 50%;
+}
+
+.triagem-compliance-conteudo {
+    width: 50%;
+}
+
+.triagem-compliance-resposta-area {
+    width: 50%;
+}
+
+.triagem-compliance-pre-triagem form {
+    font-size: 14px;
+}
+
+.triagem-compliance-pre-triagem form label {
+    font-weight: 600;
+    width: 35%;
+}
+
+.triagem-compliance-pre-triagem .label-input {
+    display: flex;
+}
+
+.triagem-compliance-pre-triagem input {
+    height: 2rem;
+    border: 1px solid lightgray ;
+    padding: 0.375rem 0.75rem;
 }
