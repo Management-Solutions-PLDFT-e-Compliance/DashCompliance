@@ -1350,7 +1350,7 @@ sup{
     grid-row: 4/8;
   }
 
-  .atendimentoCentralizador > div{
+  /* .atendimentoCentralizador > div{
     border: 2px solid lightgray;
     background-color: white;
     padding: 1em;
@@ -1387,7 +1387,7 @@ sup{
   .atendimentoCentralizadorRequisicoes{
     grid-column: 1/8;
     grid-row: 4/8;
-  }
+  } */
 
   /* .atendimentoHistorico > div{
     border: 2px solid lightgray;

@@ -118,13 +118,13 @@
 }  */
 
 .Parametros_linha > input {
-    border: 1px solid #5c5c5c;
+    border: 1px solid #dcdcdc;
     border-radius: 4px;
 }
 
 /* Tabela */
 
-#tabela > table > thead > tr > th {
+.tabela > table > thead > tr > th {
     background-color: #687ca4;
     color: white;
     border: 1px solid #ddd;
@@ -134,11 +134,11 @@
     box-shadow: 2px 2px 2px #888888;
 }
 
-#tabela > table > tbody > tr  > td {
+.tabela > table > tbody > tr  > td {
     margin: 12px;
 }
 
-#tabela > table {
+.tabela > table {
     border-collapse: separate;
     border-spacing: 10px; /* Altere o valor conforme necessário */
 }

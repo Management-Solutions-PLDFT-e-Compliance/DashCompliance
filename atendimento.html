@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./styles-atendimento/atendimento-historico.css">
+  <link rel="stylesheet" href="./styles-atendimento/atendimento-centralizador.css">
   <title>Compliance Analytics</title>
 </head>
 <header class="header1" >
@@ -90,13 +91,369 @@
           </div>
           <div class="content">
             <div class="atendimentoCentralizador">
-              <div class="atendimentoCentralizadorRequerimentos">Requerimentos</div>
-              <div class="atendimentoCentralizadorPlano">Plano de ações</div>
-              <div class="atendimentoCentralizadorNotificacao">Notificações</div>
-              <div class="atendimentoCentralizadorBusca">Busca de requerimentos</div>
-              <div class="atendimentoCentralizadorRequisicoes">Requisições</div>
+              <div class="atendimentoCentralizadorRequerimentos">
+                
+                <div class="titulo">
+                  <h4 style="font-size: x-large;font-family: Calibri; margin-bottom: 0%;">Requerimentos</h4>
+                  <p style="color: #c0bcbc; font-size: large; font-family: Calibri; border-bottom: 1px solid #000;">Status</p>
+                </div>
+
+                <p style="font-size: large; font-family: Calibri; margin-top: 2%;">Atualizado 00h00 25/04/2023</p>
+                <div class="icones_contorno">
+
+                  <div class="contorno">
+                    <h3>1</h3>
+                    <h4 style="text-align: center;">Vencido</h4>
+                  </div>
+
+                  <div class="contorno">
+                    <h3 style="font-size: xx-large;font-weight: bold; text-align: center;">2</h3>
+                    <h4 style="text-align: center;">Aberto</h4>
+                  </div>
+
+                </div>
+                
+              </div>
+
+              <div class="atendimentoCentralizadorPlano">
+                
+                <div class="titulo">
+                  <h4 style="font-size: x-large;font-family: Calibri; margin-bottom: 0%;">Plano de ações</h4>
+                  <p style="color: #c0bcbc; font-size: large; font-family: Calibri; border-bottom: 1px solid #000;">Status</p>
+                </div>
+
+                <div class="icones_contorno" style="margin-top: 17.1%;">
+
+                  <div class="contorno" >
+                    <h3 style="font-size: xx-large;font-weight: bold; text-align: center;">0</h3>
+                    <h4 style="text-align: center;">Vencido</h4>
+                  </div>
+
+                  <div class="contorno">
+                    <h3 style="font-size: xx-large;font-weight: bold; text-align: center;">0</h3>
+                    <h4 style="text-align: center;">Aberto</h4>
+                  </div>
+
+                </div>
+                
+                
+                </div>
+              <div class="atendimentoCentralizadorNotificacao">
+                
+                <div class="titulo">
+                  <h4 style="font-size: x-large;font-family: Calibri; margin-bottom: 0%;">Notificações</h4>
+
+                  <p style="color: #c0bcbc; font-size: large; font-family: Calibri; border-bottom: 1px solid #000;">Categorias</p>
+                </div>
+
+                <div id="itens_notificacoes">
+                  <div>                    
+                    <h4 style="font-size: medium;">1 Parecer em atraso</h4>
+                    <img src="./assets/icons/seta-para-a-frente-26.png" alt="abrir" style="margin-left: 148px; padding: 8px 0px 6px 0px;">
+                  </div>
+
+                  <div>                    
+                    <h4 style="font-size: medium;">2 Parecer respondido</h4>
+                    <img src="./assets/icons/seta-para-a-frente-26.png" alt="abrir" style="margin-left: 135px; padding: 8px 0px 6px 0px;">
+                  </div>
+
+                  <div>                    
+                    <h4 style="font-size: medium;">0 Envios pendentes</h4>
+
+                    <img src="./assets/icons/seta-para-a-frente-26.png" alt="abrir" style="margin-left: 147px; padding: 8px 0px 6px 0px;">
+                  </div>
+
+                  <div>                    
+                    <h4 style="font-size: medium;">0 Plano de ação pendentes</h4>
+                    <img src="./assets/icons/seta-para-a-frente-26.png" alt="abrir" style="margin-left: 90px; padding: 8px 0px 6px 0px;">
+                  </div>
+                </div>
+                
+
+              </div>
+              <div class="atendimentoCentralizadorBusca" style="margin-right: 31px;">
+                
+                <div class="titulo">
+                  <h4 style="font-size: x-large;font-family: Calibri; margin-bottom: 0%;">Busca de requerimentos</h4>
+
+                  <p style="color: #c0bcbc; font-size: large; font-family: Calibri; border-bottom: 1px solid #000;">Filtro:</p>
+                </div>
+
+                <!-- Linha 1 -->
+                <div class="filtros_busca_requerimentos">
+
+                  <p>Regulador:</p>
+                  <select name="Regulador" class="busca-select" style="margin-left: 10px;">
+                    <option value=""></option>
+                    <option value="Bacen">Bacen</option>
+                    <option value="CVM">CVM</option>
+                  </select>
+
+                  <p style="margin-left: 6%; margin-right: 0.5%;">Data:</p>
+                  <input type="date" style="border: 1px solid #dcdcdc;border-radius: 4px; margin-left: 10px; width:100px">
+
+                  <p style="margin-left: 6%;">Criticidade:</p>
+                  <select name="criticidade" class="busca-select" style="margin-left:7px">
+                    <option value=""></option>
+                    <option value="Baixo">Baixo</option>
+                    <option value="Moderado">Moderado</option>
+                    <option value="Alto">Alto</option>
+                  </select>
+
+                </div>
+
+                <!-- Linha 2 -->
+                <div class="filtros_busca_requerimentos">
+
+                  <p>Categoria:</p>
+                  <select name="Categoria" class="busca-select" style="margin-left: 15px;">
+                    <option value=""></option>
+                    <option value="Normativo">Normativo</option>                 
+                  </select>
+
+                  <p style="margin-left: 5.9%; margin-right: 0.5%;">Área:</p>
+                  <select name="area" class="busca-select" style="margin-left: 10px;">
+                    <option value=""></option>
+                    <option value="PLDFT">PLDFT</option>
+                    <option value="Financeira">Financeira</option>                 
+                  </select>
+
+                </div>
+
+                <!-- Linha 3 -->
+                <div class="filtros_busca_requerimentos" style="margin-bottom: 5px;">
+
+                  <p>Status:</p>
+                  <select name="Status" class="busca-select" style="margin-left: 41px;">
+                    <option value=""></option>
+                    <option value="">Finalizado</option>
+                  </select>
+
+                  <p style="margin-left: 5.8%; margin-right: 0.5%;">Tema:</p>
+                  <select name="Tema" class="busca-select" style="margin-left: 7px;">
+                    <option value=""></option>
+                    <option value="PLDFT">PLDFT</option>
+                    <option value="Cyber">Cyber</option>
+                    <option value="ESG">ESG</option>
+                  </select>
+
+                </div>
+
+                <Button>
+                  <p style="font-size: 16px; font-family: Calibri;color: #ffffff;">Pesquisar</p> 
+                  
+                  <img src="assets/icons/lupa-24.png" alt="Pesquisar" style="margin-left: 5px; margin-top: 2px;">
+                </Button>
+
+              </div>
+
+              <!-- Requisições -->
+              <div class="atendimentoCentralizadorRequisicoes">
+                
+                <div class="titulo">
+                  <h4 style="font-size: x-large;font-family: Calibri; margin-bottom: 0%;">Requisições</h4>
+
+                  <p style="color: #c0bcbc; font-size: large; font-family: Calibri; border-bottom: 1px solid #000;">Lista</p>
+                </div>
+                 
+                <div class="tabela">
+                  <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Regulador</th>
+                            <th>Instrução</th>
+                            <th>Tema</th>
+                            <th>Áreas Relacionadas</th>
+                            <th>Centralizador</th>
+                            <th>Solicitação</th>
+                            <th>Vencimento</th>
+                            <th>Status</th>
+                            <th>Criticidade</th>
+                            <th>Visualização</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>0001</td>
+                          <td>CVM</td>
+                          <td>Resolução nº 50</td>
+                          <td>PLDFT</td>
+                          <td>Corretora, A.M,...</td>
+                          <td>Camila Lira</td>
+                          <td>20/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Atrasado</td>
+                          <td>Moderado</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0002</td>
+                          <td>Susep</td>
+                          <td>Circular nº 638</td>
+                          <td>Cyber</td>
+                          <td>Cadastro, S. I.,...</td>
+                          <td>Carlos José</td>
+                          <td>04/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Atrasado</td>
+                          <td>Alto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0003</td>
+                          <td>Bacen</td>
+                          <td>Circular nº 3.978</td>
+                          <td>PLDFT</td>
+                          <td>Intel. Financeira,...</td>
+                          <td>Camila Lira</td>
+                          <td>25/01/2023</td>
+                          <td>06/02/2023</td>
+                          <td>Pendente</td>
+                          <td>Alto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0004</td>
+                          <td>Susep</td>
+                          <td>Circular nº 666</td>
+                          <td>ESG</td>
+                          <td>Seguradora, Capital...</td>
+                          <td>Lucas Fagundes</td>
+                          <td>20/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Pendente</td>
+                          <td>Baixo</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0005</td>
+                          <td>Bacen</td>
+                          <td>Circular nº 3.461</td>
+                          <td>PLDFT</td>
+                          <td>A.M, Tesouraria,...</td>
+                          <td>Camila Lira</td>
+                          <td>26/01/2023</td>
+                          <td>07/02/2023</td>
+                          <td>Pendente</td>
+                          <td>Alto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0006</td>
+                          <td>CVM</td>
+                          <td>Resolução nº 50</td>
+                          <td>PLDFT</td>
+                          <td>Inteligência</td>
+                          <td>Giovanni Silva</td>
+                          <td>20/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Rejeitado</td>
+                          <td>Moderado</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0007</td>
+                          <td>CVM</td>
+                          <td>Resolução nº 50</td>
+                          <td>PLDET</td>
+                          <td>Tesouraria</td>
+                          <td>Natalia Mendes</td>
+                          <td>20/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Finalizado</td>
+                          <td>Alto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0008</td>
+                          <td>CVM</td>
+                          <td>Resolução nº 50</td>
+                          <td>PLDFT</td>
+                          <td>Corretora</td>
+                          <td>Bruna Vasconcelos</td>
+                          <td>20/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Aprovado</td>
+                          <td>Baixo</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+
+                          <td>0009</td>
+                          <td>CVM</td>
+                          <td>Resolução nº 50</td>
+                          <td>PLDFT</td>
+                          <td>Tesouraria</td>
+                          <td>Natalia Mendes</td>
+                          <td>20/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Pendente</td>
+                          <td>Baixo</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
+
+
           <div class="content">
             <div class="atendimentoHistorico">
               <div class="atendimentoHistoricoBusca">
@@ -123,7 +480,7 @@
                     <option value="ESG">ESG</option>
                   </select>
 
-                  <p style="margin-left: 10.1%; margin-right: 0.5%;">Solicitação:</p>
+                  <p style="margin-left: 10%; margin-right: 0.5%;">Solicitação:</p>
                   <input type="date" class="Solicitação">
 
                   <p style="margin-left: 3%; margin-right: 0.5%;">Status:</p>
@@ -172,12 +529,12 @@
               </div>
               <div class="atendimentoHistoricoAtendimento">
                 
-                <div id="titulo">
+                <div class="titulo">
                   <h4 style="font-size: x-large; margin-bottom: 0%;">Atendimento</h4>
                   <p style="color: #c0bcbc; font-size: large; border-bottom: 1px solid #000;">Histórico</p> 
                 </div>
                 
-                <div id="tabela">
+                <div class="tabela">
                   <table>
 
                     <thead>
