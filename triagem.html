@@ -461,15 +461,15 @@
                     <div class="card-body">
                       <div class="tamanho-lista">
                         <ul>
-                          <li><span>Contábil</span><span>001</span><span>01/05/2023</span><span><div class="btn-pre-analise" id="triagem-compliance-engrenagem"><img src="./assets/icons/Engrenagem.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/Lixeira.png" alt=""></span></div></li>
-                          <li><span>Financeiro</span><span>001;003;004</span><span>01/05/2023</span><span><div class="btn-pre-analise"><img src="./assets/icons/Engrenagem.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/Lixeira.png" alt=""></span></div></li>
-                          <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/Engrenagem.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/Lixeira.png" alt=""></span></div></li>
-                          <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/Engrenagem.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/Lixeira.png" alt=""></span></div></li> 
-                          <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/Engrenagem.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/Lixeira.png" alt=""></span></div></li>
-                          <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/Engrenagem.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/Lixeira.png" alt=""></span></div></li>
+                          <li><span>Contábil</span><span>001</span><span>01/05/2023</span><span><div class="btn-pre-analise" id="triagem-compliance-engrenagem"><img src="./assets/icons/engrenagem-novo-2.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/lixo-novo-2.png" alt=""></span></div></li>
+                          <li><span>Financeiro</span><span>001;003;004</span><span>01/05/2023</span><span><div class="btn-pre-analise"><img src="./assets/icons/engrenagem-novo-2.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/lixo-novo-2.png" alt=""></span></div></li>
+                          <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/engrenagem-novo-2.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/lixo-novo-2.png" alt=""></span></div></li>
+                          <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/engrenagem-novo-2.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/lixo-novo-2.png" alt=""></span></div></li> 
+                          <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/engrenagem-novo-2.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/lixo-novo-2.png" alt=""></span></div></li>
+                          <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/engrenagem-novo-2.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/lixo-novo-2.png" alt=""></span></div></li>
                         </ul>
                       </div>
-                      <button class="separadorCapAutoIncluir triagem-compliance-btn"><span>Incluir</span><img src="./assets/icons/icon-add.png" height="20px"  alt="Incluir"></button>
+                      <button class="triagem-compliance-btn"><span>Incluir</span><img src="./assets/icons/icon-add.png" height="20px"  alt="Incluir"></button>
                     </div>
                   </div>
                   <div class="triagem-compliance-visualizar-normas-vinculadas card">
@@ -545,12 +545,12 @@
                             <option value="">01/05/2023</option>
                           </select>
                         </div>
-                        <button class="separadorCapAutoIncluir triagem-compliance-btn triagem-btn-alterar"><span>Alterar</span><img src="./assets/icons/editar_2.png" height="20px"  alt="Incluir"></button>
+                        <button class=" triagem-compliance-btn triagem-btn-alterar"><span>Alterar</span><img src="./assets/icons/editar_2.png" height="20px"  alt="Incluir"></button>
                       </form>
                     </div>
                   </div>
                 </div>
-                <button class="separadorCapAutoIncluir triagem-compliance-btn triagem-compliance-distribuir"><span>Distribuir</span><img src="./assets/icons/seta-btn-distribuir.png" height="20px"  alt="Incluir"></button>
+                <button class="triagem-compliance-btn triagem-compliance-distribuir"><span>Distribuir</span><img src="./assets/icons/seta-btn-distribuir.png" height="20px"  alt="Incluir"></button>
               </div>
 
               <div class="triagem-compliance-respondidos">
@@ -977,28 +977,29 @@
             <div class="TriagemHistorico">
               <div class="TriagemHistoricoAreaFiltro">
 
-                <div id="titulo">
-                  <h4 style="font-size: large; margin-bottom: 0%;">Busca de Triagens</h4>
-                  <p style="color: #c0bcbc; font-size: medium; border-bottom: 1px solid #000;">Histórico</p> 
+                <div class="titulo">
+                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Busca de Triagens</h2>
+                  <h5 class="SubtituloCinza">Histórico</h5>
+                  <hr> 
                 </div>
 
-                <p style="font-size: medium;font-weight: bold;margin: 1.5% 1% 0% 1%;">Filtro:</p>
+                <p style="font-size: x-large;font-weight: bold;margin: 1.5% 1% 0% 1%;">Filtro:</p>
 
                 <!-- Dividindo por linhas os parâmetros -->
                 <div class="Parametros_linha">
                   <!-- Linha 1 -->
-                  <p>Regulador:</p>
+                  <p style="font-size: 1.1em; font-family: sans-serif;">Regulador:</p>
                   <select name="Regulador" id="select-regulador">
                       <option value=""></option>
                       <option value="Bacen">Bacen</option>
                       <option value="CVM">CVM</option>
                   </select>
 
-                  <p style="margin-left: 6%; margin-right: 0.5%;">Data de Publicação:</p>
+                  <p style="margin-left: 6%; margin-right: 0.5%;font-size: 1.1em; font-family: sans-serif;">Data de Publicação:</p>
                   <input type="date" class="data-range">
                   <input type="date" class="data-range">
 
-                  <p style="margin-left: 6%; margin-right: 0.7%;">Status:</p>
+                  <p style="margin-left: 6%; margin-right: 0.7%; font-size: 1.1em;  font-family: sans-serif;">Status:</p>
                   <select name="Status" id="select-status">
                     <option value=""></option>
                     <option value="Finalizado">Finalizado</option>
@@ -1007,13 +1008,13 @@
 
                 <div class="Parametros_linha">
                   <!-- Linha 2 -->
-                  <p>Categoria:</p>
+                  <p style="font-size: 1.1em;  font-family: sans-serif;">Categoria:</p>
                   <select name="Categoria" id="select-categoria">
                     <option value=""></option>
                     <option value="Normativo">Normativo</option>                 
                   </select>
 
-                  <p style="margin-left: 6.1%; margin-right: 0.5%;">Responsável:</p>
+                  <p style="margin-left: 6.1%; margin-right: 0.5%; font-size: 1.1em;  font-family: sans-serif;">Responsável:</p>
                   <select name="Responsavel" id="select-responsavel">
                     <option value=""></option>
                     <option value="Credito">Crédito</option>
@@ -1021,7 +1022,7 @@
                     <option value="Controladoria">Controladoria</option>
                   </select>
 
-                  <p style="margin-left: 13.7%; margin-right: 0.5%;">Tema:</p>
+                  <p style="margin-left: 13.7%; margin-right: 0.5%; font-size: 1.1em;  font-family: sans-serif;">Tema:</p>
                   <select name="Tema" id="select-Tema">
                     <option value=""></option>
                     <option value="Moedas Eletrônicas">Moedas Eletrônicas</option>
@@ -1029,14 +1030,19 @@
                   </select>
 
                 </div>
-                <Button style="margin-left: 94.2%;">Pesquisar</Button>
+                <Button>
+                  <p style="font-size: 16px; font-family: Calibri;color: #ffffff;">Pesquisar</p> 
+                  
+                  <img src="assets/icons/lupa-24.png" alt="Pesquisar" style="margin-left: 5px; margin-top: 2px;">
+                </Button>
 
               </div>
               <div class="TriagemHistoricoRegulatoria">
                 
-                <div id="titulo">
-                  <h4 style="font-size: large; margin-bottom: 0%;">Triagem Regulatória</h4>
-                  <p style="color: #c0bcbc; font-size: medium; border-bottom: 1px solid #000;">Histórico</p> 
+                <div class="titulo">
+                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Triagem Regulatória</h4>
+                  <h5 class="SubtituloCinza">Histórico</h5> 
+                  <hr>
                 </div>
                 
                 <div id="tabela">
