@@ -192,6 +192,28 @@ function ReguladorOutros(checkboxId) {
   }
 }
 
+function PadraoCustom(checkboxId) {
+  const padraoCheckbox = document.getElementById('padraoCheckbox');
+  const customCheckbox = document.getElementById('customCheckbox');
+
+  if (checkboxId === 'Padrao' && padraoCheckbox.checked) {
+    customCheckbox.checked = false;
+  } else if (checkboxId === 'Custom' && customCheckbox.checked) {
+    padraoCheckbox.checked = false;
+  }
+}
+
+function mostrarAspectosPreTriagem(){
+  let customCheckbox = document.getElementById("customCheckbox");
+  let aspectosPreTriagem = document.getElementById("aspectosPreTriagem");
+
+  if(customCheckbox.checked){
+    aspectosPreTriagem.classList.replace("hiddenElement", "showElement");
+  }else{
+    aspectosPreTriagem.classList.replace("showElement", "hiddenElement");
+  }
+}
+
 function CapcturaManualOpcoes(checkboxId) {
   const atuaTodosCheckbox = document.getElementById('AtuaTodos');
   const atuaEspeCheckbox = document.getElementById('AtuaEspe');
@@ -214,10 +236,24 @@ function preencheRegulador() {
   var fonteInput = document.getElementById('Fonte');
   var armazenarInput = document.getElementById('Armazenar');
 
+  let card2 = document.getElementById('card2PreTriagem');
+  let card1 = document.getElementById('card1PreTriagem');
+  let infosPreTriagem = document.getElementById('infosPreTriagem');
+  let botaoConfigParamsGeral = document.getElementById('botaoConfigParamsGeral');
+  let botaoIncluirCapAuto = document.getElementById('botaoIncluirCapAuto');
+  let botaoCancelarCapAuto = document.getElementById('botaoCancelarCapAuto');
+
   if (document.getElementById('Regulador').checked) {
     descricaoInput.value = 'Bacen';
     fonteInput.value = 'https://www.bcb.gov.br/resultadobusca?termo=3978&source=';
     armazenarInput.value = 'https://soluçõescompliance...';
+
+    card2.classList.add("preTriagemCard2");
+    card1.classList.add("preTriagemCard1");
+    infosPreTriagem.classList.replace("hiddenElement", "showElement");
+    botaoConfigParamsGeral.classList.replace("showElement", "hiddenElement");
+    botaoIncluirCapAuto.classList.add("btnIncluirPreTriagem");
+    botaoCancelarCapAuto.classList.replace("hiddenElement", "showElement");
   } else {
     descricaoInput.value = '';
     fonteInput.value = '';
@@ -225,15 +261,67 @@ function preencheRegulador() {
   }
 }
 
+function botaoCancelarPreTriagem(){
+  var descricaoInput = document.getElementById('Descrição');
+  var fonteInput = document.getElementById('Fonte');
+  var armazenarInput = document.getElementById('Armazenar');
+  let card2 = document.getElementById('card2PreTriagem');
+  let card1 = document.getElementById('card1PreTriagem');
+  let infosPreTriagem = document.getElementById('infosPreTriagem');
+  let botaoConfigParamsGeral = document.getElementById('botaoConfigParamsGeral');
+  let botaoIncluirCapAuto = document.getElementById('botaoIncluirCapAuto');
+  let botaoCancelarCapAuto = document.getElementById('botaoCancelarCapAuto');
+  let botaoRegulador = document.getElementById('Regulador');
+  let botaoOutro = document.getElementById('Outro');
+  let customCheckbox = document.getElementById('customCheckbox');
+  let padraoCheckbox = document.getElementById('padraoCheckbox');
+  let aspectosPreTriagem = document.getElementById('aspectosPreTriagem');
+  let textAreasAspectos = document.querySelectorAll('.aspectosConsiderarInput');
+
+  textAreasAspectos.forEach((textArea) =>{
+    textArea.value = "";
+  })
+
+  aspectosPreTriagem.classList.replace("showElement", "hiddenElement");
+  card2.classList.remove("preTriagemCard2");
+  card1.classList.remove("preTriagemCard1");
+  infosPreTriagem.classList.replace("showElement", "hiddenElement");
+  botaoConfigParamsGeral.classList.replace("hiddenElement", "showElement");
+  botaoIncluirCapAuto.classList.remove("btnIncluirPreTriagem");
+  botaoCancelarCapAuto.classList.replace("showElement", "hiddenElement");
+  customCheckbox.checked = false;
+  padraoCheckbox.checked = true;
+
+  descricaoInput.value = '';
+  fonteInput.value = '';
+  armazenarInput.value = '';
+  botaoRegulador.checked = false;
+  botaoOutro.checked = false;
+}
+
 function preencheOutros() {
   var descricaoInput = document.getElementById('Descrição');
   var fonteInput = document.getElementById('Fonte');
   var armazenarInput = document.getElementById('Armazenar');
 
-  if (document.getElementById('Regulador').checked) {
+  let card2 = document.getElementById('card2PreTriagem');
+  let card1 = document.getElementById('card1PreTriagem');
+  let infosPreTriagem = document.getElementById('infosPreTriagem');
+  let botaoConfigParamsGeral = document.getElementById('botaoConfigParamsGeral');
+  let botaoIncluirCapAuto = document.getElementById('botaoIncluirCapAuto');
+  let botaoCancelarCapAuto = document.getElementById('botaoCancelarCapAuto');
+
+  if (document.getElementById('Outro').checked) {
     descricaoInput.value = '';
     fonteInput.value = '';
     armazenarInput.value = '';
+
+    card2.classList.add("preTriagemCard2");
+    card1.classList.add("preTriagemCard1");
+    infosPreTriagem.classList.replace("hiddenElement", "showElement");
+    botaoConfigParamsGeral.classList.replace("showElement", "hiddenElement");
+    botaoIncluirCapAuto.classList.add("btnIncluirPreTriagem");
+    botaoCancelarCapAuto.classList.replace("hiddenElement", "showElement");
   } else {
     descricaoInput.value = '';
     fonteInput.value = '';
@@ -246,22 +334,24 @@ incluirBotao.addEventListener('click', function () {
   var descricao = document.getElementById('Descrição').value;
   var fonte = document.getElementById('Fonte').value;
   var periodicidade = document.getElementById('Periodicidade').value;
+  let configPreTriagem = document.getElementById('padraoCheckbox').checked;
 
   let valorRegulador = regulador ? 'Regulador' : 'Outro';
+
+  let valorConfig = configPreTriagem ? 'Configuração padrão' : 'Configuração customizada';
 
   var tabela = document.querySelector('.tableVariaves tbody');
 
   tabela.innerHTML = tabela.innerHTML + 
-  `<tr>
-  <td>0006</td>
-  <td>${valorRegulador}</td>
-  <td>${descricao}</td>
-  <td>${fonte}</td>
-  <td>html</td>
-  <td>${periodicidade}</td>
-  <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Engrenagem.png" alt="Descrição da Imagem" height="30px" width="30px"></button></td>
-  <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/Lixeira.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
-  </tr>`;
+  ` <tr>
+    <td>0019</td>
+    <td>${valorRegulador}</td>
+    <td>${descricao}</td>
+    <td>${fonte}</td>
+    <td>${periodicidade}</td>
+    <td>${valorConfig}</td>
+    <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
+    </tr>`;
 
   document.getElementById('Regulador').checked = false;
   document.getElementById('Descrição').value = '';
@@ -271,6 +361,8 @@ incluirBotao.addEventListener('click', function () {
   document.getElementById('Outro').checked = false;
   document.getElementById('Armazenar').value = '';
   document.getElementById('Horário').value ='';
+
+  botaoCancelarPreTriagem();
 
   Swal.fire({
     icon: 'success',
@@ -449,4 +541,76 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
           randomArray.push(randomNumber);
       }
       return randomArray;
+    }
+
+    function abrirConfigParamsGeral(){
+      let card1 = document.getElementById("card1PreTriagem");
+      let card2 = document.getElementById("card2PreTriagem");
+      let card3 = document.getElementById("card3Captura");
+      let cardConfigParamsGeral = document.getElementById("cardConfigParamsGeral");
+
+      card1.classList.replace("showElement", "hiddenElement");
+      card2.classList.replace("showElement", "hiddenElement");
+      card3.classList.replace("showElement", "hiddenElement");
+      cardConfigParamsGeral.classList.replace("hiddenElement", "showElement");
+      
+    }
+
+    function salvarConfigParamsGeral(){
+      let card1 = document.getElementById("card1PreTriagem");
+      let card2 = document.getElementById("card2PreTriagem");
+      let card3 = document.getElementById("card3Captura");
+      let cardConfigParamsGeral = document.getElementById("cardConfigParamsGeral");
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Alterações realizadas com sucesso!'});
+
+      card1.classList.replace("hiddenElement", "showElement");
+      card2.classList.replace("hiddenElement", "showElement");
+      card3.classList.replace("hiddenElement", "showElement");
+      cardConfigParamsGeral.classList.replace("showElement", "hiddenElement");
+      
+    }
+
+    function configurarParametroEspecifico(){
+
+      let checkRegulador = document.getElementById('Regulador');
+      let aspConsiderar = document.getElementById('aspectosConsiderarInput');
+      let aspExcluir = document.getElementById('aspectosExcluirInput');
+      let checkCustom = document.getElementById('customCheckbox');
+      let checkPadrao = document.getElementById('padraoCheckbox');
+      let botaoIncluir = document.querySelector("#botaoIncluirCapAuto");
+      let botaoAtualizar = document.querySelector("#botaoAtualizarParamEsp");
+      let botaoCancelar = document.querySelector("#botaoCancelarCapAuto");
+      
+
+      botaoIncluir.classList.replace("showElement", "hiddenElement");
+      botaoAtualizar.classList.replace("hiddenElement", "showElement");
+      
+      checkCustom.checked = true;
+      checkPadrao.checked = false;
+      checkRegulador.checked = true;
+      aspConsiderar.textContent = "Normativos: Leis, Decreto, Resolução, Circular, Carta Circular; Localidades: Brasil, Reino Unido, Chile";
+      aspExcluir.textContent = "Operações no mercado de câmbio";
+
+      
+      mostrarAspectosPreTriagem();
+      preencheRegulador();
+      botaoCancelar.classList.replace("showElement", "hiddenElement");
+
+    }
+
+    function atualizarParamEsp(){
+      let botaoAtualizar = document.querySelector("#botaoAtualizarParamEsp");
+      let botaoIncluir = document.querySelector("#botaoIncluirCapAuto");
+
+      botaoIncluir.classList.replace("hiddenElement", "showElement");
+      botaoAtualizar.classList.replace("showElement", "hiddenElement");
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Parâmetro atualizado!'});
+
+        botaoCancelarPreTriagem();
     }

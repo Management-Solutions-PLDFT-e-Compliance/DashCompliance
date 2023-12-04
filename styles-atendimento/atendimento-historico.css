@@ -1,20 +1,21 @@
-.TriagemHistoricoAreaFiltro{
-    border: 1px solid #dcdcdc;
-}
-
-.TriagemHistorico > div{
+.atendimentoHistorico > div{
     border: 2px solid lightgray;
     background-color: white;
     padding: 1em;
     color: black;
 }
 
-.TriagemHistorico{
+.atendimentoHistorico{
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 2;
     gap: 10px;
 }
+
+.atendimentoHistoricoBusca{
+    border: 1px solid #dcdcdc;
+}
+
 
 .Parametros_linha{
     display: flex;
@@ -22,7 +23,7 @@
 }
 
 .Parametros_linha > p{
-    font-size: medium;
+    font-size: large;
     font-weight: bold; 
     margin: 0% 1%;
 }
@@ -32,7 +33,7 @@
 } 
 
 
-.TriagemHistoricoAreaFiltro > button {
+.atendimentoHistoricoBusca > button {
     /* Cor de fundo */
     background-color: #304c7c;
     
@@ -49,20 +50,33 @@
 }
 
 /* Adicional: Estilo ao passar o mouse sobre o botão */
-.TriagemHistoricoAreaFiltro > button:hover {
+.atendimentoHistoricoBusca > button:hover {
     background-color: #1e3557;
 }
 
+#id{
+    margin-left: 5.7%;
+    
+}
+
 #select-categoria{
-    margin-left: 0.2%;
+    margin-left: 1.6%;
 }
 
 #select-responsavel{
-    margin-left: 4.2%;
+    margin-left: 3.5%;
 }
 
 #select-Tema {
-    margin-left: 0.6%;
+    margin-left: 2.5%;
+}
+
+#retorno{
+    margin-left: 1.4%;
+}
+
+#select-status{
+    margin-left: 2.2%;
 }
 
 .Parametros_linha > select {
@@ -103,16 +117,14 @@
     /* border-color: #a0a0a0;
 }  */
 
-.Parametros_linha > input:focus {
-    /* Altere conforme necessário */
-    outline: none;
-    border-color: #5c5c5c;
-    box-shadow: 0 0 5px rgba(220, 220, 220, 0.8);
+.Parametros_linha > input {
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
 }
 
 /* Tabela */
 
-#tabela > table > thead > tr > th {
+.tabela > table > thead > tr > th {
     background-color: #687ca4;
     color: white;
     border: 1px solid #ddd;
@@ -122,11 +134,11 @@
     box-shadow: 2px 2px 2px #888888;
 }
 
-#tabela > table > tbody > tr  > td {
+.tabela > table > tbody > tr  > td {
     margin: 12px;
 }
 
-#tabela > table {
+.tabela > table {
     border-collapse: separate;
     border-spacing: 10px; /* Altere o valor conforme necessário */
 }
@@ -161,4 +173,3 @@
     width: 100%;
     justify-content: center;
 }
-

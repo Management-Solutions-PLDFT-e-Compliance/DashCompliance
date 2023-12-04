@@ -5,30 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./styles-triagem/compliance.css">
+  <link rel="stylesheet" href="./styles-triagem/triagem-historico.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
   <title>Compliance Analytics</title>
 </head>
 <header class="header1" >
   <img src="logoMS.png" alt="MSSolutions" class="MSlogoHome" onclick="redirecionarParaHome()">
-  <div class="dropdown">
-    <button class="botaoHeader botaoBiblioteca botaoBibliotecaOn">
-      <img src="./assets/icons/capturaIconOn.svg" alt="Icone Biblioteca">
+  <!-- <div class="dropdown">
+    <button class="botaoHeader botaoBiblioteca">
+      <img src="./assets/icons/capturaIconOff.svg" alt="Icone Biblioteca">
       <p>Biblioteca</p>
     </button>
     <div class="dropdown-content">
       <a href="captura.html">Captura</a>
-      <a href="triagem.html" class="linkSelecionado">Triagem</a>
+      <a href="triagem.html">Triagem</a>
     </div>
-  </div>
-  <a href="atendimento.html" class="linkAtendimento">
+  </div> -->
+  <a href="captura.html" class="linksBotoes linkCaptura">
+    <button class="botaoHeader botaoCaptura">
+      <img src="./assets/icons/capturaIconOff.svg" alt="Icone Atendimento">
+      <p>Captura</p>
+    </button>
+  </a>
+  <a href="triagem.html" class="linksBotoes">
+    <button class="botaoHeader botaoTriagem botaoTriagemOn">
+      <img src="./assets/icons/TriagemIconOn.png" alt="Icone Atendimento">
+      <p>Triagem</p>
+    </button>
+  </a>
+  <a href="atendimento.html" class="linksBotoes">
     <button class="botaoHeader botaoAtendimento">
       <img src="./assets/icons/atendimentoIconOff.png" alt="Icone Atendimento">
       <p>Atendimento</p>
     </button>
   </a>
   <h1 class="a comprimentos">Olá, Usuário! </h1>
-  <button class="botaoHeader botaoSair" onclick="redirecionarParaLogin()">
+  <button class="botaoHeader botaoSair botaoSairHeaderPrincipal" onclick="redirecionarParaLogin()">
     <img src="./assets/icons/exitIcon.png" alt="Descrição da Imagem" height="25px" width="25px">
     SAIR
   </button>
@@ -690,12 +703,12 @@
                       </select>
                   </div>
                   <div>
-                    <label for="DataPublicacao" class="separadorTriagemDataPublica1">Data da publicação:</label>
+                    <label for="DataPublicacao" class="separadorTriagemDataPublica1">Data de publicação:</label>
                       <select name="DataPublicacao" id="DataPublicacao" class="separadorTriagemDataPublica2">
                         <option value="Diariamente">Diariamente</option>
                       </select>
                   </div>
-                  <div>
+                   <div>
                     <label for="Categoria" class="separadorTriagemCategoria1">Categoria:</label>
                       <select name="Categoria" id="Categoria" class="separadorTriagemCategoria2">
                         <option value="Diariamente">Diariamente</option>
@@ -719,12 +732,10 @@
                         <option value="Diariamente">Diariamente</option>
                       </select>
                   </div>
-                  <!-- <div>
-                    <button>Limpar</button>
-                  </div>
                   <div>
-                    <button>Pesquisar</button>
-                  </div> -->
+                    <button class="botaoLimpaFiltro2"><img src="./assets/icons/VassouraBranca.png" alt="">Limpar</button>
+                    <button class="botaoFiltrar2"><img src="./assets/icons/FiltroBranco.png" alt="">Pesquisar</button>
+                  </div> 
                 </div>
 
               </div>
@@ -734,8 +745,8 @@
                   <h5 class="SubtituloCinza">Lista</h5>
                   <hr>
                 </div>
-                  <div class="tableFixHead">
-                    <table class="tableVariaves">
+                  <div class="tableFixHeadTriagemRaul">
+                    <table class="tableVariavesTriagemRaul">
                       <thead>
                         <tr>
                           <th>Normativo</th>
@@ -853,9 +864,55 @@
                 </div>
 
               </div>
-              <div class="TriagemValidacaoAreaBuscaDeNormativos">Busca de normativos
-
-
+              <div class="TriagemParecerAreaBuscaDeNormativos">
+                <h2 class="TituloPreto9">Busca de normativos</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Filtro:</h5>
+                  <hr>
+                </div>
+                <div class="separadorBuscaNormativos">
+                  <div>
+                    <label for="ReguladorTriagem" class="separadorTriagemRegulador1">Regulador:</label>
+                      <select name="ReguladorTriagem" id="ReguladorTriagem" class="separadorTriagemRegulador2">
+                        <option value="Bacen">Bacen</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="DataPublicacao" class="separadorTriagemDataPublica1">Data de publicação:</label>
+                      <select name="DataPublicacao" id="DataPublicacao" class="separadorTriagemDataPublica2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                   <div>
+                    <label for="Categoria" class="separadorTriagemCategoria1">Categoria:</label>
+                      <select name="Categoria" id="Categoria" class="separadorTriagemCategoria2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Tema" class="separadorTriagemTema1">Tema:</label>
+                      <select name="Tema" id="Tema" class="separadorTriagemTema2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Status" class="separadorTriagemStatus1">Status:</label>
+                      <select name="Status" id="Status" class="separadorTriagemStatus2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Criticidade" class="separadorTriagemCriticidade1">Criticidade:</label>
+                      <select name="Criticidade" id="Criticidade" class="separadorTriagemCriticidade2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <button class="botaoLimpaFiltro2"><img src="./assets/icons/VassouraBranca.png" alt="">Limpar</button>
+                    <button class="botaoFiltrar2"><img src="./assets/icons/FiltroBranco.png" alt="">Pesquisar</button>
+                  </div> 
+                </div>
+              
               </div>
               <div class="TriagemValidacaoAreaNormativos">
                 <h2 class="TituloPreto9">Normativos</h2>
@@ -863,8 +920,8 @@
                   <h5 class="SubtituloCinza">Lista</h5>
                   <hr>
                 </div>
-                  <div class="tableFixHead">
-                    <table class="tableVariaves">
+                  <div class="tableFixHeadTriagemRaul">
+                    <table class="tableVariavesTriagemRaul">
                       <thead>
                         <tr>
                           <th>Normativo</th>
@@ -916,7 +973,6 @@
             </div>
           </div>
           <div class="content">
-            <!-- VIctor -->
 
             <div class="TriagemHistorico">
               <div class="TriagemHistoricoAreaFiltro">
@@ -942,9 +998,10 @@
                   <input type="date" class="data-range">
                   <input type="date" class="data-range">
 
-                  <p style="margin-left: 6%; margin-right: 0.5%;">Status:</p>
+                  <p style="margin-left: 6%; margin-right: 0.7%;">Status:</p>
                   <select name="Status" id="select-status">
                     <option value=""></option>
+                    <option value="Finalizado">Finalizado</option>
                   </select>
                 </div>
 
@@ -956,19 +1013,24 @@
                     <option value="Normativo">Normativo</option>                 
                   </select>
 
-                  <p style="margin-left: 4.6%; margin-right: 0.5%;">Responsável:</p>
+                  <p style="margin-left: 6.1%; margin-right: 0.5%;">Responsável:</p>
                   <select name="Responsavel" id="select-responsavel">
                     <option value=""></option>
+                    <option value="Credito">Crédito</option>
+                    <option value="Tesouraria">Tesouraria</option>
+                    <option value="Controladoria">Controladoria</option>
                   </select>
 
-                  <p style="margin-left: 22.7%; margin-right: 0.5%;">Tema:</p>
+                  <p style="margin-left: 13.7%; margin-right: 0.5%;">Tema:</p>
                   <select name="Tema" id="select-Tema">
                     <option value=""></option>
+                    <option value="Moedas Eletrônicas">Moedas Eletrônicas</option>
+                    <option value="Sist. Pagamento">Sist. Pagamento</option>
                   </select>
 
                 </div>
+                <Button style="margin-left: 94.2%;">Pesquisar</Button>
 
-                <Button style="margin-left: 92%;">Pesquisar</Button>
               </div>
               <div class="TriagemHistoricoRegulatoria">
                 
@@ -1206,7 +1268,6 @@
                     </tbody>
                   </table>
                 </div>
-
               </div>
             </div>
 
