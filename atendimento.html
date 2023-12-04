@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./styles-atendimento/atendimento-historico.css">
   <title>Compliance Analytics</title>
 </head>
 <header class="header1" >
@@ -98,8 +99,278 @@
           </div>
           <div class="content">
             <div class="atendimentoHistorico">
-              <div class="atendimentoHistoricoBusca">Busca de atendimento</div>
-              <div class="atendimentoHistoricoAtendimento">Atendimento</div>
+              <div class="atendimentoHistoricoBusca">
+                
+                <div id="titulo">
+                  <h4 style="font-size: x-large; margin-bottom: 0%;">Busca de atendimento</h4>
+                  <p style="color: #c0bcbc; font-size: large; border-bottom: 1px solid #000;">Histórico</p> 
+                </div>
+
+                <p style="font-size: x-large;font-weight: bold;margin: 1.5% 1% 0% 1%;">Filtro:</p>
+
+                <!-- Dividindo por linhas os parâmetros -->
+
+                <div class="Parametros_linha">
+                  <!-- Linha 1 -->
+                  <p style="margin-right: 0.5%;">ID:</p>
+                  <input type="text" id="id">
+
+                  <p style="margin-left: 6.6%; margin-right: 0.5%;">Tema:</p>
+                  <select name="Tema" id="select-Tema">
+                    <option value=""></option>
+                    <option value="PLDFT">PLDFT</option>
+                    <option value="Cyber">Cyber</option>
+                    <option value="ESG">ESG</option>
+                  </select>
+
+                  <p style="margin-left: 10.1%; margin-right: 0.5%;">Solicitação:</p>
+                  <input type="date" class="Solicitação">
+
+                  <p style="margin-left: 3%; margin-right: 0.5%;">Status:</p>
+                  <select name="Status" id="select-status">
+                    <option value=""></option>
+                    <option value="">Finalizado</option>
+                  </select>
+
+                  <p style="margin-left: 5.5%; margin-right: 0.5%;">Categoria:</p>
+                  <select name="Categoria" id="select-categoria">
+                    <option value=""></option>
+                    <option value="Normativo">Normativo</option>                 
+                  </select>
+
+                </div>
+
+                <div class="Parametros_linha">
+                  <!-- Linha 2 -->
+                  <p>Responsável:</p>
+                  <input type="text" id="resposavel">
+
+                  <p style="margin-left: 6.7%; margin-right: 0.5%;">Regulador:</p>
+                  <select name="Regulador" id="select-regulador">
+                      <option value=""></option>
+                      <option value="Bacen">Bacen</option>
+                      <option value="CVM">CVM</option>
+                  </select>
+
+                  <p style="margin-left: 10.3%; margin-right: 0.5%;">Retorno:</p>
+                  <input type="date" id="retorno">
+
+                  <p style="margin-left: 3.1%; margin-right: 0.5%;">Criticidade:</p>
+                  <select name="criticidade" id="select-criticidade">
+                    <option value=""></option>
+                    <option value="Baixo">Baixo</option>
+                    <option value="Moderado">Moderado</option>
+                    <option value="Alto">Alto</option>
+                  </select>
+
+                  <p style="margin-left: 5.5%; margin-right: 0.5%;">Centralizador:</p>
+                  <input type="text" id="centralizador">
+                  
+                </div>
+
+                <Button style="margin-left: 94.2%;">Pesquisar</Button>
+              </div>
+              <div class="atendimentoHistoricoAtendimento">
+                
+                <div id="titulo">
+                  <h4 style="font-size: x-large; margin-bottom: 0%;">Atendimento</h4>
+                  <p style="color: #c0bcbc; font-size: large; border-bottom: 1px solid #000;">Histórico</p> 
+                </div>
+                
+                <div id="tabela">
+                  <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Regulador</th>
+                            <th>Instrução</th>
+                            <th>Tema</th>
+                            <th>Áreas Relacionadas</th>
+                            <th>Centralizador</th>
+                            <th>Solicitação</th>
+                            <th>Vencimento</th>
+                            <th>Status</th>
+                            <th>Criticidade</th>
+                            <th>Visualização</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>0001</td>
+                          <td>CVM</td>
+                          <td>Resolução nº 50</td>
+                          <td>PLDFT</td>
+                          <td>Corretora, A.M,...</td>
+                          <td>Camila Lira</td>
+                          <td>20/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Atrasado</td>
+                          <td>Moderado</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0002</td>
+                          <td>Susep</td>
+                          <td>Circular nº 638</td>
+                          <td>Cyber</td>
+                          <td>Cadastro, S. I.,...</td>
+                          <td>Carlos José</td>
+                          <td>04/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Atrasado</td>
+                          <td>Alto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0003</td>
+                          <td>Bacen</td>
+                          <td>Circular nº 3.978</td>
+                          <td>PLDFT</td>
+                          <td>Intel. Financeira,...</td>
+                          <td>Camila Lira</td>
+                          <td>25/01/2023</td>
+                          <td>06/02/2023</td>
+                          <td>Pendente</td>
+                          <td>Alto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0004</td>
+                          <td>Susep</td>
+                          <td>Circular nº 666</td>
+                          <td>ESG</td>
+                          <td>Seguradora, Capital...</td>
+                          <td>Lucas Fagundes</td>
+                          <td>20/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Pendente</td>
+                          <td>Baixo</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0005</td>
+                          <td>Bacen</td>
+                          <td>Circular nº 3.461</td>
+                          <td>PLDFT</td>
+                          <td>A.M, Tesouraria,...</td>
+                          <td>Camila Lira</td>
+                          <td>26/01/2023</td>
+                          <td>07/02/2023</td>
+                          <td>Pendente</td>
+                          <td>Alto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0006</td>
+                          <td>CVM</td>
+                          <td>Resolução nº 50</td>
+                          <td>PLDFT</td>
+                          <td>Inteligência</td>
+                          <td>Giovanni Silva</td>
+                          <td>20/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Rejeitado</td>
+                          <td>Moderado</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0007</td>
+                          <td>CVM</td>
+                          <td>Resolução nº 50</td>
+                          <td>PLDET</td>
+                          <td>Tesouraria</td>
+                          <td>Natalia Mendes</td>
+                          <td>20/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Finalizado</td>
+                          <td>Alto</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+                          <td>0008</td>
+                          <td>CVM</td>
+                          <td>Resolução nº 50</td>
+                          <td>PLDFT</td>
+                          <td>Corretora</td>
+                          <td>Bruna Vasconcelos</td>
+                          <td>20/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Aprovado</td>
+                          <td>Baixo</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+
+                        <tr>
+
+                          <td>0009</td>
+                          <td>CVM</td>
+                          <td>Resolução nº 50</td>
+                          <td>PLDFT</td>
+                          <td>Tesouraria</td>
+                          <td>Natalia Mendes</td>
+                          <td>20/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Pendente</td>
+                          <td>Baixo</td>
+                          <td><div class="botaoAbrirPesquisaCentralizar">
+                            <button class="botaoAbrirPesquisa botaoMain">
+                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                              <div>Abrir</div>
+                            </button>
+                          </div></td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>
