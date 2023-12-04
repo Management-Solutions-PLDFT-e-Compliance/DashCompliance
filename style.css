@@ -863,6 +863,148 @@ sup{
     border-radius: 12px;
   }
 
+  .capturaParametrizacaoConfigParams{
+    grid-column: 1/3;
+    grid-row: 1/10;
+
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: bolder;
+  }
+
+  .capturaParametrizacaoConfigParams > div{
+    padding: 0px 10px 0px 10px;
+  }
+
+  .configParamsFull{
+    display: flex;
+    width: 100%;
+    margin-top: 1%;
+    gap: 2%;
+  }
+
+  .configParamsLeft{
+    width: 50%;
+  }
+
+  .configParamsLeft .par1{
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+
+  .configParamsRight{
+    width: 50%;
+  }
+
+  .configParamsLeftConsiderar{
+    height: 500px;
+    border: lightgray 1px solid;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px 0px 10px;
+  }
+
+  .configParamsLeftConsiderar .par2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .campoConfigParams{
+    margin-bottom: 20px;
+  }
+
+  .campoConfigParams textarea{
+    width: 100%;
+    height: 60%;
+    font-size: 1.1em;
+    border: lightgray 1px solid;
+    resize: none;
+  }
+
+  .configParamsLeftExcluir{
+    margin-top: 15px;
+    border: lightgray 1px solid;
+    padding: 10px 10px 0px 10px;
+  }
+
+  .configParamsLeftExcluir .par3{
+    margin-bottom: 20px;
+  } 
+
+  .configParamsRightPriorizar p{
+    margin-left: 30px;
+  }
+
+  .configParamsRightPreAnalise p{
+    margin-left: 30px;
+  }
+
+  .conteinerPriorizar{
+    border: lightgray 1px solid;
+    height: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blocoCriterio{
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+  }
+
+  .blocoCriterio p{
+    margin-left: 20px;
+  }
+
+  .blocoCriterio textarea{
+    width: 70%;
+    height: 80%;
+    font-size: 1.1em;
+    border: lightgray 1px solid;
+    resize: none;
+    margin-left: 70px;
+    margin-right: 10px;
+  }
+
+  .blocoAddPreAnalise{
+    margin-top: 20px;
+  }
+
+  .blocoAddPreAnaliseInput{
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .blocoAddPreAnaliseInput .textAreaAreaApp{
+    width: 31%;
+    height: 80%;
+    font-size: 1.1em;
+    border: lightgray 1px solid;
+    resize: none;
+    margin-left: 85px;
+    margin-right: 175px;
+  } 
+
+  .blocoAddPreAnaliseInput .textAreaTemasApp{
+    width: 60%;
+    height: 70px;
+    font-size: 1.1em;
+    border: lightgray 1px solid;
+    resize: none;
+    margin-left: 10px;
+    margin-right: 83px;
+  }
+
+  .blocoAddPreAnaliseInput button{
+    margin-right: 45px;
+  }
+
   .capturaBiblioteca > div{
     border: 2px solid lightgray;
     background-color: white;
@@ -2415,4 +2557,27 @@ sup{
     position: absolute;
     left: 1806px;
     top: 388px;
+  }
+
+  .botaoSalvarParams{
+    position: absolute;
+    top: 864px;
+    left: 1715px;
+    width: 150px;
+  }
+
+  .botaoAddCriterio{
+    position: absolute;
+    top: 452px;
+    left: 1817px;
+  }
+
+  .botaoAddPreAnalise{
+    top: 800px;
+    left: 1817px;
+  }
+
+  #botaoAtualizarParamEsp{
+    top: 288px;
+    left: 1763px;
   }
