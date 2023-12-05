@@ -10,6 +10,7 @@ var dataParecerAtraso = {
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 1,
         data: [1, 1, 1],
+        barPercentage: 0.5
     }]
 };
 
@@ -21,6 +22,7 @@ var dataPlanoAcao = {
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 1,
         data: [3, 2, 1],
+        barPercentage: 0.5
     }]
 };
 
@@ -51,13 +53,15 @@ var optionsParecerAtraso = {
         },
 
         datalabels: {
-            display: true,
-            align: 'top', // Posiciona o rótulo acima do ponto
-            anchor: 'center', // Alinha o rótulo no centro do ponto
-            clamp: true
+            anchor: 'end',
+            align: 'end',
+            color: 'black',
+            font: {
+                size: 20
+            }
         },
         
-    }
+    },
 };
 
 var optionsPlanoAcao = {
@@ -65,7 +69,7 @@ var optionsPlanoAcao = {
         y: {
             display: false,
             suggestedMin: 0, // Valor mínimo sugerido
-            suggestedMax: 3,
+            suggestedMax: 4,
             beginAtZero: true,
             grid: {
                 display: false // Remove a grade do eixo Y
@@ -84,16 +88,19 @@ var optionsPlanoAcao = {
             position: 'right', // Coloca a legenda à direita do gráfico
             display: false
         },
-
         datalabels: {
-            display: true,
-            align: 'top', // Posiciona o rótulo acima do ponto
-            anchor: 'center', // Alinha o rótulo no centro do ponto
-            clamp: true
+            anchor: 'end',
+            align: 'end',
+            color: 'black',
+            font: {
+                size: 20
+            }
         },
         
     }
 };
+
+Chart.register(ChartDataLabels)
 
 // Crie o gráfico de barras
 var parecerAtraso = new Chart(ctxParecerAtraso, {
@@ -137,4 +144,15 @@ lerMaisArray[0].addEventListener("click", function() {
 })
 lerMaisArray[1].addEventListener("click", function() {
     console.log("aquiiiii")
+})
+
+// PAGINA COMPLIANCE BOTÃO ABRIR DA TABELA
+
+const triagemComplianceBtnAbrir = document.getElementById("triagem-compliance-btn-abrir")
+const triagemCompliance = document.getElementsByClassName("triagem-compliance")[0]
+const triagemComplianceVisualizarDashboard = document.getElementsByClassName("triagem-compliance-visualizar-dashboard")[0]
+
+triagemComplianceBtnAbrir.addEventListener("click", function() {
+    triagemCompliance.style.display = "none"
+    triagemComplianceVisualizarDashboard.style.display = "flex"
 })
