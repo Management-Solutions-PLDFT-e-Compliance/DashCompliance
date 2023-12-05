@@ -1874,9 +1874,10 @@ sup{
   }
 
   .fonteItensBlocos{
+    font-size: 17.6px;
     font-weight: bold;
   }
-  
+
 
   .bibliotecaFiltroNormativo > *{
     background-color: white;
@@ -2116,6 +2117,7 @@ sup{
     height: 20px;
     margin-right: 5px;
   }
+  
   
 
   .botaoAbrirPesquisa{
