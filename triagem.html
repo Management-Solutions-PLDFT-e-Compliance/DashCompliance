@@ -6,8 +6,13 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./styles-triagem/compliance.css">
   <link rel="stylesheet" href="./styles-triagem/triagem-historico.css">
+  <link rel="stylesheet" href="./styles-triagem/triagem-dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./styles-triagem/ParecerValidacao.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.1/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.1/dist/sweetalert2.all.min.js"></script>
   <title>Compliance Analytics</title>
 </head>
 <header class="header1" >
@@ -800,7 +805,7 @@
             </div>
           </div>
           <div class="content">
-            <div class="TriagemParecerArea">
+            <div class="TriagemParecerArea showParecer">
               <div class="TriagemParecerAreaPublicacoes">
                 <h2 class="TituloPreto9">Publicações</h2>
                 <div>
@@ -943,8 +948,8 @@
                           <td>Contabilidade</td>
                           <td>Alta</td>
                           <td class="SemBordaColuna">
-                            <div class="botaoAbrirPesquisaCentralizar">
-                              <button class="botaoAbrirPesquisa botaoMain">
+                            <div class="botaoAbrirVisualizacaoCentralizar">
+                              <button class="botaoAbrirVisualizacao botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
                                 <div>Abrir<sup>1</sup></div>
                               </button>
@@ -971,6 +976,99 @@
                     </table>
                   </div>
               </div>
+            </div>
+
+            <div class="TriagemParecerAreaConteudo">
+              <div class="TriagemParecerAreaConteudoPreTriagem hiddenParecer">
+                <h2 class="TituloPreto9">Pré-triagem</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Resolução</h5>
+                  <hr>
+                </div>
+
+                <div>
+                  <label class="pesquisaTriagemLabel1 fonteItensBlocos">Normativo:</label>
+                  <input class="pesquisaTriagemInput1" type="text" readonly value="Resolução nº 309">
+                  <label class="pesquisaTriagemLabel2 fonteItensBlocos">Regulador:</label>
+                  <input class="pesquisaTriagemInput2" type="text" readonly value="Bacen">
+                  <label class="pesquisaTriagemLabel3 fonteItensBlocos">Tema:</label>
+                  <input class="pesquisaTriagemInput3" type="text" readonly value="Contabilidade">
+                  <label class="pesquisaTriagemLabel4 fonteItensBlocos">Publicação:</label>
+                  <input class="pesquisaTriagemInput4" type="text" readonly value="28/03/2023">
+                  <label class="pesquisaTriagemLabel5 fonteItensBlocos">Criticidade:</label>
+                  <input class="pesquisaTriagemInput5" type="text" readonly value="Alta">
+                </div>
+              </div>
+              <div class="TriagemParecerAreaConteudoParecer hiddenParecer">
+                <h2 class="TituloPreto9">Parecer da área</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Resumo</h5>
+                  <hr>
+                </div>
+                <div>
+                  <label class="pesquisaTriagemLabel6 fonteItensBlocos">Área:</label>
+                  <input class="pesquisaTriagemInput6" type="text" readonly value="Contábil">
+                  <label class="pesquisaTriagemLabel7 fonteItensBlocos">Prazo de retorno:</label>
+                  <input class="pesquisaTriagemInput7" type="text" readonly value="01/05/2023">
+                  <label class="pesquisaTriagemLabel8 fonteItensBlocos">Aderente:</label>
+                  <select name="" id="" class="pesquisaTriagemInput8">
+                    <option value="vazio"></option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                  </select>
+                  <label class="pesquisaTriagemLabel9 fonteItensBlocos">Data de resposta:</label>
+                  <input class="pesquisaTriagemInput9" type="text" value="">
+                </div>
+              </div>
+              <div class="TriagemParecerAreaConteudoPlano hiddenParecer">
+                <h2 class="TituloPreto9">Plano de ação</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Cronograma</h5>
+                  <hr>
+                </div>
+                <div>
+                  <label class="pesquisaTriagemLabel10 fonteItensBlocos">Plano de ação:</label>
+                  <input class="pesquisaTriagemInput10" type="text" value="">
+                  <label class="pesquisaTriagemLabel11 fonteItensBlocos">Data início:</label>
+                  <input class="pesquisaTriagemInput11" type="text" value="">
+                  <label class="pesquisaTriagemLabel12 fonteItensBlocos">Data fim:</label>
+                  <input class="pesquisaTriagemInput12" type="text" value="">
+                  <input class="pesquisaTriagemInput13" type="text" value="">
+                  <button class="botaoAqruivo"><img src="./assets/icons/icon-add.png" alt="" height="25px" width="25px"> Arquivo</button>
+                </div>
+               </div>
+                <div class="TriagemParecerAreaConteudoResumo hiddenParecer">
+                 <h2 class="TituloPreto9">Conteúdo</h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Resumo e Requerimentos</h5>
+                    <hr>
+                </div>
+                <div class="fonteConteudo">
+                  <h5 class="fonteConteudo">Novo normativo</h5>
+                  <p class="fonteConteudo"><strong>Normativos Relacionados: </strong> <span>Resolução CMN 4.817/2020 | 4.818/2020</span> </p>
+                  <p class="fonteConteudo"><strong>Revoga os normativos vigentes: </strong> <span>Revoga, a partir de 1º/1/2025, Circulares BCB ns. 2.535/1995.</span></p>
+                  <p class="fonteConteudo"><strong>Resumo: </strong> <span>O Banco Central do Brasil (BCB) publicou a Resolução BCB nº 309 de 28 de março de 2023, que estabelece procedimentos contábeis sobre: a definição de fluxos de caixa de ativo financeiro como somente pagamento de principal e juros; a aplicação da metodologia para apuração da taxa de juros efetiva de instrumentos financeiros; a constituição de provisão para perdas associadas ao risco de crédito; e a evidenciação de informações relativas a instrumentos financeiros em notas explicativas a serem observadas pelas instituições financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil.</span></p>
+                  <p class="fonteConteudo"><strong>Requerimentos Associados</strong></p>
+                  <p class="fonteConteudo"><strong>ID: </strong> <Span>0001</Span></p>
+                  <p class="fonteConteudo"><strong>Palavras chave: </strong> <Span>Art. 1º; IV; notas explicativas.</Span></p>
+                </div>
+               </div>
+                <div class="TriagemParecerAreaConteudoResposta hiddenParecer">
+                  <h2 class="TituloPreto9">Resposta da área</h2>
+                  <div>
+                   <h5 class="SubtituloCinza">Parecer da área</h5>
+                    <hr>
+                  </div>
+                  <div>
+                    <textarea class="pesquisaTriagemInput14" id="campoComQuebraDeLinha" placeholder="Digite seu texto aqui..."></textarea>
+                    <input class="pesquisaTriagemInput15" type="file"/>
+                  </div>
+                  <div>
+                    <button class="botaoCancelar"><img src="./assets/icons/cancelarIcon.png" alt="" height="25px" width="25px">Cancelar</button>
+                    <button class="botaoUploadEvidencia"><img src="./assets/icons/UploadBranco.png" alt="" height="25px" width="25px">Upload de evidência</button>
+                    <button class="botaoSalvarEnviar" ><img src="./assets/icons/SalvarBranco.png" alt="" height="25px" width="25px" >Salvar / enviar</button>
+                  </div>
+                </div>
             </div>
           </div>
           <div class="content">
@@ -1135,7 +1233,7 @@
                           <td>baixa</td>
                           <td class="SemBordaColuna">
                             <div class="botaoAbrirPesquisaCentralizar">
-                              <button class="botaoAbrirPesquisa botaoMain">
+                              <button class="botaoAbrirVisualizacao botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
                                 <div>Abrir</div>
                               </button>
@@ -1456,20 +1554,84 @@
           </div>
           <div class="content">
             <div class="TriagemDashboard">
-              <div class="triagemDashboardPendencias">Pendências por Área</div>
-              <div class="triagemDashboardSLA">SLA por Área</div>
-              <div class="triagemDashboardCriticidade">Criticidade por Tema</div>
-              <div class="triagemDashboardAderenciaNormativos">Aderência dos últimos normativos publicados</div>
-              <div class="triagemDashboardAderenciaEstado">Aderência por Estado</div>
-              <div class="triagemDashboardStatus">Status plano de ação</div>
+              <div class="triagemDashboardPendencias">
+                <h2 class="TituloPreto9">Pendências por Área</h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Quantidade de demandas pendentes</h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGraficoPendenciasArea">
+                    <canvas id="graficoPendenciasArea"></canvas>
+                  </div>
+              </div>
+              <div class="triagemDashboardSLA">
+                <h2 class="TituloPreto9">SLA por Área 
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Tempo médio de resposta
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGraficoSLAArea">
+                    <canvas id="graficoSLAArea"></canvas>
+                  </div>
+              </div>
+              <div class="triagemDashboardCriticidade">
+                <h2 class="TituloPreto9">Criticidade por Tema
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Tema vs Área – 12 meses
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGrafCritTema">
+                    <img src="./assets/mapaCalor.png" alt="mapa calor">
+                  </div>
+              </div>
+              <div class="triagemDashboardAderenciaNormativos">
+                <h2 class="TituloPreto9">Aderência dos últimos normativos publicados
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Principais reguladores
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGraficoAderenciaNorm">
+                    <canvas id="graficoAderenciaNorm"></canvas>
+                  </div>
+              </div>
+              <div class="triagemDashboardAderenciaEstado">
+                <h2 class="TituloPreto9">Aderência por Estado
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Quantidade de demandas pendentes
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGrafAdEstado">
+                    <img src="./assets/mapaBrasil.png" alt="mapaBrasil">
+                  </div>
+              </div>
+              <div class="triagemDashboardStatus">
+                <h2 class="TituloPreto9">Status plano de ação
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Por período</h5>
+                    <hr>
+                  </div>
+                  <div class="grafPlanoAcao">
+                    <img src="./assets/grafPlanoAcao.png" alt="graf plano acao">
+                  </div>
+              </div>
             </div>
           </div>
         </div>
     </div>
       <!--Script-->
-    
     <script src="script.js"></script>
+    <script src="./javascript-triagem/dashboardTriagem.js"></script>
     <script src="./javascript-triagem/compliance-js.js"></script>
+    <script src="/javascript-triagem/ParecerValidacao.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
 </body>
