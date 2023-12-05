@@ -722,7 +722,7 @@
 .triagem-compliance-resposta-area select {
     padding: 0.5rem 1rem;
     border: 1px solid lightgray;
-    height: 20%;
+    height: 100%;
     width: 40%;
 }
 
@@ -733,10 +733,40 @@
 .triagem-compliance-container-btns {
     display: flex;
     justify-content: end;
-    gap: 2rem;
 }
 
 .triagem-compliance-download, .triagem-compliance-fechar {
     padding: .7rem 1.4rem;
     font-size: 1.3em;
+}
+
+.triagem-compliance-file-download {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+}
+
+#table-compliance-vencido {
+    display: none;
+    min-height: 30rem;
+}
+
+#table-compliance-parecer {
+    display: none;
+    min-height: 30rem;
+}
+
+#table-compliance-parecer tr td:nth-child(6) {
+    border: none;
+}
+#table-compliance-parecer tr th:nth-child(6) {
+    border: none;
+    background-color: #fff;
+}
+
+.triagem-compliance-container-btns-abrir {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
 }
