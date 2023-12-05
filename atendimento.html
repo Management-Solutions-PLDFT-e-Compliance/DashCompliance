@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./styles-atendimento/atendimento-historico.css">
   <link rel="stylesheet" href="./styles-atendimento/atendimento-centralizador.css">
   <link rel="stylesheet" href="./styles-atendimento/centralizador-conteudo.css">
-  <script src="./javascript-atendimento/centralizador-conteudo.js"></script>
+  
   <title>Compliance Analytics</title>
 </head>
 <header class="header1" >
@@ -463,25 +463,247 @@
                   <h2 class="TituloPreto9" style="margin-bottom: 0%;">Requisição</h2>
                   <h5 class="SubtituloCinza">Informações</h5>
                   <hr>
+                  <div class="filtros_requisição" style="margin-top: 20px;">
+                    <label>Normativo:</label>
+                    <input type="text" value="Resolução nº 617">
+  
+                    <label style="margin-left: 170px;">ID:</label>
+                    <input type="text" value="0001" style="margin-left: 96px;">
+                    
+                  </div>
+
+                  <div class="filtros_requisição">
+                    <label>Regulador:</label>
+                    <input type="text" value="CVM">
+  
+                    <label style="margin-left: 170px;">Centralizador:</label>
+                    <input type="text" value="Camila Lira">
+
+                  </div>
+
+                  <div class="filtros_requisição">
+                    <label>Tema:</label>
+                    <input type="text" value="PLDFT" style="margin-left: 43px;">
+  
+                    <label style="margin-left: 170px;">Área:</label>
+                    <input type="text" value="PLDFT" style="margin-left: 73px;">
+                    
+                  </div>
+
+                  <div class="filtros_requisição">
+                    <label style="margin-right: 4.3%;">Solicitação:</label>
+                    <input type="text" value="28/03/2023">
+  
+                    <label style="margin-left: 170px;">Vencimento:</label>
+                    <input type="text" value="10/05/2023" style="margin-left: 13px;">
+                    
+                  </div>
+
+                  <div class="filtros_requisição">
+                    <label style="margin-right: 4.4%;">Criticidade:</label>
+                    <input type="text" value="Alta">
+  
+                    <label style="margin-left: 170px;">Status:</label>
+                    <input type="text" value="Pendente" style="margin-left: 60px;">
+                    
+                  </div>
+
                 </div>
               </div>
 
               <div class="atendimentoCentralizadorPareceres" style="border-radius: 12px;">
-                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Pareceres</h2>
-                  <h5 class="SubtituloCinza">Áreas</h5>
+                <h2 class="TituloPreto9" style="margin-bottom: 0%;">Pareceres</h2>
+                <h5 class="SubtituloCinza">Áreas</h5>
+                <hr>
+
+                <div id="Conteudo_Pareceres">
+                  
+                  <p style="margin-bottom: 30px;"><strong>Área:</strong> PLDFT</p>
+                  <p><strong>ID:</strong> 0001</p>
+                  <p><strong>Status:</strong>Aderente</p>
+                  <p><strong>Parecer:</strong>: O Banco tem evoluído no processo de controle e prevenção ao risco de lavagem de dinheiro mediante a implementação de novos controles nas áreas de tesouraria e varejo, com uso de inovação tanto nos processos de on-boarding quanto nos processos de controles internos.</p>
+                  <p><strong>Anexos:</strong> <ul style="margin-left: 30px;">
+                    <li><u style="color: rgb(43, 43, 255);">Calculadora AIR</u></li>
+                    <li><u style="color: rgb(43, 43, 255);">Relatório AIR</u></li>
+                  </ul></p>
+
+
+                  <p><strong>ID:</strong> 002</p>
+                  <p><strong>Status:</strong>Inaderente</p>
+                  <p><strong>Parecer:</strong>A politica de PLDFT se encontra desatualizada e como melhoria iniciamos o processo de atualização</p>
+                  <p><strong>Plano de Ação:</strong>Atualização da Política de Prevenção à Lavagem de Dinheiro e ao Financiamento do Terrorismo (PLDFT)</p>
+                  <p><strong>Anexos:</strong> <ul style="margin-left: 30px;">
+                    <li><u style="color: rgb(43, 43, 255);">Cronograma Normativo</u></li>
+                  </ul></p>
+
+                  <div class="caixas_brancas" style="margin-top: 40px;">
+                    <label for="button"><strong>Aprovado:</strong></label>
+                    <button id="botao_aprovado">
+                      <img src="./assets/icons/icons8-selecionado-30.png" alt="Reprovado" style="display: none;" id="v_aprovado">
+                    </button>
+
+                    <label for="button" style=" margin-left:  30px;"><Strong>Reprovado:</Strong></label>
+                    <button id="botao_reprovado">
+                      <img src="./assets/icons/x-vermelho.png" alt="Reprovado" style="display: none;" id="x_reprovado">
+                    </button>
+                  </div>
+
+                  <input type="text" style="width: 500px; height: 100px;margin-top: 4px; margin-bottom: 15px ;border: 1px solid #dcdcdc">
+
                   <hr>
+
+                  <p style="margin-bottom: 30px; margin-top: 30px;"><strong>Área:</strong> Tesouraria</p>
+                  <p><strong>ID:</strong> 0002</p>
+                  <p><strong>Status:</strong>Pendente</p>
+                </div>
               </div>
 
               <div class="atendimentoCentralizadorConteudo" style="border-radius: 12px;">
                 <h2 class="TituloPreto9" style="margin-bottom: 0%;">Conteúdo</h2>
                 <h5 class="SubtituloCinza">Resumo</h5>
                 <hr>
+
+                <p style="margin-top: 5px;font-size: 17.6px;font-family: sans-serif;"><strong>Assunto:</strong>Resultado da avaliação da Política de Prevenção à Lavagem de Dinheiro e ao Financiamento do Terrorismo (PLDFT) e da implantação da Abordagem Baseada em Risco (ABR)</p>
+
+                <p style="margin-top: 5px;font-size: 17.6px;font-family: sans-serif;"><strong>Resumo:</strong>Critérios de classificação de risco dos clientes e procedimentos de revisão e atualização.</p>
+                
               </div>
 
               <div class="atendimentoCentralizadorResponsavel" style="border-radius: 12px;">
                 <h2 class="TituloPreto9" style="margin-bottom: 0%;">Responsável</h2>
                 <h5 class="SubtituloCinza">Respostas</h5>
                 <hr>
+                <div class="tabela_responsavel">
+                  <table>
+                    <thead>
+                      <tr>
+
+                        <th>Área</th>
+                        <th>Prazo Retorno</th>
+                        <th>Status</th>
+                        <th>Plano de ação</th>
+                        <th style="background-color: #ffffff; border: 1px solid #ffffff;">
+                        
+                          <div>
+                            <button id="lupa_botao">
+                              <img src="./assets/icons/lupa-cinza-24.png" alt="Lupa">
+                            </button>
+                          </div>
+                        
+                        </th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+
+                        <td>PLDFT</td>
+                        <td>01/05/2023</td>
+                        <td>Aprovado</td>
+                        <td>Sim</td>
+                        <td>
+                          <div>
+                            <button id="notificacao">
+                              <img src="./assets/icons/sino-24.png" alt="Enviar Notificação"> <sup style="display: inline; position: fixed; left: 920px;">
+                            </button>
+                          </div>
+                        </td>
+
+                      </tr>
+                      <tr>
+                        <td>Tesouraria</td>
+                        <td>01/05/2023</td>
+                        <td>Pendente</td>
+                        <td> - </td>
+                        <td>
+                          <div>
+                            <button>
+                              <img src="./assets/icons/sino-24.png" alt="Enviar Notificação">
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>Tesouraria</td>
+                        <td>01/05/2023</td>
+                        <td>Pendente</td>
+                        <td> - </td>
+                        <td>
+                          <div>
+                            <button>
+                              <img src="./assets/icons/sino-24.png" alt="Enviar Notificação">
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tesouraria</td>
+                        <td>01/05/2023</td>
+                        <td>Pendente</td>
+                        <td> - </td>
+                        <td>
+                          <div>
+                            <button>
+                              <img src="./assets/icons/sino-24.png" alt="Enviar Notificação">
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tesouraria</td>
+                        <td>01/05/2023</td>
+                        <td>Pendente</td>
+                        <td> - </td>
+                        <td>
+                          <div>
+                            <button>
+                              <img src="./assets/icons/sino-24.png" alt="Enviar Notificação">
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                  <!-- Pop up sininho -->
+
+                  <div id="popup" class="popup">
+                    <span class="fechar" onclick="fecharPopup()">&times;</span>
+                    <p>Notificação enviada com sucesso!</p>
+                  </div>
+
+                  <!-- Pop up Reprovado -->
+
+                  <div id="popup_reprovacao_salvar" class="popup">
+                    <span class="fechar" onclick="fecharPopupReprovado()">&times;</span>
+                    <p>Solicitação redirecionada para o analista!</p>
+                  </div>
+
+
+                  <!-- Pop up Aprovado -->
+                  <div id="popup_aprovação_consolidar" class="popup">
+                    <span class="fechar" onclick="fecharPopupAprovado()">&times;</span>
+                    <p><strong>Digite parecer final da área!</strong></p>
+                    <input type="text">
+                    <div>
+                      <button><img src="./assets/icons/icons8-olho-24.png" alt="Visualização" style="margin-top: 5px;"><p style="margin-top: 1px; color: #ffffff;">Visualização</p></button>
+                      <button><img src="./assets/icons/icons8-disquete-32.png" alt="Salvar" style=" margin:7px 2px 0px 4px;width:20px; height: 20px;"><p style="margin-top: 1px; color: #ffffff; width: 70px">Salvar</p></button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <div style="display: flex; background-color: lightgray; margin-top: 0px; margin-left: 60%; grid-column: span 2; gap: 3px; padding:0%">
+
+                <button onclick="toggleVisibility()" id="botao_cancelar"><img src="./assets/icons/x-branco-32px.png" alt=""><p style="margin-top: 1px; color: #ffffff;">Cancelar</p></button>
+  
+                <button id="botao_consolidar"><img src="./assets/icons/seta-btn-distribuir.png" alt="Consolidar" style=" margin:7px 4px 0px 4px;width:20px; height: 20px;"><p style="margin-top: 1px; color: #ffffff;">Consolidar</p></button>
+  
+                <button  id="botao_salvar"><img src="./assets/icons/icons8-disquete-32.png" alt="Salvar" style=" margin:7px 2px 0px 4px;width:20px; height: 20px;"><p style="margin-top: 1px; color: #ffffff;">Salvar/Enviar</p></button>
+
               </div>
             </div>
           </div>
@@ -773,6 +995,6 @@
     </div>
 
       <script src="script.js"></script>
-    
+    <script src="./javascript-atendimento/centralizador-conteudo.js"></script>
     <script src="script.js"></script>
 </body>
