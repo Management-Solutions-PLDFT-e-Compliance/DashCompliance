@@ -793,7 +793,8 @@ sup{
   border: none;
   background-color: white;
   display: flex;
-  gap: 0.5rem
+  gap: 0.5rem;
+  margin-left: 30px;
 }
 
 .botaoEngrenagemLixeira{
@@ -898,6 +899,7 @@ sup{
     font-size: 1.1em;
     border: lightgray 1px solid;
     resize: none;
+    padding: 8px;
   }
 
   .configParamsLeftExcluir{
@@ -946,6 +948,7 @@ sup{
     resize: none;
     margin-left: 70px;
     margin-right: 10px;
+    padding: 8px;
   }
 
   .blocoAddPreAnalise{
@@ -978,6 +981,10 @@ sup{
     resize: none;
     margin-left: 10px;
     margin-right: 83px;
+  }
+
+  .blocoAddPreAnaliseInput textarea{
+    padding: 8px;
   }
 
   .blocoAddPreAnaliseInput button{
@@ -2346,6 +2353,7 @@ sup{
     resize: none;
     height: 40px;
     width: 700px;
+    padding: 8px;
   }
 
   .aspectosExcluir{
@@ -2371,16 +2379,84 @@ sup{
 
   .botaoAddCriterio{
     position: absolute;
-    top: 452px;
-    left: 1817px;
+    top: 453px;
+    left: 1809px;
   }
 
   .botaoAddPreAnalise{
-    top: 800px;
-    left: 1817px;
+    top: 806px;
+    left: 1808px;
   }
 
   #botaoAtualizarParamEsp{
     top: 288px;
     left: 1763px;
+  }
+
+  .labelAlinharMeio{
+    margin-top: 5px;
+  }
+
+  .tableFixHeadCapturaParams {
+    overflow-y: auto; 
+    height: 90%;
+  }
+  
+  .tableFixHeadCapturaParams thead th {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    position: sticky; 
+    top: 0px;
+    padding: 0.5rem 0.5rem;
+  }
+  
+  .tableVariavesCapturaParams {
+    width:100%;
+    border-spacing: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+  }
+  
+  
+  
+  .tableVariavesCapturaParams td{
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .tableVariavesCapturaParams th:nth-child(1), td:nth-child(1) {
+    width: 5%;
+  }
+  
+  .tableVariavesCapturaParams th:nth-child(2), td:nth-child(2) {
+    width: 8%;
+  }
+  
+  .tableVariavesCapturaParams th:nth-child(3), td:nth-child(3) {
+    width: 7%;
+  }
+  .tableVariavesCapturaParams th:nth-child(4), td:nth-child(4) {
+    width: 30%;
+  }
+  .tableVariavesCapturaParams th:nth-child(5), td:nth-child(5) {
+    width: 8%;
+  }
+  
+  .tableVariavesCapturaParams th:nth-child(6), td:nth-child(6) {
+    width: 10%;
+  }
+  .tableVariavesCapturaParams th:nth-child(7), td:nth-child(7) {
+    width: 5%;
+  }
+
+  .tableVariavesCapturaParams th, td {
+    border: 1px solid lightgray;
+    border-spacing: 30px;
+  }
+  
+  .tableVariavesCapturaParams th {
+    background-color: #647ca4;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  
   }

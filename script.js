@@ -340,7 +340,7 @@ incluirBotao.addEventListener('click', function () {
 
   let valorConfig = configPreTriagem ? 'Configuração padrão' : 'Configuração customizada';
 
-  var tabela = document.querySelector('.tableVariaves tbody');
+  var tabela = document.querySelector('.tableVariavesCapturaParams tbody');
 
   tabela.innerHTML = tabela.innerHTML + 
   ` <tr>
@@ -591,11 +591,12 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
       checkCustom.checked = true;
       checkPadrao.checked = false;
       checkRegulador.checked = true;
+
+      mostrarAspectosPreTriagem();
+
       aspConsiderar.textContent = "Normativos: Leis, Decreto, Resolução, Circular, Carta Circular; Localidades: Brasil, Reino Unido, Chile";
       aspExcluir.textContent = "Operações no mercado de câmbio";
 
-      
-      mostrarAspectosPreTriagem();
       preencheRegulador();
       botaoCancelar.classList.replace("showElement", "hiddenElement");
 
@@ -604,13 +605,162 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
     function atualizarParamEsp(){
       let botaoAtualizar = document.querySelector("#botaoAtualizarParamEsp");
       let botaoIncluir = document.querySelector("#botaoIncluirCapAuto");
+      let aspConsiderar = document.getElementById('aspectosConsiderarInput');
+      let aspExcluir = document.getElementById('aspectosExcluirInput');
 
       botaoIncluir.classList.replace("hiddenElement", "showElement");
       botaoAtualizar.classList.replace("showElement", "hiddenElement");
+
+      aspConsiderar.textContent = "Normativos: Leis, Decreto, Resolução, Circular, Carta Circular; Localidades: Brasil, Reino Unido, Chile";
+      aspExcluir.textContent = "Operações no mercado de câmbio";
 
       Swal.fire({
         icon: 'success',
         title: 'Parâmetro atualizado!'});
 
-        botaoCancelarPreTriagem();
+        var descricaoInput = document.getElementById('Descrição');
+        var fonteInput = document.getElementById('Fonte');
+        var armazenarInput = document.getElementById('Armazenar');
+        let card2 = document.getElementById('card2PreTriagem');
+        let card1 = document.getElementById('card1PreTriagem');
+        let infosPreTriagem = document.getElementById('infosPreTriagem');
+        let botaoConfigParamsGeral = document.getElementById('botaoConfigParamsGeral');
+        let botaoIncluirCapAuto = document.getElementById('botaoIncluirCapAuto');
+        let botaoCancelarCapAuto = document.getElementById('botaoCancelarCapAuto');
+        let botaoRegulador = document.getElementById('Regulador');
+        let botaoOutro = document.getElementById('Outro');
+        let customCheckbox = document.getElementById('customCheckbox');
+        let padraoCheckbox = document.getElementById('padraoCheckbox');
+        let aspectosPreTriagem = document.getElementById('aspectosPreTriagem');
+        let textAreasAspectos = document.querySelectorAll('.aspectosConsiderarInput');
+      
+        aspectosPreTriagem.classList.replace("showElement", "hiddenElement");
+        card2.classList.remove("preTriagemCard2");
+        card1.classList.remove("preTriagemCard1");
+        infosPreTriagem.classList.replace("showElement", "hiddenElement");
+        botaoConfigParamsGeral.classList.replace("hiddenElement", "showElement");
+        botaoIncluirCapAuto.classList.remove("btnIncluirPreTriagem");
+        botaoCancelarCapAuto.classList.replace("showElement", "hiddenElement");
+        customCheckbox.checked = false;
+        padraoCheckbox.checked = true;
+      
+        descricaoInput.value = '';
+        fonteInput.value = '';
+        armazenarInput.value = '';
+        botaoRegulador.checked = false;
+        botaoOutro.checked = false;
+
+        
+    }
+
+    function excluirLinhaTabelaCaptura(){
+      let linha = document.getElementById("linhaPraExcluir");
+
+      Swal.fire({
+        title: "Deseja excluir esta captura?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sim",
+        cancelButtonText: "Não"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Captura excluída!",
+            icon: "success"
+          });
+          linha.parentNode.removeChild(linha);
+        }
+      });
+    }
+
+    function excluirBlocoCriteriosPri(){
+      let bloco = document.getElementById("blocoPraExcluir");
+
+      Swal.fire({
+        title: "Deseja excluir este critério?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sim",
+        cancelButtonText: "Não"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Critério excluído!",
+            icon: "success"
+          });
+          bloco.parentNode.removeChild(bloco);
+        }
+      });
+    }
+
+    function excluirBlocoCriteriosPreTri(){
+      let bloco = document.getElementById("blocoExcluirPreTri");
+
+      Swal.fire({
+        title: "Deseja excluir este critério?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sim",
+        cancelButtonText: "Não"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Critério excluído!",
+            icon: "success"
+          });
+          bloco.parentNode.removeChild(bloco);
+        }
+      });
+    }
+
+    function adicionarBlocoCriterio() {
+      var conteiner = document.querySelector('.conteinerPriorizar');
+      var ultimoBloco = conteiner.lastElementChild;
+
+      var ultimoNumero = 1; 
+      if (ultimoBloco) {
+        var numeroTexto = ultimoBloco.querySelector('p').textContent.match(/\d+/);
+        ultimoNumero = numeroTexto ? parseInt(numeroTexto[0]) + 1 : 1;
+      }
+
+      var novoBloco = document.createElement('div');
+      novoBloco.className = 'blocoCriterio';
+
+      novoBloco.innerHTML = `
+        <p>Critério ${ultimoNumero}:</p>
+        <textarea name="" id=""></textarea>
+        <button class="botaoEngrenagemLixeira">
+          <img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px">
+        </button>
+      `;
+
+      conteiner.appendChild(novoBloco);
+    }
+
+    function adicionarBlocoCriterioPreTri() {
+      var conteiner = document.querySelector('#conteinerCriteriosPreTri');
+
+      var novoBloco = document.createElement('div');
+      novoBloco.className = 'blocoAddPreAnalise';
+
+      novoBloco.innerHTML = `
+        <div class="blocoAddPreAnaliseInput">
+          <p>Área:</p>
+          <textarea name="" id="" class="textAreaAreaApp"></textarea>
+          <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px">
+          </button>
+        </div>
+        <div class="blocoAddPreAnaliseInput">
+          <p>Temas Aplicáveis:</p>
+          <textarea name="" id="" class="textAreaTemasApp"></textarea>
+        </div>  
+      `;
+
+      conteiner.appendChild(novoBloco);
     }

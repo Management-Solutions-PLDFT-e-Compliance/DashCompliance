@@ -59,7 +59,7 @@
                   <h2 class="TituloPreto9">Captura Automática</h2>
                   <div>
                     <h5 class="SubtituloCinza">Parâmetros</h5>
-                    <button class="botaoEngrenagemLixeira botaoEngrenagemParGeral showElement" id="botaoConfigParamsGeral" onclick="abrirConfigParamsGeral()"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"></button>
+                    <button class="botaoEngrenagemLixeira botaoEngrenagemParGeral showElement" id="botaoConfigParamsGeral" onclick="abrirConfigParamsGeral()"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"><sup>1</sup></button>
                     <hr>
                   </div>
                   <div class="separadorCapAuto">
@@ -83,19 +83,19 @@
                     
                   </div>
                   <div class="separadorCapAutoCampos">
-                    <label for="Descrição" class="separadorCapAutoCamposDescricao1">Descrição:</label>
+                    <label for="Descrição" class="separadorCapAutoCamposDescricao1 labelAlinharMeio">Descrição:</label>
                     <input type="text" id="Descrição" name="Descrição" class="separadorCapAutoCamposDescricao2" value="">
                   </div>
                   <div class="separadorCapAutoCampos">
-                    <label for="Fonte" class="separadorCapAutoCamposFonte1">Fonte:</label>
+                    <label for="Fonte" class="separadorCapAutoCamposFonte1 labelAlinharMeio">Fonte:</label>
                     <input type="text" id="Fonte" name="Fonte" class="separadorCapAutoCamposFonte2" value="">
                   </div>
                   <div class="separadorCapAutoCampos">
-                    <label for="Armazenar" class="separadorCapAutoCamposArmazenar1">Armazenar:</label>
+                    <label for="Armazenar" class="separadorCapAutoCamposArmazenar1 labelAlinharMeio">Armazenar:</label>
                     <input type="text" id="Armazenar" name="Armazenar" class="separadorCapAutoCamposArmazenar2" value="">
                   </div>
                   <div class="separadorCapAuto">
-                      <label for="Periodicidade" class="separadorCapAutoCamposPeriodicidade1">Periodicidade:</label>
+                      <label for="Periodicidade" class="separadorCapAutoCamposPeriodicidade1 labelAlinharMeio">Periodicidade:</label>
                       <select name="Periodicidade" id="Periodicidade" class="separadorCapAutoCamposPeriodicidade2">
                         <option value="Diariamente">Diariamente</option>
                         <option value="Semanalmente">Semanalmente</option>
@@ -105,7 +105,7 @@
                         <option value="Semestral">Semestral</option>
                         <option value="Anual">Anual</option>
                       </select>
-                      <label for="Horário" class="separadorCapAutoCamposHorario1">Horário:</label>
+                      <label for="Horário" class="separadorCapAutoCamposHorario1 labelAlinharMeio">Horário:</label>
                       <select name="Horário" id="Horário" class="separadorCapAutoCamposHorario2">
                         <option value="00:00">00:00</option>
                         <option value="01:00">01:00</option>
@@ -180,8 +180,8 @@
                       <hr>
                       <button class="botaoEngrenagemLixeira botaoEngrenagemParGeral showElement botaoDownload" id=""><img src="./assets/icons/baixarIcon.svg" alt="Descrição da Imagem" height="50px" width="50px"></button>
                   </div>
-                  <div class="tableFixHead">
-                    <table class="tableVariaves">
+                  <div class="tableFixHeadCapturaParams">
+                    <table class="tableVariavesCapturaParams">
                       <thead>
                         <tr>
                           <th>ID</th>
@@ -201,16 +201,16 @@
                           <td>https://www.bcb.gov.br/resultadobusca?termo=3978&source</td>
                           <td>Diariamente</td>
                           <td>Configuração customizada</td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira" onclick="configurarParametroEspecifico()"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"></button><button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
+                          <td class="tableButton"><button class="botaoEngrenagemLixeira" onclick="configurarParametroEspecifico()"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"></button><sup style="margin-left: -10px;">1</sup><button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>
                         </tr>
-                        <tr>
+                        <tr id="linhaPraExcluir">
                           <td>0002</td>
                           <td>Regulador</td>
                           <td>Susep</td>
                           <td>https://www2.susep.gov.br/legislacao/legislacao-em-vigor/resolucoes/resolucao-susep-n-572-de-20-de-dez-2022</td>
                           <td>Diariamente</td>
                           <td>Configuração customizada</td>
-                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button></td>                         
+                          <td class="tableButton"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/engrenagem-novo-2.png" alt="Descrição da Imagem" height="30px" width="30px"><button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px" onclick="excluirLinhaTabelaCaptura()"></button><sup style="margin-left: -5px;">1</sup></td>                         
                         </tr>
                         <tr>
                           <td>0003</td>
@@ -401,11 +401,11 @@
                           <p>Critérios de priorização (palavras-chave):
                           </p>
                           <div class="conteinerPriorizar">
-                            <div class="blocoCriterio">
+                            <div class="blocoCriterio" id="blocoPraExcluir">
                               <p>Critério 1:</p>
                               <textarea name="" id="">Relacionamento com Clientes
                               </textarea>
-                              <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button>
+                              <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px" onclick="excluirBlocoCriteriosPri()"><sup>1</sup></button>
                             </div>
                             <div class="blocoCriterio">
                               <p>Critério 2:</p>
@@ -419,23 +419,23 @@
                               </textarea>
                               <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button>
                             </div>
+                            <button class="botaoEngrenagemLixeira botaoAddCriterio"><img src="./assets/icons/iconAdd.png" alt="Descrição da Imagem" height="30px" width="30px" onclick="adicionarBlocoCriterio()"><sup style="position: absolute;">1</sup></button>
                             <div class="blocoCriterio">
                               <p>Critério 4:</p>
                               <textarea name="" id="">“vigor”;”2023”
                               </textarea>
                               <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button>
                             </div>
-                            <button class="botaoEngrenagemLixeira botaoAddCriterio"><img src="./assets/icons/iconAdd.png" alt="Descrição da Imagem" height="30px" width="30px"></button>
                           </div>
                         </div>
                         <div class="configParamsRightPreAnalise"><p>Critérios de pré-análise (palavras-chave)
                         </p>
-                        <div class="conteinerPriorizar">
-                          <div class="blocoAddPreAnalise">
+                        <div class="conteinerPriorizar" id="conteinerCriteriosPreTri">
+                          <div class="blocoAddPreAnalise" id="blocoExcluirPreTri">
                             <div class="blocoAddPreAnaliseInput">
                               <p>Área:</p>
                               <textarea name="" id="" class="textAreaAreaApp">Contábil</textarea>
-                              <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button>
+                              <button class="botaoEngrenagemLixeira" onclick="excluirBlocoCriteriosPreTri()"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"><sup>1</sup></button>
                             </div>
                             <div class="blocoAddPreAnaliseInput">
                               <p>Temas Aplicáveis:</p>
@@ -449,13 +449,13 @@
                               <textarea name="" id="" class="textAreaAreaApp">Riscos</textarea>
                               <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px"></button>
                             </div>
+                            <button class="botaoEngrenagemLixeira botaoAddCriterio botaoAddPreAnalise" onclick="adicionarBlocoCriterioPreTri()"><img src="./assets/icons/iconAdd.png" alt="Descrição da Imagem" height="30px" width="30px"><sup style="position: absolute;">1</sup></button>
                             <div class="blocoAddPreAnaliseInput">
                               <p>Temas Aplicáveis:</p>
                               <textarea name="" id="" class="textAreaTemasApp">Controles Internos, Lavagem de Dinheiro, Relacionamento com Clientes, Risco de Mercado, Risco de Crédito, Risco Operacional
                               </textarea>
                             </div>  
                           </div>
-                          <button class="botaoEngrenagemLixeira botaoAddCriterio botaoAddPreAnalise"><img src="./assets/icons/iconAdd.png" alt="Descrição da Imagem" height="30px" width="30px"></button>
                         </div>
                         </div>
                         <button class="separadorCapAutoIncluir botaoSalvarParams" id="" onclick="salvarConfigParamsGeral()"><img src="./assets/icons/salvarIcon.svg" height="30px"  alt="Incluir"><span style="margin-left: 10px;">Salvar</span></button>
