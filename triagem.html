@@ -830,7 +830,7 @@
                           <td>Aberto</td>
                           <td>Contabilidade</td>
                           <td>Alta</td>
-                          <td>
+                          <td class="SemBordaColuna">
                             <div class="botaoAbrirPesquisaCentralizar">
                               <button class="botaoAbrirPesquisa botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
@@ -846,7 +846,7 @@
                           <td>Aberto</td>
                           <td>Contabilidade</td>
                           <td>baixa</td>
-                          <td>
+                          <td class="SemBordaColuna">
                             <div class="botaoAbrirPesquisaCentralizar">
                               <button class="botaoAbrirPesquisa botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
@@ -1005,7 +1005,7 @@
                           <td>Aberto</td>
                           <td>Contabilidade</td>
                           <td>Alta</td>
-                          <td>
+                          <td class="SemBordaColuna">
                             <div class="botaoAbrirPesquisaCentralizar">
                               <button class="botaoAbrirPesquisa botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
@@ -1021,7 +1021,7 @@
                           <td>Aberto</td>
                           <td>Contabilidade</td>
                           <td>baixa</td>
-                          <td>
+                          <td class="SemBordaColuna">
                             <div class="botaoAbrirPesquisaCentralizar">
                               <button class="botaoAbrirPesquisa botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
@@ -1041,43 +1041,44 @@
             <div class="TriagemHistorico">
               <div class="TriagemHistoricoAreaFiltro">
 
-                <div id="titulo">
-                  <h4 style="font-size: large; margin-bottom: 0%;">Busca de Triagens</h4>
-                  <p style="color: #c0bcbc; font-size: medium; border-bottom: 1px solid #000;">Histórico</p> 
+                <div class="titulo">
+                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Busca de Triagens</h2>
+                  <h5 class="SubtituloCinza">Histórico</h5>
+                  <hr> 
                 </div>
 
-                <p style="font-size: medium;font-weight: bold;margin: 1.5% 1% 0% 1%;">Filtro:</p>
+                <p style="font-size: x-large;font-weight: bold;margin: 1% 1% 0% 0.5%;">Filtro:</p>
 
                 <!-- Dividindo por linhas os parâmetros -->
-                <div class="Parametros_linha">
+                <div class="Parametros_linha" style="margin-top: 0.5%;">
                   <!-- Linha 1 -->
-                  <p>Regulador:</p>
+                  <p style="font-size: 1.1em; font-family: sans-serif;">Regulador:</p>
                   <select name="Regulador" id="select-regulador">
                       <option value=""></option>
                       <option value="Bacen">Bacen</option>
                       <option value="CVM">CVM</option>
                   </select>
 
-                  <p style="margin-left: 6%; margin-right: 0.5%;">Data de Publicação:</p>
+                  <p style="margin-left: 6%; margin-right: 0.5%;font-size: 1.1em; font-family: sans-serif;">Data de Publicação:</p>
                   <input type="date" class="data-range">
                   <input type="date" class="data-range">
 
-                  <p style="margin-left: 6%; margin-right: 0.7%;">Status:</p>
+                  <p style="margin-left: 5.7%; margin-right: 0.7%; font-size: 1.1em;  font-family: sans-serif;">Status:</p>
                   <select name="Status" id="select-status">
                     <option value=""></option>
                     <option value="Finalizado">Finalizado</option>
                   </select>
                 </div>
 
-                <div class="Parametros_linha">
+                <div class="Parametros_linha" style="margin-bottom: 0.5%;">
                   <!-- Linha 2 -->
-                  <p>Categoria:</p>
+                  <p style="font-size: 1.1em;  font-family: sans-serif;">Categoria:</p>
                   <select name="Categoria" id="select-categoria">
                     <option value=""></option>
                     <option value="Normativo">Normativo</option>                 
                   </select>
 
-                  <p style="margin-left: 6.1%; margin-right: 0.5%;">Responsável:</p>
+                  <p style="margin-left: 6.1%; margin-right: 0.5%; font-size: 1.1em;  font-family: sans-serif;">Responsável:</p>
                   <select name="Responsavel" id="select-responsavel">
                     <option value=""></option>
                     <option value="Credito">Crédito</option>
@@ -1085,7 +1086,7 @@
                     <option value="Controladoria">Controladoria</option>
                   </select>
 
-                  <p style="margin-left: 13.7%; margin-right: 0.5%;">Tema:</p>
+                  <p style="margin-left: 13.6%; margin-right: 0.5%; font-size: 1.1em;  font-family: sans-serif;">Tema:</p>
                   <select name="Tema" id="select-Tema">
                     <option value=""></option>
                     <option value="Moedas Eletrônicas">Moedas Eletrônicas</option>
@@ -1093,14 +1094,19 @@
                   </select>
 
                 </div>
-                <Button style="margin-left: 94.2%;">Pesquisar</Button>
+                <Button>
+                  <p style="font-size: 16px; font-family: Calibri;color: #ffffff;">Pesquisar</p> 
+                  
+                  <img src="assets/icons/lupa-24.png" alt="Pesquisar" style="margin-left: 5px; margin-top: 2px;">
+                </Button>
 
               </div>
               <div class="TriagemHistoricoRegulatoria">
                 
-                <div id="titulo">
-                  <h4 style="font-size: large; margin-bottom: 0%;">Triagem Regulatória</h4>
-                  <p style="color: #c0bcbc; font-size: medium; border-bottom: 1px solid #000;">Histórico</p> 
+                <div class="titulo">
+                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Triagem Regulatória</h4>
+                  <h5 class="SubtituloCinza">Histórico</h5> 
+                  <hr>
                 </div>
                 
                 <div id="tabela">
