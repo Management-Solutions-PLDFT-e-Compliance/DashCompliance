@@ -1,4 +1,4 @@
-.atendimentocentralizadorContentContent{
+.atendimentocentralizadorContent{
     display: none;
 }
 
@@ -10,7 +10,7 @@
 }
   
 .atendimentocentralizadorContent{
-    display: grid;
+
     grid-template-columns: 50% 50%;
     grid-template-rows: 3;
     gap: 10px;
@@ -24,3 +24,199 @@
     grid-row: span 3;
 }
 /* grid-column: span 4; */
+
+.filtros_requisição{
+    display: flex;
+    font-size: 17.6px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 1.5% 5%;
+}
+
+
+.filtros_requisição > label {
+    margin: 1% 5% 1% 0%;
+}
+.filtros_requisição > input{
+    border: 1px solid#dcdcdc;
+    width: 180px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 14px;
+    font-family: sans-serif;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.tabela_responsavel{
+    max-height: 180px;
+    overflow-y: auto;
+    justify-content: center;
+    
+}
+
+.tabela_responsavel > table > thead > tr > th {
+    background-color: #687ca4;
+    color: white;
+    border: 1px solid #ddd;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+.tabela_responsavel > table > tbody > tr  > td {
+    margin: 12px;
+}
+
+.tabela_responsavel > table > tbody > tr  > td:nth-child(1), td:nth-child(2), td:nth-child(3), td:nth-child(4) {
+    width: 23.75%;
+}
+
+.tabela_responsavel > table {
+    border-collapse: separate;
+    border-spacing: 10px;
+    width: 100%;
+}
+
+.tabela_responsavel > table > tbody > tr > th:last-child, td:last-child {
+    border: none;
+    width: 5%;
+}
+
+.tabela_responsavel > table > tbody > tr > td:last-child > div{
+    background-color: #2c4c88;
+    border-radius: 10px;
+    margin: 1% 0%;
+}
+
+.tabela_responsavel > table > tbody > tr > td:last-child > div> button{
+    background-color: #2c4c88;
+    color: #2c4c88;
+    border: none;
+}
+
+.tabela_responsavel > table > tbody > tr > th:last-child > div> button{
+    background-color: #ffffff;
+    border: none;
+}
+
+.tabela_responsavel > table > tbody > tr > td:last-child {
+    text-align: center;
+}
+
+.tabela_responsavel > table > tbody > tr > td:last-child > img{
+    margin: 10% 0%;
+}
+
+/* Parecer */
+
+#Conteudo_Pareceres{
+    display: none;
+    max-height: 800px;
+    overflow-y: auto;
+}
+
+#Conteudo_Pareceres{
+    font-size: 17.6px;
+    font-family: sans-serif;
+}
+
+.caixas_brancas{
+    margin: 10px;
+    display: flex;
+    font-size: 17.6px;
+    font-family: sans-serif;
+}
+
+.caixas_brancas > button{
+    border: 1px solid #dcdcdc;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    margin-left: 5px;
+}
+
+/* Pop up */
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #f8f4f4;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.fechar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+}
+
+.popup > input {
+    width: 500px;
+    height: 150px;
+    text-align: left;
+}
+
+#popup_aprovação_consolidar > div{
+    display: flex;
+}
+
+#popup_aprovação_consolidar > div > button{
+    display: flex;
+    background-color: #2c4c88;
+    color: #ffffff;
+    font-size: 17.6px;
+    font-family: sans-serif;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    border:#2c4c88;
+    border-radius: 10px;
+}
+
+/* Botoes final da tela */
+
+#botao_cancelar{
+    display: flex;
+    background-color: #2c4c88;
+    color: #ffffff;
+    font-size: 17.6px;
+    font-family: sans-serif;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    border:#2c4c88;
+    border-radius: 10px;
+    width: 120px;
+}
+
+#botao_consolidar{
+    display: flex;
+    background-color: #2c4c88;
+    color: #ffffff;
+    font-size: 17.6px;
+    font-family: sans-serif;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    border:#2c4c88;
+    border-radius: 10px;
+    width: 130px;
+}
+
+#botao_salvar{
+    display: flex;
+    background-color: #2c4c88;
+    color: #ffffff;
+    font-size: 17.6px;
+    font-family: sans-serif;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    border:#2c4c88;
+    border-radius: 10px;
+    width: 150px;
+}
