@@ -271,7 +271,7 @@
     margin: 5px;
 }
 
-.botaoCacenlar{
+.botaoCancelar{
     position: fixed;
     top: 905px;
     left: 1300px;
@@ -341,6 +341,7 @@
     height: 350px;
     width: 905px;
     border: 1px lightgray solid;
+    
 }
 .pesquisaTriagemInput15{
     position: fixed;
