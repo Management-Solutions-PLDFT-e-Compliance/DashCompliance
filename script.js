@@ -195,23 +195,43 @@ function ReguladorOutros(checkboxId) {
 function PadraoCustom(checkboxId) {
   const padraoCheckbox = document.getElementById('padraoCheckbox');
   const customCheckbox = document.getElementById('customCheckbox');
+  let aspectosPreTriagem = document.getElementById("aspectosPreTriagem");
+  let textAreasAspectos = document.querySelectorAll("#aspectosPreTriagem textarea");
+  let aspectosConsiderarInput = document.getElementById("aspectosConsiderarInput");
+  let aspectosExcluirInput = document.getElementById("aspectosExcluirInput");
 
   if (checkboxId === 'Padrao' && padraoCheckbox.checked) {
+    mostrarAspectosPreTriagem();
+    aspectosPreTriagem.classList.add("aspectosPreTriagemReadOnly");
+    textAreasAspectos.forEach((textarea)=>{
+      textarea.readOnly = true;
+      textarea.classList.add("aspectosPreTriagemReadOnly");
+    });
+    aspectosConsiderarInput.textContent = "Normativos: Leis, Decreto, Resolução, Circular, Carta Circular; Órgãos Reguladores: Banco Central do Brasil, Comissão de Valores Mobiliários, ações,";
+  aspectosExcluirInput.textContent = "Superintendência de Seguros Privados, títulos de capitalização, instrumentos de garantia";
     customCheckbox.checked = false;
   } else if (checkboxId === 'Custom' && customCheckbox.checked) {
+    mostrarAspectosPreTriagem();
+    aspectosPreTriagem.classList.remove("aspectosPreTriagemReadOnly");
+    textAreasAspectos.forEach((textarea)=>{
+      textarea.readOnly = false;
+      textarea.classList.remove("aspectosPreTriagemReadOnly");
+      textarea.textContent = "";
+    });
     padraoCheckbox.checked = false;
   }
 }
 
 function mostrarAspectosPreTriagem(){
-  let customCheckbox = document.getElementById("customCheckbox");
   let aspectosPreTriagem = document.getElementById("aspectosPreTriagem");
 
-  if(customCheckbox.checked){
-    aspectosPreTriagem.classList.replace("hiddenElement", "showElement");
-  }else{
-    aspectosPreTriagem.classList.replace("showElement", "hiddenElement");
-  }
+  aspectosPreTriagem.classList.replace("hiddenElement", "showElement");
+}
+
+function ocultarAspectosPreTriagem(){
+  let aspectosPreTriagem = document.getElementById("aspectosPreTriagem");
+
+  aspectosPreTriagem.classList.replace("showElement", "hiddenElement");
 }
 
 function CapcturaManualOpcoes(checkboxId) {
@@ -244,9 +264,7 @@ function preencheRegulador() {
   let botaoCancelarCapAuto = document.getElementById('botaoCancelarCapAuto');
 
   if (document.getElementById('Regulador').checked) {
-    descricaoInput.value = 'Bacen';
-    fonteInput.value = 'https://www.bcb.gov.br/resultadobusca?termo=3978&source=';
-    armazenarInput.value = 'https://soluçõescompliance...';
+    
 
     card2.classList.add("preTriagemCard2");
     card1.classList.add("preTriagemCard1");
@@ -259,6 +277,16 @@ function preencheRegulador() {
     fonteInput.value = '';
     armazenarInput.value = '';
   }
+}
+
+function preencherComLabelDesc(){
+  var descricaoInput = document.getElementById('Descrição');
+  var fonteInput = document.getElementById('Fonte');
+  var armazenarInput = document.getElementById('Armazenar');
+
+  descricaoInput.value = 'Bacen';
+  fonteInput.value = 'https://www.bcb.gov.br/resultadobusca?termo=3978&source=';
+  armazenarInput.value = 'https://soluçõescompliance...';
 }
 
 function botaoCancelarPreTriagem(){
@@ -297,6 +325,9 @@ function botaoCancelarPreTriagem(){
   armazenarInput.value = '';
   botaoRegulador.checked = false;
   botaoOutro.checked = false;
+
+  let botaoAtualizar = document.querySelector("#botaoAtualizarParamEsp");
+      botaoAtualizar.classList.replace("showElement", "hiddenElement");
 }
 
 function preencheOutros() {
@@ -598,7 +629,8 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
       aspExcluir.textContent = "Operações no mercado de câmbio";
 
       preencheRegulador();
-      botaoCancelar.classList.replace("showElement", "hiddenElement");
+      preencherComLabelDesc();      
+      // botaoCancelar.classList.replace("showElement", "hiddenElement");
 
     }
 

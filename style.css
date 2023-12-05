@@ -815,7 +815,7 @@ sup{
   background-color: white;
   display: flex;
   gap: 0.5rem;
-  margin-left: 30px;
+  margin-left: 0px;
 }
 
 .botaoEngrenagemLixeira{
@@ -2710,16 +2710,17 @@ sup{
   }
   
   .tableVariavesCapturaParams th:nth-child(6), td:nth-child(6) {
-    width: 10%;
+    width: 14%;
   }
   .tableVariavesCapturaParams th:nth-child(7), td:nth-child(7) {
-    width: 5%;
+    width: 1%;
   }
 
   .tableVariavesCapturaParams th, td {
     border: 1px solid lightgray;
     border-spacing: 30px;
   }
+  
   
   .tableVariavesCapturaParams th {
     background-color: #647ca4;
@@ -2728,3 +2729,18 @@ sup{
     font-weight: bold;
   
   }
+
+  .tableVariavesCapturaParams .headerDosBotesCaptura{
+    background-color: white;
+    border-color: white;
+  }
+  
+  .titulosConfigParamsCaptura{
+    font-size: 1.2em;
+    font-weight: bolder;
+  }
+
+  .aspectosPreTriagemReadOnly{
+    color: lightgray;
+  }
+  

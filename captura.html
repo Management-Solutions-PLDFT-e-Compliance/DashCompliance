@@ -66,7 +66,7 @@
                     <div class="criteriosPreTriagem hiddenElement" id="infosPreTriagem">
                       <label class="preTriagemLegenda">Critérios de pré-triagem:</label>
                       <label class="preTriagemLegenda configPadrao">Utilizar configuração padrão</label>
-                      <input type="checkbox" name="" id="padraoCheckbox" class="preTriagemLegenda configPadrao checkConfigPadrao" onclick="PadraoCustom('Padrao')" onchange="mostrarAspectosPreTriagem()" checked>
+                      <input type="checkbox" name="" id="padraoCheckbox" class="preTriagemLegenda configPadrao checkConfigPadrao" onclick="PadraoCustom('Padrao')" onchange="mostrarAspectosPreTriagem()">
                       <label class="preTriagemLegenda configCustom">Customizar configuração</label>
                       <input type="checkbox" name="" id="customCheckbox" class="preTriagemLegenda configCustom checkConfigCustom" onclick="PadraoCustom('Custom')" onchange="mostrarAspectosPreTriagem()">
                       <div class="hiddenElement" id="aspectosPreTriagem">
@@ -83,7 +83,7 @@
                     
                   </div>
                   <div class="separadorCapAutoCampos">
-                    <label for="Descrição" class="separadorCapAutoCamposDescricao1 labelAlinharMeio">Descrição:</label>
+                    <label for="Descrição" class="separadorCapAutoCamposDescricao1 labelAlinharMeio" onclick="preencherComLabelDesc()">Descrição:<sup>1</sup></label>
                     <input type="text" id="Descrição" name="Descrição" class="separadorCapAutoCamposDescricao2" value="">
                   </div>
                   <div class="separadorCapAutoCampos">
@@ -160,7 +160,7 @@
                     <label for="AtuaEspe" class="separadorCapManAtuaEspe2">Atualizar fonte específica<sup>1</sup></label>
                   </div>
                   <div class="separadorCapMan">
-                    <label for="FonteEspecifica" class="separadorCapManParametroID1">Paramêtro ID:</label>
+                    <label for="FonteEspecifica" class="separadorCapManParametroID1">Parâmetro ID:</label>
                     <select name="FonteEspecifica" id="FonteEspecifica" class="separadorCapManParametroID2" disabled>
                       <option value="0001">0001</option>
                       <option value="0002">0002</option>
@@ -168,6 +168,19 @@
                       <option value="0004">0004</option>
                       <option value="0005">0005</option>
                       <option value="0006">0006</option>
+                      <option value="0007">0007</option>
+                      <option value="0008">0008</option>
+                      <option value="0009">0009</option>
+                      <option value="0010">0010</option>
+                      <option value="0011">0011</option>
+                      <option value="0012">0012</option>
+                      <option value="0013">0013</option>
+                      <option value="0014">0014</option>
+                      <option value="0015">0015</option>
+                      <option value="0016">0016</option>
+                      <option value="0017">0017</option>
+                      <option value="0018">0018</option>
+                      <option value="0019">0019</option>
                     </select>
                     <button class="separadorCapManLog">Log acesso <img src="./assets/icons/editar_2.png" alt=""></button>
                   </div>
@@ -190,7 +203,7 @@
                           <th>Fonte</th>
                           <th>Periodicidade</th>
                           <th>Critérios de pré-triagem</th>
-                          <th></th>
+                          <th class="headerDosBotesCaptura"></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -361,7 +374,7 @@
                     </div>
                     <div class="configParamsFull">
                       <div class="configParamsLeft">
-                        <p class="par1">Configuração padrão:</p>
+                        <p class="par1 titulosConfigParamsCaptura">Configuração padrão:</p>
                         <div class="configParamsLeftConsiderar">
                           <p class="par2">Aspectos a serem considerados (palavras-chave)
                           </p>
@@ -398,7 +411,7 @@
                       </div>
                       <div class="configParamsRight">
                         <div class="configParamsRightPriorizar">
-                          <p>Critérios de priorização (palavras-chave):
+                          <p class="titulosConfigParamsCaptura">Critérios de priorização (palavras-chave):
                           </p>
                           <div class="conteinerPriorizar">
                             <div class="blocoCriterio" id="blocoPraExcluir">
@@ -428,7 +441,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="configParamsRightPreAnalise"><p>Critérios de pré-análise (palavras-chave)
+                        <div class="configParamsRightPreAnalise"><p class="titulosConfigParamsCaptura">Critérios de pré-análise (palavras-chave)
                         </p>
                         <div class="conteinerPriorizar" id="conteinerCriteriosPreTri">
                           <div class="blocoAddPreAnalise" id="blocoExcluirPreTri">
