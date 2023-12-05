@@ -60,8 +60,9 @@
   }
 
   .conteinerGraficoAderenciaNorm{
-    width: 700px;
-    margin-top: 55px;
+    width: 524px;
+    margin-top: 96px;
+
   }
 
   .conteinerGrafAdEstado img{
@@ -71,10 +72,13 @@
   }
 
   .conteinerGrafCritTema img{
-    width: 700px;
+    width: 500px;
+    margin-top: 38px;
+    margin-left: 28px;
   }
 
   .grafPlanoAcao img{
-    width: 700px;
-    margin-top: 50px;
+    width: 563px;
+    margin-top: 82px;
+    margin-left: 15px;
   }

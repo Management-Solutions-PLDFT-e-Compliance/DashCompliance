@@ -2730,4 +2730,8 @@ sup{
   .aspectosPreTriagemReadOnly{
     color: lightgray;
   }
+
+  #botaoSairLogin{
+    font-weight:500;
+  }
   
