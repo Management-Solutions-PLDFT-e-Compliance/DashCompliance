@@ -1,0 +1,80 @@
+.TriagemDashboard > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+  }
+
+  .TriagemDashboard{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: 100px;
+  }
+
+  .triagemDashboardPendencias{
+    grid-column: 1;
+    grid-row: 1/5;
+    border-radius: 12px;
+  }
+
+  .triagemDashboardSLA{
+    grid-column: 2;
+    grid-row: 1/5;
+    border-radius: 12px;
+  }
+
+  .triagemDashboardCriticidade{
+    grid-column: 3;
+    grid-row: 1/5;
+    border-radius: 12px;
+  }
+
+  .triagemDashboardAderenciaNormativos{
+    grid-column: 1;
+    grid-row: 5/10;
+    border-radius: 12px;
+  }
+
+  .triagemDashboardAderenciaEstado{
+    grid-column: 2;
+    grid-row: 5/10;
+    border-radius: 12px;
+  }
+
+  .triagemDashboardStatus{
+    grid-column: 3;
+    grid-row: 5/10;
+    border-radius: 12px;
+  }
+
+  .conteinerGraficoSLAArea{
+    width: 600px;
+    margin-top: 29px;
+  }
+
+  .conteinerGraficoPendenciasArea{
+    width: 500px;
+    margin-top: -75px;
+    margin-left: 50px;
+  }
+
+  .conteinerGraficoAderenciaNorm{
+    width: 700px;
+    margin-top: 55px;
+  }
+
+  .conteinerGrafAdEstado img{
+    width: 400px;
+    margin-top: 29px;
+    margin-left: 141px;
+  }
+
+  .conteinerGrafCritTema img{
+    width: 700px;
+  }
+
+  .grafPlanoAcao img{
+    width: 700px;
+    margin-top: 50px;
+  }

@@ -6,8 +6,13 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./styles-triagem/compliance.css">
   <link rel="stylesheet" href="./styles-triagem/triagem-historico.css">
+  <link rel="stylesheet" href="./styles-triagem/triagem-dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="./styles-triagem/ParecerValidacao.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.1/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.1/dist/sweetalert2.all.min.js"></script>
   <title>Compliance Analytics</title>
 </head>
 <header class="header1" >
@@ -58,7 +63,7 @@
         </div>
         <div class="tab-content">
           <div class="content active">
-            <div class="triagem-compliance-vizualizar">
+            <div class="triagem-compliance-visualizar">
               <div class="triagem-compliance">
                 <div class="up">
                   <div class="triagem-compliance-publicacao card">
@@ -91,8 +96,8 @@
                     </div>
                     <div class="card-body">
                       <ul class="notificacoes">
-                        <li><span>3 Pareceres em atraso</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li>
-                        <li><span>2 Retornos de parecer</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li>
+                        <li id="notificacao-atraso"><span>3 Pareceres em atraso</span><div><sup>1</sup><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></div></li>
+                        <li id="notificacao-parecer"><span>2 Retornos de parecer</span><div><sup>1</sup><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></div></li>
                         <li><span>0 Envios pendentes</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li> 
                         <li><span>5 Plano de ação pendentes</span><img src="./assets/icons/seta_triagem_notificações.svg" alt=""></li> 
                       </ul>
@@ -142,12 +147,12 @@
                 </div>
                 <div class="triagem-compliance-captura card">
                   <div class="card-header">
-                    <span class="card-titulo">Captura</span>
+                    <span class="card-titulo" id="notificacao-titulo">Captura</span>
                     <span class="card-subtitulo">Lista</span>
                   </div>
                   <div class="card-body">
                     <div class="espacamento-table-top"></div>
-                    <table class="tableVariaves table-compliance">
+                    <table class="tableVariaves table-compliance" id="table-compliance-conteudo">
                       <thead class="thead-compliance">
                         <tr>
                           <th>Normativo</th>
@@ -168,7 +173,7 @@
                           <td>Contabilidade</td>
                           <td>Aplicável</td>
                           <td>
-                            <div class="botaoAbrirPesquisaCentralizar">
+                            <div class="botaoAbrirPesquisaCentralizar" id="triagem-compliance-btn-abrir">
                               <button class="botaoAbrirPesquisa botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
                                 <div>Abrir<sup>1</sup></div>
@@ -418,10 +423,117 @@
                         </tr>
                       </tbody>
                     </table>
+                    <table class="tableVariaves table-compliance" id="table-compliance-vencido">
+                      <thead class="thead-compliance">
+                        <tr>
+                          <th>Normativo</th>
+                          <th>Regulador</th>
+                          <th>Publicação</th>
+                          <th>Tema</th>
+                          <th>Área</th>
+                          <th>Status</th>
+                          <th>Visualização</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Resolução nº 5.070</td>
+                          <td>CMN</td>
+                          <td>20/04/2023</td>
+                          <td>Crédito</td>
+                          <td>Crédito</td>
+                          <td>Atrasado</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar" id="triagem-compliance-btn-notificar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <!-- <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa"> -->
+                                <div>Notificar<sup>1</sup></div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.067</td>
+                          <td>CMN</td>
+                          <td>20/04/2023</td>
+                          <td>Auditoria </td>
+                          <td>Auditoria</td>
+                          <td>Atrasado</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <!-- <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa"> -->
+                                <div>Notificar</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Ins. Normativa nº 371</td>
+                          <td>Bacen</td>
+                          <td>10/04/2023</td>
+                          <td>Open Finance</td>
+                          <td>Open Finance</td>
+                          <td>Atrasado</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <!-- <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa"> -->
+                                <div>Notificar</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="tableVariaves table-compliance" id="table-compliance-parecer">
+                      <thead class="thead-compliance">
+                        <tr>
+                          <th>Normativo</th>
+                          <th>Regulador</th>
+                          <th>Publicação</th>
+                          <th>Área</th>
+                          <th>Status Geral</th>
+                          <th>Visualização</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Resolução nº 309</td>
+                          <td>Bacen</td>
+                          <td>28/03/2023</td>
+                          <td>Contábil</td>
+                          <td>Em aberto</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar" id="triagem-compliance-btn-visualizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <!-- <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa"> -->
+                                <div>Visualizar<sup>1</sup></div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.067</td>
+                          <td>CMN</td>
+                          <td>20/04/2023</td>
+                          <td>Auditoria</td>
+                          <td>Finalizada</td>
+                          <td>
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <!-- <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa"> -->
+                                <div>Visualizar</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
-              <div class="triagem-compliance-vizualizar-dashboard">
+              <div class="triagem-compliance-visualizar-dashboard">
                 <div class="up-visualizacao">
                   <div class="triagem-compliance-visualizar-pre-triagem card">
                     <div class="card-header">
@@ -461,7 +573,7 @@
                     <div class="card-body">
                       <div class="tamanho-lista">
                         <ul>
-                          <li><span>Contábil</span><span>001</span><span>01/05/2023</span><span><div class="btn-pre-analise" id="triagem-compliance-engrenagem"><img src="./assets/icons/engrenagem-novo-2.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/lixo-novo-2.png" alt=""></span></div></li>
+                          <li><span>Contábil</span><span>001</span><span>01/05/2023</span><span><div class="btn-pre-analise" id="triagem-compliance-engrenagem"><img src="./assets/icons/engrenagem-novo-2.png" alt=""><sup>1</sup></div><div class="btn-pre-analise"><img src="./assets/icons/lixo-novo-2.png" alt=""></span></div></li>
                           <li><span>Financeiro</span><span>001;003;004</span><span>01/05/2023</span><span><div class="btn-pre-analise"><img src="./assets/icons/engrenagem-novo-2.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/lixo-novo-2.png" alt=""></span></div></li>
                           <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/engrenagem-novo-2.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/lixo-novo-2.png" alt=""></span></div></li>
                           <li><span></span><span></span><span></span><span><div class="btn-pre-analise"><img src="./assets/icons/engrenagem-novo-2.png" alt=""></div><div class="btn-pre-analise"><img src="./assets/icons/lixo-novo-2.png" alt=""></span></div></li> 
@@ -482,13 +594,13 @@
                       <div class="normativo-relacionado-pergunta">
                         <div class="normativo-relacionado">
                           <span class="normativo-label">Normativos Relacionados</span>
-                          <div class="card-normativo"><span class="card-conteudo-normativo-relacionado">Resolução CMN (4.817/2020 | 4.818/2020...</span><span class="ler-mais">Ler mais</span></div>
+                          <div class="card-normativo"><span class="card-conteudo-normativo-relacionado">Resolução CMN (4.817/2020 | 4.818/2020...</span><span class="ler-mais">Ler mais<sup>1</sup></span></div>
                         </div>
                         <span class="normativo-label">Revoga normativo?</span>
                       </div>
                       <div class="normativo-revogado">
                         <span class="normativo-label">Normativos Revogados</span>
-                        <div class="card-normativo"><span class="card-conteudo-normativo-revogado">Circulares BCB ns.2.535/1995, 2.951/1999...</span><span class="ler-mais">Ler mais</span></div>
+                        <div class="card-normativo"><span class="card-conteudo-normativo-revogado">Circulares BCB ns.2.535/1995, 2.951/1999...</span><span class="ler-mais">Ler mais<sup>1</sup></span></div>
                       </div>
                     </div>
                   </div>
@@ -550,7 +662,10 @@
                     </div>
                   </div>
                 </div>
-                <button class="triagem-compliance-btn triagem-compliance-distribuir"><span>Distribuir</span><img src="./assets/icons/seta-btn-distribuir.png" height="20px"  alt="Incluir"></button>
+                <div class="triagem-compliance-container-btns-abrir">
+                  <button class="triagem-compliance-btn triagem-compliance-distribuir" id="triagem-compliance-visualiza-dashboard-btn-distribuir"><span>Distribuir</span><img src="./assets/icons/seta-btn-distribuir.png" height="20px"  alt="Incluir"><sup style="color: #fff">1</sup></button>
+                  <button class="triagem-compliance-btn triagem-compliance-fechar" id="triagem-compliance-visualiza-dashboard-btn-fechar"><span>Fechar</span><img src="./assets/icons/fechar.png" height="20px"  alt="Incluir"><sup style="color: #fff">1</sup></button>
+                </div>
               </div>
 
               <div class="triagem-compliance-respondidos">
@@ -591,6 +706,27 @@
                         <span class="card-subtitulo">Cronograma</span>
                       </div>
                       <div class="card-body">
+                        <form action="">
+                          <div class="label-input">
+                            <label for="normativo">Área:</label>
+                            <input type="text" id="normativo" name="normativo" value="Contábil" required>
+                          </div>
+                          <div class="label-input">
+                            <label for="regulador">Prazo de retorno:</label>
+                            <input type="text" id="regulador" name="regulador" value="01/05/2023" required>
+                          </div>
+                          <div class="label-input">
+                            <label for="tema">Aderente:</label>
+                            <select name="" id="">
+                              <option value="Sim">Sim</option>
+                              <option value="Não">Não</option>
+                            </select>
+                          </div>
+                          <div class="label-input">
+                            <label for="publicacao">Data de resposta:</label>
+                            <input type="text" id="publicacao" name="publicacao" value="26/04/2023" required>
+                          </div>
+                        </form>
                       </div>
                     </div>
                     <div class="triagem-compliance-plano-acao card">
@@ -599,6 +735,21 @@
                         <span class="card-subtitulo">Cronograma</span>
                       </div>
                       <div class="card-body">
+                        <form action="">
+                          <div class="label-input">
+                            <label for="normativo">Plano de ação:</label>
+                            <input type="text" id="normativo" name="normativo" value="n/a" required>
+                          </div>
+                          <div class="label-input">
+                            <label for="regulador">Data início:</label>
+                            <input type="text" id="regulador" name="regulador" value="-" required>
+                          </div>
+                          <div class="label-input">
+                            <label for="tema">Data fim:</label>
+                            <input type="text" id="regulador" name="regulador" value="-" required>
+                          </div>
+                        </form>
+                        <div class="triagem-compliance-vazio"></div>
                       </div>
                     </div>
                   </div>
@@ -609,6 +760,20 @@
                         <span class="card-subtitulo">Resumo e Requerimentos</span>
                       </div>
                       <div class="card-body">
+                        <span class="respondido-paragrafo">
+                          <span class="titulo-respondido-paragrafo">Novo Normativo</span>
+                          <div class="respondido-paragrafo-texto"><span class="topico-respondido-paragrafo">Normativos Relacionados:</span>  Resolução CMN 4.817/2020 | 4.818/2020 | 4.966/</div>
+                          <div class="respondido-paragrafo-texto"><span class="topico-respondido-paragrafo">Revoga os normativos vigentes:</span> Revoga, a partir de 1º/1/2025, Circulares BCB ns. 2.535</div>
+                          <div class="respondido-paragrafo-texto"><span class="topico-respondido-paragrafo">Resumo:</span> O Banco Central do Brasil (BCB) publicou a Resolução BCB nº 309 de 28 de 
+                            março de 2023, que estabelece procedimentos contábeis sobre: a definição de fluxos de caixa de ativo financeiro 
+                            como somente pagamento de principal e juros; a aplicação da metodologia para apuração da taxa de juros efetiva 
+                            de instrumentos financeiros; a constituição de provisão para perdas associadas ao risco de crédito; e a evidenciação 
+                            de informações relativas a instrumentos financeiros em notas explicativas a serem observadas pelas instituições 
+                            financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil.</div>
+                          <div class="respondido-paragrafo-texto"><span class="topico-respondido-paragrafo">Requerimentos Associados:</span></div>
+                          <div class="respondido-paragrafo-texto"><span class="topico-respondido-paragrafo">ID: 001</span></div>
+                          <div class="respondido-paragrafo-texto"><span class="topico-respondido-paragrafo">Palavras chave:</span> Art. 1º; IV; notas explicativas</div>
+                        </span>
                       </div>
                     </div>
                     <div class="triagem-compliance-resposta-area card">
@@ -617,14 +782,30 @@
                         <span class="card-subtitulo">Parecer para Aprovação</span>
                       </div>
                       <div class="card-body">
+                        <div class="resposta-area-resultado">
+                          <span class="resposta-area-resultado-texto">
+                            Conforme a resolução nº 309 de 28 de março de 2023 do Banco Central do Brasil (BCB), 
+                            que estabelece procedimentos contábeis. Declaramos que a área exerce suas atividades
+                            conforme norma e encontra-se aderente a regulação.
+                          </span>
+                        </div>
+                        <div class="triagem-compliance-file-download">
+                          <select name="" id="">
+                            <option value=""><span>evidencia_atendimento_resolução309.xlsx</span><span>10 KB</span></option>
+                          </select>
+                          <button class="triagem-compliance-btn triagem-compliance-download"><span>Download</span><img src="./assets/icons/download-branco.svg" height="20px"  alt="Incluir"></button>
+                        </div>
                       </div>
                     </div>
+                  </div>
+                  <div class="triagem-compliance-container-btns">
+                    <button class="triagem-compliance-btn triagem-compliance-fechar" id="triagem-compliance-resposta-fechar"><span>Fechar</span><img src="./assets/icons/fechar.png" height="20px"  alt="Incluir"><sup style="color: #fff">1</sup></button>
                   </div>
               </div>
             </div>
           </div>
           <div class="content">
-            <div class="TriagemParecerArea">
+            <div class="TriagemParecerArea showParecer">
               <div class="TriagemParecerAreaPublicacoes">
                 <h2 class="TituloPreto9">Publicações</h2>
                 <div>
@@ -767,8 +948,8 @@
                           <td>Contabilidade</td>
                           <td>Alta</td>
                           <td class="SemBordaColuna">
-                            <div class="botaoAbrirPesquisaCentralizar">
-                              <button class="botaoAbrirPesquisa botaoMain">
+                            <div class="botaoAbrirVisualizacaoCentralizar">
+                              <button class="botaoAbrirVisualizacao botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
                                 <div>Abrir<sup>1</sup></div>
                               </button>
@@ -795,6 +976,99 @@
                     </table>
                   </div>
               </div>
+            </div>
+
+            <div class="TriagemParecerAreaConteudo">
+              <div class="TriagemParecerAreaConteudoPreTriagem hiddenParecer">
+                <h2 class="TituloPreto9">Pré-triagem</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Resolução</h5>
+                  <hr>
+                </div>
+
+                <div>
+                  <label class="pesquisaTriagemLabel1 fonteItensBlocos">Normativo:</label>
+                  <input class="pesquisaTriagemInput1" type="text" readonly value="Resolução nº 309">
+                  <label class="pesquisaTriagemLabel2 fonteItensBlocos">Regulador:</label>
+                  <input class="pesquisaTriagemInput2" type="text" readonly value="Bacen">
+                  <label class="pesquisaTriagemLabel3 fonteItensBlocos">Tema:</label>
+                  <input class="pesquisaTriagemInput3" type="text" readonly value="Contabilidade">
+                  <label class="pesquisaTriagemLabel4 fonteItensBlocos">Publicação:</label>
+                  <input class="pesquisaTriagemInput4" type="text" readonly value="28/03/2023">
+                  <label class="pesquisaTriagemLabel5 fonteItensBlocos">Criticidade:</label>
+                  <input class="pesquisaTriagemInput5" type="text" readonly value="Alta">
+                </div>
+              </div>
+              <div class="TriagemParecerAreaConteudoParecer hiddenParecer">
+                <h2 class="TituloPreto9">Parecer da área</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Resumo</h5>
+                  <hr>
+                </div>
+                <div>
+                  <label class="pesquisaTriagemLabel6 fonteItensBlocos">Área:</label>
+                  <input class="pesquisaTriagemInput6" type="text" readonly value="Contábil">
+                  <label class="pesquisaTriagemLabel7 fonteItensBlocos">Prazo de retorno:</label>
+                  <input class="pesquisaTriagemInput7" type="text" readonly value="01/05/2023">
+                  <label class="pesquisaTriagemLabel8 fonteItensBlocos">Aderente:</label>
+                  <select name="" id="" class="pesquisaTriagemInput8">
+                    <option value="vazio"></option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                  </select>
+                  <label class="pesquisaTriagemLabel9 fonteItensBlocos">Data de resposta:</label>
+                  <input class="pesquisaTriagemInput9" type="text" value="">
+                </div>
+              </div>
+              <div class="TriagemParecerAreaConteudoPlano hiddenParecer">
+                <h2 class="TituloPreto9">Plano de ação</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Cronograma</h5>
+                  <hr>
+                </div>
+                <div>
+                  <label class="pesquisaTriagemLabel10 fonteItensBlocos">Plano de ação:</label>
+                  <input class="pesquisaTriagemInput10" type="text" value="">
+                  <label class="pesquisaTriagemLabel11 fonteItensBlocos">Data início:</label>
+                  <input class="pesquisaTriagemInput11" type="text" value="">
+                  <label class="pesquisaTriagemLabel12 fonteItensBlocos">Data fim:</label>
+                  <input class="pesquisaTriagemInput12" type="text" value="">
+                  <input class="pesquisaTriagemInput13" type="text" value="">
+                  <button class="botaoAqruivo"><img src="./assets/icons/icon-add.png" alt="" height="25px" width="25px"> Arquivo</button>
+                </div>
+               </div>
+                <div class="TriagemParecerAreaConteudoResumo hiddenParecer">
+                 <h2 class="TituloPreto9">Conteúdo</h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Resumo e Requerimentos</h5>
+                    <hr>
+                </div>
+                <div class="fonteConteudo">
+                  <h5 class="fonteConteudo">Novo normativo</h5>
+                  <p class="fonteConteudo"><strong>Normativos Relacionados: </strong> <span>Resolução CMN 4.817/2020 | 4.818/2020</span> </p>
+                  <p class="fonteConteudo"><strong>Revoga os normativos vigentes: </strong> <span>Revoga, a partir de 1º/1/2025, Circulares BCB ns. 2.535/1995.</span></p>
+                  <p class="fonteConteudo"><strong>Resumo: </strong> <span>O Banco Central do Brasil (BCB) publicou a Resolução BCB nº 309 de 28 de março de 2023, que estabelece procedimentos contábeis sobre: a definição de fluxos de caixa de ativo financeiro como somente pagamento de principal e juros; a aplicação da metodologia para apuração da taxa de juros efetiva de instrumentos financeiros; a constituição de provisão para perdas associadas ao risco de crédito; e a evidenciação de informações relativas a instrumentos financeiros em notas explicativas a serem observadas pelas instituições financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil.</span></p>
+                  <p class="fonteConteudo"><strong>Requerimentos Associados</strong></p>
+                  <p class="fonteConteudo"><strong>ID: </strong> <Span>0001</Span></p>
+                  <p class="fonteConteudo"><strong>Palavras chave: </strong> <Span>Art. 1º; IV; notas explicativas.</Span></p>
+                </div>
+               </div>
+                <div class="TriagemParecerAreaConteudoResposta hiddenParecer">
+                  <h2 class="TituloPreto9">Resposta da área</h2>
+                  <div>
+                   <h5 class="SubtituloCinza">Parecer da área</h5>
+                    <hr>
+                  </div>
+                  <div>
+                    <textarea class="pesquisaTriagemInput14" id="campoComQuebraDeLinha" placeholder="Digite seu texto aqui..."></textarea>
+                    <input class="pesquisaTriagemInput15" type="file"/>
+                  </div>
+                  <div>
+                    <button class="botaoCancelar"><img src="./assets/icons/cancelarIcon.png" alt="" height="25px" width="25px">Cancelar</button>
+                    <button class="botaoUploadEvidencia"><img src="./assets/icons/UploadBranco.png" alt="" height="25px" width="25px">Upload de evidência</button>
+                    <button class="botaoSalvarEnviar" ><img src="./assets/icons/SalvarBranco.png" alt="" height="25px" width="25px" >Salvar / enviar</button>
+                  </div>
+                </div>
             </div>
           </div>
           <div class="content">
@@ -959,7 +1233,7 @@
                           <td>baixa</td>
                           <td class="SemBordaColuna">
                             <div class="botaoAbrirPesquisaCentralizar">
-                              <button class="botaoAbrirPesquisa botaoMain">
+                              <button class="botaoAbrirVisualizacao botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
                                 <div>Abrir</div>
                               </button>
@@ -1280,18 +1554,84 @@
           </div>
           <div class="content">
             <div class="TriagemDashboard">
-              <div class="triagemDashboardPendencias">Pendências por Área</div>
-              <div class="triagemDashboardSLA">SLA por Área</div>
-              <div class="triagemDashboardCriticidade">Criticidade por Tema</div>
-              <div class="triagemDashboardAderenciaNormativos">Aderência dos últimos normativos publicados</div>
-              <div class="triagemDashboardAderenciaEstado">Aderência por Estado</div>
-              <div class="triagemDashboardStatus">Status plano de ação</div>
+              <div class="triagemDashboardPendencias">
+                <h2 class="TituloPreto9">Pendências por Área</h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Quantidade de demandas pendentes</h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGraficoPendenciasArea">
+                    <canvas id="graficoPendenciasArea"></canvas>
+                  </div>
+              </div>
+              <div class="triagemDashboardSLA">
+                <h2 class="TituloPreto9">SLA por Área 
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Tempo médio de resposta
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGraficoSLAArea">
+                    <canvas id="graficoSLAArea"></canvas>
+                  </div>
+              </div>
+              <div class="triagemDashboardCriticidade">
+                <h2 class="TituloPreto9">Criticidade por Tema
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Tema vs Área – 12 meses
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGrafCritTema">
+                    <img src="./assets/mapaCalor.png" alt="mapa calor">
+                  </div>
+              </div>
+              <div class="triagemDashboardAderenciaNormativos">
+                <h2 class="TituloPreto9">Aderência dos últimos normativos publicados
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Principais reguladores
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGraficoAderenciaNorm">
+                    <canvas id="graficoAderenciaNorm"></canvas>
+                  </div>
+              </div>
+              <div class="triagemDashboardAderenciaEstado">
+                <h2 class="TituloPreto9">Aderência por Estado
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Quantidade de demandas pendentes
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGrafAdEstado">
+                    <img src="./assets/mapaBrasil.png" alt="mapaBrasil">
+                  </div>
+              </div>
+              <div class="triagemDashboardStatus">
+                <h2 class="TituloPreto9">Status plano de ação
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Por período</h5>
+                    <hr>
+                  </div>
+                  <div class="grafPlanoAcao">
+                    <img src="./assets/grafPlanoAcao.png" alt="graf plano acao">
+                  </div>
+              </div>
             </div>
           </div>
         </div>
     </div>
       <!--Script-->
-    
     <script src="script.js"></script>
+    <script src="./javascript-triagem/dashboardTriagem.js"></script>
     <script src="./javascript-triagem/compliance-js.js"></script>
+    <script src="/javascript-triagem/ParecerValidacao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
 </body>

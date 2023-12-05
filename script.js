@@ -195,23 +195,43 @@ function ReguladorOutros(checkboxId) {
 function PadraoCustom(checkboxId) {
   const padraoCheckbox = document.getElementById('padraoCheckbox');
   const customCheckbox = document.getElementById('customCheckbox');
+  let aspectosPreTriagem = document.getElementById("aspectosPreTriagem");
+  let textAreasAspectos = document.querySelectorAll("#aspectosPreTriagem textarea");
+  let aspectosConsiderarInput = document.getElementById("aspectosConsiderarInput");
+  let aspectosExcluirInput = document.getElementById("aspectosExcluirInput");
 
   if (checkboxId === 'Padrao' && padraoCheckbox.checked) {
+    mostrarAspectosPreTriagem();
+    aspectosPreTriagem.classList.add("aspectosPreTriagemReadOnly");
+    textAreasAspectos.forEach((textarea)=>{
+      textarea.readOnly = true;
+      textarea.classList.add("aspectosPreTriagemReadOnly");
+    });
+    aspectosConsiderarInput.textContent = "Normativos: Leis, Decreto, Resolução, Circular, Carta Circular; Órgãos Reguladores: Banco Central do Brasil, Comissão de Valores Mobiliários, ações,";
+  aspectosExcluirInput.textContent = "Superintendência de Seguros Privados, títulos de capitalização, instrumentos de garantia";
     customCheckbox.checked = false;
   } else if (checkboxId === 'Custom' && customCheckbox.checked) {
+    mostrarAspectosPreTriagem();
+    aspectosPreTriagem.classList.remove("aspectosPreTriagemReadOnly");
+    textAreasAspectos.forEach((textarea)=>{
+      textarea.readOnly = false;
+      textarea.classList.remove("aspectosPreTriagemReadOnly");
+      textarea.textContent = "";
+    });
     padraoCheckbox.checked = false;
   }
 }
 
 function mostrarAspectosPreTriagem(){
-  let customCheckbox = document.getElementById("customCheckbox");
   let aspectosPreTriagem = document.getElementById("aspectosPreTriagem");
 
-  if(customCheckbox.checked){
-    aspectosPreTriagem.classList.replace("hiddenElement", "showElement");
-  }else{
-    aspectosPreTriagem.classList.replace("showElement", "hiddenElement");
-  }
+  aspectosPreTriagem.classList.replace("hiddenElement", "showElement");
+}
+
+function ocultarAspectosPreTriagem(){
+  let aspectosPreTriagem = document.getElementById("aspectosPreTriagem");
+
+  aspectosPreTriagem.classList.replace("showElement", "hiddenElement");
 }
 
 function CapcturaManualOpcoes(checkboxId) {
@@ -244,9 +264,7 @@ function preencheRegulador() {
   let botaoCancelarCapAuto = document.getElementById('botaoCancelarCapAuto');
 
   if (document.getElementById('Regulador').checked) {
-    descricaoInput.value = 'Bacen';
-    fonteInput.value = 'https://www.bcb.gov.br/resultadobusca?termo=3978&source=';
-    armazenarInput.value = 'https://soluçõescompliance...';
+    
 
     card2.classList.add("preTriagemCard2");
     card1.classList.add("preTriagemCard1");
@@ -259,6 +277,16 @@ function preencheRegulador() {
     fonteInput.value = '';
     armazenarInput.value = '';
   }
+}
+
+function preencherComLabelDesc(){
+  var descricaoInput = document.getElementById('Descrição');
+  var fonteInput = document.getElementById('Fonte');
+  var armazenarInput = document.getElementById('Armazenar');
+
+  descricaoInput.value = 'Bacen';
+  fonteInput.value = 'https://www.bcb.gov.br/resultadobusca?termo=3978&source=';
+  armazenarInput.value = 'https://soluçõescompliance...';
 }
 
 function botaoCancelarPreTriagem(){
@@ -297,6 +325,9 @@ function botaoCancelarPreTriagem(){
   armazenarInput.value = '';
   botaoRegulador.checked = false;
   botaoOutro.checked = false;
+
+  let botaoAtualizar = document.querySelector("#botaoAtualizarParamEsp");
+      botaoAtualizar.classList.replace("showElement", "hiddenElement");
 }
 
 function preencheOutros() {
@@ -340,7 +371,7 @@ incluirBotao.addEventListener('click', function () {
 
   let valorConfig = configPreTriagem ? 'Configuração padrão' : 'Configuração customizada';
 
-  var tabela = document.querySelector('.tableVariaves tbody');
+  var tabela = document.querySelector('.tableVariavesCapturaParams tbody');
 
   tabela.innerHTML = tabela.innerHTML + 
   ` <tr>
@@ -591,26 +622,177 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
       checkCustom.checked = true;
       checkPadrao.checked = false;
       checkRegulador.checked = true;
+
+      mostrarAspectosPreTriagem();
+
       aspConsiderar.textContent = "Normativos: Leis, Decreto, Resolução, Circular, Carta Circular; Localidades: Brasil, Reino Unido, Chile";
       aspExcluir.textContent = "Operações no mercado de câmbio";
 
-      
-      mostrarAspectosPreTriagem();
       preencheRegulador();
-      botaoCancelar.classList.replace("showElement", "hiddenElement");
+      preencherComLabelDesc();      
+      // botaoCancelar.classList.replace("showElement", "hiddenElement");
 
     }
 
     function atualizarParamEsp(){
       let botaoAtualizar = document.querySelector("#botaoAtualizarParamEsp");
       let botaoIncluir = document.querySelector("#botaoIncluirCapAuto");
+      let aspConsiderar = document.getElementById('aspectosConsiderarInput');
+      let aspExcluir = document.getElementById('aspectosExcluirInput');
 
       botaoIncluir.classList.replace("hiddenElement", "showElement");
       botaoAtualizar.classList.replace("showElement", "hiddenElement");
+
+      aspConsiderar.textContent = "Normativos: Leis, Decreto, Resolução, Circular, Carta Circular; Localidades: Brasil, Reino Unido, Chile";
+      aspExcluir.textContent = "Operações no mercado de câmbio";
 
       Swal.fire({
         icon: 'success',
         title: 'Parâmetro atualizado!'});
 
-        botaoCancelarPreTriagem();
+        var descricaoInput = document.getElementById('Descrição');
+        var fonteInput = document.getElementById('Fonte');
+        var armazenarInput = document.getElementById('Armazenar');
+        let card2 = document.getElementById('card2PreTriagem');
+        let card1 = document.getElementById('card1PreTriagem');
+        let infosPreTriagem = document.getElementById('infosPreTriagem');
+        let botaoConfigParamsGeral = document.getElementById('botaoConfigParamsGeral');
+        let botaoIncluirCapAuto = document.getElementById('botaoIncluirCapAuto');
+        let botaoCancelarCapAuto = document.getElementById('botaoCancelarCapAuto');
+        let botaoRegulador = document.getElementById('Regulador');
+        let botaoOutro = document.getElementById('Outro');
+        let customCheckbox = document.getElementById('customCheckbox');
+        let padraoCheckbox = document.getElementById('padraoCheckbox');
+        let aspectosPreTriagem = document.getElementById('aspectosPreTriagem');
+        let textAreasAspectos = document.querySelectorAll('.aspectosConsiderarInput');
+      
+        aspectosPreTriagem.classList.replace("showElement", "hiddenElement");
+        card2.classList.remove("preTriagemCard2");
+        card1.classList.remove("preTriagemCard1");
+        infosPreTriagem.classList.replace("showElement", "hiddenElement");
+        botaoConfigParamsGeral.classList.replace("hiddenElement", "showElement");
+        botaoIncluirCapAuto.classList.remove("btnIncluirPreTriagem");
+        botaoCancelarCapAuto.classList.replace("showElement", "hiddenElement");
+        customCheckbox.checked = false;
+        padraoCheckbox.checked = true;
+      
+        descricaoInput.value = '';
+        fonteInput.value = '';
+        armazenarInput.value = '';
+        botaoRegulador.checked = false;
+        botaoOutro.checked = false;
+
+        
+    }
+
+    function excluirLinhaTabelaCaptura(){
+      let linha = document.getElementById("linhaPraExcluir");
+
+      Swal.fire({
+        title: "Deseja excluir esta captura?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sim",
+        cancelButtonText: "Não"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Captura excluída!",
+            icon: "success"
+          });
+          linha.parentNode.removeChild(linha);
+        }
+      });
+    }
+
+    function excluirBlocoCriteriosPri(){
+      let bloco = document.getElementById("blocoPraExcluir");
+
+      Swal.fire({
+        title: "Deseja excluir este critério?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sim",
+        cancelButtonText: "Não"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Critério excluído!",
+            icon: "success"
+          });
+          bloco.parentNode.removeChild(bloco);
+        }
+      });
+    }
+
+    function excluirBlocoCriteriosPreTri(){
+      let bloco = document.getElementById("blocoExcluirPreTri");
+
+      Swal.fire({
+        title: "Deseja excluir este critério?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sim",
+        cancelButtonText: "Não"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Critério excluído!",
+            icon: "success"
+          });
+          bloco.parentNode.removeChild(bloco);
+        }
+      });
+    }
+
+    function adicionarBlocoCriterio() {
+      var conteiner = document.querySelector('.conteinerPriorizar');
+      var ultimoBloco = conteiner.lastElementChild;
+
+      var ultimoNumero = 1; 
+      if (ultimoBloco) {
+        var numeroTexto = ultimoBloco.querySelector('p').textContent.match(/\d+/);
+        ultimoNumero = numeroTexto ? parseInt(numeroTexto[0]) + 1 : 1;
+      }
+
+      var novoBloco = document.createElement('div');
+      novoBloco.className = 'blocoCriterio';
+
+      novoBloco.innerHTML = `
+        <p>Critério ${ultimoNumero}:</p>
+        <textarea name="" id=""></textarea>
+        <button class="botaoEngrenagemLixeira">
+          <img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px">
+        </button>
+      `;
+
+      conteiner.appendChild(novoBloco);
+    }
+
+    function adicionarBlocoCriterioPreTri() {
+      var conteiner = document.querySelector('#conteinerCriteriosPreTri');
+
+      var novoBloco = document.createElement('div');
+      novoBloco.className = 'blocoAddPreAnalise';
+
+      novoBloco.innerHTML = `
+        <div class="blocoAddPreAnaliseInput">
+          <p>Área:</p>
+          <textarea name="" id="" class="textAreaAreaApp"></textarea>
+          <button class="botaoEngrenagemLixeira"><img src="./assets/icons/lixo-novo-2.png" alt="Descrição da Imagem" height="25px" width="25px">
+          </button>
+        </div>
+        <div class="blocoAddPreAnaliseInput">
+          <p>Temas Aplicáveis:</p>
+          <textarea name="" id="" class="textAreaTemasApp"></textarea>
+        </div>  
+      `;
+
+      conteiner.appendChild(novoBloco);
     }
