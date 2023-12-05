@@ -59,7 +59,7 @@
         </div>
         <div class="tab-content">
           <div class="content active">
-            <div class="triagem-compliance-vizualizar">
+            <div class="triagem-compliance-visualizar">
               <div class="triagem-compliance">
                 <div class="up">
                   <div class="triagem-compliance-publicacao card">
@@ -169,7 +169,7 @@
                           <td>Contabilidade</td>
                           <td>Aplicável</td>
                           <td>
-                            <div class="botaoAbrirPesquisaCentralizar">
+                            <div class="botaoAbrirPesquisaCentralizar" id="triagem-compliance-btn-abrir">
                               <button class="botaoAbrirPesquisa botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
                                 <div>Abrir<sup>1</sup></div>
@@ -422,7 +422,7 @@
                   </div>
                 </div>
               </div>
-              <div class="triagem-compliance-vizualizar-dashboard">
+              <div class="triagem-compliance-visualizar-dashboard">
                 <div class="up-visualizacao">
                   <div class="triagem-compliance-visualizar-pre-triagem card">
                     <div class="card-header">
@@ -592,6 +592,27 @@
                         <span class="card-subtitulo">Cronograma</span>
                       </div>
                       <div class="card-body">
+                        <form action="">
+                          <div class="label-input">
+                            <label for="normativo">Área:</label>
+                            <input type="text" id="normativo" name="normativo" value="Contábil" required>
+                          </div>
+                          <div class="label-input">
+                            <label for="regulador">Prazo de retorno:</label>
+                            <input type="text" id="regulador" name="regulador" value="01/05/2023" required>
+                          </div>
+                          <div class="label-input">
+                            <label for="tema">Aderente:</label>
+                            <select name="" id="">
+                              <option value="Sim">Sim</option>
+                              <option value="Não">Não</option>
+                            </select>
+                          </div>
+                          <div class="label-input">
+                            <label for="publicacao">Data de resposta:</label>
+                            <input type="text" id="publicacao" name="publicacao" value="26/04/2023" required>
+                          </div>
+                        </form>
                       </div>
                     </div>
                     <div class="triagem-compliance-plano-acao card">
@@ -600,6 +621,21 @@
                         <span class="card-subtitulo">Cronograma</span>
                       </div>
                       <div class="card-body">
+                        <form action="">
+                          <div class="label-input">
+                            <label for="normativo">Plano de ação:</label>
+                            <input type="text" id="normativo" name="normativo" value="n/a" required>
+                          </div>
+                          <div class="label-input">
+                            <label for="regulador">Data início:</label>
+                            <input type="text" id="regulador" name="regulador" value="-" required>
+                          </div>
+                          <div class="label-input">
+                            <label for="tema">Data fim:</label>
+                            <input type="text" id="regulador" name="regulador" value="-" required>
+                          </div>
+                        </form>
+                        <div class="triagem-compliance-vazio"></div>
                       </div>
                     </div>
                   </div>
@@ -610,6 +646,20 @@
                         <span class="card-subtitulo">Resumo e Requerimentos</span>
                       </div>
                       <div class="card-body">
+                        <span class="respondido-paragrafo">
+                          <span class="titulo-respondido-paragrafo">Novo Normativo</span>
+                          <div class="respondido-paragrafo-texto"><span class="topico-respondido-paragrafo">Normativos Relacionados:</span>  Resolução CMN 4.817/2020 | 4.818/2020 | 4.966/</div>
+                          <div class="respondido-paragrafo-texto"><span class="topico-respondido-paragrafo">Revoga os normativos vigentes:</span> Revoga, a partir de 1º/1/2025, Circulares BCB ns. 2.535</div>
+                          <div class="respondido-paragrafo-texto"><span class="topico-respondido-paragrafo">Resumo:</span> O Banco Central do Brasil (BCB) publicou a Resolução BCB nº 309 de 28 de 
+                            março de 2023, que estabelece procedimentos contábeis sobre: a definição de fluxos de caixa de ativo financeiro 
+                            como somente pagamento de principal e juros; a aplicação da metodologia para apuração da taxa de juros efetiva 
+                            de instrumentos financeiros; a constituição de provisão para perdas associadas ao risco de crédito; e a evidenciação 
+                            de informações relativas a instrumentos financeiros em notas explicativas a serem observadas pelas instituições 
+                            financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil.</div>
+                          <div class="respondido-paragrafo-texto"><span class="topico-respondido-paragrafo">Requerimentos Associados:</span></div>
+                          <div class="respondido-paragrafo-texto"><span class="topico-respondido-paragrafo">ID: 001</span></div>
+                          <div class="respondido-paragrafo-texto"><span class="topico-respondido-paragrafo">Palavras chave:</span> Art. 1º; IV; notas explicativas</div>
+                        </span>
                       </div>
                     </div>
                     <div class="triagem-compliance-resposta-area card">
@@ -618,8 +668,22 @@
                         <span class="card-subtitulo">Parecer para Aprovação</span>
                       </div>
                       <div class="card-body">
+                        <div class="resposta-area-resultado">
+                          <span class="resposta-area-resultado-texto">
+                            Conforme a resolução nº 309 de 28 de março de 2023 do Banco Central do Brasil (BCB), 
+                            que estabelece procedimentos contábeis. Declaramos que a área exerce suas atividades
+                            conforme norma e encontra-se aderente a regulação.
+                          </span>
+                        </div>
+                        <select name="" id="">
+                          <option value=""><span>evidencia_atendimento_resolução309.xlsx</span><span>10 KB</span></option>
+                        </select>
                       </div>
                     </div>
+                  </div>
+                  <div class="triagem-compliance-container-btns">
+                    <button class="triagem-compliance-btn triagem-compliance-download"><span>Download</span><img src="./assets/icons/download-branco.svg" height="20px"  alt="Incluir"></button>
+                    <button class="triagem-compliance-btn triagem-compliance-fechar"><span>Fechar</span><img src="./assets/icons/fechar.png" height="20px"  alt="Incluir"></button>
                   </div>
               </div>
             </div>
@@ -1077,10 +1141,10 @@
                   <hr> 
                 </div>
 
-                <p style="font-size: x-large;font-weight: bold;margin: 1.5% 1% 0% 1%;">Filtro:</p>
+                <p style="font-size: x-large;font-weight: bold;margin: 1% 1% 0% 0.5%;">Filtro:</p>
 
                 <!-- Dividindo por linhas os parâmetros -->
-                <div class="Parametros_linha">
+                <div class="Parametros_linha" style="margin-top: 0.5%;">
                   <!-- Linha 1 -->
                   <p style="font-size: 1.1em; font-family: sans-serif;">Regulador:</p>
                   <select name="Regulador" id="select-regulador">
@@ -1093,14 +1157,14 @@
                   <input type="date" class="data-range">
                   <input type="date" class="data-range">
 
-                  <p style="margin-left: 6%; margin-right: 0.7%; font-size: 1.1em;  font-family: sans-serif;">Status:</p>
+                  <p style="margin-left: 5.7%; margin-right: 0.7%; font-size: 1.1em;  font-family: sans-serif;">Status:</p>
                   <select name="Status" id="select-status">
                     <option value=""></option>
                     <option value="Finalizado">Finalizado</option>
                   </select>
                 </div>
 
-                <div class="Parametros_linha">
+                <div class="Parametros_linha" style="margin-bottom: 0.5%;">
                   <!-- Linha 2 -->
                   <p style="font-size: 1.1em;  font-family: sans-serif;">Categoria:</p>
                   <select name="Categoria" id="select-categoria">
@@ -1116,7 +1180,7 @@
                     <option value="Controladoria">Controladoria</option>
                   </select>
 
-                  <p style="margin-left: 13.7%; margin-right: 0.5%; font-size: 1.1em;  font-family: sans-serif;">Tema:</p>
+                  <p style="margin-left: 13.6%; margin-right: 0.5%; font-size: 1.1em;  font-family: sans-serif;">Tema:</p>
                   <select name="Tema" id="select-Tema">
                     <option value=""></option>
                     <option value="Moedas Eletrônicas">Moedas Eletrônicas</option>

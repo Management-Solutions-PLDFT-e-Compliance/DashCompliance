@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./styles-atendimento/atendimento-historico.css">
   <link rel="stylesheet" href="./styles-atendimento/atendimento-centralizador.css">
+  <link rel="stylesheet" href="./styles-atendimento/centralizador-conteudo.css">
+  <script src="./javascript-atendimento/centralizador-conteudo.js"></script>
   <title>Compliance Analytics</title>
 </head>
 <header class="header1" >
@@ -48,7 +50,7 @@
 <body>
     <div class="container">
         <div class="tabsAtendimento">
-          <h3 class="active">Monitoramento</h3>
+          <h3 class="active">Dashboard</h3>
           <h3>Gestão processo</h3>
           <h3>Parecer área</h3>
           <h3>Validação</h3>
@@ -58,10 +60,10 @@
         <div class="tab-content">
           <div class="content active">
             <div class="atendimentoMonitoramento">
-              <div class="atendimentoMonitoramentoPendencias">Pendências
+              <div class="atendimentoMonitDemandasReg">Demandas Regulatórias
               </div>
-              <div class="atendimentoMonitoramentoSLA">SLA por Área</div>
-              <div class="atendimentoMonitoramentoDemandas">Demandas por Área</div>
+              <div class="atendimentoMonitAreasDemand">Áreas mais demandadas</div>
+              <div class="atendimentoMonitCritTema">Criticidade por Tema</div>
             </div>
           </div>
           <div class="content">
@@ -89,13 +91,13 @@
               <div class="atendimentoValidacaoRequisicoes">Requisições</div>
             </div>
           </div>
-          <div class="content">
-            <div class="atendimentoCentralizador">
-              <div class="atendimentoCentralizadorRequerimentos">
+          <div class="content" >
+            <div class="atendimentoCentralizador" id="centralizador-lista">
+              <div class="atendimentoCentralizadorRequerimentos" style="border-radius: 12px;">
                 
                 <div class="titulo">
-                  <h4 style="font-size: x-large;font-family: Calibri; margin-bottom: 0%;">Requerimentos</h4>
-                  <p style="color: #c0bcbc; font-size: large; font-family: Calibri; ">Status</p>
+                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Requerimentos</h4>
+                  <h5 class="SubtituloCinza" >Status</h5>
                   <hr>
                 </div>
 
@@ -116,11 +118,11 @@
                 
               </div>
 
-              <div class="atendimentoCentralizadorPlano">
+              <div class="atendimentoCentralizadorPlano" style="border-radius: 12px;">
                 
                 <div class="titulo">
-                  <h4 style="font-size: x-large;font-family: Calibri; margin-bottom: 0%;">Plano de ações</h4>
-                  <p style="color: #c0bcbc; font-size: large; font-family: Calibri; ">Status</p>
+                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Plano de ações</h4>
+                  <h5 class="SubtituloCinza">Status</h5>
                   <hr>
                 </div>
 
@@ -140,12 +142,12 @@
                 
                 
                 </div>
-              <div class="atendimentoCentralizadorNotificacao">
+              <div class="atendimentoCentralizadorNotificacao" style="border-radius: 12px;">
                 
                 <div class="titulo">
-                  <h4 style="font-size: x-large;font-family: Calibri; margin-bottom: 0%;">Notificações</h4>
+                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Notificações</h4>
 
-                  <p style="color: #c0bcbc; font-size: large; font-family: Calibri; ">Categorias</p>
+                  <h5 class="SubtituloCinza">Categorias</h5>
                   <hr>
                 </div>
 
@@ -174,12 +176,11 @@
                 
 
               </div>
-              <div class="atendimentoCentralizadorBusca" style="margin-right: 31px;">
+              <div class="atendimentoCentralizadorBusca" style="margin-right: 31px;" style="border-radius: 12px;">
                 
                 <div class="titulo">
-                  <h4 style="font-size: x-large;font-family: Calibri; margin-bottom: 0%;">Busca de requerimentos</h4>
-
-                  <p style="color: #c0bcbc; font-size: large; font-family: Calibri; ">Filtro:</p>
+                  <h2 class="TituloPreto9"margin-bottom: 0%;">Busca de requerimentos</h4>
+                  <h5 class="SubtituloCinza">Filtro:</h5>
                   <hr>
                 </div>
 
@@ -252,12 +253,12 @@
               </div>
 
               <!-- Requisições -->
-              <div class="atendimentoCentralizadorRequisicoes">
+              <div class="atendimentoCentralizadorRequisicoes" style="border-radius: 12px;">
                 
                 <div class="titulo">
-                  <h4 style="font-size: x-large;font-family: Calibri; margin-bottom: 0%;">Requisições</h4>
+                  <h2 class="TituloPreto9"style="margin-bottom: 0%;">Requisições</h4>
 
-                  <p style="color: #c0bcbc; font-size: large; font-family: Calibri; ">Lista</p>
+                  <h5 class="SubtituloCinza">Lista</h5>
                   <hr>
                 </div>
                  
@@ -292,9 +293,9 @@
                           <td>Atrasado</td>
                           <td>Moderado</td>
                           <td><div class="botaoAbrirPesquisaCentralizar">
-                            <button class="botaoAbrirPesquisa botaoMain">
+                            <button class="botaoAbrirPesquisa botaoMain" onclick="toggleVisibility()">
                               <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
-                              <div>Abrir</div>
+                              <div>Abrir <sup>1</sup></div>
                             </button>
                           </div></td>
                         </tr>
@@ -456,6 +457,33 @@
                 </div>
               </div>
             </div>
+            <div class="atendimentocentralizadorContent" id="centralizador-conteudo">
+              <div class="atendimentoCentralizadorRequisicao" style="border-radius: 12px;">
+                <div class="titulo">
+                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Requisição</h2>
+                  <h5 class="SubtituloCinza">Informações</h5>
+                  <hr>
+                </div>
+              </div>
+
+              <div class="atendimentoCentralizadorPareceres" style="border-radius: 12px;">
+                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Pareceres</h2>
+                  <h5 class="SubtituloCinza">Áreas</h5>
+                  <hr>
+              </div>
+
+              <div class="atendimentoCentralizadorConteudo" style="border-radius: 12px;">
+                <h2 class="TituloPreto9" style="margin-bottom: 0%;">Conteúdo</h2>
+                <h5 class="SubtituloCinza">Resumo</h5>
+                <hr>
+              </div>
+
+              <div class="atendimentoCentralizadorResponsavel" style="border-radius: 12px;">
+                <h2 class="TituloPreto9" style="margin-bottom: 0%;">Responsável</h2>
+                <h5 class="SubtituloCinza">Respostas</h5>
+                <hr>
+              </div>
+            </div>
           </div>
 
 
@@ -464,8 +492,8 @@
               <div class="atendimentoHistoricoBusca">
                 
                 <div id="titulo">
-                  <h4 style="font-size: x-large; margin-bottom: 0%;">Busca de atendimento</h4>
-                  <p style="color: #c0bcbc; font-size: large;">Histórico</p>
+                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Busca de atendimento</h2>
+                  <h5 class="SubtituloCinza">Histórico</h5>
                   <hr>
                 </div>
 
@@ -495,8 +523,8 @@
                     <option value="">Finalizado</option>
                   </select>
 
-                  <p style="margin-left: 5.5%; margin-right: 0.5%; font-size: 1.1em;  font-family: sans-serif;">Categoria:</p>
-                  <select name="Categoria" id="select-categoria">
+                  <p style="margin-left: 5.5%; margin-right: 0.6%; font-size: 1.1em;  font-family: sans-serif;">Categoria:</p>
+                  <select name="Categoria" id="select-categoria" style="width: 171px">
                     <option value=""></option>
                     <option value="Normativo">Normativo</option>                 
                   </select>
@@ -540,8 +568,8 @@
               <div class="atendimentoHistoricoAtendimento">
                 
                 <div class="titulo">
-                  <h4 style="font-size: x-large; margin-bottom: 0%;">Atendimento</h4>
-                  <p style="color: #c0bcbc; font-size: large; ">Histórico</p> 
+                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Atendimento</h4>
+                  <h5 class= "SubtituloCinza">Histórico</h5> 
                   <hr>
                 </div>
                 
