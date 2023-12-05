@@ -1,0 +1,108 @@
+.atendimentoCentralizador > div{
+  border: 2px solid lightgray;
+  background-color: white;
+  padding: 1em;
+  color: black;
+}
+
+.atendimentoCentralizador{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 40% ;
+  grid-template-rows: 2;
+  gap: 10px;
+}
+
+.icones_contorno{
+  display:flex;
+  margin: 1rem 0.5rem 1rem 0.1rem;
+  width: fit-content;
+}
+
+.contorno {
+
+  border: 5px solid #e0dcdc;
+  border-radius: 10px;
+  margin: 10% 10% 0% 10%;
+  
+}
+
+.contorno > h3 {
+  padding: 0.5rem 1rem 0.5rem 1.3rem;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  font-family: Calibri;
+} 
+
+.contorno > h4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 25px;
+  font-family: Calibri;
+}
+
+#itens_notificacoes > div {
+  display: flex;
+  font-size: medium;
+  font-family: Calibri;
+  border: 2px solid #c0bcbc;
+  border-radius: 10px;
+  padding: 0px 5px;
+  margin: 10px 0px;
+}
+
+#itens_notificacoes > div > h4 {
+  margin-top: 10px ;
+}
+
+.filtros_busca_requerimentos{
+  display: flex;
+  font-size: medium;
+  font-weight: bold;
+  font-family: Calibri;
+  margin: 20px 0px;
+}
+
+.atendimentoCentralizadorBusca > button{
+  display: flex;
+  background-color: #304c7c;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px #888888;
+  margin-left: 82%;
+}
+
+.atendimentoCentralizadorBusca > button:hover {
+  background-color: #1e3557;
+}
+
+.atendimentoHistoricoBusca > button{
+  display: flex;
+  background-color: #304c7c;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px #888888;
+  margin-left: 93.5%;
+}
+
+.atendimentoHistoricoBusca > button:hover {
+  background-color: #1e3557;
+}
+
+.busca-select{
+  border: 1px solid#dcdcdc;
+  width: 100px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.atendimentoCentralizadorRequisicoes{
+  grid-column: span 4;
+  margin-right: 31px;
+}

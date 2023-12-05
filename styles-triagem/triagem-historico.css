@@ -1,5 +1,6 @@
 .TriagemHistoricoAreaFiltro{
     border: 1px solid #dcdcdc;
+    border-radius: 12px;
 }
 
 .TriagemHistorico > div{
@@ -14,6 +15,10 @@
     grid-template-columns: 100%;
     grid-template-rows: 2;
     gap: 10px;
+}
+
+.TriagemHistoricoRegulatoria{
+    border-radius: 12px;
 }
 
 .Parametros_linha{
@@ -31,15 +36,11 @@
     margin: 0% 0.5%;
 } 
 
-
+/* 
 .TriagemHistoricoAreaFiltro > button {
-    /* Cor de fundo */
+
     background-color: #304c7c;
-    
-    /* Cor do texto (opcional, ajuste conforme necessário) */
     color: #ffffff;
-    
-    /* Outras propriedades de estilo, como margem, preenchimento, etc. */
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -48,24 +49,47 @@
     box-shadow: 2px 2px 2px #888888;
 }
 
-/* Adicional: Estilo ao passar o mouse sobre o botão */
+.TriagemHistoricoAreaFiltro > button:hover {
+    background-color: #1e3557;
+} */
+
+.TriagemHistoricoAreaFiltro > button{
+    display: flex;
+    background-color: #304c7c;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #888888;
+    margin-left: 93.5%;
+}
+  
 .TriagemHistoricoAreaFiltro > button:hover {
     background-color: #1e3557;
 }
 
+
 #select-categoria{
     margin-left: 0.2%;
+    
 }
 
 #select-responsavel{
-    margin-left: 3.2%;
+    margin-left: 3.3%;
+    width: 114.33px
 }
 
 #select-Tema {
-    margin-left: 0.4%;
+    margin-left: 0.6%;
 }
 
+#select-regulador{
+    width: 99px;
+}
 
+#select-status{
+    width: 156px
+}
 .Parametros_linha > select {
     /* Cor da borda */
     border: 1px solid #dcdcdc;
@@ -81,6 +105,7 @@
     border-radius: 4px;
 }
   
+
 
 .Parametros_linha > select::-ms-expand {
     display: none;
@@ -100,7 +125,7 @@
 }
 
 .Parametros_linha > input {
-    border: 1px solid #5c5c5c;
+    border: 1px solid #dcdcdc;
     border-radius: 4px;
 }
 
@@ -114,16 +139,18 @@
     text-align: center;
     margin: 5px;
     padding: 10px;
-    box-shadow: 2px 2px 2px #888888;
+
 }
 
 #tabela > table > tbody > tr  > td {
     margin: 12px;
+    width:14.28%;
 }
 
 #tabela > table {
     border-collapse: separate;
     border-spacing: 10px; /* Altere o valor conforme necessário */
+    width: 100%;
 }
 
 #celula-abrir {
@@ -156,4 +183,3 @@
     width: 100%;
     justify-content: center;
 }
-

@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    display: none;
 }
 
 .up {
@@ -18,44 +19,56 @@
 .triagem-compliance-notificacao {
     width: 23%;
 }
+
 .triagem-compliance-prazo {
     width: 17%;
 }
+
+
 .triagem-compliance-parecer {
     width: 20%;
 }
+
 .triagem-compliance-plano {
     width: 20%;
+}
+
+
+
+.espacamento-table-top {
+    height: 0.75rem;
+    background-color: #fff;
+    position: sticky;
+    top: 10%;
+    z-index: 1;
 }
 
 .card {
     background-color: #fff;
     box-sizing: border-box;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
 }
 
 .card-header {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid #000;
-    padding: 0.3rem 0.75rem;
+    border-bottom: 1px solid lightgray;
     padding-bottom: .5rem;
 }
 
-.card-body {
-    padding: 0.75rem;
-}
 
 .card-titulo {
     margin: 0;
     padding: 0;
-    font-size: 1rem;
+    font-size: 1.3em;
     color: #000;
     font-weight: 700;
 }
 
 .card-subtitulo {
     font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 1rem;
+    font-size: 1.3em;
     font-weight: 700;
     color: 	#80808094;
 }
@@ -92,7 +105,7 @@
 
 
 .triagem-compliance-publicacao .card-body span{
-    font-size: 15px;
+    font-size: 1.1em;
     align-self: center;
 }
 
@@ -130,7 +143,7 @@
   }
  
   .palavra-compliance {
-    font-size: 14px;
+    font-size: 1.1em;
     font-weight: bold;
   }
 
@@ -166,4 +179,404 @@
 
 .cronometro-quadrado img{
     height: 60px;
+}
+
+.table-compliance td{
+    font-size: 1.1em;
+}
+
+.table-compliance th{
+    font-size: 1.1em;
+    padding: 0.375rem 0.75rem;
+}
+
+.table-compliance thead {
+    position: sticky;
+    top: 12%;
+    z-index: 1;
+}
+
+
+.table-compliance th:nth-child(1) {
+    width: 15%;
+}
+
+.table-compliance  td:nth-child(1) {
+    width: 15%;
+}
+
+.table-compliance th:nth-child(2) {
+    width: 10%;
+}
+
+.table-compliance  td:nth-child(2) {
+    width: 10%;
+}
+
+.table-compliance th:nth-child(3) {
+    width: 5%;
+}
+.table-compliance td:nth-child(3) {
+    width: 5%;
+}
+
+.table-compliance th:nth-child(4) {
+    width: 15%;
+}
+.table-compliance td:nth-child(4) {
+    width: 15%;
+}
+
+.table-compliance th:nth-child(5) {
+    width: 13%;
+}
+.table-compliance td:nth-child(5) {
+    width: 13%;
+}
+
+.table-compliance th:nth-child(6) {
+    width: 7%;
+}
+.table-compliance td:nth-child(6) {
+    width: 7%;
+}
+
+.table-compliance th:nth-child(7) {
+    border: none;
+    background-color: #fff;
+    width: 5%;
+}
+.table-compliance td:nth-child(7) {
+    border: none;
+    background-color: #fff;
+    width: 5%;
+}
+
+
+/* TRIAGEM COMPLIANCE VISUALIZAÇÃO */
+
+.triagem-compliance-vizualizar-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.up-visualizacao, .down-visualizacao {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.triagem-compliance-visualizar-pre-triagem {
+    width: 25%
+}
+
+.triagem-compliance-visualizar-pre-analise {
+    width: 45%;
+}
+
+.triagem-compliance-visualizar-normas-vinculadas {
+    width: 30%;
+}
+
+.triagem-compliance-visualizar-conteudo {
+    width: 50%;
+    overflow: hidden;
+}
+
+.triagem-compliance-visualizar-conteudo .card-body{
+    height: 27rem;  
+    overflow-y: scroll;
+}
+
+.triagem-compliance-visualizar-pre-analise-detalhe {
+    width: 50%;
+}
+
+.card-body {
+    padding: 0.75rem;
+}
+
+.triagem-compliance-visualizar-pre-triagem form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.1em;
+}
+
+.triagem-compliance-visualizar-pre-triagem label {
+    font-weight: bold;
+}
+
+.triagem-compliance-visualizar-pre-triagem input {
+    padding: 0.5rem 1rem;
+    height: 2.5rem;
+    width: 60%;
+    border: 1px solid lightgray ;
+    font-size: 1.1rem;
+}
+
+.triagem-compliance-visualizar-pre-triagem .label-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.triagem-compliance-visualizar-pre-analise ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+}
+
+.triagem-compliance-btn {
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+    background-color: #2c4c7c;
+    color: #fff;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, .3);
+}
+
+.triagem-compliance-distribuir {
+    align-self: self-end;
+    font-size: 1.3em;
+    padding: 0.7rem 1.4rem;
+}
+
+.triagem-compliance-visualizar-pre-analise .tamanho-lista {
+    height: 12rem;
+    overflow-y: scroll;
+}
+
+.triagem-compliance-visualizar-pre-analise .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
+
+.triagem-compliance-visualizar-pre-analise li {
+    display: flex;
+    gap: 0.5rem;  
+    height: 2.5rem;
+}
+
+.triagem-compliance-visualizar-pre-analise li span{
+    font-size: 1.1em;
+    padding: 0.5rem 1rem;
+    border: 1px solid lightgray;
+}
+
+.triagem-compliance-visualizar-pre-analise li span:nth-child(1){
+    width: 30%;
+}
+
+.triagem-compliance-visualizar-pre-analise li span:nth-child(2){
+    width: 30%;
+}
+
+.triagem-compliance-visualizar-pre-analise li span:nth-child(3){
+    width: 25%;
+}
+
+.triagem-compliance-visualizar-pre-analise li span:nth-child(4){
+    width: 15%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    padding: 0;
+}
+
+.btn-pre-analise {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 0.375rem 0.3rem;
+    /* background-color: #2c4c7c;
+    border-radius: 5px; */
+}
+
+.btn-pre-analise img{
+    height: 20px;
+}
+
+.triagem-compliance-visualizar-normas-vinculadas .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    font-size: 1.1em;
+}
+
+.normativo-atualizacao {
+    display: flex;
+    gap: 2rem;
+}
+
+.pergunta-resposta {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.normativo-label {
+    font-weight: 600;
+}
+
+.card-normativo {
+    position: relative;
+    border: 1px solid lightgray;
+    padding: 0.6rem 1.2rem;
+}
+
+.normativo-relacionado-pergunta, .normativo-relacionado, .normativo-revogado {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.resumo-texto {
+    font-size: 1.1em;
+    line-height: 1.6rem;
+}
+
+.ler-mais {
+    position: absolute;
+    font-size: .8rem;
+    text-decoration: underline;
+    right: 3px;
+    bottom: 3px;
+}
+
+.triagem-compliance-visualizar-pre-analise-detalhe form {
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    display: none;
+}
+
+.triagem-compliance-visualizar-pre-analise-detalhe label {
+    font-weight: 600;
+    width: 20%;
+}
+
+.triagem-compliance-visualizar-pre-analise-detalhe .label-input {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.triagem-compliance-visualizar-pre-analise-detalhe input {
+    height: 2rem;
+    width: 10%;
+    border: 1px solid lightgray ;
+    padding: 0.5rem 1rem;
+    font-size: 1.1em;
+}
+
+.triagem-compliance-visualizar-pre-analise-detalhe select {
+    height: 2.5rem;
+    width: 25%;
+    border: 1px solid lightgray ;
+    padding: 0.5rem 1rem;
+    font-size: 1.1em;
+}
+.triagem-compliance-visualizar-pre-analise-detalhe option {
+    height: 2.5rem;
+    width: 25%;
+    border: 1px solid lightgray ;
+    padding: 0.5rem 1rem;
+    font-size: 0.5em;
+}
+
+.triagem-compliance-visualizar-pre-analise-detalhe textarea {
+    height: 8rem;
+    width: 70%;
+    border: 1px solid lightgray ;
+    padding: 0.5rem 0.1rem;
+    font-size: 1.1em;
+}
+
+.triagem-btn-alterar {
+    margin-top: 1rem;
+}
+
+.titulo-subtitulo {
+    display: flex;
+    flex-direction: column;
+}
+
+.triagem-compliance-visualizar-conteudo .card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.triagem-compliance-visualizar-conteudo .card-header img{
+    height: 40px;
+    width: 41.66px;
+}
+
+/* TRIAGEM COMPLIANCE RESPONDIDO */
+
+.triagem-compliance-respondidos {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.triagem-compliance-respondidos-up {
+    display: flex;
+    gap: 1rem;
+}
+
+.triagem-compliance-respondidos-down {
+    display: flex;
+    gap: 1rem;
+}
+
+.triagem-compliance-pre-triagem {
+    width: 25%;
+}
+
+.triagem-compliance-parecer-area {
+    width: 25%;
+}
+
+.triagem-compliance-plano-acao {
+    width: 50%;
+}
+
+.triagem-compliance-conteudo {
+    width: 50%;
+}
+
+.triagem-compliance-resposta-area {
+    width: 50%;
+}
+
+.triagem-compliance-pre-triagem form {
+    font-size: 1.1em;
+}
+
+.triagem-compliance-pre-triagem form label {
+    font-weight: 600;
+    width: 35%;
+}
+
+.triagem-compliance-pre-triagem .label-input {
+    display: flex;
+}
+
+.triagem-compliance-pre-triagem input {
+    height: 2rem;
+    border: 1px solid lightgray ;
+    padding: 0.375rem 0.75rem;
 }

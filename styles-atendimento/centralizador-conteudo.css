@@ -1,0 +1,26 @@
+.atendimentocentralizadorContentContent{
+    display: none;
+}
+
+.atendimentocentralizadorContent > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+}
+  
+.atendimentocentralizadorContent{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 3;
+    gap: 10px;
+}
+.texto_corpo{
+    font-size: 1.1em; 
+    font-family: sans-serif;
+}
+
+.atendimentoCentralizadorPareceres{
+    grid-row: span 3;
+}
+/* grid-column: span 4; */
