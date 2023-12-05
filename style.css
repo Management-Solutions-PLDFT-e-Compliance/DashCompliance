@@ -1767,50 +1767,6 @@ sup{
     grid-row: 4/8;
   } */
 
-  .TriagemDashboard > div{
-    border: 2px solid lightgray;
-    background-color: white;
-    padding: 1em;
-    color: black;
-  }
-
-  .TriagemDashboard{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    grid-auto-rows: 100px;
-  }
-
-  .triagemDashboardPendencias{
-    grid-column: 1;
-    grid-row: 1/4;
-  }
-
-  .triagemDashboardSLA{
-    grid-column: 2;
-    grid-row: 1/4;
-  }
-
-  .triagemDashboardCriticidade{
-    grid-column: 3;
-    grid-row: 1/4;
-  }
-
-  .triagemDashboardAderenciaNormativos{
-    grid-column: 1;
-    grid-row: 4/8;
-  }
-
-  .triagemDashboardAderenciaEstado{
-    grid-column: 2;
-    grid-row: 4/8;
-  }
-
-  .triagemDashboardStatus{
-    grid-column: 3;
-    grid-row: 4/8;
-  }
-
   .horarioAtualizacao{
     margin-top: -30px;
     display: flex;

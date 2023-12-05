@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./styles-triagem/compliance.css">
   <link rel="stylesheet" href="./styles-triagem/triagem-historico.css">
+  <link rel="stylesheet" href="./styles-triagem/triagem-dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
   <title>Compliance Analytics</title>
@@ -1344,18 +1346,81 @@
           </div>
           <div class="content">
             <div class="TriagemDashboard">
-              <div class="triagemDashboardPendencias">Pendências por Área</div>
-              <div class="triagemDashboardSLA">SLA por Área</div>
-              <div class="triagemDashboardCriticidade">Criticidade por Tema</div>
-              <div class="triagemDashboardAderenciaNormativos">Aderência dos últimos normativos publicados</div>
-              <div class="triagemDashboardAderenciaEstado">Aderência por Estado</div>
-              <div class="triagemDashboardStatus">Status plano de ação</div>
+              <div class="triagemDashboardPendencias">
+                <h2 class="TituloPreto9">Pendências por Área</h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Quantidade de demandas pendentes</h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGraficoPendenciasArea">
+                    <canvas id="graficoPendenciasArea"></canvas>
+                  </div>
+              </div>
+              <div class="triagemDashboardSLA">
+                <h2 class="TituloPreto9">SLA por Área 
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Tempo médio de resposta
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGraficoSLAArea">
+                    <canvas id="graficoSLAArea"></canvas>
+                  </div>
+              </div>
+              <div class="triagemDashboardCriticidade">
+                <h2 class="TituloPreto9">Criticidade por Tema
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Tema vs Área – 12 meses
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGrafCritTema">
+                    <img src="./assets/mapaCalor.png" alt="mapa calor">
+                  </div>
+              </div>
+              <div class="triagemDashboardAderenciaNormativos">
+                <h2 class="TituloPreto9">Aderência dos últimos normativos publicados
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Principais reguladores
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGraficoAderenciaNorm">
+                    <canvas id="graficoAderenciaNorm"></canvas>
+                  </div>
+              </div>
+              <div class="triagemDashboardAderenciaEstado">
+                <h2 class="TituloPreto9">Aderência por Estado
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Quantidade de demandas pendentes
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGrafAdEstado">
+                    <img src="./assets/mapaBrasil.png" alt="mapaBrasil">
+                  </div>
+              </div>
+              <div class="triagemDashboardStatus">
+                <h2 class="TituloPreto9">Status plano de ação
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Por período</h5>
+                    <hr>
+                  </div>
+                  <div class="grafPlanoAcao">
+                    <img src="./assets/grafPlanoAcao.png" alt="graf plano acao">
+                  </div>
+              </div>
             </div>
           </div>
         </div>
     </div>
       <!--Script-->
-    
     <script src="script.js"></script>
+    <script src="./javascript-triagem/dashboardTriagem.js"></script>
     <script src="./javascript-triagem/compliance-js.js"></script>
 </body>
