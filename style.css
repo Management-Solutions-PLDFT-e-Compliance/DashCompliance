@@ -2416,7 +2416,7 @@ sup{
     justify-content: center;
     padding: 50px;
   }
-  svg{
+  /* svg{
     width: 30%;
   }
   .norte {
@@ -2475,7 +2475,7 @@ sup{
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid white;
-  }
+  } */
 
   .containerGraficoNormaApli{
     width: 500px;
