@@ -15,6 +15,23 @@
   .botaoAbrirVisualizacao > img{
     width: 20px;
   }
+.botaoAbrirVisualizacao2{
+    display: flex;
+    background-color: #BFBFBF;
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 4px 10px 4px 10px;
+    width: 100px;
+    justify-content: space-around;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .botaoAbrirVisualizacao2 > img{
+    width: 20px;
+  }
 
   .botaoAbrirPesquisaCentralizar{
     display: flex;
@@ -79,6 +96,45 @@
     border-radius: 12px;
 }
 .TriagemParecerAreaConteudoResposta{
+    grid-column: 3/5;
+    grid-row: 4/9;
+    border-radius: 12px;
+}
+.TriagemParecerAreaConteudo2 > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+}
+
+.TriagemParecerAreaConteudo2{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-auto-rows: 104px;
+}
+
+.TriagemParecerAreaConteudoPreTriagem2{
+    grid-column: 1;
+    grid-row: 1/4;
+    border-radius: 12px;
+}
+.TriagemParecerAreaConteudoParecer2{
+    grid-column: 2;
+    grid-row: 1/4;
+    border-radius: 12px;
+}
+.TriagemParecerAreaConteudoPlano2{
+    grid-column: 3/5;
+    grid-row: 1/4;
+    border-radius: 12px;
+}
+.TriagemParecerAreaConteudoResumo2{
+    grid-column: 1/3;
+    grid-row: 4/9;
+    border-radius: 12px;
+}
+.TriagemParecerAreaConteudoResposta2{
     grid-column: 3/5;
     grid-row: 4/9;
     border-radius: 12px;
@@ -330,7 +386,70 @@
     display: flex;
      
 }
+.botaoReprovar{
+    position: fixed;
+    top: 890px;
+    left: 1470px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16.6px;
+    padding: 0.3rem 0.5rem;
+    width: 210px;
+    height: 50px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+     
+}
+.DownloadEvidencia{
+    position: fixed;
+    top: 890px;
+    left: 980px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16.6px;
+    padding: 0.3rem 0.5rem;
+    width: 210px;
+    height: 50px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+     
+}
 .botaoSalvarEnviar{
+    position: fixed;
+    top: 890px;
+    left: 1690px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16.6px;
+    padding: 0.3rem 0.5rem;
+    width: 210px;
+    height: 50px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+     
+}
+.botaoAprovar{
     position: fixed;
     top: 890px;
     left: 1690px;
@@ -353,7 +472,7 @@
 }
 .pesquisaTriagemInput14{
     position: fixed;
-    top: 460px;
+    top: 470px;
     left: 985px;
     height: 350px;
     width: 905px;
