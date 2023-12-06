@@ -500,14 +500,14 @@
     width: 25%;
     border: 1px solid lightgray ;
     padding: 0.5rem 1rem;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 .triagem-compliance-visualizar-pre-analise-detalhe option {
     height: 2.5rem;
     width: 25%;
     border: 1px solid lightgray ;
     padding: 0.5rem 1rem;
-    font-size: 0.5em;
+    font-size: 1.1em;
 }
 
 .triagem-compliance-visualizar-pre-analise-detalhe textarea {
@@ -769,4 +769,8 @@
     display: flex;
     justify-content: end;
     gap: 2rem;
+}
+
+.botaoAbrirPesquisaCentralizar {
+    justify-content: flex-start;
 }

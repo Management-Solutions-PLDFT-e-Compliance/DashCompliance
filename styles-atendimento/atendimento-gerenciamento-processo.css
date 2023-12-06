@@ -1,0 +1,354 @@
+.atendimendimento-gestao-processo-abrir {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.atendimento-gerenciamento-processo-down, .atendimento-gerenciamento-processo-up {
+    display: flex;
+    gap: 1rem;
+}
+
+.atendimentoGestaoProcesso {
+    display: none;
+}
+
+/* ESTILO CARD */
+
+.card {
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 1rem 1rem;
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: .5rem;
+    margin-bottom: 1rem;
+}
+
+.card-titulo {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3em;
+    color: #000;
+    font-weight: 700;
+}
+
+.card-subtitulo {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: 	#80808094;
+}
+
+/* LAYOUT */
+
+.atendimento-gestao-processos-pre-captura {
+    width: 60%;
+}
+
+.atendimento-gestao-processos-areas-impactadas {
+    width: 40%;
+}
+
+.atendimento-gestao-processos-conteudo {
+    width: 50%;
+}
+
+.atendimento-gestao-processos-pre-analise-ia {
+    width: 50%;
+}
+
+
+/* CARD PRE-CAPTURA */
+.atendimento-gestao-processos-pre-captura form {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.1em;
+}
+
+.atendimento-gestao-processos-pre-captura label {
+    font-weight: bold;
+}
+
+.atendimento-gestao-processos-pre-captura input {
+    padding: 0.5rem 1rem;
+    height: 2.5rem;
+    border: 1px solid lightgray ;
+    font-size: 1rem;
+}
+
+.atendimento-gestao-processos-pre-captura .label-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.atendimento-gestao-processos-pre-captura select {
+    height: 2.5rem;
+    border: 1px solid lightgray ;
+    padding: 0.5rem 1rem;
+    font-size: 1.1em;
+}
+
+.separa-form-tres-partes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.separa-form-tres-partes:nth-child(1) {
+    width: 30%;
+}
+
+.separa-form-tres-partes:nth-child(1) input {
+    width: 60%;
+}
+.separa-form-tres-partes:nth-child(2) {
+    width: 40%;
+}
+
+.separa-form-tres-partes:nth-child(2) input, select {
+    width: 45%;
+}
+.separa-form-tres-partes:nth-child(3) {
+    width: 30%;
+}
+.separa-form-tres-partes:nth-child(3) input{
+    width: 60%;
+}
+
+/* CARDS ÁREAS IMPACTADAS */
+.atendimento-gestao-processos-areas-impactadas .card-body {
+    position: relative;
+    height: 14.5rem;
+    overflow-y: scroll;
+}
+
+.table-atendimento-abrir thead{
+    position: sticky;
+    top: 0;
+}
+
+.table-atendimento-abrir th, td{
+    padding: .5rem 1rem;
+    font-size: 1.1em;
+}
+
+.table-atendimento-abrir th:nth-child(1){
+    width: 35%;
+}
+.table-atendimento-abrir td:nth-child(1){
+    padding: 0;
+    border: none;
+}
+.table-atendimento-abrir th:nth-child(2){
+    width: 30%;
+}
+.table-atendimento-abrir th:nth-child(3){
+    width: 30%;
+}
+.table-atendimento-abrir th:nth-child(4), td:nth-child(4){
+    border: none;
+    background-color: #fff;
+    width: 5%;
+}
+
+.table-atendimento-abrir img{
+    height: 30px;
+}
+
+.table-atendimento-abrir select{
+    width: 100%;
+    height: 100%;
+    border: 1px solid lightgray;
+    padding: .5rem 1rem;
+    font-size: 1em;
+}
+
+/* CARD CONTEÚDO */
+
+.atendimento-gestao-processos-conteudo .card-body{
+    height: 22rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.atendimento-gestao-processos-conteudo-container {
+    border: 1px solid lightgray;
+    padding: 1rem;
+    height: 75%;
+}
+
+.atendimento-gestao-processo-conteudo-paragrafo {
+    font-size: 1.1em;
+}
+
+.atendimento-gestao-processos-conteudo .conteudo-paragrafo-texto{
+    margin-bottom: 2rem;
+}
+
+
+.atendimento-gestao-processos-conteudo .topico-conteudo-paragrafo {
+    font-weight: bolder;
+}
+
+.atendimento-gestao-processo-conteudo-file-download {
+    border: 1px solid lightgray;
+    display: flex;
+    width: 35%;
+    padding: .5rem 1rem;
+    gap: 1rem
+}
+
+.atendimento-gestao-processo-conteudo-file-download img{
+    height: 50px;
+}
+
+.nome-file-tamanho {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1em;
+    color: gray;
+    gap: .5rem
+}
+
+/* CARD PRÉ-ANÁLISE IA */
+.atendimento-gestao-processos-pre-analise-ia .card-body{
+    height: 22rem;
+    overflow-y: scroll;
+}
+
+.atendimento-pre-analise-lista {
+    list-style-type: none;
+    font-size: 1.1em;
+}
+
+.atendimento-pre-analise-item {
+    border-bottom: 1px solid lightgray;
+    padding: 1rem 0;
+}
+
+.atendimento-pre-analise-item form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.atendimento-pre-analise-lista label{
+    font-weight: bold;
+    width: 20%;
+}
+
+.atendimento-pre-analise-lista input, select, textarea{
+    font-size: 1.1em;
+    border: 1px solid lightgray;
+    padding: .5rem 1rem;
+}
+
+.atendimento-pre-analise-lista input{
+    width: 10%;
+}
+
+.atendimento-pre-analise-lista textarea{
+    width: 50%;
+    height: 5rem;
+}
+
+.atendimento-pre-analise-label-input {
+    display: flex;
+}
+
+.triagem-compliance-btn {
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+    background-color: #2c4c7c;
+    color: #fff;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, .3);
+}
+
+.atendimento-gestao-processo-container-btn {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.triagem-compliance-distribuir, .triagem-compliance-fechar {
+    font-size: 1.3em;
+    padding: 0.7rem 1.4rem;
+}
+
+.sup-lupa {
+    display: flex;
+}
+
+.atendimendimento-gestao-processo-pop-up {
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .1);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-up-container-lista {
+    background-color: #d3d3d3;   
+    padding: 1rem;
+    padding-bottom: 3rem;
+    width: 50%;
+    border-radius: 20px;
+    font-size: 1.1em;
+}
+
+.pop-up-container-lista .listas{
+    display: flex;
+    gap: 1rem;
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+.pop-up-container-lista ul{
+    list-style-type: none;
+    width: 30%;
+}
+
+.pop-up-container-lista li{
+    padding: .5rem 1rem;
+}
+
+.titulo-lista {
+    background-color: #647ca4;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.dado-lista {
+    background-color: #fff;
+    border: 1px solid lightgray;
+}
+
+.titulo-fechar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-pop-up {
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: blue;
+}
