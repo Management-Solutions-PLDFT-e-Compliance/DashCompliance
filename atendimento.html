@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./styles-atendimento/atendimento-historico.css">
+  <link rel="stylesheet" href="./styles-atendimento/ParecerValidacao.css">
   <link rel="stylesheet" href="./styles-atendimento/atendimento-centralizador.css">
   <link rel="stylesheet" href="./styles-atendimento/centralizador-conteudo.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
-  <link rel="stylesheet" href="./styles-atendimento/atendimento-dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>  
   
   <link rel="stylesheet" href="./styles-atendimento/atendimento-gerenciamento-processo.css">
   <script src="./javascript-atendimento/centralizador-conteudo.js"></script>
-  <script src="./javascript-atendimento/gerenciamento-processo.jss"></script>
+  <script src="./javascript-atendimento/gerenciamento-processo.js"></script>
+  <link rel="stylesheet" href="./styles-atendimento/atendimento-dashboard.css">
   <title>Compliance Analytics</title>
 </head>
 <header class="header1" >
@@ -65,22 +68,167 @@
         </div>
         <div class="tab-content">
           <div class="content active">
-            <div class="atendimentoMonitoramento">
-              <div class="atendimentoDashDemandasReg">Demandas Regulatórias
+            <div class="atendimentoDashboard">
+              <div class="atendimentoDashDemandasReg">
+                <h2 class="TituloPreto9">Demandas Regulatórias
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Por período
+                    </h5>
+                    <hr>
+                  </div>
+                  <select id="selecionaMesDemandasReg" onchange="atualizaGrafDemandasReg()">
+                    <option value="nov" selected>Nov/2023</option>
+                    <option value="out">Out/2023</option>
+                    <option value="set">Set/2023</option>
+                  </select>
+                <div class="conteinerGrafDemandasReg">
+                  <canvas id="GrafDashDemandasReg"></canvas>
+                </div>
               </div>
-              <div class="atendimentoDashAreasDemand">Áreas mais demandadas</div>
-              <div class="atendimentoDashCritTemaArea">Criticidade por Tema vs Area</div>
-              <div class="atendimentoDashNormOrg">Normativos aplicáveis à Organização
+              <div class="atendimentoDashAreasDemand">
+                <h2 class="TituloPreto9">Áreas mais demandadas
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Por período
+                    </h5>
+                    <hr>
+                  </div>
+                  <select id="selecionaMesAreaDeman" onchange="atualizaGrafAreaDeman()">
+                    <option value="nov" selected>Nov/2023</option>
+                    <option value="out">Out/2023</option>
+                    <option value="set">Set/2023</option>
+                  </select>
+                <div class="conteinerGrafAreaDeman">
+                  <canvas id="GrafDashAreaDeman"></canvas>
+                </div>
               </div>
-              <div class="atendimentoDashPendArea">Pendências por Área 
+              <div class="atendimentoDashCritTemaArea">
+                <h2 class="TituloPreto9">Criticidade por Tema
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Tema vs Área – 12 meses
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerTabelaCalorArea">
+                    <h2 class="TituloPreto9 tituloCimaTabelaCalorArea">TEMA
+                    </h2>
+                    <h2 class="TituloPreto9 tituloLadoTabelaCalorArea">ÁREA
+                    </h2>
+                    <div class="legendasDeCimaTbCalorArea">
+                      <p>Crédito</p>
+                      <p>Capital</p>
+                      <p>PLDFT</p>
+                      <p>Conduta</p>
+                      <p>PIX</p>
+                    </div>
+                    <div class="legendasDoLadoTbCalorArea">
+                      <p>Crédito</p>
+                      <p>Câmbio</p>
+                      <p>Mercado</p>
+                      <p>Cartões</p>
+                      <p>Financeira</p>
+                    </div>
+                    <table id="heatmapArea">
+                      <!-- Tabela será gerada dinamicamente com JS -->
+                    </table>
+                    <div class="barraPretaArea"></div>
+                    <div class="color-barArea">
+                    </div>
+                    <input type="range" id="colorSwappingArea" min="0" max="10" value="0">
+                  </div>
               </div>
-              <div class="atendimentoDashSLAArea">SLA por Área  
+              <div class="atendimentoDashNormOrg">
+                <h2 class="TituloPreto9">Normativos aplicáveis à Organização 
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Por período
+                    </h5>
+                    <hr>
+                  </div>
+                  <select id="selecionaMesNormaApp" onchange="atualizaGrafNormaApp()">
+                    <option value="nov" selected>Nov/2023</option>
+                    <option value="out">Out/2023</option>
+                    <option value="set">Set/2023</option>
+                  </select>
+                <div class="conteinerGrafDashNormOrg">
+                  <canvas id="GrafDashNormOrg"></canvas>
+                </div>
+              </div>
+              <div class="atendimentoDashPendArea">
+                <h2 class="TituloPreto9">Pendências por Área  
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Quantidade de demandas pendentes
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGrafDashPendArea">
+                    <canvas id="GrafDashPendArea"></canvas>
+                  </div>
+              </div>
+              <div class="atendimentoDashSLAArea">
+                <h2 class="TituloPreto9">SLA por Área  
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Tempo médio de resposta
+                    </h5>
+                    <hr>
+                  </div>
+                <div class="conteinerGrafSLAArea">
+                  <canvas id="GrafDashSLAArea"></canvas>
+                </div>
               </div>
               <div class="atendimentoDashDemArea">Demanda por Área 
               </div>
-              <div class="atendimentoDashSolTema">Solicitações por Tema 
+              <div class="atendimentoDashSolTema">
+                <h2 class="TituloPreto9">Solicitações por Tema 
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Quantidade de demandas – 12 meses
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGrafDashSolTema">
+                    <canvas id="GrafDashSolTema"></canvas>
+                  </div>
               </div>
-              <div class="atendimentoDashCritTemaImpacto">Criticidade por Tema vs Impacto 
+              <div class="atendimentoDashCritTemaImpacto">
+                <h2 class="TituloPreto9">Criticidade por Tema
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Tema vs Impacto Regulatório – 12 meses
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerTabelaCalorImpacto">
+                    <h2 class="TituloPreto9 tituloCimaTabelaCalorImpacto">TEMA
+                    </h2>
+                    <h2 class="TituloPreto9 tituloLadoTabelaCalorImpacto">IMPACTO
+                    </h2>
+                    <div class="legendasDeCimaTbCalorImpacto">
+                      <p>Crédito</p>
+                      <p>Capital</p>
+                      <p>PLDFT</p>
+                      <p>Conduta</p>
+                      <p>PIX</p>
+                    </div>
+                    <div class="legendasDoLadoTbCalorImpacto">
+                      <p>Muito Alto</p>
+                      <p>Alto</p>
+                      <p>Moderado</p>
+                      <p>Baixo</p>
+                      <p>Muito Baixo</p>
+                    </div>
+                    <table id="heatmapImpacto">
+                      <!-- Tabela será gerada dinamicamente com JS -->
+                    </table>
+                    <div class="barraPretaImpacto"></div>
+                    <div class="color-barImpacto">
+                    </div>
+                    <input type="range" id="colorSwappingImpacto" min="0" max="10" value="0">
+                  </div>
               </div>
               <div class="atendimentoDashDemTema">Demandas por Tema
               </div>
@@ -758,679 +906,552 @@
             </div>
           </div>
           <div class="content">
-            <div class="atendimentoCentralizador" id="centralizador-lista">
-              <div class="atendimentoCentralizadorRequerimentos" style="border-radius: 12px;">
-                
-                <div class="titulo">
-                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Requerimentos</h4>
-                  <h5 class="SubtituloCinza" >Status</h5>
-                  <hr>
-                </div>
-
-                <p style="font-size: large; font-family: Calibri; margin-top: 2%;">Atualizado 00h00 25/04/2023</p>
-                <div class="icones_contorno">
-                  <div class="quadrado">
-                    <div class="conteudo">
-
-                      <div class="numero">1</div>
-                      <div class="palavra">Vencido</div>
-
-                    </div>
-                  </div>
-
-                  <div class="quadrado">  
-                    <div class="conteudo">
-                      <div class="numero">2</div>
-                      <div class="palavra">Aberto</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="atendimentoCentralizadorPlano" style="border-radius: 12px;">
-                
-                <div class="titulo">
-                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Plano de ações</h4>
+            <div class="TriagemParecerArea">
+              <div class="TriagemParecerAreaPublicacoes showParecer">
+                <h2 class="TituloPreto9">Publicações</h2>
+                <div>
                   <h5 class="SubtituloCinza">Status</h5>
                   <hr>
                 </div>
-
-                <!-- <div class="icones_contorno" style="margin-top: 17.1%;"> -->
-                
-                  <div class="icones_contorno" style="margin-top: 29.5%;">
+              <div class="separadorPubli">
+                <div class="separadorPubliHora">
+                  <div class="horarioAtualizacao">
+                    <p id="horaAtualizada">Atualizado 00h00 05/06/2023</p>
+                  </div>
+                </div>
+                <div class="separadorPubliVencido">
+                  <div class="quadrado">
+                   <div class="conteudo">
+                      <div class="numero">0</div>
+                      <div class="palavra">Vencido</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="separadorPubliAberto">
+                  <div class="quadrado">
+                    <div class="conteudo">
+                     <div class="numero">2</div>
+                      <div class="palavra">Aberto</div>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+              </div>
+              <div class="TriagemParecerAreaPlanosDeAcao showParecer">
+                <h2 class="TituloPreto9">Planos de ações</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Status</h5>
+                  <hr>
+                </div>
+                <div class="separadorPubli">
+                  <div class="separadorPlanoVencido">
                     <div class="quadrado">
-                      <div class="conteudo">
-  
+                     <div class="conteudo">
                         <div class="numero">0</div>
                         <div class="palavra">Vencido</div>
-  
                       </div>
                     </div>
-  
-                    <div class="quadrado">  
+                  </div>
+                  <div class="separadorPlanoAberto">
+                    <div class="quadrado">
                       <div class="conteudo">
-                        <div class="numero">0</div>
+                       <div class="numero">2</div>
                         <div class="palavra">Aberto</div>
                       </div>
                     </div>
-                  </div>
-                
-                
+                  </div>  
+                  <div class="separadorPlanoFinalizado">
+                    <div class="quadrado">
+                      <div class="conteudo">
+                       <div class="numero">2</div>
+                        <div class="palavra">Finalizado</div>
+                      </div>
+                    </div>
+                  </div>  
                 </div>
-              <div class="atendimentoCentralizadorNotificacao" style="border-radius: 12px;">
-                
-                <div class="titulo">
-                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Notificações</h4>
-
-                  <h5 class="SubtituloCinza">Categorias</h5>
-                  <hr>
-                </div>
-
-                <div id="itens_notificacoes">
-                  <div>                    
-                    <h4 style="font-size: medium;">1 Parecer em atraso</h4>
-                    <img src="./assets/icons/seta-para-a-frente-26.png" alt="abrir" style="margin-left: 148px; padding: 8px 0px 6px 0px;">
-                  </div>
-
-                  <div>                    
-                    <h4 style="font-size: medium;">2 Parecer respondido</h4>
-                    <img src="./assets/icons/seta-para-a-frente-26.png" alt="abrir" style="margin-left: 135px; padding: 8px 0px 6px 0px;">
-                  </div>
-
-                  <div>                    
-                    <h4 style="font-size: medium;">0 Envios pendentes</h4>
-
-                    <img src="./assets/icons/seta-para-a-frente-26.png" alt="abrir" style="margin-left: 147px; padding: 8px 0px 6px 0px;">
-                  </div>
-
-                  <div>                    
-                    <h4 style="font-size: medium;">0 Plano de ação pendentes</h4>
-                    <img src="./assets/icons/seta-para-a-frente-26.png" alt="abrir" style="margin-left: 90px; padding: 8px 0px 6px 0px;">
-                  </div>
-                </div>
-                
 
               </div>
-              <div class="atendimentoCentralizadorBusca" style="margin-right: 31px; border-radius: 12px;">
-                
-                <div class="titulo">
-                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Busca de requerimentos</h4>
+              <div class="TriagemParecerAreaBuscaDeNormativos showParecer">
+                <h2 class="TituloPreto9">Busca de normativos</h2>
+                <div>
                   <h5 class="SubtituloCinza">Filtro:</h5>
                   <hr>
                 </div>
-
-                <!-- Linha 1 -->
-                <div class="filtros_busca_requerimentos">
-
-                  
-                  <p style="font-size: 1.1em;  font-family: sans-serif;">ID:</p>
-                  <input type="text" name="ID" class="busca-select" style="margin-left:83px">
-
-                  <p style="margin-left: 56px; margin-right: 0.5%; font-size: 1.1em;  font-family: sans-serif;">Tema:</p>
-                  <select name="Tema" class="busca-select" style="margin-left: 5px;">
-                    <option value=""></option>
-                    <option value="PLDFT">PLDFT</option>
-                    <option value="Cyber">Cyber</option>
-                    <option value="ESG">ESG</option>
-                  </select>
-
-                  
-
-                  <p style="margin-left: 7.5%; font-size: 1.1em;  font-family: sans-serif;">Criticidade:</p>
-                  <select name="criticidade" class="busca-select" style="margin-left:17px">
-                    <option value=""></option>
-                    <option value="Baixo">Baixo</option>
-                    <option value="Moderado">Moderado</option>
-                    <option value="Alto">Alto</option>
-                  </select>
-
+                <div class="separadorBuscaNormativos">
+                  <div>
+                    <label for="ReguladorTriagem" class="separadorTriagemRegulador1">Regulador:</label>
+                      <select name="ReguladorTriagem" id="ReguladorTriagem" class="separadorTriagemRegulador2">
+                        <option value="Bacen">Bacen</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="DataPublicacao" class="separadorTriagemDataPublica1">Data de publicação:</label>
+                      <select name="DataPublicacao" id="DataPublicacao" class="separadorTriagemDataPublica2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                   <div>
+                    <label for="Categoria" class="separadorTriagemCategoria1">Categoria:</label>
+                      <select name="Categoria" id="Categoria" class="separadorTriagemCategoria2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Tema" class="separadorTriagemTema1">Tema:</label>
+                      <select name="Tema" id="Tema" class="separadorTriagemTema2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Status" class="separadorTriagemStatus1">Status:</label>
+                      <select name="Status" id="Status" class="separadorTriagemStatus2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Criticidade" class="separadorTriagemCriticidade1">Criticidade:</label>
+                      <select name="Criticidade" id="Criticidade" class="separadorTriagemCriticidade2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <button class="botaoLimpaFiltro2"><img src="./assets/icons/VassouraBranca.png" alt="">Limpar</button>
+                    <button class="botaoFiltrar2"><img src="./assets/icons/FiltroBranco.png" alt="">Pesquisar</button>
+                  </div> 
                 </div>
-
-                <!-- Linha 2 -->
-                <div class="filtros_busca_requerimentos">
-
-                  <p style="font-size: 1.1em;  font-family: sans-serif;">Categoria:</p>
-                  <select name="Categoria" class="busca-select" style="margin-left: 16px;">
-                    <option value=""></option>
-                    <option value="Normativo">Normativo</option>                 
-                  </select>
-
-                  <p style="font-size: 1.1em;  font-family: sans-serif; margin-left: 46px;">Status:</p>
-                  <select name="Status" class="busca-select" style="margin-left: 9px;">
-                    <option value=""></option>
-                    <option value="">Finalizado</option>
-                  </select>
-
-                  <p style="margin-left: 4.8%; font-size: 1.1em;  font-family: sans-serif;">Centralizador:</p>
-                  <input type="text" name="criticidade" class="busca-select" style="margin-left:2px">
-                
-
-                </div>
-
-                <!-- Linha 3 -->
-                <div class="filtros_busca_requerimentos" style="margin-bottom: 5px;">
-                  
-                  <p style="margin-right: 0.5%; font-size: 1.1em;  font-family: sans-serif;">Retorno:</p>
-                  <input type="date" class="busca-select" style="margin-left: 27px;">
-
-                  <p style="font-size: 1.1em;  font-family: sans-serif; margin-left: 17px;">Regulador:</p>
-                  <select name="Regulador" class="busca-select" style="margin-left: 2px; margin-right: 20;">
-                    <option value=""></option>
-                    <option value="Bacen">Bacen</option>
-                    <option value="CVM">CVM</option>
-                  </select>
-
-                  <p style="font-size: 1.1em;  font-family: sans-serif; margin-left: 32px;">Responsável:</p>
-                  <input type="text" name="criticidade" class="busca-select" style="margin-left:10px">
-
-                  
-                </div>
-
-                <!-- Linha 4 -->
-                <div class="filtros_busca_requerimentos" style="margin-bottom: 5px;">
-                  <p style="margin-right: 0.5%; font-size: 1.1em;  font-family: sans-serif;">Solicitação:</p>
-                  <input type="date" style="border: 1px solid #dcdcdc;border-radius: 4px; margin-left: 0px; width:100px">
-                  
-                </div>
-
-                <Button>
-                  <p style="font-size: 16px; font-family: Calibri;color: #ffffff;"><strong>Pesquisar</strong></p> 
-                  
-                  <img src="assets/icons/lupa-24.png" alt="Pesquisar" style="margin-left: 5px; margin-top: 2px;">
-                </Button>
 
               </div>
-
-              <!-- Requisições -->
-              <div class="atendimentoCentralizadorRequisicoes" style="border-radius: 12px;">
-                
-                <div class="titulo">
-                  <h2 class="TituloPreto9"style="margin-bottom: 0%;">Requisições</h4>
-
+              <div class="TriagemParecerAreaNormativos showParecer">
+                <h2 class="TituloPreto9">Normativos</h2>
+                <div>
                   <h5 class="SubtituloCinza">Lista</h5>
                   <hr>
                 </div>
-                 
-                <div class="tabela tab_parecer">
-                  <table>
-
-                    <thead>
+                  <div class="tableFixHeadTriagemRaul">
+                    <table class="tableVariavesTriagemRaul">
+                      <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Regulador</th>
-                            <th>Instrução</th>
-                            <th>Tema</th>
-                            <th>Validador</th>
-                            <th>Centralizador</th>
-                            <th>Solicitação</th>
-                            <th>Retorno</th>
-                            <th>Status</th>
-                            <th>Criticidade</th>
-                            <th>Visualização</th>
+                          <th>Normativo</th>
+                          <th>Regulador</th>
+                          <th>Publicação</th>
+                          <th>Status</th>
+                          <th>Tema</th>
+                          <th>Criticidade</th>
+                          <th>Visualização</th>
                         </tr>
-                    </thead>
-                    <tbody>
+                      </thead>
+                      <tbody>
                         <tr>
-                          <td>0001</td>
-                          <td>CVM</td>
-                          <td>Resolução nº 50</td>
-                          <td>PLDFT</td>
-                          <td>Corretora, A.M,...</td>
-                          <td>Camila Lira</td>
-                          <td>20/01/2023</td>
-                          <td>30/01/2023</td>
-                          <td>Atrasado</td>
-                          <td>Moderado</td>
-                          <td><div class="botaoAbrirPesquisaCentralizar">
-                            <button class="botaoAbrirPesquisa botaoMain" onclick="toggleVisibility()">
-                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
-                              <div>Abrir <sup>1</sup></div>
-                            </button>
-                          </div></td>
-                        </tr>
-
-                        <tr>
-                          <td>0002</td>
-                          <td>Susep</td>
-                          <td>Circular nº 638</td>
-                          <td>Cyber</td>
-                          <td>Cadastro, S. I.,...</td>
-                          <td>Carlos José</td>
-                          <td>04/01/2023</td>
-                          <td>30/01/2023</td>
-                          <td>Atrasado</td>
-                          <td>Alto</td>
-                          <td><div class="botaoAbrirPesquisaCentralizar">
-                            <button class="botaoAbrirPesquisa botaoMain">
-                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
-                              <div>Abrir</div>
-                            </button>
-                          </div></td>
-                        </tr>
-
-                        <tr>
-                          <td>0003</td>
+                          <td>Resolução nº 309</td>
                           <td>Bacen</td>
-                          <td>Circular nº 3.978</td>
-                          <td>PLDFT</td>
-                          <td>Intel. Financeira,...</td>
-                          <td>Camila Lira</td>
-                          <td>25/01/2023</td>
-                          <td>06/02/2023</td>
-                          <td>Pendente</td>
-                          <td>Alto</td>
-                          <td><div class="botaoAbrirPesquisaCentralizar">
-                            <button class="botaoAbrirPesquisa botaoMain">
-                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
-                              <div>Abrir</div>
-                            </button>
-                          </div></td>
+                          <td>28/03/2023</td>
+                          <td>Aberto</td>
+                          <td>Contabilidade</td>
+                          <td>Alta</td>
+                          <td class="SemBordaColuna">
+                            <div class="botaoAbrirVisualizacaoCentralizar">
+                              <button class="botaoAbrirVisualizacao botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir<sup>1</sup></div>
+                              </button>
+                            </div>
+                          </td>
                         </tr>
-
                         <tr>
-                          <td>0004</td>
-                          <td>Susep</td>
-                          <td>Circular nº 666</td>
-                          <td>ESG</td>
-                          <td>Seguradora, Capital...</td>
-                          <td>Lucas Fagundes</td>
-                          <td>20/01/2023</td>
-                          <td>30/01/2023</td>
-                          <td>Pendente</td>
-                          <td>Baixo</td>
-                          <td><div class="botaoAbrirPesquisaCentralizar">
-                            <button class="botaoAbrirPesquisa botaoMain">
-                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
-                              <div>Abrir</div>
-                            </button>
-                          </div></td>
+                          <td>Resolução nº 5.066</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Aberto</td>
+                          <td>Contabilidade</td>
+                          <td>Baixa</td>
+                          <td class="SemBordaColuna">
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
                         </tr>
-
-                        <tr>
-                          <td>0005</td>
-                          <td>Bacen</td>
-                          <td>Circular nº 3.461</td>
-                          <td>PLDFT</td>
-                          <td>A.M, Tesouraria,...</td>
-                          <td>Camila Lira</td>
-                          <td>26/01/2023</td>
-                          <td>07/02/2023</td>
-                          <td>Pendente</td>
-                          <td>Alto</td>
-                          <td><div class="botaoAbrirPesquisaCentralizar">
-                            <button class="botaoAbrirPesquisa botaoMain">
-                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
-                              <div>Abrir</div>
-                            </button>
-                          </div></td>
-                        </tr>
-
-                        <tr>
-                          <td>0006</td>
-                          <td>CVM</td>
-                          <td>Resolução nº 50</td>
-                          <td>PLDFT</td>
-                          <td>Inteligência</td>
-                          <td>Giovanni Silva</td>
-                          <td>20/01/2023</td>
-                          <td>30/01/2023</td>
-                          <td>Rejeitado</td>
-                          <td>Moderado</td>
-                          <td><div class="botaoAbrirPesquisaCentralizar">
-                            <button class="botaoAbrirPesquisa botaoMain">
-                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
-                              <div>Abrir</div>
-                            </button>
-                          </div></td>
-                        </tr>
-
-                        <tr>
-                          <td>0007</td>
-                          <td>CVM</td>
-                          <td>Resolução nº 50</td>
-                          <td>PLDET</td>
-                          <td>Tesouraria</td>
-                          <td>Natalia Mendes</td>
-                          <td>20/01/2023</td>
-                          <td>30/01/2023</td>
-                          <td>Finalizado</td>
-                          <td>Alto</td>
-                          <td><div class="botaoAbrirPesquisaCentralizar">
-                            <button class="botaoAbrirPesquisa botaoMain">
-                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
-                              <div>Abrir</div>
-                            </button>
-                          </div></td>
-                        </tr>
-
-                        <tr>
-                          <td>0008</td>
-                          <td>CVM</td>
-                          <td>Resolução nº 50</td>
-                          <td>PLDFT</td>
-                          <td>Corretora</td>
-                          <td>Bruna Vasconcelos</td>
-                          <td>20/01/2023</td>
-                          <td>30/01/2023</td>
-                          <td>Aprovado</td>
-                          <td>Baixo</td>
-                          <td><div class="botaoAbrirPesquisaCentralizar">
-                            <button class="botaoAbrirPesquisa botaoMain">
-                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
-                              <div>Abrir</div>
-                            </button>
-                          </div></td>
-                        </tr>
-
-                        <tr>
-
-                          <td>0009</td>
-                          <td>CVM</td>
-                          <td>Resolução nº 50</td>
-                          <td>PLDFT</td>
-                          <td>Tesouraria</td>
-                          <td>Natalia Mendes</td>
-                          <td>20/01/2023</td>
-                          <td>30/01/2023</td>
-                          <td>Pendente</td>
-                          <td>Baixo</td>
-                          <td><div class="botaoAbrirPesquisaCentralizar">
-                            <button class="botaoAbrirPesquisa botaoMain">
-                              <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
-                              <div>Abrir</div>
-                            </button>
-                          </div></td>
-                        </tr>
-                        
-                    </tbody>
-                  </table>
-                </div>
+                      </tbody>
+                    </table>
+                  </div>
               </div>
             </div>
-            <div class="atendimentocentralizadorContent" id="centralizador-conteudo">
-              <div id="botoes_navegação">
 
-                <button onclick="toggleVisibility()" id="botao_cancelar"><img src="./assets/icons/x-branco-32px.png" alt=""><p style="margin-top: 1px; color: #ffffff;">Cancelar</p></button>
-  
-                <button id="botao_consolidar"><img src="./assets/icons/seta-btn-distribuir.png" alt="Consolidar" style=" margin:7px 4px 0px 4px;width:20px; height: 20px;"><p style="margin-top: 1px; color: #ffffff;">Consolidar</p></button>
-  
-                <button  id="botao_salvar"><img src="./assets/icons/icons8-disquete-32.png" alt="Salvar" style=" margin:7px 2px 0px 4px;width:20px; height: 20px;"><p style="margin-top: 1px; color: #ffffff;">Salvar/Enviar</p></button>
-
-              </div>
-
-              <div class="atendimentoCentralizadorRequisicao" style="border-radius: 12px;">
-                <div class="titulo">
-                  <h2 class="TituloPreto9" style="margin-bottom: 0%;">Requisição</h2>
-                  <h5 class="SubtituloCinza">Informações</h5>
+            <div class="TriagemParecerAreaConteudo">
+              <div class="TriagemParecerAreaConteudoPreTriagem hiddenParecer">
+                <h2 class="TituloPreto9">Pré-triagem</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Resolução</h5>
                   <hr>
-                  <div class="filtros_requisição" style="margin-top: 20px;">
-                    <label>Normativo:</label>
-                    <input type="text" value="Resolução nº 617">
-  
-                    <label style="margin-left: 170px;">ID:</label>
-                    <input type="text" value="0001" style="margin-left: 96px;">
-                    
-                  </div>
+                </div>
 
-                  <div class="filtros_requisição">
-                    <label>Regulador:</label>
-                    <input type="text" value="CVM">
-  
-                    <label style="margin-left: 170px;">Centralizador:</label>
-                    <input type="text" value="Camila Lira">
-
-                  </div>
-
-                  <div class="filtros_requisição">
-                    <label>Tema:</label>
-                    <input type="text" value="PLDFT" style="margin-left: 43px;">
-  
-                    <label style="margin-left: 170px;">Área:</label>
-                    <input type="text" value="PLDFT" style="margin-left: 73px;">
-                    
-                  </div>
-
-                  <div class="filtros_requisição">
-                    <label style="margin-right: 4.3%;">Solicitação:</label>
-                    <input type="text" value="28/03/2023">
-  
-                    <label style="margin-left: 170px;">Vencimento:</label>
-                    <input type="text" value="10/05/2023" style="margin-left: 13px;">
-                    
-                  </div>
-
-                  <div class="filtros_requisição">
-                    <label style="margin-right: 4.4%;">Criticidade:</label>
-                    <input type="text" value="Alta">
-  
-                    <label style="margin-left: 170px;">Status:</label>
-                    <input type="text" value="Pendente" style="margin-left: 60px;">
-                    
-                  </div>
-
+                <div>
+                  <label class="pesquisaTriagemLabel1 fonteItensBlocos">Normativo:</label>
+                  <input class="pesquisaTriagemInput1" type="text" readonly value="Resolução nº 309">
+                  <label class="pesquisaTriagemLabel2 fonteItensBlocos">Regulador:</label>
+                  <input class="pesquisaTriagemInput2" type="text" readonly value="Bacen">
+                  <label class="pesquisaTriagemLabel3 fonteItensBlocos">Tema:</label>
+                  <input class="pesquisaTriagemInput3" type="text" readonly value="Contabilidade">
+                  <label class="pesquisaTriagemLabel4 fonteItensBlocos">Publicação:</label>
+                  <input class="pesquisaTriagemInput4" type="text" readonly value="28/03/2023">
+                  <label class="pesquisaTriagemLabel5 fonteItensBlocos">Criticidade:</label>
+                  <input class="pesquisaTriagemInput5" type="text" readonly value="Alta">
                 </div>
               </div>
-
-              <div class="atendimentoCentralizadorPareceres" style="border-radius: 12px;">
-                <h2 class="TituloPreto9" style="margin-bottom: 0%;">Pareceres</h2>
-                <h5 class="SubtituloCinza">Áreas</h5>
-                <hr>
-
-                <div id="Conteudo_Pareceres">
-                  
-                  <p style="margin-bottom: 30px;"><strong>Área:</strong> PLDFT</p>
-                  <p><strong>ID:</strong> 0001</p>
-                  <p><strong>Status:</strong>Aderente</p>
-                  <p><strong>Parecer:</strong>: O Banco tem evoluído no processo de controle e prevenção ao risco de lavagem de dinheiro mediante a implementação de novos controles nas áreas de tesouraria e varejo, com uso de inovação tanto nos processos de on-boarding quanto nos processos de controles internos.</p>
-                  <p><strong>Anexos:</strong> <ul style="margin-left: 30px;">
-                    <li><u style="color: rgb(43, 43, 255);">Calculadora AIR</u></li>
-                    <li><u style="color: rgb(43, 43, 255);">Relatório AIR</u></li>
-                  </ul></p>
-
-
-                  <p style="margin-top:30px"><strong>ID:</strong> 002</p>
-                  <p><strong>Status:</strong>Inaderente</p>
-                  <p><strong>Parecer:</strong>A politica de PLDFT se encontra desatualizada e como melhoria iniciamos o processo de atualização</p>
-                  <p><strong>Plano de Ação:</strong>Atualização da Política de Prevenção à Lavagem de Dinheiro e ao Financiamento do Terrorismo (PLDFT)</p>
-                  <p><strong>Anexos:</strong> <ul style="margin-left: 30px;">
-                    <li><u style="color: rgb(43, 43, 255);">Cronograma Normativo</u></li>
-                  </ul></p>
-
-                  <div class="caixas_brancas" style="margin-top: 40px;">
-                    <label for="button"><strong>Aprovado:</strong></label>
-                    <button id="botao_aprovado">
-                      <img src="./assets/icons/icons8-selecionado-30.png" alt="Reprovado" style="display: none;" id="v_aprovado">
-                    </button>
-
-                    <label for="button" style=" margin-left:  30px;"><Strong>Reprovado:</Strong></label>
-                    <button id="botao_reprovado">
-                      <img src="./assets/icons/x-vermelho.png" alt="Reprovado" style="display: none;" id="x_reprovado">
-                    </button>
-                  </div>
-
-                  <textarea name="parecer_area" id="parecer_area" cols="64" rows="5" style="width: 500px; height: 100px;margin-top: 4px; margin-bottom: 15px ;border: 1px solid #dcdcdc"></textarea>
-
+              <div class="TriagemParecerAreaConteudoParecer hiddenParecer">
+                <h2 class="TituloPreto9">Parecer da área</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Resumo</h5>
                   <hr>
-
-                  <p style="margin-bottom: 30px; margin-top: 30px;"><strong>Área:</strong> Tesouraria</p>
-                  <p><strong>ID:</strong> 0002</p>
-                  <p><strong>Status:</strong>Pendente</p>
+                </div>
+                <div>
+                  <label class="pesquisaTriagemLabel6 fonteItensBlocos">Área:</label>
+                  <input class="pesquisaTriagemInput6" type="text" readonly value="Contábil">
+                  <label class="pesquisaTriagemLabel7 fonteItensBlocos">Prazo de retorno:</label>
+                  <input class="pesquisaTriagemInput7" type="text" readonly value="01/05/2023">
+                  <label class="pesquisaTriagemLabel8 fonteItensBlocos">Aderente:</label>
+                  <select name="" id="" class="pesquisaTriagemInput8">
+                    <option value="vazio"></option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                  </select>
+                  <label class="pesquisaTriagemLabel9 fonteItensBlocos">Data de resposta:</label>
+                  <input class="pesquisaTriagemInput9" type="text" value="">
                 </div>
               </div>
-
-              <div class="atendimentoCentralizadorConteudo" style="border-radius: 12px;">
-                <h2 class="TituloPreto9" style="margin-bottom: 0%;">Conteúdo</h2>
-                <h5 class="SubtituloCinza">Resumo</h5>
-                <hr>
-
-                <p style="margin-top: 5px;font-size: 17.6px;font-family: sans-serif;"><strong>Assunto:</strong>Resultado da avaliação da Política de Prevenção à Lavagem de Dinheiro e ao Financiamento do Terrorismo (PLDFT) e da implantação da Abordagem Baseada em Risco (ABR)</p>
-
-                <p style="margin-top: 5px;font-size: 17.6px;font-family: sans-serif;"><strong>Resumo:</strong>Critérios de classificação de risco dos clientes e procedimentos de revisão e atualização.</p>
-                
-              </div>
-
-              <div class="atendimentoCentralizadorResponsavel" style="border-radius: 12px;">
-                <h2 class="TituloPreto9" style="margin-bottom: 0%;">Responsável</h2>
-                <h5 class="SubtituloCinza">Respostas</h5>
-                <hr>
-                <div class="tabela_responsavel">
-                  <table>
-                    <thead>
-                      <tr>
-
-                        <th>Área</th>
-                        <th>Prazo Retorno</th>
-                        <th>Status</th>
-                        <th>Plano de ação</th>
-                        <th style="background-color: #ffffff; border: 1px solid #ffffff;">
-                        
-                          <div>
-                            <button id="lupa_botao">
-                              <img src="./assets/icons/lupa-cinza-24.png" alt="Lupa">
-                            </button>
-                          </div>
-                        
-                        </th>
-                        
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-
-                        <td>PLDFT</td>
-                        <td>01/05/2023</td>
-                        <td>Aprovado</td>
-                        <td>Sim</td>
-                        <td>
-                          <div>
-                            <button id="notificacao">
-                              <img src="./assets/icons/sino-24.png" alt="Enviar Notificação"> <sup style="display: inline; position: fixed; left: 920px;">
-                            </button>
-                          </div>
-                        </td>
-
-                      </tr>
-                      <tr>
-                        <td>Tesouraria</td>
-                        <td>01/05/2023</td>
-                        <td>Pendente</td>
-                        <td> - </td>
-                        <td>
-                          <div>
-                            <button>
-                              <img src="./assets/icons/sino-24.png" alt="Enviar Notificação">
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td>Tesouraria</td>
-                        <td>01/05/2023</td>
-                        <td>Pendente</td>
-                        <td> - </td>
-                        <td>
-                          <div>
-                            <button>
-                              <img src="./assets/icons/sino-24.png" alt="Enviar Notificação">
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Tesouraria</td>
-                        <td>01/05/2023</td>
-                        <td>Pendente</td>
-                        <td> - </td>
-                        <td>
-                          <div>
-                            <button>
-                              <img src="./assets/icons/sino-24.png" alt="Enviar Notificação">
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Tesouraria</td>
-                        <td>01/05/2023</td>
-                        <td>Pendente</td>
-                        <td> - </td>
-                        <td>
-                          <div>
-                            <button>
-                              <img src="./assets/icons/sino-24.png" alt="Enviar Notificação">
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                  <!-- Pop up sininho -->
-
-                  <div id="popup">
-                    <p>Notificação enviada com sucesso!</p>
-                  </div>
-
-                  <!-- Pop up Reprovado -->
-
-                  <div id="popup_reprovacao_salvar" >
-                    <p>Solicitação redirecionada para o analista!</p>
-                  </div>
-
-
-                  <!-- Pop up Aprovado -->
-                  <div id="popup_aprovação_consolidar" class="popup">
-                    <span class="fechar" onclick="fecharPopupAprovado()">&times;</span>
-                    <p><strong>Digite parecer final da área!</strong></p>
-                    <textarea name="parecer_final_text_area" id="parecer_final" cols="65" rows="10" style="border: 1px solid #dcdcdc">Conforme declarado pelas áreas envolvidas O Banco tem evoluído no processo de controle e prevenção ao risco de lavagem de dinheiro mediante a implementação de novos controles nas áreas de tesouraria e varejo, com uso de inovação tanto nos processos de on-boarding quanto nos processos de controles internos.
-                    </textarea>
-                    <div>
-                      <button onclick="visualizar_pdf()"><img src="./assets/icons/icons8-olho-24.png" alt="Visualização" style="margin-top: 5px;"><p style="margin-top: 1px; color: #ffffff; width: 110px;">Visualização</p></button>
-                      <button onclick="salvar_parecer_final()"><img src="./assets/icons/icons8-disquete-32.png" alt="Salvar" style=" margin:7px 2px 0px 4px;width:20px; height: 20px;"><p style="margin-top: 1px; margin-left: 6px; color: #ffffff; width: 65px">Salvar</p></button>
-                    </div>
-
-                  </div>
-                  <div id="pop_up_download" class="popup" style="top: 72.5%;
-                  left: 50%;">
-
-                    <p style="color: #2c4c88; margin-right: 15px; height: 30px; margin-top: 15px;">Download</p>
-                    
-                    <div style="background-color: #ffffff; display: flex;">
-                      <img src="./assets/icons/pdf-30.png" alt="Download" style="width: 30px; height: 30px; margin-top: 10px;">
-                      <div>
-                        <p>parecer_aderencia_PLDFT.pdf</p>
-                        <p><u style="color: rgb(50, 50, 255);">Open file</u></p>
-                      </div>
-                      
-                    </div>
-
-
-                  </div>
-
+              <div class="TriagemParecerAreaConteudoPlano hiddenParecer">
+                <h2 class="TituloPreto9">Plano de ação</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Cronograma</h5>
+                  <hr>
                 </div>
-              </div>
-
-
-              
+                <div>
+                  <label class="pesquisaTriagemLabel10 fonteItensBlocos">Plano de ação:</label>
+                  <input class="pesquisaTriagemInput10" type="text" value="">
+                  <label class="pesquisaTriagemLabel11 fonteItensBlocos">Data início:</label>
+                  <input class="pesquisaTriagemInput11" type="text" value="">
+                  <label class="pesquisaTriagemLabel12 fonteItensBlocos">Data fim:</label>
+                  <input class="pesquisaTriagemInput12" type="text" value="">
+                  <input class="pesquisaTriagemInput13" type="text" value="">
+                  <button class="botaoAqruivo"><img src="./assets/icons/icon-add.png" alt="" height="25px" width="25px"> Arquivo</button>
+                </div>
+               </div>
+                <div class="TriagemParecerAreaConteudoResumo hiddenParecer">
+                 <h2 class="TituloPreto9">Conteúdo</h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Resumo e Requerimentos</h5>
+                    <hr>
+                </div>
+                <div class="fonteConteudo">
+                  <h5 class="fonteConteudo">Novo normativo</h5>
+                  <p class="fonteConteudo"><strong>Normativos Relacionados: </strong> <span>Resolução CMN 4.817/2020 | 4.818/2020</span> </p>
+                  <p class="fonteConteudo"><strong>Revoga os normativos vigentes: </strong> <span>Revoga, a partir de 1º/1/2025, Circulares BCB ns. 2.535/1995.</span></p>
+                  <p class="fonteConteudo"><strong>Resumo: </strong> <span>O Banco Central do Brasil (BCB) publicou a Resolução BCB nº 309 de 28 de março de 2023, que estabelece procedimentos contábeis sobre: a definição de fluxos de caixa de ativo financeiro como somente pagamento de principal e juros; a aplicação da metodologia para apuração da taxa de juros efetiva de instrumentos financeiros; a constituição de provisão para perdas associadas ao risco de crédito; e a evidenciação de informações relativas a instrumentos financeiros em notas explicativas a serem observadas pelas instituições financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil.</span></p>
+                  <p class="fonteConteudo"><strong>Requerimentos Associados</strong></p>
+                  <p class="fonteConteudo"><strong>ID: </strong> <Span>0001</Span></p>
+                  <p class="fonteConteudo"><strong>Palavras chave: </strong> <Span>Art. 1º; IV; notas explicativas.</Span></p>
+                </div>
+               </div>
+                <div class="TriagemParecerAreaConteudoResposta hiddenParecer">
+                  <h2 class="TituloPreto9">Resposta da área</h2>
+                  <div>
+                   <h5 class="SubtituloCinza">Parecer da área</h5>
+                    <hr>
+                  </div>
+                  <div>
+                    <textarea class="pesquisaTriagemInput14" id="campoComQuebraDeLinha" placeholder="Digite seu texto aqui..."></textarea>
+                    <form  method="POST" enctype="multipart/form-data" name="myForm">
+                      <div id="yourBtn" onclick="getFile()">Selecione uma evidência</div>
+                      <div style='height: 0px;width: 0px; overflow:hidden;'><input id="upfile" type="file" value="upload" onchange="sub(this)" /></div>
+                    </form>
+                  </div>
+                  <div>
+                    <button class="botaoCancelar"><img src="./assets/icons/cancelarIcon.png" alt="" height="25px" width="25px">Cancelar</button>
+                    <button class="botaoUploadEvidencia"><img src="./assets/icons/UploadBranco.png" alt="" height="25px" width="25px">Upload de evidência</button>
+                    <button class="botaoSalvarEnviar" ><img src="./assets/icons/SalvarBranco.png" alt="" height="25px" width="25px" >Salvar / enviar</button>
+                  </div>
+                </div>
             </div>
-            <!-- ----------------------- -->
-            <!-- <div class="atendimentoParecer">
-              <div class="atendimentoParecerRequerimentos">Requerimentos</div>
-              <div class="atendimentoParecerPlano">Plano de ações</div>
-              <div class="atendimentoParecerBusca">Busca de requerimentos</div>
-              <div class="atendimentoParecerRequisicoes">Requisições</div>
-            </div> -->
-
-            <!-- ------------- -->
           </div>
           <div class="content">
-            <div class="atendimentoValidacao">
-              <div class="atendimentoValidacaoRequerimentos">Requerimentos</div>
-              <div class="atendimentoValidacaoPlano">Plano de ações</div>
-              <div class="atendimentoValidacaoBusca">Busca de requerimentos</div>
-              <div class="atendimentoValidacaoRequisicoes">Requisições</div>
+            <div class="TriagemValidacaoArea">
+              <div class="TriagemValidacaoAreaPublicacoes showValidacao">
+                  <h2 class="TituloPreto9">Publicações</h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Status</h5>
+                    <hr>
+                  </div>
+                <div class="separadorPubli">
+                  <div class="separadorPubliHora">
+                    <div class="horarioAtualizacao">
+                      <p id="horaAtualizada">Atualizado 00h00 05/06/2023</p>
+                    </div>
+                  </div>
+                  <div class="separadorPubliVencido">
+                    <div class="quadrado">
+                     <div class="conteudo">
+                        <div class="numero">0</div>
+                        <div class="palavra">Vencido</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="separadorPubliAberto">
+                    <div class="quadrado">
+                      <div class="conteudo">
+                       <div class="numero">2</div>
+                        <div class="palavra">Aberto</div>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+
+              </div>
+              <div class="TriagemValidacaoAreaPlanosDeAcao showValidacao">
+                <h2 class="TituloPreto9">Planos de ações</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Status</h5>
+                  <hr>
+                </div>
+                <div class="separadorPubli">
+                  <div class="separadorPlanoVencido">
+                    <div class="quadrado">
+                     <div class="conteudo">
+                        <div class="numero">0</div>
+                        <div class="palavra">Vencido</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="separadorPlanoAberto">
+                    <div class="quadrado">
+                      <div class="conteudo">
+                       <div class="numero">2</div>
+                        <div class="palavra">Aberto</div>
+                      </div>
+                    </div>
+                  </div>  
+                  <div class="separadorPlanoFinalizado">
+                    <div class="quadrado">
+                      <div class="conteudo">
+                       <div class="numero">2</div>
+                        <div class="palavra">Finalizado</div>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+
+              </div>
+              <div class="TriagemParecerAreaBuscaDeNormativos showValidacao">
+                <h2 class="TituloPreto9">Busca de normativos</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Filtro:</h5>
+                  <hr>
+                </div>
+                <div class="separadorBuscaNormativos">
+                  <div>
+                    <label for="ReguladorTriagem" class="separadorTriagemRegulador1">Regulador:</label>
+                      <select name="ReguladorTriagem" id="ReguladorTriagem" class="separadorTriagemRegulador2">
+                        <option value="Bacen">Bacen</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="DataPublicacao" class="separadorTriagemDataPublica1">Data de publicação:</label>
+                      <select name="DataPublicacao" id="DataPublicacao" class="separadorTriagemDataPublica2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                   <div>
+                    <label for="Categoria" class="separadorTriagemCategoria1">Categoria:</label>
+                      <select name="Categoria" id="Categoria" class="separadorTriagemCategoria2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Tema" class="separadorTriagemTema1">Tema:</label>
+                      <select name="Tema" id="Tema" class="separadorTriagemTema2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Status" class="separadorTriagemStatus1">Status:</label>
+                      <select name="Status" id="Status" class="separadorTriagemStatus2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Criticidade" class="separadorTriagemCriticidade1">Criticidade:</label>
+                      <select name="Criticidade" id="Criticidade" class="separadorTriagemCriticidade2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <button class="botaoLimpaFiltro2"><img src="./assets/icons/VassouraBranca.png" alt="">Limpar</button>
+                    <button class="botaoFiltrar2"><img src="./assets/icons/FiltroBranco.png" alt="">Pesquisar</button>
+                  </div> 
+                </div>
+              
+              </div>
+              <div class="TriagemValidacaoAreaNormativos showValidacao">
+                <h2 class="TituloPreto9">Normativos</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Lista</h5>
+                  <hr>
+                </div>
+                  <div class="tableFixHeadTriagemRaul">
+                    <table class="tableVariavesTriagemRaul">
+                      <thead>
+                        <tr>
+                          <th>Normativo</th>
+                          <th>Regulador</th>
+                          <th>Publicação</th>
+                          <th>Status</th>
+                          <th>Tema</th>
+                          <th>Criticidade</th>
+                          <th>Visualização</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Resolução nº 309</td>
+                          <td>Bacen</td>
+                          <td>28/03/2023</td>
+                          <td>Aberto</td>
+                          <td>Contabilidade</td>
+                          <td>Alta</td>
+                          <td class="SemBordaColuna">
+                            <div class="botaoAbrirVisualizacaoCentralizar">
+                              <button class="botaoAbrirVisualizacao2 botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir<sup>1</sup></div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Resolução nº 5.066</td>
+                          <td>CMN</td>
+                          <td>30/03/2023</td>
+                          <td>Aberto</td>
+                          <td>Contabilidade</td>
+                          <td>Baixa</td>
+                          <td class="SemBordaColuna">
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirVisualizacao botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
             </div>
+          
+            <div class="TriagemParecerAreaConteudo">
+              <div class="TriagemParecerAreaConteudoPreTriagem hiddenValidacao">
+                <h2 class="TituloPreto9">Pré-triagem</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Resolução</h5>
+                  <hr>
+                </div>
+
+                <div>
+                  <label class="pesquisaTriagemLabel1 fonteItensBlocos">Normativo:</label>
+                  <input class="pesquisaTriagemInput1" type="text" readonly value="Resolução nº 309">
+                  <label class="pesquisaTriagemLabel2 fonteItensBlocos">Regulador:</label>
+                  <input class="pesquisaTriagemInput2" type="text" readonly value="Bacen">
+                  <label class="pesquisaTriagemLabel3 fonteItensBlocos">Tema:</label>
+                  <input class="pesquisaTriagemInput3" type="text" readonly value="Contabilidade">
+                  <label class="pesquisaTriagemLabel4 fonteItensBlocos">Publicação:</label>
+                  <input class="pesquisaTriagemInput4" type="text" readonly value="28/03/2023">
+                  <label class="pesquisaTriagemLabel5 fonteItensBlocos">Criticidade:</label>
+                  <input class="pesquisaTriagemInput5" type="text" readonly value="Alta">
+                </div>
+              </div>
+              <div class="TriagemParecerAreaConteudoParecer hiddenValidacao">
+                <h2 class="TituloPreto9">Parecer da área</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Resumo</h5>
+                  <hr>
+                </div>
+                <div>
+                  <label class="pesquisaTriagemLabel6 fonteItensBlocos">Área:</label>
+                  <input class="pesquisaTriagemInput6" type="text" readonly value="Contábil">
+                  <label class="pesquisaTriagemLabel7 fonteItensBlocos">Prazo de retorno:</label>
+                  <input class="pesquisaTriagemInput7" type="text" readonly value="01/05/2023">
+                  <label class="pesquisaTriagemLabel8 fonteItensBlocos">Aderente:</label>
+                  <select name="" id="" class="pesquisaTriagemInput8">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                  </select>
+                  <label class="pesquisaTriagemLabel9 fonteItensBlocos">Data de resposta:</label>
+                  <input class="pesquisaTriagemInput9" type="text" value="26/04/2023">
+                </div>
+              </div>
+              <div class="TriagemParecerAreaConteudoPlano hiddenValidacao">
+                <h2 class="TituloPreto9">Plano de ação</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Cronograma</h5>
+                  <hr>
+                </div>
+                <div>
+                  <label class="pesquisaTriagemLabel10 fonteItensBlocos">Plano de ação:</label>
+                  <input class="pesquisaTriagemInput10" type="text" value="  n/a">
+                  <label class="pesquisaTriagemLabel11 fonteItensBlocos">Data início:</label>
+                  <input class="pesquisaTriagemInput11" type="text" value="  -">
+                  <label class="pesquisaTriagemLabel12 fonteItensBlocos">Data fim:</label>
+                  <input class="pesquisaTriagemInput12" type="text" value="  -">
+                  <input class="pesquisaTriagemInput13" type="text" value="">
+                  <button class="botaoAqruivo"><img src="./assets/icons/icon-add.png" alt="" height="25px" width="25px"> Arquivo</button>
+                </div>
+               </div>
+                <div class="TriagemParecerAreaConteudoResumo hiddenValidacao">
+                 <h2 class="TituloPreto9">Conteúdo</h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Resumo e Requerimentos</h5>
+                    <hr>
+                </div>
+                <div class="fonteConteudo">
+                  <h5 class="fonteConteudo">Novo normativo</h5>
+                  <p class="fonteConteudo"><strong>Normativos Relacionados: </strong> <span>Resolução CMN 4.817/2020 | 4.818/2020</span> </p>
+                  <p class="fonteConteudo"><strong>Revoga os normativos vigentes: </strong> <span>Revoga, a partir de 1º/1/2025, Circulares BCB ns. 2.535/1995.</span></p>
+                  <p class="fonteConteudo"><strong>Resumo: </strong> <span>O Banco Central do Brasil (BCB) publicou a Resolução BCB nº 309 de 28 de março de 2023, que estabelece procedimentos contábeis sobre: a definição de fluxos de caixa de ativo financeiro como somente pagamento de principal e juros; a aplicação da metodologia para apuração da taxa de juros efetiva de instrumentos financeiros; a constituição de provisão para perdas associadas ao risco de crédito; e a evidenciação de informações relativas a instrumentos financeiros em notas explicativas a serem observadas pelas instituições financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil.</span></p>
+                  <p class="fonteConteudo"><strong>Requerimentos Associados</strong></p>
+                  <p class="fonteConteudo"><strong>ID: </strong> <Span>0001</Span></p>
+                  <p class="fonteConteudo"><strong>Palavras chave: </strong> <Span>Art. 1º; IV; notas explicativas.</Span></p>
+                </div>
+               </div>
+                <div class="TriagemParecerAreaConteudoResposta hiddenValidacao">
+                  <h2 class="TituloPreto9">Resposta da área</h2>
+                  <div>
+                   <h5 class="SubtituloCinza">Parecer da área</h5>
+                    <hr>
+                  </div>
+                  <div>
+                      <textarea class="pesquisaTriagemInput14" id="campoComQuebraDeLinha" placeholder="Digite seu texto aqui...">Conforme a resolução nº 309 de 28 de março de 2023 do Banco Central do Brasil (BCB), que estabelece procedimentos contábeis. Declaramos que a área exerce suas atividades conforme norma e encontra-se aderente à regulação.</textarea>
+                    
+                      <button class="DownloadEvidencia">
+                        <a href="./assets/xlsx/Evidência_atendimento_resolução309.xlsx" download>
+                        <img src="./assets/icons/microsoft-excel.png" alt="excel" width="35px" height="35px">
+                        </a>Download da evidência
+                      </button>
+                    
+                  </div>
+                  <div>
+                    <button class="botaoReprovar"><img src="./assets/icons/fechar.png" alt="" height="25px" width="25px">Recusar</button>
+                    <button class="botaoAprovar" ><img src="./assets/icons/SalvarBranco.png" alt="" height="25px" width="25px" >Aprovar</button>
+                  </div>
+                </div>
+            </div>
+          
+          
+          
+          
+          
+          
           </div>
           <div class="content" >
             <div class="atendimentoCentralizador" id="centralizador-lista">
@@ -2363,10 +2384,10 @@
         </div>
     </div>
 
-      <script src="script.js"></script>
+    <script src="script.js"></script>
     <script src="./javascript-atendimento/centralizador-conteudo.js"></script>
-    <script src="script.js"></script>
-    <script src="script.js"></script>
+    <script src="./javascript-atendimento/atendimento-dashbord.js"></script>
+    <script src="./javascript-atendimento/ParecerValidacao.js"></script>
     <script src="./javascript-atendimento/gerenciamento-processo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
