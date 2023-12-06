@@ -1,62 +1,57 @@
-if(document.querySelector(".botaoAbrirVisualizacao.botaoMain")){
-    let botao = document.querySelector(".botaoAbrirVisualizacao.botaoMain");
+document.addEventListener("DOMContentLoaded", function () {
+    var botao = document.querySelector('.botaoAbrirVisualizacao');
+    var elementosValidacaoTriagem = document.querySelectorAll('.TriagemParecerArea .showParecer');
+    var elementosValidacaoParecer = document.querySelectorAll('.TriagemParecerAreaConteudo .hiddenParecer');
 
-    let ParecerArea = document.querySelector(".TriagemParecerArea");
-    let ConteudoParecer = document.querySelector(".TriagemParecerAreaConteudo");
-    
-    let PreTriagem = document.querySelector(".TriagemParecerAreaConteudoPreTriagem");
-    let Parecer = document.querySelector(".TriagemParecerAreaConteudoParecer");
-    let Plano = document.querySelector(".TriagemParecerAreaConteudoPlano");
-    let Resumo = document.querySelector(".TriagemParecerAreaConteudoResumo");
-    let Resposta = document.querySelector(".TriagemParecerAreaConteudoResposta");
-    let Botoes =document.querySelector(".TriagemParecerAreaConteudoBotoes")
+    botao.addEventListener('click', function () {
+        elementosValidacaoTriagem.forEach(function (elemento) {
+            elemento.classList.toggle('showParecer');
+            elemento.classList.toggle('hiddenParecer');
+        });
 
-
-
-
-    botao.addEventListener("click", ()=>{
-      ParecerArea.classList.replace('showParecer', 'hiddenParecer');
-
-      ConteudoParecer.classList.replace('hiddenParecer', 'showParecer');
-      
-      PreTriagem.classList.replace('hiddenParecer', 'showParecer');
-      Parecer.classList.replace('hiddenParecer', 'showParecer');
-      Plano.classList.replace('hiddenParecer', 'showParecer');
-      Resumo.classList.replace('hiddenParecer', 'showParecer');
-      Resposta.classList.replace('hiddenParecer', 'showParecer');
-      Botoes.classList.replace('hiddenParecer', 'showParecer');
-
-
+        elementosValidacaoParecer.forEach(function (elemento) {
+            elemento.classList.toggle('showParecer');
+            elemento.classList.toggle('hiddenParecer');
+        });
     });
-  }
+});
 
-  if (document.querySelector(".botaoCancelar")) {
-    let botaoCancelar = document.querySelector(".botaoCancelar");
+  document.addEventListener("DOMContentLoaded", function () {
+    var botao = document.querySelector('.botaoAbrirVisualizacao2');
+    var elementosValidacaoTriagem = document.querySelectorAll('.TriagemValidacaoArea .showValidacao');
+    var elementosValidacaoParecer = document.querySelectorAll('.TriagemParecerAreaConteudo .hiddenValidacao');
 
-    let ParecerArea = document.querySelector(".TriagemParecerArea");
-    let ConteudoParecer = document.querySelector(".TriagemParecerAreaConteudo");
+    botao.addEventListener('click', function () {
+        elementosValidacaoTriagem.forEach(function (elemento) {
+            elemento.classList.toggle('showValidacao');
+            elemento.classList.toggle('hiddenValidacao');
+        });
 
-    let PreTriagem = document.querySelector(".TriagemParecerAreaConteudoPreTriagem");
-    let Parecer = document.querySelector(".TriagemParecerAreaConteudoParecer");
-    let Plano = document.querySelector(".TriagemParecerAreaConteudoPlano");
-    let Resumo = document.querySelector(".TriagemParecerAreaConteudoResumo");
-    let Resposta = document.querySelector(".TriagemParecerAreaConteudoResposta");
-    let Botoes = document.querySelector(".TriagemParecerAreaConteudoBotoes");
-
-    botaoCancelar.addEventListener("click", () => {
-        ParecerArea.classList.replace('hiddenParecer', 'showParecer');
-        ConteudoParecer.classList.replace('showParecer', 'hiddenParecer');
-
-        PreTriagem.classList.replace('showParecer', 'hiddenParecer');
-        Parecer.classList.replace('showParecer', 'hiddenParecer');
-        Plano.classList.replace('showParecer', 'hiddenParecer');
-        Resumo.classList.replace('showParecer', 'hiddenParecer');
-        Resposta.classList.replace('showParecer', 'hiddenParecer');
-        Botoes.classList.replace('showParecer', 'hiddenParecer');
+        elementosValidacaoParecer.forEach(function (elemento) {
+            elemento.classList.toggle('showValidacao');
+            elemento.classList.toggle('hiddenValidacao');
+        });
     });
-}
+});
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  var botao = document.querySelector('.botaoCancelar');
+  var elementosValidacaoTriagem = document.querySelectorAll('.TriagemParecerArea .showParecer');
+  var elementosValidacaoParecer = document.querySelectorAll('.TriagemParecerAreaConteudo .hiddenParecer');
+
+  botao.addEventListener('click', function () {
+      elementosValidacaoTriagem.forEach(function (elemento) {
+          elemento.classList.toggle('showParecer');
+          elemento.classList.toggle('hiddenParecer');
+      });
+
+      elementosValidacaoParecer.forEach(function (elemento) {
+          elemento.classList.toggle('showParecer');
+          elemento.classList.toggle('hiddenParecer');
+      });
+  });
+});
   
   var aderenteSelect = document.querySelector('.pesquisaTriagemInput8');
   var dataRespostaInput = document.querySelector('.pesquisaTriagemInput9');
@@ -106,7 +101,6 @@ if(document.querySelector(".botaoAbrirVisualizacao.botaoMain")){
     let inputArquivo = document.getElementById("upfile");
 
     botaoUploadEvidencia.addEventListener("click", () => {
-        // Verifica se o campo de input tipo arquivo contém algum arquivo
         if (inputArquivo.files.length > 0) {
             Swal.fire({
                 icon: 'success',
@@ -114,11 +108,6 @@ if(document.querySelector(".botaoAbrirVisualizacao.botaoMain")){
                 allowOutsideClick: false,
                 showConfirmButton: true,
                 confirmButtonText: 'OK'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Habilita o botão "Salvar/Enviar" após o OK do usuário
-                    document.querySelector(".botaoSalvarEnviar").disabled = false;
-                }
             });
         } else {
             Swal.fire({
@@ -129,41 +118,100 @@ if(document.querySelector(".botaoAbrirVisualizacao.botaoMain")){
     });
 }
 
+
 if (document.querySelector(".botaoSalvarEnviar")) {
   let botaoSalvarEnviar = document.querySelector(".botaoSalvarEnviar");
 
+  var elementosParecerTriagem = document.querySelectorAll('.TriagemParecerArea .showParecer');
+  var elementosParecerTriagem = document.querySelectorAll('.TriagemParecerAreaConteudo .hiddenParecer');
+
   botaoSalvarEnviar.addEventListener("click", () => {
-      // Aqui você pode adicionar a lógica para salvar/enviar o parecer
+      elementosParecerTriagem.forEach(function (elemento) {
+      elemento.classList.toggle('showParecer');
+      elemento.classList.toggle('hiddenParecer');
+      });
+
+      elementosParecerTriagem.forEach(function (elemento) {
+      elemento.classList.toggle('showParecer');
+      elemento.classList.toggle('hiddenParecer');
+      });
       Swal.fire({
           icon: 'success',
           title: 'Parecer salvo e enviado com sucesso!'
-      }).then(() => {
-          // Reverte a visibilidade dos elementos
-          let ParecerArea = document.querySelector(".TriagemParecerArea");
-          let ConteudoParecer = document.querySelector(".TriagemParecerAreaConteudo");
-
-          let PreTriagem = document.querySelector(".TriagemParecerAreaConteudoPreTriagem");
-          let Parecer = document.querySelector(".TriagemParecerAreaConteudoParecer");
-          let Plano = document.querySelector(".TriagemParecerAreaConteudoPlano");
-          let Resumo = document.querySelector(".TriagemParecerAreaConteudoResumo");
-          let Resposta = document.querySelector(".TriagemParecerAreaConteudoResposta");
-          let Botoes = document.querySelector(".TriagemParecerAreaConteudoBotoes");
-
-          ParecerArea.classList.replace('hiddenParecer', 'showParecer');
-          ConteudoParecer.classList.replace('showParecer', 'hiddenParecer');
-
-          PreTriagem.classList.replace('showParecer', 'hiddenParecer');
-          Parecer.classList.replace('showParecer', 'hiddenParecer');
-          Plano.classList.replace('showParecer', 'hiddenParecer');
-          Resumo.classList.replace('showParecer', 'hiddenParecer');
-          Resposta.classList.replace('showParecer', 'hiddenParecer');
-          Botoes.classList.replace('showParecer', 'hiddenParecer');
       });
   });
 }
 
+if (document.querySelector(".botaoAprovar")) {
+  let botaoAprovar = document.querySelector(".botaoAprovar");
+
+  var elementosValidacaoTriagem = document.querySelectorAll('.TriagemValidacaoArea .showValidacao');
+  var elementosValidacaoParecer = document.querySelectorAll('.TriagemParecerAreaConteudo .hiddenValidacao');
 
 
+  botaoAprovar.addEventListener("click", () => {
+    elementosValidacaoTriagem.forEach(function (elemento) {
+      elemento.classList.toggle('showValidacao');
+      elemento.classList.toggle('hiddenValidacao');
+    });
 
+    elementosValidacaoParecer.forEach(function (elemento) {
+      elemento.classList.toggle('showValidacao');
+      elemento.classList.toggle('hiddenValidacao');
+    });
+    Swal.fire({
+      icon: 'success',
+      title: 'Parecer submetido para área de compliance!'  
+    });
+  });
+}
 
+if (document.querySelector(".botaoReprovar")) {
+  let botaoReprovar = document.querySelector(".botaoReprovar");
 
+  var elementosValidacaoTriagem = document.querySelectorAll('.TriagemValidacaoArea .showValidacao');
+  var elementosValidacaoParecer = document.querySelectorAll('.TriagemParecerAreaConteudo .hiddenValidacao');
+
+  botaoReprovar.addEventListener("click", () => {
+    
+    
+    Swal.fire({
+      title: 'Justificativa da reprovação:',
+      input: 'textarea',
+      inputLabel: 'Digite sua justificativa',
+      inputPlaceholder: 'Escreva aqui...',
+      showCancelButton: true,
+      confirmButtonText: 'Enviar',
+      cancelButtonText: 'Cancelar',
+      showLoaderOnConfirm: true,
+      preConfirm: (justificativa) => {
+        // Aqui você pode adicionar a lógica para lidar com a justificativa
+        // e realizar as ações necessárias, como enviar para o servidor, etc.
+        return new Promise((resolve) => {
+          elementosValidacaoTriagem.forEach(function (elemento) {
+            elemento.classList.toggle('showValidacao');
+            elemento.classList.toggle('hiddenValidacao');
+          });
+      
+          elementosValidacaoParecer.forEach(function (elemento) {
+            elemento.classList.toggle('showValidacao');
+            elemento.classList.toggle('hiddenValidacao');
+          });
+          // Simulando uma requisição assíncrona (substitua por sua lógica real)
+          setTimeout(() => {
+            resolve();
+          }, 1000);
+        });
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    }).then((result) => {
+      if (result.isConfirmed) {
+    
+        Swal.fire({
+          icon: 'success',
+          title: 'Reprovação enviada com sucesso!'
+        });
+      }
+    });
+  });
+}

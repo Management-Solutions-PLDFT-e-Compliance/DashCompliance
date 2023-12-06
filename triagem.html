@@ -812,8 +812,8 @@
             </div>
           </div>
           <div class="content">
-            <div class="TriagemParecerArea showParecer">
-              <div class="TriagemParecerAreaPublicacoes">
+            <div class="TriagemParecerArea">
+              <div class="TriagemParecerAreaPublicacoes showParecer">
                 <h2 class="TituloPreto9">Publicações</h2>
                 <div>
                   <h5 class="SubtituloCinza">Status</h5>
@@ -843,7 +843,7 @@
                 </div>  
               </div>
               </div>
-              <div class="TriagemParecerAreaPlanosDeAcao">
+              <div class="TriagemParecerAreaPlanosDeAcao showParecer">
                 <h2 class="TituloPreto9">Planos de ações</h2>
                 <div>
                   <h5 class="SubtituloCinza">Status</h5>
@@ -877,7 +877,7 @@
                 </div>
 
               </div>
-              <div class="TriagemParecerAreaBuscaDeNormativos">
+              <div class="TriagemParecerAreaBuscaDeNormativos showParecer">
                 <h2 class="TituloPreto9">Busca de normativos</h2>
                 <div>
                   <h5 class="SubtituloCinza">Filtro:</h5>
@@ -927,7 +927,7 @@
                 </div>
 
               </div>
-              <div class="TriagemParecerAreaNormativos">
+              <div class="TriagemParecerAreaNormativos showParecer">
                 <h2 class="TituloPreto9">Normativos</h2>
                 <div>
                   <h5 class="SubtituloCinza">Lista</h5>
@@ -1083,7 +1083,7 @@
           </div>
           <div class="content">
             <div class="TriagemValidacaoArea">
-              <div class="TriagemValidacaoAreaPublicacoes">
+              <div class="TriagemValidacaoAreaPublicacoes showValidacao">
                   <h2 class="TituloPreto9">Publicações</h2>
                   <div>
                     <h5 class="SubtituloCinza">Status</h5>
@@ -1114,7 +1114,7 @@
                 </div>
 
               </div>
-              <div class="TriagemValidacaoAreaPlanosDeAcao">
+              <div class="TriagemValidacaoAreaPlanosDeAcao showValidacao">
                 <h2 class="TituloPreto9">Planos de ações</h2>
                 <div>
                   <h5 class="SubtituloCinza">Status</h5>
@@ -1148,7 +1148,7 @@
                 </div>
 
               </div>
-              <div class="TriagemParecerAreaBuscaDeNormativos">
+              <div class="TriagemParecerAreaBuscaDeNormativos showValidacao">
                 <h2 class="TituloPreto9">Busca de normativos</h2>
                 <div>
                   <h5 class="SubtituloCinza">Filtro:</h5>
@@ -1198,7 +1198,7 @@
                 </div>
               
               </div>
-              <div class="TriagemValidacaoAreaNormativos">
+              <div class="TriagemValidacaoAreaNormativos showValidacao">
                 <h2 class="TituloPreto9">Normativos</h2>
                 <div>
                   <h5 class="SubtituloCinza">Lista</h5>
@@ -1226,8 +1226,8 @@
                           <td>Contabilidade</td>
                           <td>Alta</td>
                           <td class="SemBordaColuna">
-                            <div class="botaoAbrirPesquisaCentralizar">
-                              <button class="botaoAbrirPesquisa botaoMain">
+                            <div class="botaoAbrirVisualizacaoCentralizar">
+                              <button class="botaoAbrirVisualizacao2 botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
                                 <div>Abrir<sup>1</sup></div>
                               </button>
@@ -1256,6 +1256,102 @@
               </div>
             </div>
           
+            <div class="TriagemParecerAreaConteudo">
+              <div class="TriagemParecerAreaConteudoPreTriagem hiddenValidacao">
+                <h2 class="TituloPreto9">Pré-triagem</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Resolução</h5>
+                  <hr>
+                </div>
+
+                <div>
+                  <label class="pesquisaTriagemLabel1 fonteItensBlocos">Normativo:</label>
+                  <input class="pesquisaTriagemInput1" type="text" readonly value="Resolução nº 309">
+                  <label class="pesquisaTriagemLabel2 fonteItensBlocos">Regulador:</label>
+                  <input class="pesquisaTriagemInput2" type="text" readonly value="Bacen">
+                  <label class="pesquisaTriagemLabel3 fonteItensBlocos">Tema:</label>
+                  <input class="pesquisaTriagemInput3" type="text" readonly value="Contabilidade">
+                  <label class="pesquisaTriagemLabel4 fonteItensBlocos">Publicação:</label>
+                  <input class="pesquisaTriagemInput4" type="text" readonly value="28/03/2023">
+                  <label class="pesquisaTriagemLabel5 fonteItensBlocos">Criticidade:</label>
+                  <input class="pesquisaTriagemInput5" type="text" readonly value="Alta">
+                </div>
+              </div>
+              <div class="TriagemParecerAreaConteudoParecer hiddenValidacao">
+                <h2 class="TituloPreto9">Parecer da área</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Resumo</h5>
+                  <hr>
+                </div>
+                <div>
+                  <label class="pesquisaTriagemLabel6 fonteItensBlocos">Área:</label>
+                  <input class="pesquisaTriagemInput6" type="text" readonly value="Contábil">
+                  <label class="pesquisaTriagemLabel7 fonteItensBlocos">Prazo de retorno:</label>
+                  <input class="pesquisaTriagemInput7" type="text" readonly value="01/05/2023">
+                  <label class="pesquisaTriagemLabel8 fonteItensBlocos">Aderente:</label>
+                  <select name="" id="" class="pesquisaTriagemInput8">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                  </select>
+                  <label class="pesquisaTriagemLabel9 fonteItensBlocos">Data de resposta:</label>
+                  <input class="pesquisaTriagemInput9" type="text" value="26/04/2023">
+                </div>
+              </div>
+              <div class="TriagemParecerAreaConteudoPlano hiddenValidacao">
+                <h2 class="TituloPreto9">Plano de ação</h2>
+                <div>
+                  <h5 class="SubtituloCinza">Cronograma</h5>
+                  <hr>
+                </div>
+                <div>
+                  <label class="pesquisaTriagemLabel10 fonteItensBlocos">Plano de ação:</label>
+                  <input class="pesquisaTriagemInput10" type="text" value="  n/a">
+                  <label class="pesquisaTriagemLabel11 fonteItensBlocos">Data início:</label>
+                  <input class="pesquisaTriagemInput11" type="text" value="  -">
+                  <label class="pesquisaTriagemLabel12 fonteItensBlocos">Data fim:</label>
+                  <input class="pesquisaTriagemInput12" type="text" value="  -">
+                  <input class="pesquisaTriagemInput13" type="text" value="">
+                  <button class="botaoAqruivo"><img src="./assets/icons/icon-add.png" alt="" height="25px" width="25px"> Arquivo</button>
+                </div>
+               </div>
+                <div class="TriagemParecerAreaConteudoResumo hiddenValidacao">
+                 <h2 class="TituloPreto9">Conteúdo</h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Resumo e Requerimentos</h5>
+                    <hr>
+                </div>
+                <div class="fonteConteudo">
+                  <h5 class="fonteConteudo">Novo normativo</h5>
+                  <p class="fonteConteudo"><strong>Normativos Relacionados: </strong> <span>Resolução CMN 4.817/2020 | 4.818/2020</span> </p>
+                  <p class="fonteConteudo"><strong>Revoga os normativos vigentes: </strong> <span>Revoga, a partir de 1º/1/2025, Circulares BCB ns. 2.535/1995.</span></p>
+                  <p class="fonteConteudo"><strong>Resumo: </strong> <span>O Banco Central do Brasil (BCB) publicou a Resolução BCB nº 309 de 28 de março de 2023, que estabelece procedimentos contábeis sobre: a definição de fluxos de caixa de ativo financeiro como somente pagamento de principal e juros; a aplicação da metodologia para apuração da taxa de juros efetiva de instrumentos financeiros; a constituição de provisão para perdas associadas ao risco de crédito; e a evidenciação de informações relativas a instrumentos financeiros em notas explicativas a serem observadas pelas instituições financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil.</span></p>
+                  <p class="fonteConteudo"><strong>Requerimentos Associados</strong></p>
+                  <p class="fonteConteudo"><strong>ID: </strong> <Span>0001</Span></p>
+                  <p class="fonteConteudo"><strong>Palavras chave: </strong> <Span>Art. 1º; IV; notas explicativas.</Span></p>
+                </div>
+               </div>
+                <div class="TriagemParecerAreaConteudoResposta hiddenValidacao">
+                  <h2 class="TituloPreto9">Resposta da área</h2>
+                  <div>
+                   <h5 class="SubtituloCinza">Parecer da área</h5>
+                    <hr>
+                  </div>
+                  <div>
+                      <textarea class="pesquisaTriagemInput14" id="campoComQuebraDeLinha" placeholder="Digite seu texto aqui...">Conforme a resolução nº 309 de 28 de março de 2023 do Banco Central do Brasil (BCB), que estabelece procedimentos contábeis. Declaramos que a área exerce suas atividades conforme norma e encontra-se aderente à regulação.</textarea>
+                    
+                      <button class="DownloadEvidencia">
+                        <a href="./assets/xlsx/Evidência_atendimento_resolução309.xlsx" download>
+                        <img src="./assets/icons/microsoft-excel.png" alt="excel" width="35px" height="35px">
+                        </a>Download da evidência
+                      </button>
+                    
+                  </div>
+                  <div>
+                    <button class="botaoReprovar"><img src="./assets/icons/fechar.png" alt="" height="25px" width="25px">Recusar</button>
+                    <button class="botaoAprovar" ><img src="./assets/icons/SalvarBranco.png" alt="" height="25px" width="25px" >Aprovar</button>
+                  </div>
+                </div>
+            </div>
           
           
           
