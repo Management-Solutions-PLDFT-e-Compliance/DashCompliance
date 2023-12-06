@@ -129,8 +129,12 @@
     border: 1px solid #ddd;
     text-align: center;
     margin: 5px;
-    padding: 10px;
+    padding: 2px;
+
 }
+
+/* .tabela > table > thead > tr > th:nth-child(5){
+} */
 
 .tabela > table > tbody > tr  > td {
     margin: 12px;

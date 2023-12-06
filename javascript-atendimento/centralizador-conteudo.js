@@ -16,18 +16,22 @@ function toggleVisibility() {
     }
 }
 
+function visualizar_pdf(){
+    var download_pdf = document.getElementById('pop_up_download');
+    download_pdf.style.display = (download_pdf.style.display === "none") ? "flex" : "none";
+}
+
 // Click no Sino
-document.getElementById('notificacao').addEventListener('click', function () {
-    mostrarPopup();
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('notificacao').addEventListener('click', function () {
+        Swal.fire({
+            title: 'Notificação enviada com sucesso!',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        });
+    });
 });
-
-function mostrarPopup() {
-    document.getElementById('popup').style.display = 'block';
-}
-
-function fecharPopup() {
-    document.getElementById('popup').style.display = 'none';
-}
 
 // Click na lupa
 document.getElementById('lupa_botao').addEventListener('click', function () {
@@ -71,7 +75,12 @@ document.getElementById('botao_salvar').addEventListener('click', function () {
 });
 
 function mostrarPopupReprovado() {
-    document.getElementById('popup_reprovacao_salvar').style.display = 'block';
+    Swal.fire({
+        title: 'Reprovação!',
+        text: 'Solicitação enviada para o analista!',
+        icon: 'warning',
+        confirmButtonText: 'Ok'
+    });
 }
 
 function fecharPopupReprovado() {
@@ -92,4 +101,16 @@ function mostrarPopupAprovado() {
 
 function fecharPopupAprovado() {
     document.getElementById('popup_aprovação_consolidar').style.display = 'none';
+    document.getElementById('pop_up_download').style.display = 'none';
+}
+
+function salvar_parecer_final() {
+    Swal.fire({
+        title: 'Enviado!',
+        text: 'Parecer salvo e enviado com sucesso!',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+    });
+    document.getElementById('popup_aprovação_consolidar').style.display = 'none';
+    document.getElementById('pop_up_download').style.display = 'none';
 }
