@@ -1,3 +1,15 @@
+#botoes_navegação {
+    display: flex;
+    background-color: lightgray;
+    margin-top: 0px;
+    margin-left: 60%;
+    grid-column: span 2;
+    gap: 3px;
+    padding:0%;
+    width:160px;
+    height: 36px;
+}
+
 .atendimentocentralizadorContent{
     display: none;
 }
@@ -136,7 +148,7 @@
     margin-left: 5px;
 }
 
-/* Pop up */
+/* Pop up Consolidar */
 
 .popup {
     display: none;
@@ -158,11 +170,6 @@
     cursor: pointer;
 }
 
-.popup > input {
-    width: 500px;
-    height: 150px;
-    text-align: left;
-}
 
 #popup_aprovação_consolidar > div{
     display: flex;
@@ -180,6 +187,12 @@
     border-radius: 10px;
 }
 
+#pop_up_donwload{
+    font-size: 17.6px;
+    font-family: sans-serif;   
+}
+
+
 /* Botoes final da tela */
 
 #botao_cancelar{
@@ -192,7 +205,8 @@
     margin-bottom: 20px;
     border:#2c4c88;
     border-radius: 10px;
-    width: 120px;
+    width: fit-content;
+    height: fit-content;
 }
 
 #botao_consolidar{
@@ -205,7 +219,8 @@
     margin-bottom: 20px;
     border:#2c4c88;
     border-radius: 10px;
-    width: 130px;
+    width: fit-content;
+    height: fit-content;
 }
 
 #botao_salvar{
@@ -218,5 +233,6 @@
     margin-bottom: 20px;
     border:#2c4c88;
     border-radius: 10px;
-    width: 150px;
+    width: fit-content;
+    height: fit-content;
 }

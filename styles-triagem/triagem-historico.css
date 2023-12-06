@@ -132,6 +132,11 @@
 
 /* Tabela */
 
+#tabela > table > tbody > tr > td:last-child {
+    border: none;
+    width: 5%;
+}
+
 #tabela > table > thead > tr > th {
     background-color: #687ca4;
     color: white;
@@ -144,7 +149,7 @@
 
 #tabela > table > tbody > tr  > td {
     margin: 12px;
-    width:14.28%;
+    width:19%;
 }
 
 #tabela > table {

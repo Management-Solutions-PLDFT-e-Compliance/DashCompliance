@@ -129,7 +129,12 @@
     border: 1px solid #ddd;
     text-align: center;
     margin: 5px;
-    padding: 10px;
+    padding: 2px;
+
+}
+
+.tab_parecer> table > thead > tr > th {
+    padding: 7px;
 }
 
 .tabela > table > tbody > tr  > td {

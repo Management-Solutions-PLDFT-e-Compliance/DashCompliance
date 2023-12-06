@@ -46,14 +46,13 @@
     height: 80%;
 }
 
-
-.espacamento-table-top {
+/* .espacamento-table-top {
     height: 0.75rem;
     background-color: #fff;
     position: sticky;
     top: 10%;
     z-index: 1;
-}
+} */
 
 .card {
     background-color: #fff;
@@ -206,7 +205,7 @@
 
 .table-compliance thead {
     position: sticky;
-    top: 12%;
+    top: 10%;
     z-index: 1;
 }
 
@@ -365,6 +364,7 @@
 }
 
 .triagem-compliance-visualizar-pre-analise .tamanho-lista {
+    position: relative;
     height: 12rem;
     overflow-y: scroll;
 }
@@ -500,14 +500,14 @@
     width: 25%;
     border: 1px solid lightgray ;
     padding: 0.5rem 1rem;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 .triagem-compliance-visualizar-pre-analise-detalhe option {
     height: 2.5rem;
     width: 25%;
     border: 1px solid lightgray ;
     padding: 0.5rem 1rem;
-    font-size: 0.5em;
+    font-size: 1.1em;
 }
 
 .triagem-compliance-visualizar-pre-analise-detalhe textarea {
@@ -769,4 +769,23 @@
     display: flex;
     justify-content: end;
     gap: 2rem;
+}
+
+.botaoAbrirPesquisaCentralizar {
+    justify-content: flex-start;
+}
+
+.titulo-lista span{
+    color: #fff;
+    font-weight: bold;
+    background-color: #2c4c7c;
+}
+
+.titulo-lista{
+    position: sticky;
+    top: 0px;
+}
+
+.titulo-lista span:nth-child(4){
+    background-color: #fff;
 }

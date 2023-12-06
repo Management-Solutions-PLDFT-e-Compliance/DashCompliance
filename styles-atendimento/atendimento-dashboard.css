@@ -87,9 +87,10 @@
   }
 
   #selecionaMesNormaApp{
+    width: 132px;
     position: absolute;
     top: 579px;
-    left: 1157px;
+    left: 1139px;
     font-size: 1.1em;
   }
 
@@ -99,9 +100,10 @@
   }
 
   #selecionaMesAreaDeman{
+    width: 132px;
     position: absolute;
     top: 144px;
-    left: 1755px;
+    left: 1745px;
     font-size: 1.1em;
   }
 
@@ -111,6 +113,7 @@
   }
 
   #selecionaMesDemandasReg{
+    width: 134px;
     position: absolute;
     top: 149px;
     left: 750px;
@@ -156,6 +159,7 @@
     text-align: center;
     font-size: 1.1em;
     font-weight: bolder;
+    padding: 0;
   }
   
   #colorSwappingArea {
@@ -180,7 +184,7 @@
     padding: 0 10px;
     border-radius: 10px;
     position: absolute;
-    top: 836px;
+    top: 837px;
     left: 369px;
   }
 
@@ -194,7 +198,7 @@
     padding: 0 10px;
     border-radius: 10px;
     position: absolute;
-    top: 836px;
+    top: 837px;
     left: 346px;
   }
 
@@ -251,6 +255,7 @@
       text-align: center;
       font-size: 1.1em;
       font-weight: bolder;
+      padding: 0;
     }
     
     #colorSwappingImpacto {

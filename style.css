@@ -2093,11 +2093,6 @@ sup{
     width: 20px;
   }
 
-  .botaoAbrirPesquisaCentralizar{
-    display: flex;
-    justify-content: center;
-  }
-
   .espacoTabela{
     margin-bottom: 10px;
   }
