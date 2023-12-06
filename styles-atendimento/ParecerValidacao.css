@@ -1,0 +1,501 @@
+.botaoAbrirVisualizacao{
+    display: flex;
+    background-color: #BFBFBF;
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 4px 10px 4px 10px;
+    width: 100px;
+    justify-content: space-around;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .botaoAbrirVisualizacao > img{
+    width: 20px;
+  }
+.botaoAbrirVisualizacao2{
+    display: flex;
+    background-color: #BFBFBF;
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 4px 10px 4px 10px;
+    width: 100px;
+    justify-content: space-around;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .botaoAbrirVisualizacao2 > img{
+    width: 20px;
+  }
+
+  .botaoAbrirPesquisaCentralizar{
+    display: flex;
+    justify-content: center;
+  }
+
+  .botaoAbrirVisualizacaoCentralizar{
+    display: flex;
+    justify-content: center;
+  }
+
+  .hiddenParecer{
+    display: none;
+  }
+
+  .showParecer{
+    display: fixed;
+  }
+
+  .hiddenValidacao{
+    display: none;
+  }
+
+  .showValidacao{
+    display: fixed;
+  }
+
+
+
+.AtendimentoParecerAreaConteudo > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+}
+
+.AtendimentoParecerAreaConteudo{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-auto-rows: 104px;
+}
+
+.AtendimentoParecerAreaConteudoPreTriagem{
+    grid-column: 1;
+    grid-row: 1/4;
+    border-radius: 12px;
+}
+.AtendimentoParecerAreaConteudoParecer{
+    grid-column: 2;
+    grid-row: 1/4;
+    border-radius: 12px;
+}
+.AtendimentoParecerAreaConteudoPlano{
+    grid-column: 3/5;
+    grid-row: 1/4;
+    border-radius: 12px;
+}
+.AtendimentoParecerAreaConteudoResumo{
+    grid-column: 1/3;
+    grid-row: 4/9;
+    border-radius: 12px;
+}
+.AtendimentoParecerAreaConteudoResposta{
+    grid-column: 3/5;
+    grid-row: 4/9;
+    border-radius: 12px;
+}
+.AtendimentoParecerAreaConteudo2 > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+}
+
+.AtendimentoParecerAreaConteudo2{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-auto-rows: 104px;
+}
+
+.AtendimentoParecerAreaConteudoPreTriagem2{
+    grid-column: 1;
+    grid-row: 1/4;
+    border-radius: 12px;
+}
+.AtendimentoParecerAreaConteudoParecer2{
+    grid-column: 2;
+    grid-row: 1/4;
+    border-radius: 12px;
+}
+.AtendimentoParecerAreaConteudoPlano2{
+    grid-column: 3/5;
+    grid-row: 1/4;
+    border-radius: 12px;
+}
+.AtendimentoParecerAreaConteudoResumo2{
+    grid-column: 1/3;
+    grid-row: 4/9;
+    border-radius: 12px;
+}
+.AtendimentoParecerAreaConteudoResposta2{
+    grid-column: 3/5;
+    grid-row: 4/9;
+    border-radius: 12px;
+}
+
+.pesquisaAtendimentoLabel1{
+    position: fixed;
+    top: 135px;
+}
+.pesquisaAtendimentoLabel2{
+    position: fixed;
+    top: 180px;
+}
+.pesquisaAtendimentoLabel3{
+    position: fixed;
+    top: 225px;
+}
+.pesquisaAtendimentoLabel4{
+    position: fixed;
+    top: 270px;
+}
+.pesquisaAtendimentoLabel5{
+    position: fixed;
+    top: 315px;
+}
+
+.pesquisaAtendimentoInput1{
+    position: fixed;
+    left: 150px;
+    top: 130px;
+    height: 35px;
+    border: 1px lightgray solid;
+}
+.pesquisaAtendimentoInput2{
+    position: fixed;
+    top: 175px;
+    left: 150px;
+    height: 35px;
+    border: 1px lightgray solid;
+}
+.pesquisaAtendimentoInput3{
+    position: fixed;
+    top: 220px;
+    left: 150px;
+    height: 35px;
+    border: 1px lightgray solid;
+}
+.pesquisaAtendimentoInput4{
+    position: fixed;
+    top: 265px;
+    left: 150px;
+    height: 35px;
+    border: 1px lightgray solid;
+}
+.pesquisaAtendimentoInput5{
+    position: fixed;
+    top: 310px;
+    left: 150px;
+    height: 35px;
+    border: 1px lightgray solid;
+}
+
+.pesquisaAtendimentoLabel6{
+    position: fixed;
+    top: 135px;
+}
+.pesquisaAtendimentoLabel7{
+    position: fixed;
+    top: 180px;
+}
+.pesquisaAtendimentoLabel8{
+    position: fixed;
+    top: 225px;
+}
+.pesquisaAtendimentoLabel9{
+    position: fixed;
+    top: 270px;
+    left: 505px;
+}
+
+.pesquisaAtendimentoInput6{
+    position: fixed;
+    left: 700px;
+    top: 130px;
+    height: 35px;
+    border: 1px lightgray solid;
+    
+}
+.pesquisaAtendimentoInput7{
+    position: fixed;
+    position: fixed;
+    top: 175px;
+    left: 700px;
+    height: 35px;
+    border: 1px lightgray solid;
+    
+}
+
+.pesquisaAtendimentoInput8{
+    position: fixed;
+    top: 220px;
+    left: 700px;
+    height: 35px;
+    width: 170px;
+    border: 1px lightgray solid;
+
+}
+
+.pesquisaAtendimentoInput9{
+    position: fixed;
+    position: fixed;
+    top: 265px;
+    left: 700px;
+    height: 35px;
+    border: 1px lightgray solid;
+    
+}
+
+.pesquisaAtendimentoLabel10{
+    position: fixed;
+    top: 135px;
+}
+.pesquisaAtendimentoLabel11{
+    position: fixed;
+    top: 180px;
+}
+.pesquisaAtendimentoLabel12{
+    position: fixed;
+    top: 225px;
+}
+
+.pesquisaAtendimentoInput10{
+    position: fixed;
+    left: 1120px;
+    top: 130px;
+    height: 35px;
+    width: 300px;
+    border: 1px lightgray solid;
+}
+.pesquisaAtendimentoInput11{
+    position: fixed;
+    top: 175px;
+    left: 1120px;
+    height: 35px;
+    width: 300px;
+    border: 1px lightgray solid;
+}
+.pesquisaAtendimentoInput12{
+    position: fixed;
+    top: 220px;
+    left: 1120px;
+    height: 35px;
+    width: 300px;
+    border: 1px lightgray solid;
+}
+.pesquisaAtendimentoInput13{
+    position: fixed;
+    top: 130px;
+    left: 1450px;
+    height: 200px;
+    width: 440px;
+    border: 1px lightgray solid;
+}
+
+.botaoAqruivo{
+    position: fixed;
+    top: 280px;
+    left: 1180px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 13.3px;
+    padding: 0.3rem 0.5rem;
+    width: 100px;
+    height: 40px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+     
+}
+
+.fonteConteudo{
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    margin: 5px;
+}
+
+.botaoCancelar{
+    position: fixed;
+    top: 890px;
+    left: 1330px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16.6px;
+    padding: 0.3rem 0.5rem;
+    width: 130px;
+    height: 50px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+     
+}
+
+#yourBtn {
+    position: absolute;
+    top: 890px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 210px;
+    height: 50px;
+    padding: 10px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+.botaoUploadEvidencia{
+    position: fixed;
+    top: 890px;
+    left: 1470px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16.6px;
+    padding: 0.3rem 0.5rem;
+    width: 210px;
+    height: 50px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+     
+}
+.botaoReprovar{
+    position: fixed;
+    top: 890px;
+    left: 1470px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16.6px;
+    padding: 0.3rem 0.5rem;
+    width: 210px;
+    height: 50px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+     
+}
+.DownloadEvidencia{
+    position: fixed;
+    top: 890px;
+    left: 980px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16.6px;
+    padding: 0.3rem 0.5rem;
+    width: 210px;
+    height: 50px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+     
+}
+.botaoSalvarEnviar{
+    position: fixed;
+    top: 890px;
+    left: 1690px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16.6px;
+    padding: 0.3rem 0.5rem;
+    width: 210px;
+    height: 50px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+     
+}
+.botaoAprovar{
+    position: fixed;
+    top: 890px;
+    left: 1690px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16.6px;
+    padding: 0.3rem 0.5rem;
+    width: 210px;
+    height: 50px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+     
+}
+.pesquisaAtendimentoInput14{
+    position: fixed;
+    top: 470px;
+    left: 985px;
+    height: 350px;
+    width: 905px;
+    border: 1px lightgray solid;
+    
+}
+.pesquisaAtendimentoInput15{
+    position: fixed;
+    top: 825px;
+    left: 985px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16.6px;
+    padding: 0.3rem 0.5rem;
+    width: auto;
+    height: 50px;
+    background-color: #2c4c7c;
+    border: solid 1px #2c4c7c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
