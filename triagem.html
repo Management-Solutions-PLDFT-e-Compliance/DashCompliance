@@ -1061,7 +1061,10 @@
                   </div>
                   <div>
                     <textarea class="pesquisaTriagemInput14" id="campoComQuebraDeLinha" placeholder="Digite seu texto aqui..."></textarea>
-                    <input class="pesquisaTriagemInput15" type="file"/>
+                    <form  method="POST" enctype="multipart/form-data" name="myForm">
+                      <div id="yourBtn" onclick="getFile()">Selecione uma evidência</div>
+                      <div style='height: 0px;width: 0px; overflow:hidden;'><input id="upfile" type="file" value="upload" onchange="sub(this)" /></div>
+                    </form>
                   </div>
                   <div>
                     <button class="botaoCancelar"><img src="./assets/icons/cancelarIcon.png" alt="" height="25px" width="25px">Cancelar</button>
