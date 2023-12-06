@@ -46,14 +46,13 @@
     height: 80%;
 }
 
-
-.espacamento-table-top {
+/* .espacamento-table-top {
     height: 0.75rem;
     background-color: #fff;
     position: sticky;
     top: 10%;
     z-index: 1;
-}
+} */
 
 .card {
     background-color: #fff;
@@ -206,7 +205,7 @@
 
 .table-compliance thead {
     position: sticky;
-    top: 12%;
+    top: 10%;
     z-index: 1;
 }
 
@@ -365,6 +364,7 @@
 }
 
 .triagem-compliance-visualizar-pre-analise .tamanho-lista {
+    position: relative;
     height: 12rem;
     overflow-y: scroll;
 }
@@ -773,4 +773,19 @@
 
 .botaoAbrirPesquisaCentralizar {
     justify-content: flex-start;
+}
+
+.titulo-lista span{
+    color: #fff;
+    font-weight: bold;
+    background-color: #2c4c7c;
+}
+
+.titulo-lista{
+    position: sticky;
+    top: 0px;
+}
+
+.titulo-lista span:nth-child(4){
+    background-color: #fff;
 }

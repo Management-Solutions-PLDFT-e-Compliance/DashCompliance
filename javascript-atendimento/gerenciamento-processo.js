@@ -18,3 +18,18 @@ lupa.addEventListener("click", function() {
 atendimentoGestaoFehcarPopUp.addEventListener("click", function() {
     atendimentoGerenciamnetoPopUp.style.display = "none"
 })
+
+const atendimendimentoGerenciamentoAbrirBtn = document.getElementById("atendimento-gestao-abrir-btn")
+const telaGestao = document.getElementById("centralizador-lista")
+const telaGestaoAbrir = document.getElementsByClassName("atendimendimento-gestao-processo-abrir")[0]
+const atendimentoGestaoAbrirFechar = document.getElementById("atendimento-gestao-processo-btn-fechar")
+
+atendimendimentoGerenciamentoAbrirBtn.addEventListener("click", function() {
+    telaGestao.style.display = "none"
+    telaGestaoAbrir.style.display= "flex"
+})
+
+atendimentoGestaoAbrirFechar.addEventListener("click", function() {
+    telaGestao.style.display = "grid"
+    telaGestaoAbrir.style.display= "none"
+})
