@@ -1172,7 +1172,7 @@ sup{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    grid-auto-rows: 100px;
+    grid-auto-rows: 104px;
   }
   .TriagemParecerAreaPublicacoes {
     grid-column: 1;
@@ -1570,7 +1570,7 @@ sup{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    grid-auto-rows: 100px;
+    grid-auto-rows: 104px;
   }
   .TriagemValidacaoAreaPublicacoes {
     grid-column: 1;
