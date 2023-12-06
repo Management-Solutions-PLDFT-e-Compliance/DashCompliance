@@ -133,8 +133,9 @@
 
 }
 
-/* .tabela > table > thead > tr > th:nth-child(5){
-} */
+.tab_parecer> table > thead > tr > th {
+    padding: 7px;
+}
 
 .tabela > table > tbody > tr  > td {
     margin: 12px;
