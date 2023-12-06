@@ -60,21 +60,114 @@
   }
 
   .conteinerGraficoAderenciaNorm{
-    width: 700px;
-    margin-top: 55px;
-  }
+    width: 524px;
+    margin-top: 96px;
 
-  .conteinerGrafAdEstado img{
-    width: 400px;
-    margin-top: 29px;
-    margin-left: 141px;
   }
 
   .conteinerGrafCritTema img{
-    width: 700px;
+    width: 500px;
+    margin-top: 38px;
+    margin-left: 28px;
   }
 
-  .grafPlanoAcao img{
-    width: 700px;
-    margin-top: 50px;
+  #graficoMapaCalor{
+    height: 430px
+  }
+
+  .conteinerTabelaCalor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 96px;
+    margin-left: 64px;
+  }
+  
+  #heatmap {
+    border-collapse: collapse;
+    margin-left: 50px;
+  }
+  
+  #heatmap td {
+    width: 90px;
+    height: 30px;
+    border: 2px solid white;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bolder;
+  }
+  
+  #colorSwapping {
+    width: 300px;
+    margin-top: 20px;
+    z-index: 2;
+    margin-left: 55px;
+  }
+  
+  /* Adicionado uma classe para células destacadas */
+  .highlighted {
+    background-color: #ddd !important; /* Cinza claro para células não correspondentes */
+  }
+
+  .color-bar{
+    width: 15%;
+    height: 20px;
+    background: linear-gradient(to right, #00FF00, #33FF00, #66FF00, #99FF00, #CCFF00, #FFFF00, #FFCC00, #FF9900, #FF6600, #FF3300, #FF0000 );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 390px;
+    left: 1508px;
+  }
+
+  .barraPreta{
+    width: 15%;
+    height: 20px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 390px;
+    left: 1483px;
+  }
+
+  .tituloCimaTabelaCalor{
+    position: absolute;
+    top: 147px;
+    left: 1564px;
+  }
+
+  .tituloLadoTabelaCalor{
+    position: absolute;
+    top: 279px;
+    left: 1269px;
+    transform: rotate(-90deg);
+  }
+
+  .legendasDeCimaTbCalor{
+    display: flex;
+    position: absolute;
+    top: 190px;
+    left: 1420px;
+    gap: 39px;
+  }
+
+  .legendasDoLadoTbCalor{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 221px;
+    left: 1319px;
+    align-items: center;
+  }
+
+  #graficoPlanoAcao{
+    width: 100%;
+    height: 450px;
   }
