@@ -91,9 +91,19 @@ if(document.querySelector(".botaoAbrirVisualizacao.botaoMain")){
     }
   });
 
+  function getFile() {
+    document.getElementById("upfile").click();
+  }
+  
+  function sub(obj) {
+    var file = obj.value;
+    var fileName = file.split("\\");
+    document.getElementById("yourBtn").innerHTML = fileName[fileName.length - 1];
+  }
+
   if (document.querySelector(".botaoUploadEvidencia")) {
     let botaoUploadEvidencia = document.querySelector(".botaoUploadEvidencia");
-    let inputArquivo = document.querySelector(".pesquisaTriagemInput15");
+    let inputArquivo = document.getElementById("upfile");
 
     botaoUploadEvidencia.addEventListener("click", () => {
         // Verifica se o campo de input tipo arquivo contém algum arquivo
