@@ -11,6 +11,13 @@
   <link rel="stylesheet" href="./styles-triagem/ParecerValidacao.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  <script src="//cdn.amcharts.com/lib/4/core.js"></script>
+  <script src="//cdn.amcharts.com/lib/4/maps.js"></script>
+  <script src="//cdn.amcharts.com/lib/4/geodata/brazilLow.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.1/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.1/dist/sweetalert2.all.min.js"></script>
   <title>Compliance Analytics</title>
@@ -1688,8 +1695,32 @@
                     </h5>
                     <hr>
                   </div>
-                  <div class="conteinerGrafCritTema">
-                    <img src="./assets/mapaCalor.png" alt="mapa calor">
+                  <div class="conteinerTabelaCalor">
+                    <h2 class="TituloPreto9 tituloCimaTabelaCalor">TEMA
+                    </h2>
+                    <h2 class="TituloPreto9 tituloLadoTabelaCalor">ÁREA
+                    </h2>
+                    <div class="legendasDeCimaTbCalor">
+                      <p>Crédito</p>
+                      <p>Capital</p>
+                      <p>PLDFT</p>
+                      <p>Conduta</p>
+                      <p>PIX</p>
+                    </div>
+                    <div class="legendasDoLadoTbCalor">
+                      <p>Crédito</p>
+                      <p>Câmbio</p>
+                      <p>Mercado</p>
+                      <p>Cartões</p>
+                      <p>Financeira</p>
+                    </div>
+                    <table id="heatmap">
+                      <!-- Tabela será gerada dinamicamente com JS -->
+                    </table>
+                    <div class="barraPreta"></div>
+                    <div class="color-bar">
+                    </div>
+                    <input type="range" id="colorSwapping" min="0" max="10" value="0">
                   </div>
               </div>
               <div class="triagemDashboardAderenciaNormativos">
@@ -1713,7 +1744,7 @@
                     <hr>
                   </div>
                   <div class="conteinerGrafAdEstado">
-                    <img src="./assets/mapaBrasil.png" alt="mapaBrasil">
+                    <div id="graficoMapaCalor"></div>
                   </div>
               </div>
               <div class="triagemDashboardStatus">
@@ -1723,8 +1754,8 @@
                     <h5 class="SubtituloCinza">Por período</h5>
                     <hr>
                   </div>
-                  <div class="grafPlanoAcao">
-                    <img src="./assets/grafPlanoAcao.png" alt="graf plano acao">
+                  <div class="conteinergrafPlanoAcao">
+                    <div id="graficoPlanoAcao"></div>
                   </div>
               </div>
             </div>
