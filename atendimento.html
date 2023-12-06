@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="./styles-atendimento/atendimento-centralizador.css">
   <link rel="stylesheet" href="./styles-atendimento/centralizador-conteudo.css">
   <link rel="stylesheet" href="./styles-atendimento/atendimento-dashboard.css">
-  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>  
   <title>Compliance Analytics</title>
 </head>
 <header class="header1" >
@@ -60,22 +61,167 @@
         </div>
         <div class="tab-content">
           <div class="content active">
-            <div class="atendimentoMonitoramento">
-              <div class="atendimentoDashDemandasReg">Demandas Regulatórias
+            <div class="atendimentoDashboard">
+              <div class="atendimentoDashDemandasReg">
+                <h2 class="TituloPreto9">Demandas Regulatórias
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Por período
+                    </h5>
+                    <hr>
+                  </div>
+                  <select id="selecionaMesDemandasReg" onchange="atualizaGrafDemandasReg()">
+                    <option value="nov" selected>Nov/2023</option>
+                    <option value="out">Out/2023</option>
+                    <option value="set">Set/2023</option>
+                  </select>
+                <div class="conteinerGrafDemandasReg">
+                  <canvas id="GrafDashDemandasReg"></canvas>
+                </div>
               </div>
-              <div class="atendimentoDashAreasDemand">Áreas mais demandadas</div>
-              <div class="atendimentoDashCritTemaArea">Criticidade por Tema vs Area</div>
-              <div class="atendimentoDashNormOrg">Normativos aplicáveis à Organização
+              <div class="atendimentoDashAreasDemand">
+                <h2 class="TituloPreto9">Áreas mais demandadas
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Por período
+                    </h5>
+                    <hr>
+                  </div>
+                  <select id="selecionaMesAreaDeman" onchange="atualizaGrafAreaDeman()">
+                    <option value="nov" selected>Nov/2023</option>
+                    <option value="out">Out/2023</option>
+                    <option value="set">Set/2023</option>
+                  </select>
+                <div class="conteinerGrafAreaDeman">
+                  <canvas id="GrafDashAreaDeman"></canvas>
+                </div>
               </div>
-              <div class="atendimentoDashPendArea">Pendências por Área 
+              <div class="atendimentoDashCritTemaArea">
+                <h2 class="TituloPreto9">Criticidade por Tema
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Tema vs Área – 12 meses
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerTabelaCalorArea">
+                    <h2 class="TituloPreto9 tituloCimaTabelaCalorArea">TEMA
+                    </h2>
+                    <h2 class="TituloPreto9 tituloLadoTabelaCalorArea">ÁREA
+                    </h2>
+                    <div class="legendasDeCimaTbCalorArea">
+                      <p>Crédito</p>
+                      <p>Capital</p>
+                      <p>PLDFT</p>
+                      <p>Conduta</p>
+                      <p>PIX</p>
+                    </div>
+                    <div class="legendasDoLadoTbCalorArea">
+                      <p>Crédito</p>
+                      <p>Câmbio</p>
+                      <p>Mercado</p>
+                      <p>Cartões</p>
+                      <p>Financeira</p>
+                    </div>
+                    <table id="heatmapArea">
+                      <!-- Tabela será gerada dinamicamente com JS -->
+                    </table>
+                    <div class="barraPretaArea"></div>
+                    <div class="color-barArea">
+                    </div>
+                    <input type="range" id="colorSwappingArea" min="0" max="10" value="0">
+                  </div>
               </div>
-              <div class="atendimentoDashSLAArea">SLA por Área  
+              <div class="atendimentoDashNormOrg">
+                <h2 class="TituloPreto9">Normativos aplicáveis à Organização 
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Por período
+                    </h5>
+                    <hr>
+                  </div>
+                  <select id="selecionaMesNormaApp" onchange="atualizaGrafNormaApp()">
+                    <option value="nov" selected>Nov/2023</option>
+                    <option value="out">Out/2023</option>
+                    <option value="set">Set/2023</option>
+                  </select>
+                <div class="conteinerGrafDashNormOrg">
+                  <canvas id="GrafDashNormOrg"></canvas>
+                </div>
+              </div>
+              <div class="atendimentoDashPendArea">
+                <h2 class="TituloPreto9">Pendências por Área  
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Quantidade de demandas pendentes
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGrafDashPendArea">
+                    <canvas id="GrafDashPendArea"></canvas>
+                  </div>
+              </div>
+              <div class="atendimentoDashSLAArea">
+                <h2 class="TituloPreto9">SLA por Área  
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Tempo médio de resposta
+                    </h5>
+                    <hr>
+                  </div>
+                <div class="conteinerGrafSLAArea">
+                  <canvas id="GrafDashSLAArea"></canvas>
+                </div>
               </div>
               <div class="atendimentoDashDemArea">Demanda por Área 
               </div>
-              <div class="atendimentoDashSolTema">Solicitações por Tema 
+              <div class="atendimentoDashSolTema">
+                <h2 class="TituloPreto9">Solicitações por Tema 
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Quantidade de demandas – 12 meses
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerGrafDashSolTema">
+                    <canvas id="GrafDashSolTema"></canvas>
+                  </div>
               </div>
-              <div class="atendimentoDashCritTemaImpacto">Criticidade por Tema vs Impacto 
+              <div class="atendimentoDashCritTemaImpacto">
+                <h2 class="TituloPreto9">Criticidade por Tema
+                </h2>
+                  <div>
+                    <h5 class="SubtituloCinza">Tema vs Impacto Regulatório – 12 meses
+                    </h5>
+                    <hr>
+                  </div>
+                  <div class="conteinerTabelaCalorImpacto">
+                    <h2 class="TituloPreto9 tituloCimaTabelaCalorImpacto">TEMA
+                    </h2>
+                    <h2 class="TituloPreto9 tituloLadoTabelaCalorImpacto">IMPACTO
+                    </h2>
+                    <div class="legendasDeCimaTbCalorImpacto">
+                      <p>Crédito</p>
+                      <p>Capital</p>
+                      <p>PLDFT</p>
+                      <p>Conduta</p>
+                      <p>PIX</p>
+                    </div>
+                    <div class="legendasDoLadoTbCalorImpacto">
+                      <p>Muito Alto</p>
+                      <p>Alto</p>
+                      <p>Moderado</p>
+                      <p>Baixo</p>
+                      <p>Muito Baixo</p>
+                    </div>
+                    <table id="heatmapImpacto">
+                      <!-- Tabela será gerada dinamicamente com JS -->
+                    </table>
+                    <div class="barraPretaImpacto"></div>
+                    <div class="color-barImpacto">
+                    </div>
+                    <input type="range" id="colorSwappingImpacto" min="0" max="10" value="0">
+                  </div>
               </div>
               <div class="atendimentoDashDemTema">Demandas por Tema
               </div>
@@ -1015,7 +1161,7 @@
         </div>
     </div>
 
-      <script src="script.js"></script>
-    <script src="./javascript-atendimento/centralizador-conteudo.js"></script>
     <script src="script.js"></script>
+    <script src="./javascript-atendimento/centralizador-conteudo.js"></script>
+    <script src="./javascript-atendimento/atendimento-dashbord.js"></script>
 </body>

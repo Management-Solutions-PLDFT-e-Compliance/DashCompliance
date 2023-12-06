@@ -1,4 +1,4 @@
-.atendimentoMonitoramento > div{
+.atendimentoDashboard > div{
     border: 2px solid lightgray;
     background-color: white;
     padding: 1em;
@@ -6,7 +6,7 @@
     border-radius: 12px;
   }
 
-  .atendimentoMonitoramento{
+  .atendimentoDashboard{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
@@ -80,3 +80,244 @@
     grid-column: 1/5;
     grid-row: 33/37;
   }
+
+  .conteinerGrafDashNormOrg{
+    width: 75%;
+    margin: 12px 0px 0px 99px;
+  }
+
+  #selecionaMesNormaApp{
+    position: absolute;
+    top: 579px;
+    left: 1157px;
+    font-size: 1.1em;
+  }
+
+  .conteinerGrafAreaDeman{
+    width: 75%;
+    margin: 12px 0px 0px 99px;
+  }
+
+  #selecionaMesAreaDeman{
+    position: absolute;
+    top: 144px;
+    left: 1755px;
+    font-size: 1.1em;
+  }
+
+  .conteinerGrafDemandasReg{
+    width: 72%;
+    margin: 11px 0px 0px 70px;
+  }
+
+  #selecionaMesDemandasReg{
+    position: absolute;
+    top: 149px;
+    left: 750px;
+    font-size: 1.1em;
+  }
+
+  .conteinerGrafSLAArea{
+    width: 77%;
+    margin: 3px 0px 0px 70px;
+  }
+
+  .conteinerGrafDashPendArea{
+    width: 58%;
+    margin: -83px 0px 0px 200px;
+  }
+
+  .conteinerGrafDashSolTema{
+    width: 52%;
+    margin: -57px 0px 0px 200px;
+  }
+
+
+
+  /* tabela de calor Area */
+
+  .conteinerTabelaCalorArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 103px;
+    margin-left: -6px;
+  }
+  
+  #heatmapArea {
+    border-collapse: collapse;
+    margin-left: 50px;
+  }
+  
+  #heatmapArea td {
+    width: 90px;
+    height: 30px;
+    border: 2px solid white;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bolder;
+  }
+  
+  #colorSwappingArea {
+    width: 300px;
+    margin-top: 20px;
+    z-index: 2;
+    margin-left: 55px;
+  }
+  
+  /* Adicionado uma classe para células destacadas */
+  .highlighted {
+    background-color: #ddd !important; /* Cinza claro para células não correspondentes */
+  }
+
+  .color-barArea{
+    width: 15%;
+    height: 20px;
+    background: linear-gradient(to right, #00FF00, #33FF00, #66FF00, #99FF00, #CCFF00, #FFFF00, #FFCC00, #FF9900, #FF6600, #FF3300, #FF0000 );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 836px;
+    left: 369px;
+  }
+
+  .barraPretaArea{
+    width: 15%;
+    height: 20px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 836px;
+    left: 346px;
+  }
+
+  .tituloCimaTabelaCalorArea{
+    position: absolute;
+    top: 609px;
+  }
+
+  .tituloLadoTabelaCalorArea{
+    position: absolute;
+    top: 724px;
+    left: 120px;
+    transform: rotate(-90deg);
+  }
+
+  .legendasDeCimaTbCalorArea{
+    display: flex;
+    position: absolute;
+    top: 639px;
+    left: 282px;
+    gap: 39px
+  }
+
+  .legendasDoLadoTbCalorArea{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 668px;
+    left: 179px;
+    align-items: center;
+  }
+
+
+
+    /* tabela de calor Impacto */
+
+    .conteinerTabelaCalorImpacto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 103px;
+      margin-left: -6px;
+    }
+    
+    #heatmapImpacto {
+      border-collapse: collapse;
+      margin-left: 50px;
+    }
+    
+    #heatmapImpacto td {
+      width: 90px;
+      height: 30px;
+      border: 2px solid white;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bolder;
+    }
+    
+    #colorSwappingImpacto {
+      width: 300px;
+      margin-top: 20px;
+      z-index: 2;
+      margin-left: 55px;
+    }
+    
+    /* Adicionado uma classe para células destacadas */
+    .highlighted {
+      background-color: #ddd !important; /* Cinza claro para células não correspondentes */
+    }
+  
+    .color-barImpacto{
+      width: 15%;
+      height: 20px;
+      background: linear-gradient(to right, #00FF00, #33FF00, #66FF00, #99FF00, #CCFF00, #FFFF00, #FFCC00, #FF9900, #FF6600, #FF3300, #FF0000 );
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      border-radius: 10px;
+      position: absolute;
+      top: 2156px;
+      left: 1310px;
+    }
+  
+    .barraPretaImpacto{
+      width: 15%;
+    height: 20px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 2156px;
+    left: 1291px;
+    }
+  
+    .tituloCimaTabelaCalorImpacto{
+      position: absolute;
+      top: 1918px;
+    }
+  
+    .tituloLadoTabelaCalorImpacto{
+      position: absolute;
+      top: 2045px;
+      left: 1013px;
+      transform: rotate(-90deg);
+    }
+  
+    .legendasDeCimaTbCalorImpacto{
+      display: flex;
+      position: absolute;
+      top: 1954px;
+      left: 1224px;
+      gap: 39px;
+    }
+  
+    .legendasDoLadoTbCalorImpacto{
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 1985px;
+      left: 1111px;
+      align-items: end;
+    }
