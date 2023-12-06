@@ -1172,7 +1172,7 @@ sup{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    grid-auto-rows: 100px;
+    grid-auto-rows: 104px;
   }
   .TriagemParecerAreaPublicacoes {
     grid-column: 1;
@@ -1522,43 +1522,6 @@ sup{
     border: 1px solid lightgray;
   }
 
-
-
-  .atendimentoMonitoramento > div{
-    border: 2px solid lightgray;
-    background-color: white;
-    padding: 1em;
-    color: black;
-  }
-
-  .atendimentoMonitoramento{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    grid-auto-rows: 100px;
-  }
-
-  .atendimentoMonitDemandasReg{
-    grid-column: 1/3;
-    grid-row: 1/5;
-
-    border-radius: 12px;
-  }
-
-  .atendimentoMonitAreasDemand{
-    grid-column: 3/5;
-    grid-row: 1/5;
-
-    border-radius: 12px;
-  }
-
-  .atendimentoMonitCritTema{
-    grid-column: 1/3;
-    grid-row: 5/10;
-
-    border-radius: 12px;
-  }
-
   .TriagemValidacaoArea > div {
     border: 2px solid lightgray;
     background-color: white;
@@ -1570,7 +1533,7 @@ sup{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    grid-auto-rows: 100px;
+    grid-auto-rows: 104px;
   }
   .TriagemValidacaoAreaPublicacoes {
     grid-column: 1;
@@ -2411,7 +2374,7 @@ sup{
     justify-content: center;
     padding: 50px;
   }
-  svg{
+  /* svg{
     width: 30%;
   }
   .norte {
@@ -2470,7 +2433,7 @@ sup{
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid white;
-  }
+  } */
 
   .containerGraficoNormaApli{
     width: 500px;
@@ -2724,5 +2687,9 @@ sup{
 
   .aspectosPreTriagemReadOnly{
     color: lightgray;
+  }
+
+  #botaoSairLogin{
+    font-weight:500;
   }
   

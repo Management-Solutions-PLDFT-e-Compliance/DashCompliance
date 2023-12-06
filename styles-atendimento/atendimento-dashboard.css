@@ -1,0 +1,82 @@
+.atendimentoMonitoramento > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+    border-radius: 12px;
+  }
+
+  .atendimentoMonitoramento{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-auto-rows: 100px;
+  }
+
+  .atendimentoDashDemandasReg{
+    grid-column: 1/3;
+    grid-row: 1/5;
+
+  }
+
+  .atendimentoDashAreasDemand{
+    grid-column: 3/5;
+    grid-row: 1/5;
+
+  }
+
+  .atendimentoDashCritTemaArea{
+    grid-column: 1/3;
+    grid-row: 5/9;
+
+  }
+
+  .atendimentoDashNormOrg{
+    grid-column: 3/5;
+    grid-row: 5/9;
+  }
+
+  .atendimentoDashPendArea{
+    grid-column: 1/3;
+    grid-row: 9/13;
+  }
+
+  .atendimentoDashSLAArea{
+    grid-column: 3/5;
+    grid-row: 9/13;
+  }
+
+  .atendimentoDashDemArea{
+    grid-column: 1/5;
+    grid-row: 13/17;
+  }
+
+  .atendimentoDashSolTema{
+    grid-column: 1/3;
+    grid-row: 17/21;
+  }
+
+  .atendimentoDashCritTemaImpacto{
+    grid-column: 3/5;
+    grid-row: 17/21;
+  }
+
+  .atendimentoDashDemTema{
+    grid-column: 1/5;
+    grid-row: 21/25;
+  }
+
+  .atendimentoDashBacen{
+    grid-column: 1/5;
+    grid-row: 25/29;
+  }
+
+  .atendimentoDashCVM{
+    grid-column: 1/5;
+    grid-row: 29/33;
+  }
+
+  .atendimentoDashSusep{
+    grid-column: 1/5;
+    grid-row: 33/37;
+  }
