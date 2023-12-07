@@ -530,3 +530,86 @@
     justify-content: center;
     display: flex;
 }
+
+.infosConteudoResumoParecerAtend{
+    overflow-y: auto;
+    height: 470px;
+    padding-right: 10px;
+}
+
+.infosConteudoResumoParecerAtend .topicos{
+    border: 1px solid lightgray;
+    padding: 10px;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+.blocoArquivo{
+    display: flex;
+    border: 1px solid lightgray;
+    margin-top: 10px;
+    align-items: center;
+    gap: 1%;
+    width: 290px;
+    padding: 5px;
+}
+
+.blocoArquivo img{
+    width: 50px;
+    height: 50px;
+}
+
+.infosDoArquivo img{
+    width: 30px;
+    height: 30px;
+}
+
+.blocoArquivo .infosDoArquivo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15%;
+}
+
+.blocoArquivo .infosDoArquivo div{
+    display: flex;
+    flex-direction: column;
+}
+
+.BlocoPalavrasChavesId{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.BlocoPalavrasChavesId div{
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    margin-bottom: 10px;
+}
+
+.BlocoPalavrasChavesId{
+    font-weight: bold;
+}
+
+.BlocoPalavrasChavesId textarea{
+    resize: none;
+    font-size: 1.1em;
+    border: 1px solid lightgray;
+}
+
+.BlocoPalavrasChavesId-Id textarea{
+    height: 40px;
+    width: 150px;
+    padding: 5px 2px 2px 5px;
+    margin-left: 109px;
+}
+
+.BlocoPalavrasChavesId-PalChav textarea{
+    height: 100px;
+    width: 650px;
+    padding: 5px 2px 2px 5px;
+}
