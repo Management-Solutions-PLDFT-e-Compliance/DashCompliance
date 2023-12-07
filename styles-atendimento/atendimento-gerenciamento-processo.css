@@ -152,7 +152,7 @@
 .table-atendimento-abrir th:nth-child(3){
     width: 30%;
 }
-.table-atendimento-abrir th:nth-child(4), td:nth-child(4){
+.table-atendimento-abrir th:nth-child(4), .table-atendimento-abrir td:nth-child(4){
     border: none;
     background-color: #fff;
     width: 5%;
