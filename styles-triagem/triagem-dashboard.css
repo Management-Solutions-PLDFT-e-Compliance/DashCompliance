@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    grid-auto-rows: 100px;
+    grid-auto-rows: 91px;
   }
 
   .triagemDashboardPendencias{
@@ -50,12 +50,12 @@
 
   .conteinerGraficoSLAArea{
     width: 600px;
-    margin-top: 29px;
+    margin-top: 15px;
   }
 
   .conteinerGraficoPendenciasArea{
     width: 500px;
-    margin-top: -75px;
+    margin-top: -95px;
     margin-left: 50px;
   }
 
@@ -72,15 +72,15 @@
   }
 
   #graficoMapaCalor{
-    height: 430px
+    height: 410px;
   }
 
   .conteinerTabelaCalor {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 96px;
-    margin-left: 64px;
+    margin-top: 97px;
+    margin-left: 72px;
   }
   
   #heatmap {
@@ -120,7 +120,7 @@
     border-radius: 10px;
     position: absolute;
     top: 390px;
-    left: 1508px;
+    left: 1528px;
   }
 
   .barraPreta{
@@ -134,19 +134,19 @@
     border-radius: 10px;
     position: absolute;
     top: 390px;
-    left: 1483px;
+    left: 1506px;
   }
 
   .tituloCimaTabelaCalor{
     position: absolute;
-    top: 147px;
-    left: 1564px;
+    top: 152px;
+    left: 1602px;
   }
 
   .tituloLadoTabelaCalor{
     position: absolute;
-    top: 279px;
-    left: 1269px;
+    top: 281px;
+    left: 1283px;
     transform: rotate(-90deg);
   }
 
@@ -154,8 +154,8 @@
     display: flex;
     position: absolute;
     top: 190px;
-    left: 1420px;
-    gap: 39px;
+    left: 1446px;
+    gap: 37px;
   }
 
   .legendasDoLadoTbCalor{
@@ -163,11 +163,11 @@
     flex-direction: column;
     position: absolute;
     top: 221px;
-    left: 1319px;
-    align-items: center;
+    left: 1338px;
+    align-items: end;
   }
 
   #graficoPlanoAcao{
     width: 100%;
-    height: 450px;
+    height: 410px;
   }

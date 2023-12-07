@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     var botao = document.querySelector('.botaoAbrirVisualizacao');
-    var elementosValidacaoTriagem = document.querySelectorAll('.TriagemParecerArea .showParecer');
-    var elementosValidacaoParecer = document.querySelectorAll('.TriagemParecerAreaConteudo .hiddenParecer');
+    var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoParecerArea .showParecer');
+    var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
 
     botao.addEventListener('click', function () {
-        elementosValidacaoTriagem.forEach(function (elemento) {
+        elementosValidacaoAtendimento.forEach(function (elemento) {
             elemento.classList.toggle('showParecer');
             elemento.classList.toggle('hiddenParecer');
         });
@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener("DOMContentLoaded", function () {
     var botao = document.querySelector('.botaoAbrirVisualizacao2');
-    var elementosValidacaoTriagem = document.querySelectorAll('.TriagemValidacaoArea .showValidacao');
-    var elementosValidacaoParecer = document.querySelectorAll('.TriagemParecerAreaConteudo .hiddenValidacao');
+    var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoValidacaoArea .showValidacao');
+    var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenValidacao');
 
     botao.addEventListener('click', function () {
-        elementosValidacaoTriagem.forEach(function (elemento) {
+        elementosValidacaoAtendimento.forEach(function (elemento) {
             elemento.classList.toggle('showValidacao');
             elemento.classList.toggle('hiddenValidacao');
         });
@@ -37,11 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   var botao = document.querySelector('.botaoCancelar');
-  var elementosValidacaoTriagem = document.querySelectorAll('.TriagemParecerArea .showParecer');
-  var elementosValidacaoParecer = document.querySelectorAll('.TriagemParecerAreaConteudo .hiddenParecer');
+  var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoParecerArea .showParecer');
+  var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
 
   botao.addEventListener('click', function () {
-      elementosValidacaoTriagem.forEach(function (elemento) {
+      elementosValidacaoAtendimento.forEach(function (elemento) {
           elemento.classList.toggle('showParecer');
           elemento.classList.toggle('hiddenParecer');
       });
@@ -53,14 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
   
-  var aderenteSelect = document.querySelector('.pesquisaTriagemInput8');
-  var dataRespostaInput = document.querySelector('.pesquisaTriagemInput9');
+  var aderenteSelect = document.querySelector('.pesquisaAtendimentoInput8');
+  var dataRespostaInput = document.querySelector('.pesquisaAtendimentoInput9');
   
   // Obtém os elementos relacionados ao Plano de Ação e à Resposta da Área
-  var planoAcaoInput = document.querySelector('.pesquisaTriagemInput10');
-  var dataInicioInput = document.querySelector('.pesquisaTriagemInput11');
-  var dataFimInput = document.querySelector('.pesquisaTriagemInput12');
-  var respostaAreaTextarea = document.querySelector('.pesquisaTriagemInput14');
+  var planoAcaoInput = document.querySelector('.pesquisaAtendimentoInput10');
+  var dataInicioInput = document.querySelector('.pesquisaAtendimentoInput11');
+  var dataFimInput = document.querySelector('.pesquisaAtendimentoInput12');
+  var respostaAreaTextarea = document.querySelector('.pesquisaAtendimentoInput14');
   
   // Adiciona um ouvinte de evento para o evento 'change' no select 'Aderente'
   aderenteSelect.addEventListener('change', function() {
@@ -122,16 +122,16 @@ document.addEventListener("DOMContentLoaded", function () {
 if (document.querySelector(".botaoSalvarEnviar")) {
   let botaoSalvarEnviar = document.querySelector(".botaoSalvarEnviar");
 
-  var elementosParecerTriagem = document.querySelectorAll('.TriagemParecerArea .showParecer');
-  var elementosParecerTriagem = document.querySelectorAll('.TriagemParecerAreaConteudo .hiddenParecer');
+  var elementosParecerAtendimento = document.querySelectorAll('.AtendimentoParecerArea .showParecer');
+  var elementosParecerAtendimento = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
 
   botaoSalvarEnviar.addEventListener("click", () => {
-      elementosParecerTriagem.forEach(function (elemento) {
+      elementosParecerAtendimento.forEach(function (elemento) {
       elemento.classList.toggle('showParecer');
       elemento.classList.toggle('hiddenParecer');
       });
 
-      elementosParecerTriagem.forEach(function (elemento) {
+      elementosParecerAtendimento.forEach(function (elemento) {
       elemento.classList.toggle('showParecer');
       elemento.classList.toggle('hiddenParecer');
       });
@@ -145,12 +145,12 @@ if (document.querySelector(".botaoSalvarEnviar")) {
 if (document.querySelector(".botaoAprovar")) {
   let botaoAprovar = document.querySelector(".botaoAprovar");
 
-  var elementosValidacaoTriagem = document.querySelectorAll('.TriagemValidacaoArea .showValidacao');
-  var elementosValidacaoParecer = document.querySelectorAll('.TriagemParecerAreaConteudo .hiddenValidacao');
+  var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoValidacaoArea .showValidacao');
+  var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenValidacao');
 
 
   botaoAprovar.addEventListener("click", () => {
-    elementosValidacaoTriagem.forEach(function (elemento) {
+    elementosValidacaoAtendimento.forEach(function (elemento) {
       elemento.classList.toggle('showValidacao');
       elemento.classList.toggle('hiddenValidacao');
     });
@@ -169,8 +169,8 @@ if (document.querySelector(".botaoAprovar")) {
 if (document.querySelector(".botaoReprovar")) {
   let botaoReprovar = document.querySelector(".botaoReprovar");
 
-  var elementosValidacaoTriagem = document.querySelectorAll('.TriagemValidacaoArea .showValidacao');
-  var elementosValidacaoParecer = document.querySelectorAll('.TriagemParecerAreaConteudo .hiddenValidacao');
+  var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoValidacaoArea .showValidacao');
+  var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenValidacao');
 
   botaoReprovar.addEventListener("click", () => {
     
@@ -188,7 +188,7 @@ if (document.querySelector(".botaoReprovar")) {
         // Aqui você pode adicionar a lógica para lidar com a justificativa
         // e realizar as ações necessárias, como enviar para o servidor, etc.
         return new Promise((resolve) => {
-          elementosValidacaoTriagem.forEach(function (elemento) {
+          elementosValidacaoAtendimento.forEach(function (elemento) {
             elemento.classList.toggle('showValidacao');
             elemento.classList.toggle('hiddenValidacao');
           });
