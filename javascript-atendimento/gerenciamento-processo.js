@@ -20,12 +20,11 @@ atendimentoGestaoFehcarPopUp.addEventListener("click", function() {
 })
 
 const atendimendimentoGerenciamentoAbrirBtn = document.getElementById("atendimento-gestao-abrir-btn")
-const telaGestao = document.getElementById("centralizador-lista")
+const telaGestao = document.getElementById("gerenciamento-processo-lista")
 const telaGestaoAbrir = document.getElementsByClassName("atendimendimento-gestao-processo-abrir")[0]
 const atendimentoGestaoAbrirFechar = document.getElementById("atendimento-gestao-processo-btn-fechar")
 
 atendimendimentoGerenciamentoAbrirBtn.addEventListener("click", function() {
-    console.log("aqui")
     telaGestao.style.display = "none"
     telaGestaoAbrir.style.display= "flex"
 })
