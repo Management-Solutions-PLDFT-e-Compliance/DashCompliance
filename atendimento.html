@@ -21,16 +21,7 @@
 </head>
 <header class="header1" >
   <img src="logoMS.png" alt="MSSolutions" class="MSlogoHome" onclick="redirecionarParaHome()">
-  <!-- <div class="dropdown">
-    <button class="botaoHeader botaoBiblioteca">
-      <img src="./assets/icons/capturaIconOff.svg" alt="Icone Biblioteca">
-      <p>Biblioteca</p>
-    </button>
-    <div class="dropdown-content">
-      <a href="captura.html">Captura</a>
-      <a href="triagem.html">Triagem</a>
-    </div>
-  </div> -->
+  
   <a href="captura.html" class="linksBotoes linkCaptura">
     <button class="botaoHeader botaoCaptura">
       <img src="./assets/icons/capturaIconOff.svg" alt="Icone Atendimento">
@@ -1358,62 +1349,65 @@
                 <div class="separadorBuscaNormativos">
                   <div>
                     <label for="AtendimentoID" class="separadorAtendimentoID1">ID:</label>
-                      <select name="AtendimentoID" id="AtendimentoID" class="separadorAtendimentoID2">
-                        <option value="Bacen">Bacen</option>
-                      </select>
+                      <input name="AtendimentoID" id="AtendimentoID" class="separadorAtendimentoID2">
+                        
                   </div>
                   <div>
                     <label for="DataPublicacao" class="separadorAtendimentoSolicitacao1">Solicitação:</label>
-                      <select name="DataPublicacao" id="DataPublicacao" class="separadorAtendimentoSolicitacao2">
-                        <option value="Diariamente">Diariamente</option>
-                      </select>
+                      <input type="date" name="DataPublicacao" id="DataPublicacao" class="separadorAtendimentoSolicitacao2">
+                      
                   </div>
                    <div>
                     <label for="Categoria" class="separadorAtendimentoResponsavel1">Responsável:</label>
-                      <select name="Categoria" id="Categoria" class="separadorAtendimentoResponsavel2">
-                        <option value="Diariamente">Diariamente</option>
-                      </select>
+                      <input type="text" name="Categoria" id="Categoria" class="separadorAtendimentoResponsavel2">
+                      
                   </div>
                   <div>
                     <label for="Tema" class="separadorAtendimentoRegulador1">Regulador:</label>
                       <select name="Tema" id="Tema" class="separadorAtendimentoRegulador2">
-                        <option value="Diariamente">Diariamente</option>
+                        <option value=""></option>
+                        <option value="CVM">CVM</option>
+                        <option value="Bacen">Bacen</option>
+                        <option value="Susep">Susep</option>
                       </select>
                   </div>
                   <div>
                     <label for="Status" class="separadorAtendimentoRetorno1">Retorno:</label>
-                      <select name="Status" id="Status" class="separadorAtendimentoRetorno2">
-                        <option value="Diariamente">Diariamente</option>
-                      </select>
+                      <input type="date" name="Status" id="Status" class="separadorAtendimentoRetorno2">
+                      
                   </div>
                   <div>
                     <label for="Criticidade" class="separadorAtendimentoCentralizador1">Centralizador:</label>
-                      <select name="Criticidade" id="Criticidade" class="separadorAtendimentoCentralizador2">
-                        <option value="Diariamente">Diariamente</option>
-                      </select>
+                      <input type="text" name="Criticidade" id="Criticidade" class="separadorAtendimentoCentralizador2">
+      
                   </div>
                   <div>
                     <label for="Criticidade" class="separadorAtendimentoCategoria1">Categoria:</label>
                       <select name="Criticidade" id="Criticidade" class="separadorAtendimentoCategoria2">
-                        <option value="Diariamente">Diariamente</option>
+                        <option value=""></option>
                       </select>
                   </div>
                   <div>
                     <label for="Criticidade" class="separadorAtendimentoStatus1">Status:</label>
                       <select name="Criticidade" id="Criticidade" class="separadorAtendimentoStatus2">
-                        <option value="Diariamente">Diariamente</option>
+                        <option value=""></option>
+                        <option value="Pendente">Pendente</option>
+                        <option value="Atrasado">Atrasado</option>
                       </select>
                   </div>
                   <div>
                     <label for="Criticidade" class="separadorAtendimentoTema1">Tema:</label>
                       <select name="Criticidade" id="Criticidade" class="separadorAtendimentoTema2">
-                        <option value="Diariamente">Diariamente</option>
+                        <option value=""></option>
+                        <option value="PLDFT">PLDFT</option>
                       </select>
                   </div>
                   <div>
                     <label for="Criticidade" class="separadorAtendimentoCriticidade1">Criticidade:</label>
                       <select name="Criticidade" id="Criticidade" class="separadorAtendimentoCriticidade2">
-                        <option value="Diariamente">Diariamente</option>
+                        <option value=""></option>
+                        <option value="Diariamente">Alto</option>
+                        <option value="Medio">Medio</option>
                       </select>
                   </div>
                   <div>
