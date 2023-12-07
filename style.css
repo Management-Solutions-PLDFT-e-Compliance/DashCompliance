@@ -902,7 +902,7 @@ sup{
 
   .capturaParametrizacaoConfigParams{
     grid-column: 1/3;
-    grid-row: 1/10;
+    grid-row: 1/9;
 
     border-radius: 12px;
     font-size: 1.1em;
@@ -916,7 +916,6 @@ sup{
   .configParamsFull{
     display: flex;
     width: 100%;
-    margin-top: 1%;
     gap: 2%;
   }
 
@@ -943,11 +942,11 @@ sup{
 
   .configParamsLeftConsiderar .par2{
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .campoConfigParams{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .campoConfigParams textarea{
@@ -2903,20 +2902,20 @@ sup{
 
   .botaoSalvarParams{
     position: absolute;
-    top: 864px;
-    left: 1715px;
+    top: 843px;
+    left: 1722px;
     width: 150px;
   }
 
   .botaoAddCriterio{
     position: absolute;
-    top: 453px;
-    left: 1809px;
+    top: 442px;
+    left: 1817px;
   }
 
   .botaoAddPreAnalise{
-    top: 806px;
-    left: 1808px;
+    top: 803px;
+    left: 1815px;
   }
 
   #botaoAtualizarParamEsp{

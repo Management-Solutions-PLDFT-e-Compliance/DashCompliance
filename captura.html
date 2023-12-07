@@ -65,9 +65,9 @@
                   <div class="separadorCapAuto">
                     <div class="criteriosPreTriagem hiddenElement" id="infosPreTriagem">
                       <label class="preTriagemLegenda">Critérios de pré-triagem:</label>
-                      <label class="preTriagemLegenda configPadrao">Utilizar configuração padrão</label>
+                      <label class="preTriagemLegenda configPadrao">Utilizar configuração padrão<sup style="position: fixed; margin-top: 0px; margin-left: 0px;">1</sup></label>
                       <input type="checkbox" name="" id="padraoCheckbox" class="preTriagemLegenda configPadrao checkConfigPadrao" onclick="PadraoCustom('Padrao')" onchange="mostrarAspectosPreTriagem()">
-                      <label class="preTriagemLegenda configCustom">Customizar configuração</label>
+                      <label class="preTriagemLegenda configCustom">Customizar configuração<sup style="position: fixed; margin-top: 0px; margin-left: 0px;">1</sup></label>
                       <input type="checkbox" name="" id="customCheckbox" class="preTriagemLegenda configCustom checkConfigCustom" onclick="PadraoCustom('Custom')" onchange="mostrarAspectosPreTriagem()">
                       <div class="hiddenElement" id="aspectosPreTriagem">
                         <label class="preTriagemLegenda configPadrao aspectosConsiderar">Aspectos a serem considerados (palavras-chave):</label>
@@ -133,9 +133,9 @@
                         <option value="23:00">23:00</option>
                       </select>
                     </form>
-                    <button class="separadorCapAutoIncluir showElement" id="botaoIncluirCapAuto"><span>Incluir</span><img src="./assets/icons/icon-add.png" height="20px"  alt="Incluir"></button>
-                    <button class="separadorCapAutoIncluir hiddenElement" id="botaoAtualizarParamEsp" onclick="atualizarParamEsp()"><span>Atualizar</span><img src="./assets/icons/icon-add.png" height="20px"  alt="Incluir"></button>
-                    <button class="separadorCapAutoIncluir btnIncluirPreTriagem btnVoltar hiddenElement" id="botaoCancelarCapAuto" onclick="botaoCancelarPreTriagem()"><span>Cancelar</span><img src="./assets/icons/cancelarIcon.png" height="20px"  alt="Cancelar"></button>
+                    <button class="separadorCapAutoIncluir showElement" id="botaoIncluirCapAuto"><span>Incluir</span><img src="./assets/icons/icon-add.png" height="20px"  alt="Incluir"><sup style="position: fixed; margin-top: -35px; margin-left: 75px;">1</sup></button>
+                    <button class="separadorCapAutoIncluir hiddenElement" id="botaoAtualizarParamEsp" onclick="atualizarParamEsp()"><span>Atualizar</span><img src="./assets/icons/icon-add.png" height="20px"  alt="Incluir"><sup style="position: fixed; margin-top: -35px; margin-left: 75px;">1</sup></button>
+                    <button class="separadorCapAutoIncluir btnIncluirPreTriagem btnVoltar hiddenElement" id="botaoCancelarCapAuto" onclick="botaoCancelarPreTriagem()"><span>Cancelar</span><sup style="position: fixed; margin-top: -35px; margin-left: 75px;">1</sup><img src="./assets/icons/cancelarIcon.png" height="20px"  alt="Cancelar"></button>
                   </div>
                 </div>
                 <div class="capturaParametrizacaoCapMan showElement" id="card2PreTriagem"> <h2 class="TituloPreto9">Captura Manual</h2>
@@ -182,7 +182,7 @@
                     </select>
                     <button class="separadorCapManLog">Log acesso <img src="./assets/icons/editar_2.png" alt=""></button>
                   </div>
-                  <button class="separadorCapManExecutar">Executar <img src="/assets/icons/reiniciar_2.png" alt=""></button>
+                  <button class="separadorCapManExecutar">Executar <img src="/assets/icons/reiniciar_2.png" alt=""><sup style="position: fixed; margin-top: -40px; margin-left: 75px;">1</sup></button>
                   
                 </div>
                 <div class="capturaParametrizacaoVarAtuais showElement" id="card3Captura"> <h2 class="TituloPreto9">Inventário</h2>
@@ -476,7 +476,7 @@
                           </div>
                         </div>
                         </div>
-                        <button class="separadorCapAutoIncluir botaoSalvarParams" id="" onclick="salvarConfigParamsGeral()"><img src="./assets/icons/salvarIcon.svg" height="30px"  alt="Incluir"><span style="margin-left: 10px;">Salvar</span></button>
+                        <button class="separadorCapAutoIncluir botaoSalvarParams" id="" onclick="salvarConfigParamsGeral()"><img src="./assets/icons/salvarIcon.svg" height="30px"  alt="Incluir"><span style="margin-left: 10px;">Salvar <sup>1</sup></span></button>
                       </div>
                     </div>
                   </div>
