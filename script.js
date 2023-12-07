@@ -284,8 +284,8 @@ function preencherComLabelDesc(){
   var fonteInput = document.getElementById('Fonte');
   var armazenarInput = document.getElementById('Armazenar');
 
-  descricaoInput.value = 'Bacen';
-  fonteInput.value = 'https://www.bcb.gov.br/resultadobusca?termo=3978&source=';
+  descricaoInput.value = 'RESOLUÇÃO SUSEP Nº 34, DE 22 DE NOVEMBRO DE 2023';
+  fonteInput.value = 'https://www2.susep.gov.br/safe/scripts/bnweb/bnmapi.exe?router=upload/27890';
   armazenarInput.value = 'https://soluçõescompliance...';
 }
 
@@ -305,6 +305,7 @@ function botaoCancelarPreTriagem(){
   let padraoCheckbox = document.getElementById('padraoCheckbox');
   let aspectosPreTriagem = document.getElementById('aspectosPreTriagem');
   let textAreasAspectos = document.querySelectorAll('.aspectosConsiderarInput');
+
 
   textAreasAspectos.forEach((textArea) =>{
     textArea.value = "";
@@ -328,6 +329,8 @@ function botaoCancelarPreTriagem(){
 
   let botaoAtualizar = document.querySelector("#botaoAtualizarParamEsp");
       botaoAtualizar.classList.replace("showElement", "hiddenElement");
+  let botaoIncluir = document.querySelector("#botaoIncluirCapAuto");
+      botaoIncluir.classList.replace("hiddenElement", "showElement");
 }
 
 function preencheOutros() {
@@ -375,7 +378,7 @@ incluirBotao.addEventListener('click', function () {
 
   tabela.innerHTML = tabela.innerHTML + 
   ` <tr>
-    <td>0019</td>
+    <td>0017</td>
     <td>${valorRegulador}</td>
     <td>${descricao}</td>
     <td>${fonte}</td>
@@ -614,6 +617,12 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
       let botaoIncluir = document.querySelector("#botaoIncluirCapAuto");
       let botaoAtualizar = document.querySelector("#botaoAtualizarParamEsp");
       let botaoCancelar = document.querySelector("#botaoCancelarCapAuto");
+
+      var descricaoInput = document.getElementById('Descrição');
+      var fonteInput = document.getElementById('Fonte');
+      var armazenarInput = document.getElementById('Armazenar');
+      let botaoRegulador = document.getElementById('Regulador');
+      let botaoOutro = document.getElementById('Outro');
       
 
       botaoIncluir.classList.replace("showElement", "hiddenElement");
@@ -629,7 +638,11 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
       aspExcluir.textContent = "Operações no mercado de câmbio";
 
       preencheRegulador();
-      preencherComLabelDesc();      
+      descricaoInput.value = 'Resolução BCB n° 309 de 28/3/2023';
+        fonteInput.value = 'https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=Resolu%C3%A7%C3%A3o%20BCB&numero=309';
+        armazenarInput.value = 'https://soluçõescompliance...';
+        botaoRegulador.checked = true;
+        botaoOutro.checked = false;     
       // botaoCancelar.classList.replace("showElement", "hiddenElement");
 
     }
@@ -676,9 +689,9 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
         customCheckbox.checked = false;
         padraoCheckbox.checked = true;
       
-        descricaoInput.value = '';
-        fonteInput.value = '';
-        armazenarInput.value = '';
+        descricaoInput.value = 'Bacen';
+        fonteInput.value = 'https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=Resolu%C3%A7%C3%A3o%20BCB&numero=309';
+        armazenarInput.value = 'https://soluçõescompliance...';
         botaoRegulador.checked = false;
         botaoOutro.checked = false;
 
