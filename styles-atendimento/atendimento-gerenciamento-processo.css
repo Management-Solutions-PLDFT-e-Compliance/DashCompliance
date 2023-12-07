@@ -112,7 +112,7 @@
     width: 40%;
 }
 
-.separa-form-tres-partes:nth-child(2) input, select {
+.separa-form-tres-partes:nth-child(2) > input select {
     width: 45%;
 }
 .separa-form-tres-partes:nth-child(3) {
@@ -152,7 +152,7 @@
 .table-atendimento-abrir th:nth-child(3){
     width: 30%;
 }
-.table-atendimento-abrir th:nth-child(4), td:nth-child(4){
+.table-atendimento-abrir th:nth-child(4), .table-atendimento-abrir td:nth-child(4){
     border: none;
     background-color: #fff;
     width: 5%;
@@ -244,7 +244,7 @@
     width: 20%;
 }
 
-.atendimento-pre-analise-lista input, select, textarea{
+.atendimento-pre-analise-lista > input select textarea{
     font-size: 1.1em;
     border: 1px solid lightgray;
     padding: .5rem 1rem;

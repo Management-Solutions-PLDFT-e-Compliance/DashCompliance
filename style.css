@@ -1211,6 +1211,42 @@ sup{
     border-radius: 12px;
 
   }
+  .AtendimentoParecerArea > div{
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+  }
+  .AtendimentoParecerArea{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-auto-rows: 104px;
+  }
+  .AtendimentoParecerAreaPublicacoes {
+    grid-column: 1;
+    grid-row: 1/4;
+    border-radius: 12px;
+
+  }
+  .AtendimentoParecerAreaPlanosDeAcao {
+    grid-column: 2;
+    grid-row: 1/4;
+    border-radius: 12px;
+
+  }
+  .AtendimentoParecerAreaBuscaDeNormativos {
+    grid-column: 3/5;
+    grid-row: 1/4;
+    border-radius: 12px;
+
+  }
+  .AtendimentoParecerAreaNormativos {
+    grid-column: 1/5;
+    grid-row: 4/9;
+    border-radius: 12px;
+
+  }
 
   .tableVariavesTriagemRaul {
     width: 100%;
@@ -1258,6 +1294,64 @@ sup{
   .tableVariavesTriagemRaul th:nth-child(7), td:nth-child(7) {
     width: 14%;
   }
+  .tableVariavesAtendimentoRaul {
+    width: 100%;
+    border-spacing: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+  }
+
+  .tableVariavesAtendimentoRaul th, td {
+    border: 1px solid lightgray;
+    border-spacing: 30px;
+  }
+  
+  .tableVariavesAtendimentoRaul th {
+    background-color: #647ca4;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .tableVariavesAtendimentoRaul td{
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .tableVariavesAtendimentoRaul th:nth-child(1), td:nth-child(1) {
+    width: 9%;
+  }
+  
+  .tableVariavesAtendimentoRaul th:nth-child(2), td:nth-child(2) {
+    width: 9%;
+  }
+  
+  .tableVariavesAtendimentoRaul th:nth-child(3), td:nth-child(3) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(4), td:nth-child(4) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(5), td:nth-child(5) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(6), td:nth-child(6) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(7), td:nth-child(7) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(8), td:nth-child(8) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(9), td:nth-child(9) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(10), td:nth-child(10) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(11), td:nth-child(11) {
+    width: 9%;
+  }
 
   .tableFixHeadTriagemRaul {
     overflow-y: auto; 
@@ -1265,6 +1359,18 @@ sup{
   }
   
   .tableFixHeadTriagemRaul thead th {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    position: sticky; 
+    top: 0px;
+    padding: 0.3rem 0.5rem;
+  }
+  .tableFixHeadAtendimentoRaul {
+    overflow-y: auto; 
+    height: 90%;
+  }
+  
+  .tableFixHeadAtendimentoRaul thead th {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 18px;
     position: sticky; 
@@ -1363,7 +1469,7 @@ sup{
   .separadorPubliHora{
     grid-column: 1/3;
     grid-row: 1;
-    padding: 40px 50px 20px 0px;
+    padding: 40px 60px 20px 0px;
   }
 
   .separadorPubliVencido{
@@ -1375,7 +1481,7 @@ sup{
   .separadorPubliAberto{
     grid-column: 2;
     grid-row: 3;
-    padding-left: 65px ;
+    padding-left: 20px;
   }
 
   .separadorPlanoDeAcoes{
@@ -1432,7 +1538,7 @@ sup{
 
   .separadorBuscaNormativos{
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1.1em;
     font-family: "Poppins", sans-serif;
     margin: 15px;
 
@@ -1534,7 +1640,206 @@ sup{
     height: 30px;
     border: 1px solid lightgray;
   }
+  .separadorAtendimentoID1{
+    position: fixed;
+    right: 800px;
+    width: 125px;
+    height: 30px;
+  }
 
+  .separadorAtendimentoID2{
+    position: fixed;
+    right: 700px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid lightgray;
+  }
+
+  .separadorAtendimentoSolicitacao1{
+    position: fixed;
+    right: 350px;
+    width: 300px;
+    height: 30px;
+  }
+  .separadorAtendimentoSolicitacao2{
+    position: fixed;
+    top: 135px;
+    right: 420px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid lightgray;
+  }
+  .separadorAtendimentoResponsavel1{
+    position: fixed;
+    right: 775px;
+    top: 152px;
+    width: 150px;
+    height: 30px;
+    padding-top: 30px;
+  }
+  .separadorAtendimentoResponsavel2{
+    position: fixed;
+    right: 700px;
+    top: 180px;
+    width: 100px;
+    height: 30px;
+    padding-top: 0px;
+    border: 1px solid lightgray;
+  }
+  .separadorAtendimentoRegulador1{
+    position: fixed;
+    top: 185px;
+    right: 350px;;
+    width: 300px;
+    height: 30px;
+  }
+  .separadorAtendimentoRegulador2{
+    position: fixed;
+    right: 420px;
+    top: 180px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid lightgray;
+  }
+
+  .separadorAtendimentoRetorno1{
+    position: fixed;
+    right: 775px;
+    top: 202px;
+    width: 150px;
+    height: 30px;
+    padding-top: 30px;
+  }
+
+  .separadorAtendimentoRetorno2{
+  position: fixed;
+    right: 700px;
+    top: 230px;
+    width: 100px;
+    height: 30px;
+    padding-top: 0px;
+    border: 1px solid lightgray;
+  }
+
+  .separadorAtendimentoCentralizador1{
+    position: fixed;
+    top: 235px;
+    right: 350px;
+    width: 300px;
+    height: 30px;
+  }
+
+  .separadorAtendimentoCentralizador2{
+    position: fixed;
+    right: 420px;
+    top: 230px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid lightgray;
+  }
+  .separadorAtendimentoCategoria1{
+    position: fixed;
+    top: 140px;
+    right: 80px;
+    width: 300px;
+    height: 30px;
+  }
+
+  .separadorAtendimentoCategoria2{
+    position: fixed;
+    top:137px;
+    right: 180px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid lightgray;
+  }
+  .separadorAtendimentoStatus1{
+    position: fixed;
+    top: 185px;
+    right: 80px;
+    width: 300px;
+    height: 30px;
+  }
+
+  .separadorAtendimentoStatus2{
+    position: fixed;
+    right: 180px;
+    top: 185px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid lightgray;
+  }
+  .separadorAtendimentoTema1{
+    position: fixed;
+    top: 280px;
+    right: 626px;
+    width: 300px;
+    height: 30px;
+  }
+
+  .separadorAtendimentoTema2{
+    position: fixed;
+    right: 700px;
+    top: 280px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid lightgray;
+  }
+  .separadorAtendimentoCriticidade1{
+    position: fixed;
+    top: 235px;
+    right: 80px;
+    width: 300px;
+    height: 30px;
+  }
+
+  .separadorAtendimentoCriticidade2{
+    position: fixed;
+    right: 180px;
+    top: 230px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid lightgray;
+  }
+
+  .AtendimentoValidacaoArea > div {
+    border: 2px solid lightgray;
+    background-color: white;
+    padding: 1em;
+    color: black;
+  }
+
+  .AtendimentoValidacaoArea{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-auto-rows: 104px;
+  }
+  .AtendimentoValidacaoAreaPublicacoes {
+    grid-column: 1;
+    grid-row: 1/4;
+    border-radius: 12px;
+
+  }
+  .AtendimentoValidacaoAreaPlanosDeAcao {
+    grid-column: 2;
+    grid-row: 1/4;
+    border-radius: 12px;
+
+  }
+  .AtendimentoValidacaoAreaBuscaDeNormativos {
+    grid-column: 3/5;
+    grid-row: 1/4;
+    border-radius: 12px;
+
+  }
+  .AtendimentoValidacaoAreaNormativos {
+    grid-column: 1/5;
+    grid-row: 4/9;
+    border-radius: 12px;
+
+  }
+  
   .TriagemValidacaoArea > div {
     border: 2px solid lightgray;
     background-color: white;
