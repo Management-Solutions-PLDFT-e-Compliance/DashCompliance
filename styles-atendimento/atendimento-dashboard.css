@@ -326,3 +326,155 @@
       left: 1111px;
       align-items: end;
     }
+
+    /* ----------Tabelas 9 Colunas ------------------- */
+
+    .tableFixHeadAtendimentoDash9Col {
+      overflow-y: auto; 
+      height: 89%;
+    }
+    
+    .tableFixHeadAtendimentoDash9Col thead th {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 18px;
+      position: sticky; 
+      top: 0px;
+      padding: 0.5rem 0.5rem;
+    }
+    
+    .tableAtendimentoDash9Col {
+      width:100%;
+      border-spacing: 5px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 16px;
+    }
+    
+    
+    
+    .tableAtendimentoDash9Col td{
+      padding: 0.6rem 0.5rem;
+    }
+    
+    .tableAtendimentoDash9Col th:nth-child(1), .tableAtendimentoDash9Col td:nth-child(1) {
+      width: 3%;
+    }
+    
+    .tableAtendimentoDash9Col th:nth-child(2), .tableAtendimentoDash9Col td:nth-child(2) {
+      width: 3%;
+    }
+    
+    .tableAtendimentoDash9Col th:nth-child(3), .tableAtendimentoDash9Col td:nth-child(3) {
+      width: 7%;
+    }
+    .tableAtendimentoDash9Col th:nth-child(4), .tableAtendimentoDash9Col td:nth-child(4) {
+      width: 5%;
+    }
+    .tableAtendimentoDash9Col th:nth-child(5), .tableAtendimentoDash9Col td:nth-child(5) {
+      width: 13%;
+    }
+    
+    .tableAtendimentoDash9Col th:nth-child(6), .tableAtendimentoDash9Col td:nth-child(6) {
+      width: 10%;
+    }
+    .tableAtendimentoDash9Col th:nth-child(7), .tableAtendimentoDash9Col td:nth-child(7) {
+      width: 7%;
+    }
+
+    .tableAtendimentoDash9Col th:nth-child(8), .tableAtendimentoDash9Col td:nth-child(8) {
+      width: 7%;
+    }
+
+    .tableAtendimentoDash9Col th:nth-child(9), .tableAtendimentoDash9Col td:nth-child(9) {
+      width: 5%;
+    }
+  
+    .tableAtendimentoDash9Col th, .tableAtendimentoDash9Col td {
+      border: 1px solid lightgray;
+      border-spacing: 30px;
+    }
+    
+    
+    .tableAtendimentoDash9Col th {
+      background-color: #647ca4;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+    
+    }
+
+    /* ----------Tabelas 8 Colunas ------------------- */
+
+    .tableFixHeadAtendimentoDash8Col {
+      overflow-y: auto; 
+      height: 89%;
+    }
+    
+    .tableFixHeadAtendimentoDash8Col thead th {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 18px;
+      position: sticky; 
+      top: 0px;
+      padding: 0.5rem 0.5rem;
+    }
+    
+    .tableAtendimentoDash8Col {
+      width:100%;
+      border-spacing: 5px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 16px;
+    }
+    
+    
+    
+    .tableAtendimentoDash8Col td{
+      padding: 0.6rem 0.5rem;
+    }
+    
+    .tableAtendimentoDash8Col th:nth-child(1), .tableAtendimentoDash8Col td:nth-child(1) {
+      width: 7%;
+    }
+    
+    .tableAtendimentoDash8Col th:nth-child(2), .tableAtendimentoDash8Col td:nth-child(2) {
+      width: 5%;
+    }
+    
+    .tableAtendimentoDash8Col th:nth-child(3), .tableAtendimentoDash8Col td:nth-child(3) {
+      width: 12%;
+    }
+    .tableAtendimentoDash8Col th:nth-child(4), .tableAtendimentoDash8Col td:nth-child(4) {
+      width: 8%;
+    }
+    .tableAtendimentoDash8Col th:nth-child(5), .tableAtendimentoDash8Col td:nth-child(5) {
+      width: 13%;
+    }
+    
+    .tableAtendimentoDash8Col th:nth-child(6), .tableAtendimentoDash8Col td:nth-child(6) {
+      width: 5%;
+    }
+    .tableAtendimentoDash8Col th:nth-child(7), .tableAtendimentoDash8Col td:nth-child(7) {
+      width: 5%;
+    }
+
+    .tableAtendimentoDash8Col th:nth-child(8), .tableAtendimentoDash8Col td:nth-child(8) {
+      width: 5%;
+    }
+  
+    .tableAtendimentoDash8Col th, .tableAtendimentoDash8Col td {
+      border: 1px solid lightgray;
+      border-spacing: 30px;
+    }
+    
+    
+    .tableAtendimentoDash8Col th {
+      background-color: #647ca4;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+    
+    }
+
+    .botaoDownloadDemanArea{
+      position: fixed;
+      margin-top: -58px;
+      margin-left: 1780px;
+    }
