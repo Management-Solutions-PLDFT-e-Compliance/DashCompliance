@@ -150,6 +150,7 @@
 #tabela > table > tbody > tr  > td {
     margin: 12px;
     width:19%;
+    padding: 10px;
 }
 
 #tabela > table {
