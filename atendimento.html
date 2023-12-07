@@ -15,7 +15,7 @@
   
   <link rel="stylesheet" href="./styles-atendimento/atendimento-gerenciamento-processo.css">
   <script src="./javascript-atendimento/centralizador-conteudo.js"></script>
-  <script src="./javascript-atendimento/gerenciamento-processo.js"></script>
+  
   <link rel="stylesheet" href="./styles-atendimento/atendimento-dashboard.css">
   <title>Compliance Analytics</title>
 </head>
@@ -1429,27 +1429,35 @@
                   <h5 class="SubtituloCinza">Lista</h5>
                   <hr>
                 </div>
-                  <div class="tableFixHeadTriagemRaul">
-                    <table class="tableVariavesTriagemRaul">
+                  <div class="tableFixHeadAtendimentoRaul">
+                    <table class="tableVariavesAtendimentoRaul">
                       <thead>
                         <tr>
-                          <th>Normativo</th>
+                          <th>ID</th>
                           <th>Regulador</th>
-                          <th>Publicação</th>
-                          <th>Status</th>
+                          <th>Instrução</th>
                           <th>Tema</th>
+                          <th>Validador</th>
+                          <th>Centralizador</th>
+                          <th>Solicitação</th>
+                          <th>Retorno</th>
+                          <th>Status</th>
                           <th>Criticidade</th>
                           <th>Visualização</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Resolução nº 309</td>
-                          <td>Bacen</td>
-                          <td>28/03/2023</td>
-                          <td>Aberto</td>
-                          <td>Contabilidade</td>
-                          <td>Alta</td>
+                          <td>0001</td>
+                          <td>CVM</td>
+                          <td>Resolução nº 617</td>
+                          <td>PLDFT</td>
+                          <td>Camila Lira</td>
+                          <td>Camila Lira</td>
+                          <td>20/01/2023</td>
+                          <td>01/05/2023</td>
+                          <td>Pendente</td>
+                          <td>Moderado</td>
                           <td class="SemBordaColuna">
                             <div class="botaoAbrirVisualizacaoCentralizar">
                               <button class="botaoAbrirVisualizacao botaoMain">
@@ -1460,12 +1468,36 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Resolução nº 5.066</td>
-                          <td>CMN</td>
-                          <td>30/03/2023</td>
-                          <td>Aberto</td>
-                          <td>Contabilidade</td>
-                          <td>Baixa</td>
+                          <td>0003</td>
+                          <td>Bacen</td>
+                          <td>Circular nº 3.978</td>
+                          <td>PLDFT</td>
+                          <td>Camila Lira</td>
+                          <td>João Marques</td>
+                          <td>04/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Pendente</td>
+                          <td>Alto</td>
+                          <td class="SemBordaColuna">
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>0010</td>
+                          <td>Susep</td>
+                          <td>Circular nº 612</td>
+                          <td>PLDFT</td>
+                          <td>Camila Lira</td>
+                          <td>Marcos Fagundes</td>
+                          <td>25/01/2023</td>
+                          <td>28/02/2023</td>
+                          <td>Pendente</td>
+                          <td>Alto</td>
                           <td class="SemBordaColuna">
                             <div class="botaoAbrirPesquisaCentralizar">
                               <button class="botaoAbrirPesquisa botaoMain">
@@ -1636,7 +1668,7 @@
                 </div>
 
               </div>
-              <div class="AtendimentoParecerAreaBuscaDeNormativos showValidacao">
+              <div class="AtendimentoParecerAreaBuscaDeNormativos showParecer">
                 <h2 class="TituloPreto9">Busca de normativos</h2>
                 <div>
                   <h5 class="SubtituloCinza">Filtro:</h5>
@@ -1644,32 +1676,56 @@
                 </div>
                 <div class="separadorBuscaNormativos">
                   <div>
-                    <label for="ReguladorTriagem" class="separadorAtendimentoRegulador1">Regulador:</label>
-                      <select name="ReguladorTriagem" id="ReguladorTriagem" class="separadorAtendimentoRegulador2">
+                    <label for="AtendimentoID" class="separadorAtendimentoID1">ID:</label>
+                      <select name="AtendimentoID" id="AtendimentoID" class="separadorAtendimentoID2">
                         <option value="Bacen">Bacen</option>
                       </select>
                   </div>
                   <div>
-                    <label for="DataPublicacao" class="separadorAtendimentoDataPublica1">Data de publicação:</label>
-                      <select name="DataPublicacao" id="DataPublicacao" class="separadorAtendimentoDataPublica2">
+                    <label for="DataPublicacao" class="separadorAtendimentoSolicitacao1">Solicitação:</label>
+                      <select name="DataPublicacao" id="DataPublicacao" class="separadorAtendimentoSolicitacao2">
                         <option value="Diariamente">Diariamente</option>
                       </select>
                   </div>
                    <div>
-                    <label for="Categoria" class="separadorAtendimentoCategoria1">Categoria:</label>
-                      <select name="Categoria" id="Categoria" class="separadorAtendimentoCategoria2">
+                    <label for="Categoria" class="separadorAtendimentoResponsavel1">Responsável:</label>
+                      <select name="Categoria" id="Categoria" class="separadorAtendimentoResponsavel2">
                         <option value="Diariamente">Diariamente</option>
                       </select>
                   </div>
                   <div>
-                    <label for="Tema" class="separadorAtendimentoTema1">Tema:</label>
-                      <select name="Tema" id="Tema" class="separadorAtendimentoTema2">
+                    <label for="Tema" class="separadorAtendimentoRegulador1">Regulador:</label>
+                      <select name="Tema" id="Tema" class="separadorAtendimentoRegulador2">
                         <option value="Diariamente">Diariamente</option>
                       </select>
                   </div>
                   <div>
-                    <label for="Status" class="separadorAtendimentoStatus1">Status:</label>
-                      <select name="Status" id="Status" class="separadorAtendimentoStatus2">
+                    <label for="Status" class="separadorAtendimentoRetorno1">Retorno:</label>
+                      <select name="Status" id="Status" class="separadorAtendimentoRetorno2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Criticidade" class="separadorAtendimentoCentralizador1">Centralizador:</label>
+                      <select name="Criticidade" id="Criticidade" class="separadorAtendimentoCentralizador2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Criticidade" class="separadorAtendimentoCategoria1">Categoria:</label>
+                      <select name="Criticidade" id="Criticidade" class="separadorAtendimentoCategoria2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Criticidade" class="separadorAtendimentoStatus1">Status:</label>
+                      <select name="Criticidade" id="Criticidade" class="separadorAtendimentoStatus2">
+                        <option value="Diariamente">Diariamente</option>
+                      </select>
+                  </div>
+                  <div>
+                    <label for="Criticidade" class="separadorAtendimentoTema1">Tema:</label>
+                      <select name="Criticidade" id="Criticidade" class="separadorAtendimentoTema2">
                         <option value="Diariamente">Diariamente</option>
                       </select>
                   </div>
@@ -1684,38 +1740,46 @@
                     <button class="botaoFiltrar2"><img src="./assets/icons/FiltroBranco.png" alt="">Pesquisar</button>
                   </div> 
                 </div>
-              
+        
               </div>
-              <div class="AtendimentoValidacaoAreaNormativos showValidacao">
+              <div class="AtendimentoParecerAreaNormativos showParecer">
                 <h2 class="TituloPreto9">Normativos</h2>
                 <div>
                   <h5 class="SubtituloCinza">Lista</h5>
                   <hr>
                 </div>
-                  <div class="tableFixHeadTriagemRaul">
-                    <table class="tableVariavesTriagemRaul">
+                  <div class="tableFixHeadAtendimentoRaul">
+                    <table class="tableVariavesAtendimentoRaul">
                       <thead>
                         <tr>
-                          <th>Normativo</th>
+                          <th>ID</th>
                           <th>Regulador</th>
-                          <th>Publicação</th>
-                          <th>Status</th>
+                          <th>Instrução</th>
                           <th>Tema</th>
+                          <th>Analista</th>
+                          <th>Centralizador</th>
+                          <th>Solicitação</th>
+                          <th>Retorno</th>
+                          <th>Status</th>
                           <th>Criticidade</th>
                           <th>Visualização</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Resolução nº 309</td>
-                          <td>Bacen</td>
+                          <td>0001</td>
+                          <td>CVM</td>
+                          <td>Resolução nº 617</td>
+                          <td>PLDFT</td>
+                          <td>Felipe Matos</td>
+                          <td>Camila Lira</td>
                           <td>28/03/2023</td>
-                          <td>Aberto</td>
-                          <td>Contabilidade</td>
-                          <td>Alta</td>
+                          <td>01/05/2023</td>
+                          <td>Pendente</td>
+                          <td>Alto</td>
                           <td class="SemBordaColuna">
                             <div class="botaoAbrirVisualizacaoCentralizar">
-                              <button class="botaoAbrirVisualizacao2 botaoMain">
+                              <button class="botaoAbrirVisualizacao botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
                                 <div>Abrir<sup>1</sup></div>
                               </button>
@@ -1723,15 +1787,39 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Resolução nº 5.066</td>
-                          <td>CMN</td>
-                          <td>30/03/2023</td>
-                          <td>Aberto</td>
-                          <td>Contabilidade</td>
-                          <td>Baixa</td>
+                          <td>0003</td>
+                          <td>Bacen</td>
+                          <td>Circular nº 3.978</td>
+                          <td>PLDFT</td>
+                          <td>Daniel Martins</td>
+                          <td>João Marques</td>
+                          <td>04/01/2023</td>
+                          <td>30/01/2023</td>
+                          <td>Pendente</td>
+                          <td>Moderado</td>
                           <td class="SemBordaColuna">
                             <div class="botaoAbrirPesquisaCentralizar">
-                              <button class="botaoAbrirVisualizacao botaoMain">
+                              <button class="botaoAbrirPesquisa botaoMain">
+                                <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
+                                <div>Abrir</div>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>0010</td>
+                          <td>Susep</td>
+                          <td>Circular nº 612</td>
+                          <td>PLDFT</td>
+                          <td>João Silva</td>
+                          <td>Marcos Fagundes</td>
+                          <td>25/01/2023</td>
+                          <td>28/02/2023</td>
+                          <td>Pendente</td>
+                          <td>Alto</td>
+                          <td class="SemBordaColuna">
+                            <div class="botaoAbrirPesquisaCentralizar">
+                              <button class="botaoAbrirPesquisa botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
                                 <div>Abrir</div>
                               </button>
@@ -1743,7 +1831,7 @@
                   </div>
               </div>
             </div>
-          
+
             <div class="AtendimentoParecerAreaConteudo">
               <div class="AtendimentoParecerAreaConteudoPreTriagem hiddenValidacao">
                 <h2 class="TituloPreto9">Pré-triagem</h2>

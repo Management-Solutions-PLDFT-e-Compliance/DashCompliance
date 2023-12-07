@@ -1281,6 +1281,64 @@ sup{
   .tableVariavesTriagemRaul th:nth-child(7), td:nth-child(7) {
     width: 14%;
   }
+  .tableVariavesAtendimentoRaul {
+    width: 100%;
+    border-spacing: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+  }
+
+  .tableVariavesAtendimentoRaul th, td {
+    border: 1px solid lightgray;
+    border-spacing: 30px;
+  }
+  
+  .tableVariavesAtendimentoRaul th {
+    background-color: #647ca4;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .tableVariavesAtendimentoRaul td{
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .tableVariavesAtendimentoRaul th:nth-child(1), td:nth-child(1) {
+    width: 9%;
+  }
+  
+  .tableVariavesAtendimentoRaul th:nth-child(2), td:nth-child(2) {
+    width: 9%;
+  }
+  
+  .tableVariavesAtendimentoRaul th:nth-child(3), td:nth-child(3) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(4), td:nth-child(4) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(5), td:nth-child(5) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(6), td:nth-child(6) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(7), td:nth-child(7) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(8), td:nth-child(8) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(9), td:nth-child(9) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(10), td:nth-child(10) {
+    width: 9%;
+  }
+  .tableVariavesAtendimentoRaul th:nth-child(11), td:nth-child(11) {
+    width: 9%;
+  }
 
   .tableFixHeadTriagemRaul {
     overflow-y: auto; 
@@ -1288,6 +1346,18 @@ sup{
   }
   
   .tableFixHeadTriagemRaul thead th {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    position: sticky; 
+    top: 0px;
+    padding: 0.3rem 0.5rem;
+  }
+  .tableFixHeadAtendimentoRaul {
+    overflow-y: auto; 
+    height: 90%;
+  }
+  
+  .tableFixHeadAtendimentoRaul thead th {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 18px;
     position: sticky; 
