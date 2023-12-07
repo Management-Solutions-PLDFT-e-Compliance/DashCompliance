@@ -2,7 +2,6 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
 }
 
 .up {
@@ -46,13 +45,13 @@
     height: 80%;
 }
 
-/* .espacamento-table-top {
-    height: 0.75rem;
+.espacamento-table-top {
+    height: 12px;
     background-color: #fff;
     position: sticky;
-    top: 10%;
+    top: 184.67px;
     z-index: 1;
-} */
+}
 
 .card {
     background-color: #fff;
@@ -205,10 +204,19 @@
 
 .table-compliance thead {
     position: sticky;
-    top: 10%;
+    top: 196.67px;
     z-index: 1;
 }
 
+.triagem-compliance-captura .card-header {
+    background-color: #fff;
+    position:sticky;
+    padding-top: .5rem;
+    top: 124px;
+    z-index: 1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 
 .table-compliance th:nth-child(1) {
     width: 15%;
@@ -219,11 +227,11 @@
 }
 
 .table-compliance th:nth-child(2) {
-    width: 10%;
+    width: 5%;
 }
 
 .table-compliance  td:nth-child(2) {
-    width: 10%;
+    width: 5%;
 }
 
 .table-compliance th:nth-child(3) {
@@ -241,10 +249,10 @@
 }
 
 .table-compliance th:nth-child(5) {
-    width: 13%;
+    width: 18%;
 }
 .table-compliance td:nth-child(5) {
-    width: 13%;
+    width: 18%;
 }
 
 .table-compliance th:nth-child(6) {
