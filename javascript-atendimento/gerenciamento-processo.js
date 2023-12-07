@@ -25,6 +25,7 @@ const telaGestaoAbrir = document.getElementsByClassName("atendimendimento-gestao
 const atendimentoGestaoAbrirFechar = document.getElementById("atendimento-gestao-processo-btn-fechar")
 
 atendimendimentoGerenciamentoAbrirBtn.addEventListener("click", function() {
+    console.log("aqui")
     telaGestao.style.display = "none"
     telaGestaoAbrir.style.display= "flex"
 })
