@@ -1544,6 +1544,7 @@
                 <div>
                   <h5 class="SubtituloCinza">Resumo</h5>
                   <hr>
+                  <button class="botaoEngrenagemLixeira botaoEngrenagemParGeral showElement botaoDownload botaoDownloadConteudoAtendParecer" id=""><img src="./assets/icons/baixarIcon.svg" alt="Descrição da Imagem" height="50px" width="50px"></button>
                   <div class="infosConteudoResumoParecerAtend">
                     <div class="topicos">
                       <p><strong>Assunto:</strong> Resultado da avaliação da Política de Prevenção à Lavagem de Dinheiro e ao Financiamento do Terrorismo (PLDFT) e da implantação da Abordagem Baseada em Risco (ABR)</p>
@@ -1593,39 +1594,179 @@
                   <h5 class="SubtituloCinza">Parecer para Aprovação</h5>
                   <hr>
                 </div>
-                <div>
-                  <form  method="POST" enctype="multipart/form-data" name="myForm">
-                    <div id="yourBtn" onclick="getFile()" style="top: 130px; right: 20px;"><img src="./assets/icons/ClipBranco.png" alt="" height="25px" width="25px"><sup>1</sup></div>
-                    <div style='height: 0px;width: 0px; overflow:hidden;'><input id="upfile" type="file" value="upload" onchange="sub(this)" /></div>
-                  </form>
-                  <label class="pesquisaAtendimentoLabel1 fonteItensBlocos">ID:</label>
-                  <input class="pesquisaAtendimentoInput1" type="text" readonly value="001" style="left: 1120px; width: 100px;">
-                  <label class="pesquisaAtendimentoLabel8 fonteItensBlocos" style="top: 185px;">Aderente:</label>
-                  <select name="" id="" class="pesquisaAtendimentoInput8" style="left: 1120px; top: 180px;">
-                    <option value="Sim">Sim</option>
-                    <option value="Não">Não</option>
-                  </select>
-                  <label class="pesquisaAtendimentoLabel1 fonteItensBlocos" style="top: 235px;">Parecer:</label>
-                  <textarea class="pesquisaAtendimentoInput14" style="top: 230px; width: 780px; left: 1120px; height: 175px;" id="campoComQuebraDeLinha" placeholder="Digite seu texto aqui..."></textarea>
-                  <label class="pesquisaAtendimentoLabel5 fonteItensBlocos" style="top: 435px;">Plano de ação:</label>
-                  <input class="pesquisaAtendimentoInput5" type="text" readonly value="Alta" style="top: 430px; left: 1120px;">
-                  <label class="pesquisaAtendimentoLabel1 fonteItensBlocos" style="top: 485px;">Data Início:</label>
-                  <input type="date" name="Status" id="Status" class="separadorAtendimentoRetorno2" style="top: 480px; width: 170px; left: 1120px;">
-                  <label class="pesquisaAtendimentoLabel1 fonteItensBlocos" style="top: 535px;">Data Fim:</label>
-                  <input type="date" name="Status" id="Status" class="separadorAtendimentoRetorno2" style="top: 530px; width: 170px; left: 1120px;">
-                  <textarea class="pesquisaAtendimentoInput14" style="top: 430px; width: 590px; left: 1310px; height: 130px;" id="campoComQuebraDeLinha" placeholder="Digite seu texto aqui..."></textarea>
+                <div class="conteinerBlocoRespostaArea">
+                  <div class="blocoRespostaArea">
+                    <div class="blocoID">
+                      <label for="">ID:</label>
+                      <input type="number">
+                      <button>
+                        <img src="./assets/icons/ClipBranco.png" alt="">
+                      </button>
+                    </div>
+                    <div class="blocoStatus">
+                      <label for="">Status:</label>
+                      <select name="" id="">
+                        <option value="">Aderente</option>
+                        <option value="">Inaderente</option>
+                      </select>
+                    </div>
+                    <div class="blocoParecer">
+                      <label for="">Parecer:</label>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="blocoRespostaParteBaixo">
+                      <div class="parteLeft">
+                        <div class="blocoPlano">
+                          <label for="">Plano de Ação:</label>
+                          <select name="" id="">
+                            <option value="">Não Aplica</option>
+                            <option value="">Aplica</option>
+                          </select>
+                        </div>
+                        <div class="blocoDataInicio">
+                          <label for="">Data Início:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                        <div class="blocoDataFim">
+                          <label for="">Data Fim:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                      </div>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                  </div>
+                  <div class="blocoRespostaArea">
+                    <div class="blocoID">
+                      <label for="">ID:</label>
+                      <input type="number">
+                      <button>
+                        <img src="./assets/icons/ClipBranco.png" alt="">
+                      </button>
+                    </div>
+                    <div class="blocoStatus">
+                      <label for="">Status:</label>
+                      <select name="" id="">
+                        <option value="">Aderente</option>
+                        <option value="">Inaderente</option>
+                      </select>
+                    </div>
+                    <div class="blocoParecer">
+                      <label for="">Parecer:</label>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="blocoRespostaParteBaixo">
+                      <div class="parteLeft">
+                        <div class="blocoPlano">
+                          <label for="">Plano de Ação:</label>
+                          <select name="" id="">
+                            <option value="">Não Aplica</option>
+                            <option value="">Aplica</option>
+                          </select>
+                        </div>
+                        <div class="blocoDataInicio">
+                          <label for="">Data Início:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                        <div class="blocoDataFim">
+                          <label for="">Data Fim:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                      </div>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                  </div>
+                  <div class="blocoRespostaArea">
+                    <div class="blocoID">
+                      <label for="">ID:</label>
+                      <input type="number">
+                      <button>
+                        <img src="./assets/icons/ClipBranco.png" alt="">
+                      </button>
+                    </div>
+                    <div class="blocoStatus">
+                      <label for="">Status:</label>
+                      <select name="" id="">
+                        <option value="">Aderente</option>
+                        <option value="">Inaderente</option>
+                      </select>
+                    </div>
+                    <div class="blocoParecer">
+                      <label for="">Parecer:</label>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="blocoRespostaParteBaixo">
+                      <div class="parteLeft">
+                        <div class="blocoPlano">
+                          <label for="">Plano de Ação:</label>
+                          <select name="" id="">
+                            <option value="">Não Aplica</option>
+                            <option value="">Aplica</option>
+                          </select>
+                        </div>
+                        <div class="blocoDataInicio">
+                          <label for="">Data Início:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                        <div class="blocoDataFim">
+                          <label for="">Data Fim:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                      </div>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                  </div>
+                  <div class="blocoRespostaArea">
+                    <div class="blocoID">
+                      <label for="">ID:</label>
+                      <input type="number">
+                      <button>
+                        <img src="./assets/icons/ClipBranco.png" alt="">
+                      </button>
+                    </div>
+                    <div class="blocoStatus">
+                      <label for="">Status:</label>
+                      <select name="" id="">
+                        <option value="">Aderente</option>
+                        <option value="">Inaderente</option>
+                      </select>
+                    </div>
+                    <div class="blocoParecer">
+                      <label for="">Parecer:</label>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="blocoRespostaParteBaixo">
+                      <div class="parteLeft">
+                        <div class="blocoPlano">
+                          <label for="">Plano de Ação:</label>
+                          <select name="" id="">
+                            <option value="">Não Aplica</option>
+                            <option value="">Aplica</option>
+                          </select>
+                        </div>
+                        <div class="blocoDataInicio">
+                          <label for="">Data Início:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                        <div class="blocoDataFim">
+                          <label for="">Data Fim:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                      </div>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                  </div>
                 </div>
-                
-                
-                
-                
-                
-                <div>
-                  <button class="botaoCancelar" style="left: 1550px"><img src="./assets/icons/cancelarIcon.png" alt="" height="25px" width="25px">Cancelar <sup>1</sup></button>
-                  <button class="botaoSalvarEnviar" ><img src="./assets/icons/SalvarBranco.png" alt="" height="25px" width="25px" >Salvar / enviar <sup>1</sup></button>
+                <div class="botoesParecerArea">
+                  <button class="botaoParecerAreaAtendimento">
+                    <img src="./assets/icons/fechar.png" alt="">
+                    <p>Cancelar</p>
+                  </button>
+                  <button class="botaoParecerAreaAtendimento botaoSalvar">
+                    <img src="./assets/icons/SalvarBranco.png" alt="">
+                    <p>Salvar/enviar</p>
+                  </button>
                 </div>
                </div>
-                
             </div>
           </div>
           <div class="content">
