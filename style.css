@@ -171,10 +171,10 @@ sup{
   }
 
   .botaoAtendimento > img{
-    width: 65px;
-    margin-left: 30px;
-    margin-bottom: 4px;
-    margin-top: -8px;
+    margin-left: 14px;
+    width: 40px;
+    margin-top: -4px;
+    margin-bottom: 5px;
   }
 
   .botaoAtendimento > p{
@@ -272,9 +272,10 @@ sup{
   }
 
   .botaoAtendimentoOn > img{
-    margin-left: 20px;
+    margin-left: 14px;
     width: 40px;
-    margin-bottom: 7px;
+    margin-top: -4px;
+    margin-bottom: 5px;
   }
   
   h1 {
