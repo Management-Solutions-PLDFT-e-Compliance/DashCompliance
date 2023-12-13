@@ -277,3 +277,48 @@ function preencherInfosParecer(){
 
 }
 
+function handleCheckbox(checkbox) {
+  var aprovadoCheckbox = document.getElementById("aprovadoCheckbox");
+  var reprovadoCheckbox = document.getElementById("reprovadoCheckbox");
+  var comentarioTextarea = document.getElementById("comentarioTextarea");
+
+  if (checkbox === aprovadoCheckbox) {
+    // Ao clicar no checkbox de Aprovado
+    if (checkbox.checked) {
+      // Desabilita o checkbox de Reprovado
+      reprovadoCheckbox.disabled = true;
+      reprovadoCheckbox.checked = false;
+      // Desabilita a textarea e apaga o texto
+      comentarioTextarea.disabled = true;
+      comentarioTextarea.value = "";
+    } else {
+      // Se desmarcar, habilita o checkbox de Reprovado
+      reprovadoCheckbox.disabled = false;
+      // Mantém a textarea desabilitada
+      comentarioTextarea.disabled = true;
+    }
+  } else if (checkbox === reprovadoCheckbox) {
+    // Ao clicar no checkbox de Reprovado
+    if (checkbox.checked) {
+      // Desabilita o checkbox de Aprovado
+      aprovadoCheckbox.disabled = true;
+      aprovadoCheckbox.checked = false;
+      // Habilita a textarea
+      comentarioTextarea.disabled = false;
+    } else {
+      // Se desmarcar, habilita o checkbox de Aprovado
+      aprovadoCheckbox.disabled = false;
+      // Mantém a textarea desabilitada
+      comentarioTextarea.disabled = true;
+    }
+  }
+}
+
+function handleTextareaInput(textarea) {
+  var aprovadoCheckbox = document.getElementById("aprovadoCheckbox");
+
+  // Se a opção Aprovado estiver marcada, apaga o texto na textarea
+  if (aprovadoCheckbox.checked) {
+    textarea.value = "";
+  }
+}
