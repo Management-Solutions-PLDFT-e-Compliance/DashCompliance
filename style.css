@@ -1427,7 +1427,7 @@ sup{
   }
   
   .tableVariavesCapturaRaul th:nth-child(3), .tableVariavesCapturaRaul td:nth-child(3) {
-    width: 4%;
+    width: 10%;
   }
   .tableVariavesCapturaRaul th:nth-child(4), .tableVariavesCapturaRaul td:nth-child(4) {
     width: 30%;

@@ -1591,14 +1591,14 @@
               <div class="AtendimentoParecerAreaConteudoPlano3 hiddenParecer">
                 <h2 class="TituloPreto9">Resposta da área</h2>
                 <div>
-                  <h5 class="SubtituloCinza">Parecer para Aprovação</h5>
+                  <h5 class="SubtituloCinza" onclick="preencherInfosParecer()">Parecer para Aprovação <sup>1</sup></h5>
                   <hr>
                 </div>
                 <div class="conteinerBlocoRespostaArea">
                   <div class="blocoRespostaArea">
                     <div class="blocoID">
                       <label for="">ID:</label>
-                      <input type="number">
+                      <input type="number" id="inputIDParecer">
                       <button>
                         <img src="./assets/icons/ClipBranco.png" alt="">
                       </button>
@@ -1612,7 +1612,7 @@
                     </div>
                     <div class="blocoParecer">
                       <label for="">Parecer:</label>
-                      <textarea name="" id=""></textarea>
+                      <textarea name="" id="textAreaParecer-Parecer"></textarea>
                     </div>
                     <div class="blocoRespostaParteBaixo">
                       <div class="parteLeft">
@@ -1625,16 +1625,20 @@
                         </div>
                         <div class="blocoDataInicio">
                           <label for="">Data Início:</label>
-                          <input type="date" name="" id="">
+                          <input type="date" value="" id="dataInicioParecer">
                         </div>
                         <div class="blocoDataFim">
                           <label for="">Data Fim:</label>
-                          <input type="date" name="" id="">
+                          <input type="date" value="" id="dataFimParecer">
                         </div>
                       </div>
-                      <textarea name="" id=""></textarea>
+                      <textarea name="" id="textAreaPlanoParecer"></textarea>
                     </div>
-                  </div>
+                    <div id="divParaAddArquivo">
+                      
+                    </div>
+                    </div>
+                    
                   <div class="blocoRespostaArea">
                     <div class="blocoID">
                       <label for="">ID:</label>

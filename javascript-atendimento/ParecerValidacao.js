@@ -239,3 +239,41 @@ if (document.querySelector(".botaoReprovar")) {
     });
   });
 }
+
+
+function preencherComLabelDesc(){
+  var descricaoInput = document.getElementById('Descrição');
+  var fonteInput = document.getElementById('Fonte');
+  var armazenarInput = document.getElementById('Armazenar');
+
+  descricaoInput.value = 'Susep';
+  fonteInput.value = 'https://www2.susep.gov.br/safe/scripts/bnweb/bnmapi.exe?router=upload/27890';
+  armazenarInput.value = 'https://soluçõescompliance...';
+}
+
+function preencherInfosParecer(){ 
+  var id  = document.getElementById("inputIDParecer");
+  var textParecer = document.getElementById("textAreaParecer-Parecer");
+  var dataInicio = document.getElementById("dataInicioParecer");
+  var dataFim = document.getElementById("dataFimParecer");
+  var textplano = document.getElementById("textAreaPlanoParecer");
+
+  var divArquivo = document.getElementById("divParaAddArquivo"); 
+
+
+  id.value = "001";
+  textParecer.textContent = "O Banco tem evoluído no processo de controle e prevenção ao risco de LDFT mediante a implementação de novos controles nas áreas de tesouraria e varejo, inovando tanto nos processos de on-boarding quanto nos processos de controles internos.";
+
+  divArquivo.innerHTML = `<div class="blocoArquivo">
+  <img src="./assets/icons/pdf-file.png" alt="">
+  <div class="infosDoArquivo">
+    <div>
+      <p>Relatorio_AIR.pdf</p>
+      <p>706 KB</p>
+    </div>
+    <img src="./assets/icons/seta-para-baixo.png" alt="">
+  </div>
+</div>`
+
+}
+
