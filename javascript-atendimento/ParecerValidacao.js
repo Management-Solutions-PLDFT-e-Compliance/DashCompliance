@@ -121,12 +121,12 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 
-if (document.querySelector(".botaoSalvar")) {
-  let botaoSalvarEnviar = document.querySelector(".botaoSalvar");
+document.addEventListener("DOMContentLoaded", function () {
+  var botao = document.getElementById("salvarParecer");
   var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoParecerArea .showParecer');
   var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
 
-  botaoSalvarEnviar.addEventListener('click', function () {
+  botao.addEventListener('click', function () {
       elementosValidacaoAtendimento.forEach(function (elemento) {
           elemento.classList.toggle('showParecer');
           elemento.classList.toggle('hiddenParecer');
@@ -141,7 +141,9 @@ if (document.querySelector(".botaoSalvar")) {
         title: 'Parecer salvo e enviado com sucesso!'
     });
   });
-};
+});
+
+
 if (document.getElementById("salvarParecer2")) {
   let botaoSalvarEnviar = document.getElementById("salvarParecer2");
   var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoValidacaoArea .showParecer');
