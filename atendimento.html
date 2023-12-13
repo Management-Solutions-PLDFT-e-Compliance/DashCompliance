@@ -23,13 +23,13 @@
   <img src="logoMS.png" alt="MSSolutions" class="MSlogoHome" onclick="redirecionarParaHome()">
   
   <a href="captura.html" class="linksBotoes linkCaptura">
-    <button class="botaoHeader botaoCaptura">
+    <button class="botaoHeader botaoCaptura botaoOff">
       <img src="./assets/icons/capturaIconOff.svg" alt="Icone Atendimento">
       <p>Captura</p>
     </button>
   </a>
   <a href="triagem.html" class="linksBotoes">
-    <button class="botaoHeader botaoTriagem">
+    <button class="botaoHeader botaoTriagem botaoOff">
       <img src="./assets/icons/TriagemIconOff.png" alt="Icone Atendimento">
       <p>Triagem</p>
     </button>
@@ -41,7 +41,7 @@
     </button>
   </a>
   <h1 class="a comprimentos">Olá, Usuário! </h1>
-  <button class="botaoHeader botaoSair botaoSairHeaderPrincipal" onclick="redirecionarParaLogin()">
+  <button class="botaoHeader botaoSair botaoSairHeaderPrincipal botaoProCantoDireito" onclick="redirecionarParaLogin()">
     <img src="./assets/icons/exitIcon.png" alt="Descrição da Imagem" height="25px" width="25px">
     SAIR
   </button>
@@ -1282,10 +1282,11 @@
               </div>
             </div>
           </div>
+
           <div class="content">
             <div class="AtendimentoParecerArea">
               <div class="AtendimentoParecerAreaPublicacoes showParecer">
-                <h2 class="TituloPreto9">Publicações</h2>
+                <h2 class="TituloPreto9">Requerimentos</h2>
                 <div>
                   <h5 class="SubtituloCinza">Status</h5>
                   <hr>
@@ -1341,7 +1342,7 @@
 
               </div>
               <div class="AtendimentoParecerAreaBuscaDeNormativos showParecer">
-                <h2 class="TituloPreto9">Busca de normativos</h2>
+                <h2 class="TituloPreto9">Busca de requerimentos</h2>
                 <div>
                   <h5 class="SubtituloCinza">Filtro:</h5>
                   <hr>
@@ -1418,7 +1419,7 @@
 
               </div>
               <div class="AtendimentoParecerAreaNormativos showParecer">
-                <h2 class="TituloPreto9">Normativos</h2>
+                <h2 class="TituloPreto9">Requisições</h2>
                 <div>
                   <h5 class="SubtituloCinza">Lista</h5>
                   <hr>
@@ -1508,105 +1509,270 @@
             </div>
 
             <div class="AtendimentoParecerAreaConteudo">
-              <div class="AtendimentoParecerAreaConteudoPreTriagem hiddenParecer">
-                <h2 class="TituloPreto9">Pré-triagem</h2>
+              <div class="AtendimentoParecerAreaConteudoPreTriagem3 hiddenParecer">
+                <h2 class="TituloPreto9">Requisições</h2>
                 <div>
-                  <h5 class="SubtituloCinza">Resolução</h5>
+                  <h5 class="SubtituloCinza">Informações</h5>
                   <hr>
                 </div>
 
                 <div>
-                  <label class="pesquisaAtendimentoLabel1 fonteItensBlocos">Normativo:</label>
-                  <input class="pesquisaAtendimentoInput1" type="text" readonly value="Resolução nº 309">
+                  <label class="pesquisaAtendimentoLabel1 fonteItensBlocos">ID:</label>
+                  <input class="pesquisaAtendimentoInput1" type="text" readonly value="0001">
                   <label class="pesquisaAtendimentoLabel2 fonteItensBlocos">Regulador:</label>
                   <input class="pesquisaAtendimentoInput2" type="text" readonly value="Bacen">
-                  <label class="pesquisaAtendimentoLabel3 fonteItensBlocos">Tema:</label>
+                  <label class="pesquisaAtendimentoLabel3 fonteItensBlocos">Regulação:</label>
                   <input class="pesquisaAtendimentoInput3" type="text" readonly value="Contabilidade">
-                  <label class="pesquisaAtendimentoLabel4 fonteItensBlocos">Publicação:</label>
+                  <label class="pesquisaAtendimentoLabel4 fonteItensBlocos">Demanda:</label>
                   <input class="pesquisaAtendimentoInput4" type="text" readonly value="28/03/2023">
-                  <label class="pesquisaAtendimentoLabel5 fonteItensBlocos">Criticidade:</label>
+                  <label class="pesquisaAtendimentoLabel5 fonteItensBlocos">Tema:</label>
                   <input class="pesquisaAtendimentoInput5" type="text" readonly value="Alta">
+                  <label class="pesquisaAtendimentoLabel1 fonteItensBlocos" style="left: 500px;">Data de recebimento:</label>
+                  <input class="pesquisaAtendimentoInput1" type="text" readonly value="Resolução nº 309" style="left: 700px;">
+                  <label class="pesquisaAtendimentoLabel2 fonteItensBlocos" style="left: 500px;">Pazo de resposta:</label>
+                  <input class="pesquisaAtendimentoInput2" type="text" readonly value="Bacen" style="left: 700px;">
+                  <label class="pesquisaAtendimentoLabel3 fonteItensBlocos" style="left: 500px;">Área Centralizadora:</label>
+                  <input class="pesquisaAtendimentoInput3" type="text" readonly value="Contabilidade" style="left: 700px;">
+                  <label class="pesquisaAtendimentoLabel4 fonteItensBlocos" style="left: 500px;">Centralizador:</label>
+                  <input class="pesquisaAtendimentoInput4" type="text" readonly value="28/03/2023" style="left: 700px;">
+                  <label class="pesquisaAtendimentoLabel5 fonteItensBlocos" style="left: 500px;">Criticidade:</label>
+                  <input class="pesquisaAtendimentoInput5" type="text" readonly value="Alta" style="left: 700px;">
                 </div>
               </div>
-              <div class="AtendimentoParecerAreaConteudoParecer hiddenParecer">
-                <h2 class="TituloPreto9">Parecer da área</h2>
+              <div class="AtendimentoParecerAreaConteudoParecer3 hiddenParecer">
+                <h2 class="TituloPreto9">Conteúdo</h2>
                 <div>
                   <h5 class="SubtituloCinza">Resumo</h5>
                   <hr>
+                  <button class="botaoEngrenagemLixeira botaoEngrenagemParGeral showElement botaoDownload botaoDownloadConteudoAtendParecer" id=""><img src="./assets/icons/baixarIcon.svg" alt="Descrição da Imagem" height="50px" width="50px"></button>
+                  <div class="infosConteudoResumoParecerAtend">
+                    <div class="topicos">
+                      <p><strong>Assunto:</strong> Resultado da avaliação da Política de Prevenção à Lavagem de Dinheiro e ao Financiamento do Terrorismo (PLDFT) e da implantação da Abordagem Baseada em Risco (ABR)</p>
+                      <p><strong>Resumo:</strong> Critérios de classificação de risco dos clientes e procedimentos de revisão e atualização da classificação.</p>
+                      <p><strong>Normativos Relacionados:</strong>  Resolução CMN 3.695/2009 | 4.658/2018.</p>
+                    </div>
+                    <div class="blocoArquivo">
+                      <img src="./assets/icons/pdf-file.png" alt="">
+                      <div class="infosDoArquivo">
+                        <div>
+                          <p>Oficio_Supervisao.pdf</p>
+                          <p>706 KB</p>
+                        </div>
+                        <img src="./assets/icons/seta-para-baixo.png" alt="">
+                      </div>
+                    </div>
+                    <div class="BlocoPalavrasChavesId">
+                      <div class="BlocoPalavrasChavesId-Id">
+                        <label for="">ID:</label>
+                        <textarea name="" id="" readonly>001</textarea>
+                      </div>
+                      <div class="BlocoPalavrasChavesId-PalChav">
+                        <label for="">Palavras chave:</label>
+                        <textarea name="" id="" readonly>Politica; PLDFT; não detalha; diligencias;</textarea>
+                      </div>
+                    </div>
+                    <div class="BlocoPalavrasChavesId">
+                      <div class="BlocoPalavrasChavesId-Id">
+                        <label for="">ID:</label>
+                        <textarea name="" id="" readonly>002</textarea>
+                      </div>
+                      <div class="BlocoPalavrasChavesId-PalChav">
+                        <label for="">Palavras chave:</label>
+                        <textarea name="" id="" readonly>Politica; PLDFT; não detalha; diligencias;</textarea>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div>
-                  <label class="pesquisaAtendimentoLabel6 fonteItensBlocos">Área:</label>
-                  <input class="pesquisaAtendimentoInput6" type="text" readonly value="Contábil">
-                  <label class="pesquisaAtendimentoLabel7 fonteItensBlocos">Prazo de retorno:</label>
-                  <input class="pesquisaAtendimentoInput7" type="text" readonly value="01/05/2023">
-                  <label class="pesquisaAtendimentoLabel8 fonteItensBlocos">Aderente:</label>
-                  <select name="" id="" class="pesquisaAtendimentoInput8">
-                    <option value="vazio"></option>
-                    <option value="Sim">Sim</option>
-                    <option value="Não">Não</option>
-                  </select>
-                  <label class="pesquisaAtendimentoLabel9 fonteItensBlocos">Data de resposta:</label>
-                  <input class="pesquisaAtendimentoInput9" type="text" value="">
+
                 </div>
+                
               </div>
-              <div class="AtendimentoParecerAreaConteudoPlano hiddenParecer">
-                <h2 class="TituloPreto9">Plano de ação</h2>
+              <div class="AtendimentoParecerAreaConteudoPlano3 hiddenParecer">
+                <h2 class="TituloPreto9">Resposta da área</h2>
                 <div>
-                  <h5 class="SubtituloCinza">Cronograma</h5>
+                  <h5 class="SubtituloCinza">Parecer para Aprovação</h5>
                   <hr>
                 </div>
-                <div>
-                  <label class="pesquisaAtendimentoLabel10 fonteItensBlocos">Plano de ação:</label>
-                  <input class="pesquisaAtendimentoInput10" type="text" value="">
-                  <label class="pesquisaAtendimentoLabel11 fonteItensBlocos">Data início:</label>
-                  <input class="pesquisaAtendimentoInput11" type="text" value="">
-                  <label class="pesquisaAtendimentoLabel12 fonteItensBlocos">Data fim:</label>
-                  <input class="pesquisaAtendimentoInput12" type="text" value="">
-                  <input class="pesquisaAtendimentoInput13" type="text" value="">
-                  <button class="botaoAqruivo"><img src="./assets/icons/icon-add.png" alt="" height="25px" width="25px"> Arquivo</button>
+                <div class="conteinerBlocoRespostaArea">
+                  <div class="blocoRespostaArea">
+                    <div class="blocoID">
+                      <label for="">ID:</label>
+                      <input type="number">
+                      <button>
+                        <img src="./assets/icons/ClipBranco.png" alt="">
+                      </button>
+                    </div>
+                    <div class="blocoStatus">
+                      <label for="">Status:</label>
+                      <select name="" id="">
+                        <option value="">Aderente</option>
+                        <option value="">Inaderente</option>
+                      </select>
+                    </div>
+                    <div class="blocoParecer">
+                      <label for="">Parecer:</label>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="blocoRespostaParteBaixo">
+                      <div class="parteLeft">
+                        <div class="blocoPlano">
+                          <label for="">Plano de Ação:</label>
+                          <select name="" id="">
+                            <option value="">Não Aplica</option>
+                            <option value="">Aplica</option>
+                          </select>
+                        </div>
+                        <div class="blocoDataInicio">
+                          <label for="">Data Início:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                        <div class="blocoDataFim">
+                          <label for="">Data Fim:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                      </div>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                  </div>
+                  <div class="blocoRespostaArea">
+                    <div class="blocoID">
+                      <label for="">ID:</label>
+                      <input type="number">
+                      <button>
+                        <img src="./assets/icons/ClipBranco.png" alt="">
+                      </button>
+                    </div>
+                    <div class="blocoStatus">
+                      <label for="">Status:</label>
+                      <select name="" id="">
+                        <option value="">Aderente</option>
+                        <option value="">Inaderente</option>
+                      </select>
+                    </div>
+                    <div class="blocoParecer">
+                      <label for="">Parecer:</label>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="blocoRespostaParteBaixo">
+                      <div class="parteLeft">
+                        <div class="blocoPlano">
+                          <label for="">Plano de Ação:</label>
+                          <select name="" id="">
+                            <option value="">Não Aplica</option>
+                            <option value="">Aplica</option>
+                          </select>
+                        </div>
+                        <div class="blocoDataInicio">
+                          <label for="">Data Início:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                        <div class="blocoDataFim">
+                          <label for="">Data Fim:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                      </div>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                  </div>
+                  <div class="blocoRespostaArea">
+                    <div class="blocoID">
+                      <label for="">ID:</label>
+                      <input type="number">
+                      <button>
+                        <img src="./assets/icons/ClipBranco.png" alt="">
+                      </button>
+                    </div>
+                    <div class="blocoStatus">
+                      <label for="">Status:</label>
+                      <select name="" id="">
+                        <option value="">Aderente</option>
+                        <option value="">Inaderente</option>
+                      </select>
+                    </div>
+                    <div class="blocoParecer">
+                      <label for="">Parecer:</label>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="blocoRespostaParteBaixo">
+                      <div class="parteLeft">
+                        <div class="blocoPlano">
+                          <label for="">Plano de Ação:</label>
+                          <select name="" id="">
+                            <option value="">Não Aplica</option>
+                            <option value="">Aplica</option>
+                          </select>
+                        </div>
+                        <div class="blocoDataInicio">
+                          <label for="">Data Início:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                        <div class="blocoDataFim">
+                          <label for="">Data Fim:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                      </div>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                  </div>
+                  <div class="blocoRespostaArea">
+                    <div class="blocoID">
+                      <label for="">ID:</label>
+                      <input type="number">
+                      <button>
+                        <img src="./assets/icons/ClipBranco.png" alt="">
+                      </button>
+                    </div>
+                    <div class="blocoStatus">
+                      <label for="">Status:</label>
+                      <select name="" id="">
+                        <option value="">Aderente</option>
+                        <option value="">Inaderente</option>
+                      </select>
+                    </div>
+                    <div class="blocoParecer">
+                      <label for="">Parecer:</label>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="blocoRespostaParteBaixo">
+                      <div class="parteLeft">
+                        <div class="blocoPlano">
+                          <label for="">Plano de Ação:</label>
+                          <select name="" id="">
+                            <option value="">Não Aplica</option>
+                            <option value="">Aplica</option>
+                          </select>
+                        </div>
+                        <div class="blocoDataInicio">
+                          <label for="">Data Início:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                        <div class="blocoDataFim">
+                          <label for="">Data Fim:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                      </div>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="botoesParecerArea">
+                  <button class="botaoParecerAreaAtendimento"  id="cancelarParecer" >
+                    <img src="./assets/icons/fechar.png" alt="">
+                    <p>Cancelar<sup>1</sup></p>
+                  </button>
+                  <button class="botaoParecerAreaAtendimento botaoSalvar" id="salvarParecer">
+                    <img src="./assets/icons/SalvarBranco.png" alt="">
+                    <p>Salvar/enviar<sup>1</sup></p>
+                  </button>
                 </div>
                </div>
-                <div class="AtendimentoParecerAreaConteudoResumo hiddenParecer">
-                 <h2 class="TituloPreto9">Conteúdo</h2>
-                  <div>
-                    <h5 class="SubtituloCinza">Resumo e Requerimentos</h5>
-                    <hr>
-                </div>
-                <div class="fonteConteudo">
-                  <h5 class="fonteConteudo">Novo normativo</h5>
-                  <p class="fonteConteudo"><strong>Normativos Relacionados: </strong> <span>Resolução CMN 4.817/2020 | 4.818/2020</span> </p>
-                  <p class="fonteConteudo"><strong>Revoga os normativos vigentes: </strong> <span>Revoga, a partir de 1º/1/2025, Circulares BCB ns. 2.535/1995.</span></p>
-                  <p class="fonteConteudo"><strong>Resumo: </strong> <span>O Banco Central do Brasil (BCB) publicou a Resolução BCB nº 309 de 28 de março de 2023, que estabelece procedimentos contábeis sobre: a definição de fluxos de caixa de ativo financeiro como somente pagamento de principal e juros; a aplicação da metodologia para apuração da taxa de juros efetiva de instrumentos financeiros; a constituição de provisão para perdas associadas ao risco de crédito; e a evidenciação de informações relativas a instrumentos financeiros em notas explicativas a serem observadas pelas instituições financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil.</span></p>
-                  <p class="fonteConteudo"><strong>Requerimentos Associados</strong></p>
-                  <p class="fonteConteudo"><strong>ID: </strong> <Span>0001</Span></p>
-                  <p class="fonteConteudo"><strong>Palavras chave: </strong> <Span>Art. 1º; IV; notas explicativas.</Span></p>
-                </div>
-               </div>
-                <div class="AtendimentoParecerAreaConteudoResposta hiddenParecer">
-                  <h2 class="TituloPreto9">Resposta da área</h2>
-                  <div>
-                   <h5 class="SubtituloCinza">Parecer da área</h5>
-                    <hr>
-                  </div>
-                  <div>
-                    <textarea class="pesquisaAtendimentoInput14" id="campoComQuebraDeLinha" placeholder="Digite seu texto aqui..."></textarea>
-                    <form  method="POST" enctype="multipart/form-data" name="myForm">
-                      <div id="yourBtn" onclick="getFile()">Selecione uma evidência</div>
-                      <div style='height: 0px;width: 0px; overflow:hidden;'><input id="upfile" type="file" value="upload" onchange="sub(this)" /></div>
-                    </form>
-                  </div>
-                  <div>
-                    <button class="botaoCancelar"><img src="./assets/icons/cancelarIcon.png" alt="" height="25px" width="25px">Cancelar</button>
-                    <button class="botaoUploadEvidencia"><img src="./assets/icons/UploadBranco.png" alt="" height="25px" width="25px">Upload de evidência</button>
-                    <button class="botaoSalvarEnviar" ><img src="./assets/icons/SalvarBranco.png" alt="" height="25px" width="25px" >Salvar / enviar</button>
-                  </div>
-                </div>
             </div>
           </div>
           <div class="content">
             <div class="AtendimentoValidacaoArea">
-              <div class="AtendimentoValidacaoAreaPublicacoes showValidacao">
-                  <h2 class="TituloPreto9">Publicações</h2>
+              <div class="AtendimentoValidacaoAreaPublicacoes showParecer">
+                  <h2 class="TituloPreto9">Requerimentos</h2>
                   <div>
                     <h5 class="SubtituloCinza">Status</h5>
                     <hr>
@@ -1636,7 +1802,7 @@
                 </div>
 
               </div>
-              <div class="AtendimentoValidacaoAreaPlanosDeAcao showValidacao">
+              <div class="AtendimentoValidacaoAreaPlanosDeAcao showParecer">
                 <h2 class="TituloPreto9">Planos de ações</h2>
                 <div>
                   <h5 class="SubtituloCinza">Status</h5>
@@ -1663,7 +1829,7 @@
 
               </div>
               <div class="AtendimentoParecerAreaBuscaDeNormativos showParecer">
-                <h2 class="TituloPreto9">Busca de normativos</h2>
+                <h2 class="TituloPreto9">Busca de requerimentos</h2>
                 <div>
                   <h5 class="SubtituloCinza">Filtro:</h5>
                   <hr>
@@ -1740,7 +1906,7 @@
         
               </div>
               <div class="AtendimentoParecerAreaNormativos showParecer">
-                <h2 class="TituloPreto9">Normativos</h2>
+                  <h2 class="TituloPreto9">Requisições</h2>
                 <div>
                   <h5 class="SubtituloCinza">Lista</h5>
                   <hr>
@@ -1776,7 +1942,7 @@
                           <td>Alto</td>
                           <td class="SemBordaColuna">
                             <div class="botaoAbrirVisualizacaoCentralizar">
-                              <button class="botaoAbrirVisualizacao botaoMain">
+                              <button class="botaoAbrirVisualizacao2 botaoMain">
                                 <img src="./assets/icons/abrirIcon.png" alt="Imagem de abrir uma pesquisa">
                                 <div>Abrir<sup>1</sup></div>
                               </button>
@@ -1830,100 +1996,264 @@
             </div>
 
             <div class="AtendimentoParecerAreaConteudo">
-              <div class="AtendimentoParecerAreaConteudoPreTriagem hiddenValidacao">
-                <h2 class="TituloPreto9">Pré-triagem</h2>
+              <div class="AtendimentoParecerAreaConteudoPreTriagem3 hiddenParecer">
+                <h2 class="TituloPreto9">Requisições</h2>
                 <div>
-                  <h5 class="SubtituloCinza">Resolução</h5>
+                  <h5 class="SubtituloCinza">Informações</h5>
                   <hr>
                 </div>
 
                 <div>
-                  <label class="pesquisaAtendimentoLabel1 fonteItensBlocos">Normativo:</label>
-                  <input class="pesquisaAtendimentoInput1" type="text" readonly value="Resolução nº 309">
+                  <label class="pesquisaAtendimentoLabel1 fonteItensBlocos">ID:</label>
+                  <input class="pesquisaAtendimentoInput1" type="text" readonly value="0001">
                   <label class="pesquisaAtendimentoLabel2 fonteItensBlocos">Regulador:</label>
                   <input class="pesquisaAtendimentoInput2" type="text" readonly value="Bacen">
-                  <label class="pesquisaAtendimentoLabel3 fonteItensBlocos">Tema:</label>
+                  <label class="pesquisaAtendimentoLabel3 fonteItensBlocos">Regulação:</label>
                   <input class="pesquisaAtendimentoInput3" type="text" readonly value="Contabilidade">
-                  <label class="pesquisaAtendimentoLabel4 fonteItensBlocos">Publicação:</label>
+                  <label class="pesquisaAtendimentoLabel4 fonteItensBlocos">Demanda:</label>
                   <input class="pesquisaAtendimentoInput4" type="text" readonly value="28/03/2023">
-                  <label class="pesquisaAtendimentoLabel5 fonteItensBlocos">Criticidade:</label>
+                  <label class="pesquisaAtendimentoLabel5 fonteItensBlocos">Tema:</label>
                   <input class="pesquisaAtendimentoInput5" type="text" readonly value="Alta">
+                  <label class="pesquisaAtendimentoLabel1 fonteItensBlocos" style="left: 500px;">Data de recebimento:</label>
+                  <input class="pesquisaAtendimentoInput1" type="text" readonly value="Resolução nº 309" style="left: 700px;">
+                  <label class="pesquisaAtendimentoLabel2 fonteItensBlocos" style="left: 500px;">Pazo de resposta:</label>
+                  <input class="pesquisaAtendimentoInput2" type="text" readonly value="Bacen" style="left: 700px;">
+                  <label class="pesquisaAtendimentoLabel3 fonteItensBlocos" style="left: 500px;">Área Centralizadora:</label>
+                  <input class="pesquisaAtendimentoInput3" type="text" readonly value="Contabilidade" style="left: 700px;">
+                  <label class="pesquisaAtendimentoLabel4 fonteItensBlocos" style="left: 500px;">Centralizador:</label>
+                  <input class="pesquisaAtendimentoInput4" type="text" readonly value="28/03/2023" style="left: 700px;">
+                  <label class="pesquisaAtendimentoLabel5 fonteItensBlocos" style="left: 500px;">Criticidade:</label>
+                  <input class="pesquisaAtendimentoInput5" type="text" readonly value="Alta" style="left: 700px;">
                 </div>
               </div>
-              <div class="AtendimentoParecerAreaConteudoParecer hiddenValidacao">
-                <h2 class="TituloPreto9">Parecer da área</h2>
+              <div class="AtendimentoParecerAreaConteudoParecer3 hiddenParecer">
+                <h2 class="TituloPreto9">Conteúdo</h2>
                 <div>
                   <h5 class="SubtituloCinza">Resumo</h5>
                   <hr>
+                  <button class="botaoEngrenagemLixeira botaoEngrenagemParGeral showElement botaoDownload botaoDownloadConteudoAtendParecer" id=""><img src="./assets/icons/baixarIcon.svg" alt="Descrição da Imagem" height="50px" width="50px"></button>
+                  <div class="infosConteudoResumoParecerAtend">
+                    <div class="topicos">
+                      <p><strong>Assunto:</strong> Resultado da avaliação da Política de Prevenção à Lavagem de Dinheiro e ao Financiamento do Terrorismo (PLDFT) e da implantação da Abordagem Baseada em Risco (ABR)</p>
+                      <p><strong>Resumo:</strong> Critérios de classificação de risco dos clientes e procedimentos de revisão e atualização da classificação.</p>
+                      <p><strong>Normativos Relacionados:</strong>  Resolução CMN 3.695/2009 | 4.658/2018.</p>
+                    </div>
+                    <div class="blocoArquivo">
+                      <img src="./assets/icons/pdf-file.png" alt="">
+                      <div class="infosDoArquivo">
+                        <div>
+                          <p>Oficio_Supervisao.pdf</p>
+                          <p>706 KB</p>
+                        </div>
+                        <img src="./assets/icons/seta-para-baixo.png" alt="">
+                      </div>
+                    </div>
+                    <div class="BlocoPalavrasChavesId">
+                      <div class="BlocoPalavrasChavesId-Id">
+                        <label for="">ID:</label>
+                        <textarea name="" id="" readonly>001</textarea>
+                      </div>
+                      <div class="BlocoPalavrasChavesId-PalChav">
+                        <label for="">Palavras chave:</label>
+                        <textarea name="" id="" readonly>Politica; PLDFT; não detalha; diligencias;</textarea>
+                      </div>
+                    </div>
+                    <div class="BlocoPalavrasChavesId">
+                      <div class="BlocoPalavrasChavesId-Id">
+                        <label for="">ID:</label>
+                        <textarea name="" id="" readonly>002</textarea>
+                      </div>
+                      <div class="BlocoPalavrasChavesId-PalChav">
+                        <label for="">Palavras chave:</label>
+                        <textarea name="" id="" readonly>Politica; PLDFT; não detalha; diligencias;</textarea>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div>
-                  <label class="pesquisaAtendimentoLabel6 fonteItensBlocos">Área:</label>
-                  <input class="pesquisaAtendimentoInput6" type="text" readonly value="Contábil">
-                  <label class="pesquisaAtendimentoLabel7 fonteItensBlocos">Prazo de retorno:</label>
-                  <input class="pesquisaAtendimentoInput7" type="text" readonly value="01/05/2023">
-                  <label class="pesquisaAtendimentoLabel8 fonteItensBlocos">Aderente:</label>
-                  <select name="" id="" class="pesquisaAtendimentoInput8">
-                    <option value="Sim">Sim</option>
-                    <option value="Não">Não</option>
-                  </select>
-                  <label class="pesquisaAtendimentoLabel9 fonteItensBlocos">Data de resposta:</label>
-                  <input class="pesquisaAtendimentoInput9" type="text" value="26/04/2023">
+
                 </div>
+                
               </div>
-              <div class="AtendimentoParecerAreaConteudoPlano hiddenValidacao">
-                <h2 class="TituloPreto9">Plano de ação</h2>
+              <div class="AtendimentoParecerAreaConteudoPlano3 hiddenParecer">
+                <h2 class="TituloPreto9">Resposta da área</h2>
                 <div>
-                  <h5 class="SubtituloCinza">Cronograma</h5>
+                  <h5 class="SubtituloCinza">Parecer para Aprovação</h5>
                   <hr>
                 </div>
-                <div>
-                  <label class="pesquisaAtendimentoLabel10 fonteItensBlocos">Plano de ação:</label>
-                  <input class="pesquisaAtendimentoInput10" type="text" value="  n/a">
-                  <label class="pesquisaAtendimentoLabel11 fonteItensBlocos">Data início:</label>
-                  <input class="pesquisaAtendimentoInput11" type="text" value="  -">
-                  <label class="pesquisaAtendimentoLabel12 fonteItensBlocos">Data fim:</label>
-                  <input class="pesquisaAtendimentoInput12" type="text" value="  -">
-                  <input class="pesquisaAtendimentoInput13" type="text" value="">
-                  <button class="botaoAqruivo"><img src="./assets/icons/icon-add.png" alt="" height="25px" width="25px"> Arquivo</button>
-                </div>
-               </div>
-                <div class="AtendimentoParecerAreaConteudoResumo hiddenValidacao">
-                 <h2 class="TituloPreto9">Conteúdo</h2>
-                  <div>
-                    <h5 class="SubtituloCinza">Resumo e Requerimentos</h5>
-                    <hr>
-                </div>
-                <div class="fonteConteudo">
-                  <h5 class="fonteConteudo">Novo normativo</h5>
-                  <p class="fonteConteudo"><strong>Normativos Relacionados: </strong> <span>Resolução CMN 4.817/2020 | 4.818/2020</span> </p>
-                  <p class="fonteConteudo"><strong>Revoga os normativos vigentes: </strong> <span>Revoga, a partir de 1º/1/2025, Circulares BCB ns. 2.535/1995.</span></p>
-                  <p class="fonteConteudo"><strong>Resumo: </strong> <span>O Banco Central do Brasil (BCB) publicou a Resolução BCB nº 309 de 28 de março de 2023, que estabelece procedimentos contábeis sobre: a definição de fluxos de caixa de ativo financeiro como somente pagamento de principal e juros; a aplicação da metodologia para apuração da taxa de juros efetiva de instrumentos financeiros; a constituição de provisão para perdas associadas ao risco de crédito; e a evidenciação de informações relativas a instrumentos financeiros em notas explicativas a serem observadas pelas instituições financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil.</span></p>
-                  <p class="fonteConteudo"><strong>Requerimentos Associados</strong></p>
-                  <p class="fonteConteudo"><strong>ID: </strong> <Span>0001</Span></p>
-                  <p class="fonteConteudo"><strong>Palavras chave: </strong> <Span>Art. 1º; IV; notas explicativas.</Span></p>
-                </div>
-               </div>
-                <div class="AtendimentoParecerAreaConteudoResposta hiddenValidacao">
-                  <h2 class="TituloPreto9">Resposta da área</h2>
-                  <div>
-                   <h5 class="SubtituloCinza">Parecer da área</h5>
-                    <hr>
-                  </div>
-                  <div>
-                      <textarea class="pesquisaAtendimentoInput14" id="campoComQuebraDeLinha" placeholder="Digite seu texto aqui...">Conforme a resolução nº 309 de 28 de março de 2023 do Banco Central do Brasil (BCB), que estabelece procedimentos contábeis. Declaramos que a área exerce suas atividades conforme norma e encontra-se aderente à regulação.</textarea>
-                    
-                      <button class="DownloadEvidencia">
-                        <a href="./assets/xlsx/Evidência_atendimento_resolução309.xlsx" download>
-                        <img src="./assets/icons/microsoft-excel.png" alt="excel" width="35px" height="35px">
-                        </a>Download da evidência
+                <div class="conteinerBlocoRespostaArea">
+                  <div class="blocoRespostaArea">
+                    <div class="blocoID">
+                      <label for="">ID:</label>
+                      <input type="number">
+                      <button>
+                        <img src="./assets/icons/ClipBranco.png" alt="">
                       </button>
-                    
+                    </div>
+                    <div class="blocoStatus">
+                      <label for="">Status:</label>
+                      <select name="" id="">
+                        <option value="">Aderente</option>
+                        <option value="">Inaderente</option>
+                      </select>
+                    </div>
+                    <div class="blocoParecer">
+                      <label for="">Parecer:</label>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="blocoRespostaParteBaixo">
+                      <div class="parteLeft">
+                        <div class="blocoPlano">
+                          <label for="">Plano de Ação:</label>
+                          <select name="" id="">
+                            <option value="">Não Aplica</option>
+                            <option value="">Aplica</option>
+                          </select>
+                        </div>
+                        <div class="blocoDataInicio">
+                          <label for="">Data Início:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                        <div class="blocoDataFim">
+                          <label for="">Data Fim:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                      </div>
+                      <textarea name="" id=""></textarea>
+                    </div>
                   </div>
-                  <div>
-                    <button class="botaoReprovar"><img src="./assets/icons/fechar.png" alt="" height="25px" width="25px">Recusar</button>
-                    <button class="botaoAprovar" ><img src="./assets/icons/SalvarBranco.png" alt="" height="25px" width="25px" >Aprovar</button>
+                  <div class="blocoRespostaArea">
+                    <div class="blocoID">
+                      <label for="">ID:</label>
+                      <input type="number">
+                      <button>
+                        <img src="./assets/icons/ClipBranco.png" alt="">
+                      </button>
+                    </div>
+                    <div class="blocoStatus">
+                      <label for="">Status:</label>
+                      <select name="" id="">
+                        <option value="">Aderente</option>
+                        <option value="">Inaderente</option>
+                      </select>
+                    </div>
+                    <div class="blocoParecer">
+                      <label for="">Parecer:</label>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="blocoRespostaParteBaixo">
+                      <div class="parteLeft">
+                        <div class="blocoPlano">
+                          <label for="">Plano de Ação:</label>
+                          <select name="" id="">
+                            <option value="">Não Aplica</option>
+                            <option value="">Aplica</option>
+                          </select>
+                        </div>
+                        <div class="blocoDataInicio">
+                          <label for="">Data Início:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                        <div class="blocoDataFim">
+                          <label for="">Data Fim:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                      </div>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                  </div>
+                  <div class="blocoRespostaArea">
+                    <div class="blocoID">
+                      <label for="">ID:</label>
+                      <input type="number">
+                      <button>
+                        <img src="./assets/icons/ClipBranco.png" alt="">
+                      </button>
+                    </div>
+                    <div class="blocoStatus">
+                      <label for="">Status:</label>
+                      <select name="" id="">
+                        <option value="">Aderente</option>
+                        <option value="">Inaderente</option>
+                      </select>
+                    </div>
+                    <div class="blocoParecer">
+                      <label for="">Parecer:</label>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="blocoRespostaParteBaixo">
+                      <div class="parteLeft">
+                        <div class="blocoPlano">
+                          <label for="">Plano de Ação:</label>
+                          <select name="" id="">
+                            <option value="">Não Aplica</option>
+                            <option value="">Aplica</option>
+                          </select>
+                        </div>
+                        <div class="blocoDataInicio">
+                          <label for="">Data Início:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                        <div class="blocoDataFim">
+                          <label for="">Data Fim:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                      </div>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                  </div>
+                  <div class="blocoRespostaArea">
+                    <div class="blocoID">
+                      <label for="">ID:</label>
+                      <input type="number">
+                      <button>
+                        <img src="./assets/icons/ClipBranco.png" alt="">
+                      </button>
+                    </div>
+                    <div class="blocoStatus">
+                      <label for="">Status:</label>
+                      <select name="" id="">
+                        <option value="">Aderente</option>
+                        <option value="">Inaderente</option>
+                      </select>
+                    </div>
+                    <div class="blocoParecer">
+                      <label for="">Parecer:</label>
+                      <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="blocoRespostaParteBaixo">
+                      <div class="parteLeft">
+                        <div class="blocoPlano">
+                          <label for="">Plano de Ação:</label>
+                          <select name="" id="">
+                            <option value="">Não Aplica</option>
+                            <option value="">Aplica</option>
+                          </select>
+                        </div>
+                        <div class="blocoDataInicio">
+                          <label for="">Data Início:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                        <div class="blocoDataFim">
+                          <label for="">Data Fim:</label>
+                          <input type="date" name="" id="">
+                        </div>
+                      </div>
+                      <textarea name="" id=""></textarea>
+                    </div>
                   </div>
                 </div>
+                <div class="botoesParecerArea">
+                  <button class="botaoParecerAreaAtendimento" id="cancelarParecer2">
+                    <img src="./assets/icons/fechar.png" alt="">
+                    <p>Cancelar <sup>1</sup></p>
+                  </button>
+                  <button class="botaoParecerAreaAtendimento botaoSalvar" id="salvarParecer2">
+                    <img src="./assets/icons/SalvarBranco.png" alt="">
+                    <p>Salvar/enviar <sup>1</sup></p>
+                  </button>
+                </div>
+               </div>
             </div>
           
           

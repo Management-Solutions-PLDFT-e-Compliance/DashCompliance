@@ -147,7 +147,6 @@ sup{
 
   .linksBotoes{
     text-decoration: none;
-    margin-left: 10px;
   }
 
   .linkCaptura{
@@ -172,10 +171,10 @@ sup{
   }
 
   .botaoAtendimento > img{
-    width: 65px;
-    margin-left: 30px;
-    margin-bottom: 4px;
-    margin-top: -8px;
+    margin-left: 14px;
+    width: 40px;
+    margin-top: -4px;
+    margin-bottom: 5px;
   }
 
   .botaoAtendimento > p{
@@ -273,9 +272,10 @@ sup{
   }
 
   .botaoAtendimentoOn > img{
-    margin-left: 20px;
+    margin-left: 14px;
     width: 40px;
-    margin-bottom: 7px;
+    margin-top: -4px;
+    margin-bottom: 5px;
   }
   
   h1 {
@@ -518,6 +518,10 @@ sup{
   .tabsCaptura > *{
     background-color: lightgray;
   }
+
+  .tabsCaptura{
+    color: rgba(133, 132, 132, 0.842);
+  }
   
   .tabsCaptura .active {
     /* border: darkgray solid; */
@@ -542,9 +546,19 @@ sup{
     color: white;
   }
 
+  .tabsTriagem{
+    color: rgba(133, 132, 132, 0.842);
+  }
+
+
   .tabsTriagem .active {
     color: white;
   }
+
+  .tabsAtendimento{
+    color: rgba(133, 132, 132, 0.842);
+  }
+
   .tabsAtendimento .active {
     border-bottom: #2c4c7c solid;
     padding-left: 12px;
@@ -889,7 +903,7 @@ sup{
 
   .capturaParametrizacaoConfigParams{
     grid-column: 1/3;
-    grid-row: 1/10;
+    grid-row: 1/9;
 
     border-radius: 12px;
     font-size: 1.1em;
@@ -903,7 +917,6 @@ sup{
   .configParamsFull{
     display: flex;
     width: 100%;
-    margin-top: 1%;
     gap: 2%;
   }
 
@@ -930,11 +943,11 @@ sup{
 
   .configParamsLeftConsiderar .par2{
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .campoConfigParams{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .campoConfigParams textarea{
@@ -1400,33 +1413,33 @@ sup{
     padding: 0.2rem 0.5rem;
   }
   
-  .tableVariavesCapturaRaul th:nth-child(1), td:nth-child(1) {
+  .tableVariavesCapturaRaul th:nth-child(1), .tableVariavesCapturaRaul td:nth-child(1) {
     width: 5%;
   }
   
-  .tableVariavesCapturaRaul th:nth-child(2), td:nth-child(2) {
-    width: 4%;
+  .tableVariavesCapturaRaul th:nth-child(2), .tableVariavesCapturaRaul td:nth-child(2) {
+    width: 1%;
   }
   
-  .tableVariavesCapturaRaul th:nth-child(3), td:nth-child(3) {
+  .tableVariavesCapturaRaul th:nth-child(3), .tableVariavesCapturaRaul td:nth-child(3) {
     width: 4%;
   }
-  .tableVariavesCapturaRaul th:nth-child(4), td:nth-child(4) {
+  .tableVariavesCapturaRaul th:nth-child(4), .tableVariavesCapturaRaul td:nth-child(4) {
+    width: 50%;
+  }
+  .tableVariavesCapturaRaul th:nth-child(5), .tableVariavesCapturaRaul td:nth-child(5) {
+    width: 70%;
+  }
+  .tableVariavesCapturaRaul th:nth-child(6), .tableVariavesCapturaRaul td:nth-child(6) {
     width: 10%;
   }
-  .tableVariavesCapturaRaul th:nth-child(5), td:nth-child(5) {
-    width: 25%;
-  }
-  .tableVariavesCapturaRaul th:nth-child(6), td:nth-child(6) {
-    width: 24%;
-  }
-  .tableVariavesCapturaRaul th:nth-child(7), td:nth-child(7) {
+  .tableVariavesCapturaRaul th:nth-child(7), .tableVariavesCapturaRaul td:nth-child(7) {
     width: 14%;
   }
-  .tableVariavesCapturaRaul th:nth-child(8), td:nth-child(8) {
+  .tableVariavesCapturaRaul th:nth-child(8), .tableVariavesCapturaRaul td:nth-child(8) {
     width: 14%;
   }
-  .tableVariavesCapturaRaul th:nth-child(9), td:nth-child(9) {
+  .tableVariavesCapturaRaul th:nth-child(9), .tableVariavesCapturaRaul td:nth-child(9) {
     width: 14%;
   }
 
@@ -2890,20 +2903,20 @@ sup{
 
   .botaoSalvarParams{
     position: absolute;
-    top: 864px;
-    left: 1715px;
+    top: 843px;
+    left: 1722px;
     width: 150px;
   }
 
   .botaoAddCriterio{
     position: absolute;
-    top: 453px;
-    left: 1809px;
+    top: 442px;
+    left: 1817px;
   }
 
   .botaoAddPreAnalise{
-    top: 806px;
-    left: 1808px;
+    top: 803px;
+    left: 1815px;
   }
 
   #botaoAtualizarParamEsp{
@@ -2941,28 +2954,28 @@ sup{
     padding: 0.2rem 0.5rem;
   }
   
-  .tableVariavesCapturaParams th:nth-child(1), td:nth-child(1) {
+  .tableVariavesCapturaParams th:nth-child(1), .tableVariavesCapturaParams td:nth-child(1) {
+    width: 3%;
+  }
+  
+  .tableVariavesCapturaParams th:nth-child(2), .tableVariavesCapturaParams td:nth-child(2) {
     width: 5%;
   }
   
-  .tableVariavesCapturaParams th:nth-child(2), td:nth-child(2) {
+  .tableVariavesCapturaParams th:nth-child(3), .tableVariavesCapturaParams td:nth-child(3) {
+    width: 26%;
+  }
+  .tableVariavesCapturaParams th:nth-child(4), .tableVariavesCapturaParams td:nth-child(4) {
+    width: 35%;
+  }
+  .tableVariavesCapturaParams th:nth-child(5), .tableVariavesCapturaParams td:nth-child(5) {
     width: 8%;
   }
   
-  .tableVariavesCapturaParams th:nth-child(3), td:nth-child(3) {
-    width: 7%;
-  }
-  .tableVariavesCapturaParams th:nth-child(4), td:nth-child(4) {
-    width: 30%;
-  }
-  .tableVariavesCapturaParams th:nth-child(5), td:nth-child(5) {
-    width: 8%;
-  }
-  
-  .tableVariavesCapturaParams th:nth-child(6), td:nth-child(6) {
+  .tableVariavesCapturaParams th:nth-child(6), .tableVariavesCapturaParams td:nth-child(6) {
     width: 14%;
   }
-  .tableVariavesCapturaParams th:nth-child(7), td:nth-child(7) {
+  .tableVariavesCapturaParams th:nth-child(7), .tableVariavesCapturaParams td:nth-child(7) {
     width: 1%;
   }
 
@@ -2998,3 +3011,13 @@ sup{
     font-weight:500;
   }
   
+  .botaoOff{
+    color: rgba(211, 211, 211, 0.678);
+    border: 3px solid rgba(211, 211, 211, 0.678);
+  }
+
+  .botaoProCantoDireito{
+    position: fixed;
+    margin-left: 1800px;
+  }
+
