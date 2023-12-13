@@ -2668,15 +2668,7 @@
               </div>
             </div>
             <div class="atendimentocentralizadorContent" id="centralizador-conteudo">
-              <div id="botoes_navegação">
-
-                <button onclick="toggleVisibility()" id="botao_cancelar"><img src="./assets/icons/x-branco-32px.png" alt=""><p style="margin-top: 1px; color: #ffffff;">Cancelar</p></button>
-  
-                <button id="botao_consolidar"><img src="./assets/icons/seta-btn-distribuir.png" alt="Consolidar" style=" margin:7px 4px 0px 4px;width:20px; height: 20px;"><p style="margin-top: 1px; color: #ffffff;">Consolidar</p></button>
-  
-                <button  id="botao_salvar"><img src="./assets/icons/icons8-disquete-32.png" alt="Salvar" style=" margin:7px 2px 0px 4px;width:20px; height: 20px;"><p style="margin-top: 1px; color: #ffffff;">Salvar/Enviar</p></button>
-
-              </div>
+              
 
               <div class="atendimentoCentralizadorRequisicao" style="border-radius: 12px;">
                 <div class="titulo">
@@ -2918,7 +2910,17 @@
                   </div>
 
                 </div>
+                <div id="botoes_navegação" style="background-color: white;">
+
+                  <button onclick="toggleVisibility()" id="botao_cancelar" class="botaoCancelar"><img src="./assets/icons/x-branco-32px.png" alt=""><p style="margin-top: 1px; color: #ffffff;">Cancelar</p></button>
+    
+                  <button id="botao_consolidar" class="botaoUploadEvidencia"><img src="./assets/icons/seta-btn-distribuir.png" alt="Consolidar" style=" margin:7px 4px 0px 4px;width:20px; height: 20px;"><p style="margin-top: 1px; color: #ffffff;">Consolidar</p></button>
+    
+                  <button  id="botao_salvar" class="botaoSalvarEnviar"><img src="./assets/icons/icons8-disquete-32.png" alt="Salvar" style=" margin:7px 2px 0px 4px;width:20px; height: 20px;"><p style="margin-top: 1px; color: #ffffff;">Salvar/Enviar</p></button>
+  
+                </div>
               </div>
+              
 
 
               
@@ -3003,7 +3005,9 @@
                   
                   <img src="assets/icons/lupa-24.png" alt="Pesquisar" style="margin-left: 5px; margin-top: 2px;">
                 </Button>
+                
               </div>
+              
               <div class="atendimentoHistoricoAtendimento">
                 
                 <div class="titulo">
