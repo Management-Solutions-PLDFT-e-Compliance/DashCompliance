@@ -93,6 +93,7 @@
     border: 1px solid lightgray ;
     padding: 0.5rem 1rem;
     font-size: 1.1em;
+    width: 14.3rem;
 }
 
 .separa-form-tres-partes {
@@ -252,11 +253,13 @@
 
 .atendimento-pre-analise-lista input{
     width: 10%;
+    padding: .3rem 1rem;
 }
 
 .atendimento-pre-analise-lista textarea{
     width: 50%;
     height: 5rem;
+    padding: .5rem 1rem;
 }
 
 .atendimento-pre-analise-label-input {
