@@ -33,11 +33,45 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+  document.addEventListener("DOMContentLoaded", function () {
+    var botao = document.querySelector('.botaoAbrirVisualizacao2');
+    var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoValidacaoArea .showParecer');
+    var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
+
+    botao.addEventListener('click', function () {
+        elementosValidacaoAtendimento.forEach(function (elemento) {
+            elemento.classList.toggle('showParecer');
+            elemento.classList.toggle('hiddenParecer');
+        });
+
+        elementosValidacaoParecer.forEach(function (elemento) {
+            elemento.classList.toggle('showParecer');
+            elemento.classList.toggle('hiddenParecer');
+        });
+    });
+});
 
 
 document.addEventListener("DOMContentLoaded", function () {
   var botao = document.getElementById("cancelarParecer");
   var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoParecerArea .showParecer');
+  var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
+
+  botao.addEventListener('click', function () {
+      elementosValidacaoAtendimento.forEach(function (elemento) {
+          elemento.classList.toggle('showParecer');
+          elemento.classList.toggle('hiddenParecer');
+      });
+
+      elementosValidacaoParecer.forEach(function (elemento) {
+          elemento.classList.toggle('showParecer');
+          elemento.classList.toggle('hiddenParecer');
+      });
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  var botao = document.getElementById("cancelarParecer2");
+  var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoValidacaoArea .showParecer');
   var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
 
   botao.addEventListener('click', function () {
@@ -90,6 +124,27 @@ document.addEventListener("DOMContentLoaded", function () {
 if (document.querySelector(".botaoSalvar")) {
   let botaoSalvarEnviar = document.querySelector(".botaoSalvar");
   var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoParecerArea .showParecer');
+  var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
+
+  botaoSalvarEnviar.addEventListener('click', function () {
+      elementosValidacaoAtendimento.forEach(function (elemento) {
+          elemento.classList.toggle('showParecer');
+          elemento.classList.toggle('hiddenParecer');
+      });
+
+      elementosValidacaoParecer.forEach(function (elemento) {
+          elemento.classList.toggle('showParecer');
+          elemento.classList.toggle('hiddenParecer');
+      });
+      Swal.fire({
+        icon: 'success',
+        title: 'Parecer salvo e enviado com sucesso!'
+    });
+  });
+};
+if (document.getElementById("salvarParecer2")) {
+  let botaoSalvarEnviar = document.getElementById("salvarParecer2");
+  var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoValidacaoArea .showParecer');
   var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
 
   botaoSalvarEnviar.addEventListener('click', function () {
