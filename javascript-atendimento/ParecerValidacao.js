@@ -33,10 +33,27 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+  document.addEventListener("DOMContentLoaded", function () {
+    var botao = document.querySelector('.botaoAbrirVisualizacao2');
+    var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoValidacaoArea .showParecer');
+    var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
+
+    botao.addEventListener('click', function () {
+        elementosValidacaoAtendimento.forEach(function (elemento) {
+            elemento.classList.toggle('showParecer');
+            elemento.classList.toggle('hiddenParecer');
+        });
+
+        elementosValidacaoParecer.forEach(function (elemento) {
+            elemento.classList.toggle('showParecer');
+            elemento.classList.toggle('hiddenParecer');
+        });
+    });
+});
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  var botao = document.querySelector('.botaoCancelar');
+  var botao = document.getElementById("cancelarParecer");
   var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoParecerArea .showParecer');
   var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
 
@@ -52,39 +69,24 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
-  
-  var aderenteSelect = document.querySelector('.pesquisaAtendimentoInput8');
-  var dataRespostaInput = document.querySelector('.pesquisaAtendimentoInput9');
-  
-  // Obtém os elementos relacionados ao Plano de Ação e à Resposta da Área
-  var planoAcaoInput = document.querySelector('.pesquisaAtendimentoInput10');
-  var dataInicioInput = document.querySelector('.pesquisaAtendimentoInput11');
-  var dataFimInput = document.querySelector('.pesquisaAtendimentoInput12');
-  var respostaAreaTextarea = document.querySelector('.pesquisaAtendimentoInput14');
-  
-  // Adiciona um ouvinte de evento para o evento 'change' no select 'Aderente'
-  aderenteSelect.addEventListener('change', function() {
-    // Verifica se a opção selecionada é "Sim"
-    if (aderenteSelect.value === 'Sim') {
-      // Realiza as alterações desejadas
-      dataRespostaInput.value = '26/04/2023';
-      planoAcaoInput.value = 'n/a';
-      respostaAreaTextarea.value = 'Conforme a resolução nº 309 de 28 de março de 2023 do Banco Central do Brasil (BCB), que estabelece procedimentos contábeis. Declaramos que a área exerce suas atividades conforme norma e encontra-se aderente à regulação.';
-      
-      // Define o valor dos campos de data de início e data de fim como "-"
-      dataInicioInput.value = '-';
-      dataFimInput.value = '-';
-    } else {
-      // Limpa os campos caso a opção seja diferente de "Sim"
-      dataRespostaInput.value = '';
-      planoAcaoInput.value = '';
-      respostaAreaTextarea.value = '';
-      
-      // Limpa os campos de data de início e data de fim
-      dataInicioInput.value = '';
-      dataFimInput.value = '';
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  var botao = document.getElementById("cancelarParecer2");
+  var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoValidacaoArea .showParecer');
+  var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
+
+  botao.addEventListener('click', function () {
+      elementosValidacaoAtendimento.forEach(function (elemento) {
+          elemento.classList.toggle('showParecer');
+          elemento.classList.toggle('hiddenParecer');
+      });
+
+      elementosValidacaoParecer.forEach(function (elemento) {
+          elemento.classList.toggle('showParecer');
+          elemento.classList.toggle('hiddenParecer');
+      });
   });
+});
+  
 
   function getFile() {
     document.getElementById("upfile").click();
@@ -119,28 +121,50 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 
-if (document.querySelector(".botaoSalvarEnviar")) {
-  let botaoSalvarEnviar = document.querySelector(".botaoSalvarEnviar");
+if (document.querySelector(".botaoSalvar")) {
+  let botaoSalvarEnviar = document.querySelector(".botaoSalvar");
+  var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoParecerArea .showParecer');
+  var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
 
-  var elementosParecerAtendimento = document.querySelectorAll('.AtendimentoParecerArea .showParecer');
-  var elementosParecerAtendimento = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
-
-  botaoSalvarEnviar.addEventListener("click", () => {
-      elementosParecerAtendimento.forEach(function (elemento) {
-      elemento.classList.toggle('showParecer');
-      elemento.classList.toggle('hiddenParecer');
+  botaoSalvarEnviar.addEventListener('click', function () {
+      elementosValidacaoAtendimento.forEach(function (elemento) {
+          elemento.classList.toggle('showParecer');
+          elemento.classList.toggle('hiddenParecer');
       });
 
-      elementosParecerAtendimento.forEach(function (elemento) {
-      elemento.classList.toggle('showParecer');
-      elemento.classList.toggle('hiddenParecer');
+      elementosValidacaoParecer.forEach(function (elemento) {
+          elemento.classList.toggle('showParecer');
+          elemento.classList.toggle('hiddenParecer');
       });
       Swal.fire({
-          icon: 'success',
-          title: 'Parecer salvo e enviado com sucesso!'
-      });
+        icon: 'success',
+        title: 'Parecer salvo e enviado com sucesso!'
+    });
   });
-}
+};
+if (document.getElementById("salvarParecer2")) {
+  let botaoSalvarEnviar = document.getElementById("salvarParecer2");
+  var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoValidacaoArea .showParecer');
+  var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
+
+  botaoSalvarEnviar.addEventListener('click', function () {
+      elementosValidacaoAtendimento.forEach(function (elemento) {
+          elemento.classList.toggle('showParecer');
+          elemento.classList.toggle('hiddenParecer');
+      });
+
+      elementosValidacaoParecer.forEach(function (elemento) {
+          elemento.classList.toggle('showParecer');
+          elemento.classList.toggle('hiddenParecer');
+      });
+      Swal.fire({
+        icon: 'success',
+        title: 'Parecer salvo e enviado com sucesso!'
+    });
+  });
+};
+
+  
 
 if (document.querySelector(".botaoAprovar")) {
   let botaoAprovar = document.querySelector(".botaoAprovar");

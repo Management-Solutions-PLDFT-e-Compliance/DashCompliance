@@ -129,7 +129,7 @@
     border: 1px solid #ddd;
     text-align: center;
     margin: 5px;
-    padding: 2px;
+    padding: 20px;
 
 }
 
@@ -145,6 +145,30 @@
     border-collapse: separate;
     border-spacing: 10px; /* Altere o valor conforme necessário */
 }
+
+.tabela th:nth-child(1), .tabela td:nth-child(1) {
+    width: 4%;
+  }
+
+  .tabela th:nth-child(2), .tabela td:nth-child(2) {
+    width: 8%;
+  }
+
+  .tabela th:nth-child(3), .tabela td:nth-child(3) {
+    width: 12%;
+  }
+
+  .tabela th:nth-child(4), .tabela td:nth-child(4) {
+    width: 9%;
+  }
+
+  .tabela th:nth-child(5), .tabela td:nth-child(5) {
+    width: 13%;
+  }
+
+  .tabela th:nth-child(6), .tabela td:nth-child(6) {
+    width: 13%;
+  }
 
 #celula-abrir {
     background-color: #c0bcbc;
@@ -176,3 +200,74 @@
     width: 100%;
     justify-content: center;
 }
+
+/* ----------Tabelas 8 Colunas ------------------- */
+
+.tableFixHeadAtendimentoDash8Col {
+    overflow-y: auto; 
+    height: 89%;
+  }
+  
+  .tableFixHeadAtendimentoDash8Col thead th {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    position: sticky; 
+    top: 0px;
+    padding: 0.5rem 0.5rem;
+  }
+  
+  .tableAtendimentoDash8Col {
+    width:100%;
+    border-spacing: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+  }
+  
+  
+  
+  .tableAtendimentoDash8Col td{
+    padding: 0.6rem 0.5rem;
+  }
+  
+  .tableAtendimentoDash8Col th:nth-child(1), .tableAtendimentoDash8Col td:nth-child(1) {
+    width: 7%;
+  }
+  
+  .tableAtendimentoDash8Col th:nth-child(2), .tableAtendimentoDash8Col td:nth-child(2) {
+    width: 5%;
+  }
+  
+  .tableAtendimentoDash8Col th:nth-child(3), .tableAtendimentoDash8Col td:nth-child(3) {
+    width: 12%;
+  }
+  .tableAtendimentoDash8Col th:nth-child(4), .tableAtendimentoDash8Col td:nth-child(4) {
+    width: 8%;
+  }
+  .tableAtendimentoDash8Col th:nth-child(5), .tableAtendimentoDash8Col td:nth-child(5) {
+    width: 13%;
+  }
+  
+  .tableAtendimentoDash8Col th:nth-child(6), .tableAtendimentoDash8Col td:nth-child(6) {
+    width: 5%;
+  }
+  .tableAtendimentoDash8Col th:nth-child(7), .tableAtendimentoDash8Col td:nth-child(7) {
+    width: 5%;
+  }
+
+  .tableAtendimentoDash8Col th:nth-child(8), .tableAtendimentoDash8Col td:nth-child(8) {
+    width: 5%;
+  }
+
+  .tableAtendimentoDash8Col th, .tableAtendimentoDash8Col td {
+    border: 1px solid lightgray;
+    border-spacing: 30px;
+  }
+  
+  
+  .tableAtendimentoDash8Col th {
+    background-color: #647ca4;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  
+  }
