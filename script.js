@@ -284,9 +284,9 @@ function preencherComLabelDesc(){
   var fonteInput = document.getElementById('Fonte');
   var armazenarInput = document.getElementById('Armazenar');
 
-  descricaoInput.value = 'RESOLUÇÃO SUSEP Nº 34, DE 22 DE NOVEMBRO DE 2023';
-  fonteInput.value = 'https://www2.susep.gov.br/safe/scripts/bnweb/bnmapi.exe?router=upload/27890';
-  armazenarInput.value = 'https://soluçõescompliance...';
+  descricaoInput.value = 'Susep';
+  fonteInput.value = 'https://www2.susep.gov.br/';
+  armazenarInput.value = 'https://solucoescompliance.com.br';
 }
 
 function botaoCancelarPreTriagem(){
@@ -638,9 +638,9 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
       aspExcluir.textContent = "Operações no mercado de câmbio";
 
       preencheRegulador();
-      descricaoInput.value = 'Resolução BCB n° 309 de 28/3/2023';
-        fonteInput.value = 'https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=Resolu%C3%A7%C3%A3o%20BCB&numero=309';
-        armazenarInput.value = 'https://soluçõescompliance...';
+      descricaoInput.value = 'Bacen';
+        fonteInput.value = 'https://www.bcb.gov.br/';
+        armazenarInput.value = 'https://solucoescompliance.com.br';
         botaoRegulador.checked = true;
         botaoOutro.checked = false;     
       // botaoCancelar.classList.replace("showElement", "hiddenElement");
@@ -689,9 +689,9 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
         customCheckbox.checked = false;
         padraoCheckbox.checked = true;
       
-        descricaoInput.value = 'Bacen';
-        fonteInput.value = 'https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=Resolu%C3%A7%C3%A3o%20BCB&numero=309';
-        armazenarInput.value = 'https://soluçõescompliance...';
+        descricaoInput.value = '';
+        fonteInput.value = '';
+        armazenarInput.value = '';
         botaoRegulador.checked = false;
         botaoOutro.checked = false;
 

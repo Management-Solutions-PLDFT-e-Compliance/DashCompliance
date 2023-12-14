@@ -121,12 +121,12 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 
-if (document.querySelector(".botaoSalvar")) {
-  let botaoSalvarEnviar = document.querySelector(".botaoSalvar");
+document.addEventListener("DOMContentLoaded", function () {
+  var botao = document.getElementById("salvarParecer");
   var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoParecerArea .showParecer');
   var elementosValidacaoParecer = document.querySelectorAll('.AtendimentoParecerAreaConteudo .hiddenParecer');
 
-  botaoSalvarEnviar.addEventListener('click', function () {
+  botao.addEventListener('click', function () {
       elementosValidacaoAtendimento.forEach(function (elemento) {
           elemento.classList.toggle('showParecer');
           elemento.classList.toggle('hiddenParecer');
@@ -141,7 +141,9 @@ if (document.querySelector(".botaoSalvar")) {
         title: 'Parecer salvo e enviado com sucesso!'
     });
   });
-};
+});
+
+
 if (document.getElementById("salvarParecer2")) {
   let botaoSalvarEnviar = document.getElementById("salvarParecer2");
   var elementosValidacaoAtendimento = document.querySelectorAll('.AtendimentoValidacaoArea .showParecer');
@@ -238,4 +240,87 @@ if (document.querySelector(".botaoReprovar")) {
       }
     });
   });
+}
+
+
+function preencherComLabelDesc(){
+  var descricaoInput = document.getElementById('Descrição');
+  var fonteInput = document.getElementById('Fonte');
+  var armazenarInput = document.getElementById('Armazenar');
+
+  descricaoInput.value = 'Susep';
+  fonteInput.value = 'https://www2.susep.gov.br/safe/scripts/bnweb/bnmapi.exe?router=upload/27890';
+  armazenarInput.value = 'https://soluçõescompliance...';
+}
+
+function preencherInfosParecer(){ 
+  var id  = document.getElementById("inputIDParecer");
+  var textParecer = document.getElementById("textAreaParecer-Parecer");
+  var dataInicio = document.getElementById("dataInicioParecer");
+  var dataFim = document.getElementById("dataFimParecer");
+  var textplano = document.getElementById("textAreaPlanoParecer");
+
+  var divArquivo = document.getElementById("divParaAddArquivo"); 
+
+
+  id.value = "001";
+  textParecer.textContent = "O Banco tem evoluído no processo de controle e prevenção ao risco de LDFT mediante a implementação de novos controles nas áreas de tesouraria e varejo, inovando tanto nos processos de on-boarding quanto nos processos de controles internos.";
+
+  divArquivo.innerHTML = `<div class="blocoArquivo">
+  <img src="./assets/icons/pdf-file.png" alt="">
+  <div class="infosDoArquivo">
+    <div>
+      <p>Relatorio_AIR.pdf</p>
+      <p>706 KB</p>
+    </div>
+    <img src="./assets/icons/seta-para-baixo.png" alt="">
+  </div>
+</div>`
+
+}
+
+function handleCheckbox(checkbox) {
+  var aprovadoCheckbox = document.getElementById("aprovadoCheckbox");
+  var reprovadoCheckbox = document.getElementById("reprovadoCheckbox");
+  var comentarioTextarea = document.getElementById("comentarioTextarea");
+
+  if (checkbox === aprovadoCheckbox) {
+    // Ao clicar no checkbox de Aprovado
+    if (checkbox.checked) {
+      // Desabilita o checkbox de Reprovado
+      reprovadoCheckbox.disabled = true;
+      reprovadoCheckbox.checked = false;
+      // Desabilita a textarea e apaga o texto
+      comentarioTextarea.disabled = true;
+      comentarioTextarea.value = "";
+    } else {
+      // Se desmarcar, habilita o checkbox de Reprovado
+      reprovadoCheckbox.disabled = false;
+      // Mantém a textarea desabilitada
+      comentarioTextarea.disabled = true;
+    }
+  } else if (checkbox === reprovadoCheckbox) {
+    // Ao clicar no checkbox de Reprovado
+    if (checkbox.checked) {
+      // Desabilita o checkbox de Aprovado
+      aprovadoCheckbox.disabled = true;
+      aprovadoCheckbox.checked = false;
+      // Habilita a textarea
+      comentarioTextarea.disabled = false;
+    } else {
+      // Se desmarcar, habilita o checkbox de Aprovado
+      aprovadoCheckbox.disabled = false;
+      // Mantém a textarea desabilitada
+      comentarioTextarea.disabled = true;
+    }
+  }
+}
+
+function handleTextareaInput(textarea) {
+  var aprovadoCheckbox = document.getElementById("aprovadoCheckbox");
+
+  // Se a opção Aprovado estiver marcada, apaga o texto na textarea
+  if (aprovadoCheckbox.checked) {
+    textarea.value = "";
+  }
 }
