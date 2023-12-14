@@ -285,8 +285,8 @@ function preencherComLabelDesc(){
   var armazenarInput = document.getElementById('Armazenar');
 
   descricaoInput.value = 'Susep';
-  fonteInput.value = 'https://www2.susep.gov.br/safe/scripts/bnweb/bnmapi.exe?router=upload/27890';
-  armazenarInput.value = 'https://soluçõescompliance...';
+  fonteInput.value = 'https://www2.susep.gov.br/';
+  armazenarInput.value = 'https://solucoescompliance.com.br';
 }
 
 function botaoCancelarPreTriagem(){
@@ -639,8 +639,8 @@ var NormativosPublicados = document.getElementById('NormativosPublicados').getCo
 
       preencheRegulador();
       descricaoInput.value = 'Bacen';
-        fonteInput.value = 'https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=Resolu%C3%A7%C3%A3o%20BCB&numero=309';
-        armazenarInput.value = 'https://soluçõescompliance...';
+        fonteInput.value = 'https://www.bcb.gov.br/';
+        armazenarInput.value = 'https://solucoescompliance.com.br';
         botaoRegulador.checked = true;
         botaoOutro.checked = false;     
       // botaoCancelar.classList.replace("showElement", "hiddenElement");
